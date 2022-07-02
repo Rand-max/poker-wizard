@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2946887220525434451}
   - component: {fileID: 1522812762}
   m_Layer: 0
-  m_Name: shootpoint_exp
+  m_Name: ice_shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5051,8 +5051,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.78521234, g: 0.41960788, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.3254717, b: 0.9215275, a: 1}
+      minColor: {r: 0.28502133, g: 0.7798576, b: 0.990566, a: 1}
+      maxColor: {r: 0.32549024, g: 0.9100655, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9648,7 +9648,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5af21a981dc7f1a4b9de7bfb49260c82, type: 2}
+  - {fileID: 2100000, guid: 3e011e02835964349aa7d20427a76cf9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9922,7 +9922,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.32549024, b: 0.961384, a: 1}
+      maxColor: {r: 0.32549024, g: 0.8446405, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14518,7 +14518,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5af21a981dc7f1a4b9de7bfb49260c82, type: 2}
+  - {fileID: 2100000, guid: 3e011e02835964349aa7d20427a76cf9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
