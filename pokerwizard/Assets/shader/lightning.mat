@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: lightning
+  m_Shader: {fileID: -6465566751694194690, guid: 226a16bf9b01b184b97880629497d7b0, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_F41A19AD:
+        m_Texture: {fileID: 2800000, guid: 989b516581743bc4484ab2e4042036de, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - Vector1_6B82E111: 0.4
+    - Vector1_E56C78AE: 2
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _sphere_hardness: 0.5
+    - _sphere_mask: 0
+    - _sphere_radius: 0.5
+    m_Colors:
+    - Color_435FEC8B: {r: 3.0451503, g: 2.8030672, b: 0.9428499, a: 1}
+    - Color_7ACD2525: {r: 5.848882, g: 10.794279, b: 2.2824907, a: 1}
+    - Color_BAE37F87: {r: 2.8935897, g: 2.8106046, b: 0.8598875, a: 1}
+    - Vector3_5A3E6DCC: {r: 0, g: 0, b: 0, a: 0}
+    - _sphere_center: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!114 &1736992311204517030
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
