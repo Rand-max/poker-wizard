@@ -13,6 +13,7 @@ public class ShootingController : MonoBehaviour
     public GameObject bulleteffect;
     public GameObject bulletendeffect;
     public float cooldowntime;
+    public float bulletspeed;
     public float preparetime;
     private float cooldown;
     bool shootprepared=false;
@@ -47,6 +48,9 @@ public class ShootingController : MonoBehaviour
             GameObject newbullet=Instantiate(bullet,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
             GameObject neweffect=Instantiate(bulleteffect,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
             GameObject boomeffect=Instantiate(bulletendeffect,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
+            newbullet.GetComponent<BulletpProjectile>().end=boomeffect;
+            newbullet.GetComponent<BulletpProjectile>().bspeed=bulletspeed;
+            newbullet.GetComponent<BulletpProjectile>().layer=mousecolliderlayermask;
             neweffect.transform.parent=wandposition.transform;
             boomeffect.transform.parent=newbullet.transform;
             neweffect.SetActive(true);

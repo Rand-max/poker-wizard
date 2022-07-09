@@ -5257,7 +5257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2163977947923640414, guid: 4ffe8494c0b404d46adc7ac7a23766c6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ffe8494c0b404d46adc7ac7a23766c6, type: 3}
@@ -15878,6 +15878,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 521220659}
     - target: {fileID: 4276360891581623395, guid: 4bb636bebe662944c8a3a3af321a2d5a, type: 3}
+      propertyPath: bulletspeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4276360891581623395, guid: 4bb636bebe662944c8a3a3af321a2d5a, type: 3}
       propertyPath: preparetime
       value: 0.5
       objectReference: {fileID: 0}
@@ -16195,6 +16199,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 878ca005a4e93f94da0ae5d6b0b3d867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bspeed: 100
+  end: {fileID: 0}
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &1911298755362667888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16552,7 +16561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030374658988531655, guid: 4a157f62f730d4b4eab069fb5dd26a35, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a157f62f730d4b4eab069fb5dd26a35, type: 3}

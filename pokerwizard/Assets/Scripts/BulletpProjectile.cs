@@ -6,6 +6,10 @@ public class BulletpProjectile : MonoBehaviour
 {
     private Rigidbody bulletrigid;
     private float lifetime;
+    public float bspeed=100;
+    public GameObject end;
+    public LayerMask layer= 1<<0;
+    private bool triggered=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +20,25 @@ public class BulletpProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float speed=100f;
-        bulletrigid.velocity=transform.forward*speed;
-        if(lifetime<0){
-            Debug.Log("No hit");
-            Destroy(gameObject);
+        if(!triggered){
+            bulletrigid.velocity=transform.forward*bspeed;
+            if(lifetime<0){
+                Debug.Log("No hit");
+                Destroy(gameObject);
+            }
+            lifetime-=Time.deltaTime;
         }
-        lifetime-=Time.deltaTime;
+        else{
+            bulletrigid.velocity=new Vector3(0,0,0);
+        }
     }
     private void OnTriggerEnter(Collider other){
-        if(other.gameObject.layer==default){
+        if(((1<<other.gameObject.layer) & layer) != 0){
+            triggered=true;
             Debug.Log("HP-1");
-            transform.GetChild(1).gameObject.SetActive(true);
+            if(end!=null){
+                end.SetActive(true);
+            }
             Destroy(gameObject,0.5f);
         }
     }
