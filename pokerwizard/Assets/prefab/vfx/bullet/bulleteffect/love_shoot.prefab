@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2946887220525434451}
   - component: {fileID: 1522812762}
   m_Layer: 0
-  m_Name: purple_shoot
+  m_Name: love_shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4828,7 +4828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1973274d3b29a9d4fac10a3e4ead1dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.7
+  duration: 0.5
 --- !u!1 &5468357422210662262
 GameObject:
   m_ObjectHideFlags: 0
@@ -9648,7 +9648,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5af21a981dc7f1a4b9de7bfb49260c82, type: 2}
+  - {fileID: 2100000, guid: 86c2517cf7f9bde4880ce60f5b9b6fd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
