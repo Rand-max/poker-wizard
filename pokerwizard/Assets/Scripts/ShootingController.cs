@@ -54,6 +54,7 @@ public class ShootingController : MonoBehaviour
             neweffect.transform.parent=wandposition.transform;
             boomeffect.transform.parent=newbullet.transform;
             neweffect.SetActive(true);
+            boomeffect.SetActive(false);
         }
     }
 }
