@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeColor : MonoBehaviour {
 
@@ -11,12 +12,8 @@ public class ChangeColor : MonoBehaviour {
     private Color colorToTurnTo = Color.white;
 
     // Use this for initialization
-    private void Start () {
-
-        // Assign Renderer component to rend variable
+    public void Colorchange() {
         rend = GetComponent<Renderer>();
-
-        // Change sprite color to selected color
         rend.material.color = colorToTurnTo;
     }	
 }
