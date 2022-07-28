@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 96
+  controlID: 89
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 97
+  controlID: 90
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 98
+  controlID: 91
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -303,8 +303,8 @@ MonoBehaviour:
     y: 0
     width: 380
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 26}
   m_Panes:
   - {fileID: 26}
@@ -464,7 +464,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 8887fbff6abdfcff70bdfcff76bdfcff7cbdfcff80bdfcff84bdfcff88bdfcff8cbdfcff90bdfcffb4bdfcffb8bdfcffbebdfcffc2bdfcffcebdfcffb013feffb413feffb813feffbc13feffc013feffc413feffcc13feffd013feffd413feffd813feffdc13feffe013feffec13fefff013fefff413fefff813feff1c14feff2014feff2614feff2a14feff3014feff9421feffe849feffe2cdfeff9ad5feffecd7feff4ce1feff800affff6013ffff3616ffffbc95ffffc6c5ffff5cd2ffff9ed8ffffdaefffff0afbffff
+      m_ExpandedIDs: 342effff72d1ffff82d1ffffd8f6ffff1cf7ffff22f7ffffe8faffff0afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -889,9 +889,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 9.3390665, y: 13.808156, z: 47.747833}
+    m_Target: {x: 16.411959, y: -0.29512763, z: -3.1859853}
     speed: 2
-    m_Value: {x: 9.3390665, y: 13.808156, z: 47.747833}
+    m_Value: {x: 16.411959, y: -0.29512763, z: -3.1859853}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -938,13 +938,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.04513053, y: 0.77930033, z: -0.05642241, w: 0.6226237}
+    m_Target: {x: 0.047454763, y: 0.7621445, z: -0.056453113, w: 0.6433715}
     speed: 2
-    m_Value: {x: 0.04419257, y: 0.7793103, z: -0.055247985, w: 0.62263167}
+    m_Value: {x: 0.0486726, y: 0.7590691, z: -0.05737141, w: 0.64664805}
   m_Size:
-    m_Target: 6.1730404
+    m_Target: 14.283594
     speed: 2
-    m_Value: 6.1730404
+    m_Value: 14.956643
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -3093,22 +3093,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/model/character
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/model/character
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\bruce\OneDrive\unity\pokergame\poker-wizard\pokerwizard
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: c0840000
-    m_LastClickedID: 33984
-    m_ExpandedIDs: 000000008e82000090820000928200009482000096820000988200009a8200009c8200004c8400006e840000c084000016a700001ea7000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 402}
+    m_SelectedIDs: 00820000
+    m_LastClickedID: 33280
+    m_ExpandedIDs: 00000000dc7f0000de7f0000e07f0000e27f0000e47f0000e67f0000e87f0000ea7f0000e481000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3136,7 +3136,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008e82000090820000928200009482000096820000988200009a8200009c820000
+    m_ExpandedIDs: 00000000dc7f0000de7f0000e07f0000e27f0000e47f0000e67f0000e87f0000ea7f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
