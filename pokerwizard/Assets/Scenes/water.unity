@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 138327413}
   - component: {fileID: 138327412}
   - component: {fileID: 138327411}
-  - component: {fileID: 138327410}
+  - component: {fileID: 138327414}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -158,42 +158,6 @@ Transform:
   m_Father: {fileID: 1777365508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &138327410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138327408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b7635e934b2684486546c578dcba7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_version: 1.102
-  m_ifHead: 1
-  m_tree: []
-  m_animated: 0
-  m_simType: 0
-  m_targetDistance: 1.03
-  m_targetFlip: 0
-  m_tension: 30
-  m_inercia: 0.5
-  m_lookAxis: 2
-  m_lookAxisFlip: 0
-  m_sourceUpAxis: 1
-  m_sourceUpAxisFlip: 0
-  m_upWorld: 0
-  m_upNode: {fileID: 0}
-  m_upNodeAxis: 1
-  m_upnodeControl: 1
-  m_gravity: {x: 0, y: 0, z: 0}
-  m_colliders: []
-  m_optShowGizmosAtPlaying: 0
-  m_optShowGizmosAtEditor: 1
-  m_optGizmoSize: 0.1
-  m_optShowHiddenNodes: 0
-  m_hierarchyChanged: 0
 --- !u!65 &138327411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -257,6 +221,49 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138327408}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &138327414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138327408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f4a93502ee6be4896850a8849e80d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_version: 1.102
+  m_animated: 0
+  m_keepInitialRotation: 1
+  m_nodes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_jiggleboneHeads: []
+  wavesets:
+  - m_rotateAxis: 0
+    m_frequency: -20
+    m_frequencyProxy: -0.19999999
+    m_strengthStart: 5
+    m_strengthEnd: 40
+    m_speed: 5
+    m_offset: 0
+    m_nodesSaveStrengths:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  m_bakeTime: 1
+  m_bakeSamples: 30
+  m_bakeLoopTime: 1
+  m_bakeDisableTentacle: 1
+  m_optimizeThresholdTangent: 1
+  m_optimizeThresholdDefaultStrength: 10
+  m_optimizeThresholdStrengthRate: 0
 --- !u!1 &203844586
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +586,7 @@ GameObject:
   - component: {fileID: 897673097}
   - component: {fileID: 897673096}
   - component: {fileID: 897673095}
-  - component: {fileID: 897673094}
+  - component: {fileID: 897673098}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -603,42 +610,6 @@ Transform:
   m_Father: {fileID: 2030136533}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &897673094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897673092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b7635e934b2684486546c578dcba7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_version: 1.102
-  m_ifHead: 1
-  m_tree: []
-  m_animated: 0
-  m_simType: 0
-  m_targetDistance: 1.03
-  m_targetFlip: 0
-  m_tension: 30
-  m_inercia: 0.5
-  m_lookAxis: 2
-  m_lookAxisFlip: 0
-  m_sourceUpAxis: 1
-  m_sourceUpAxisFlip: 0
-  m_upWorld: 0
-  m_upNode: {fileID: 0}
-  m_upNodeAxis: 1
-  m_upnodeControl: 1
-  m_gravity: {x: 0, y: 0, z: 0}
-  m_colliders: []
-  m_optShowGizmosAtPlaying: 0
-  m_optShowGizmosAtEditor: 1
-  m_optGizmoSize: 0.1
-  m_optShowHiddenNodes: 0
-  m_hierarchyChanged: 0
 --- !u!65 &897673095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -702,6 +673,48 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897673092}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &897673098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897673092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f4a93502ee6be4896850a8849e80d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_version: 1.102
+  m_animated: 0
+  m_keepInitialRotation: 1
+  m_nodes:
+  - {fileID: 897673093}
+  - {fileID: 1200931951}
+  - {fileID: 1777365508}
+  - {fileID: 138327409}
+  m_jiggleboneHeads: []
+  wavesets:
+  - m_rotateAxis: 0
+    m_frequency: -20
+    m_frequencyProxy: -0.19999999
+    m_strengthStart: 5
+    m_strengthEnd: 40
+    m_speed: 5
+    m_offset: 0
+    m_nodesSaveStrengths:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  m_bakeTime: 1
+  m_bakeSamples: 30
+  m_bakeLoopTime: 1
+  m_bakeDisableTentacle: 1
+  m_optimizeThresholdTangent: 1
+  m_optimizeThresholdDefaultStrength: 10
+  m_optimizeThresholdStrengthRate: 0
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,7 +991,7 @@ GameObject:
   - component: {fileID: 1200931955}
   - component: {fileID: 1200931954}
   - component: {fileID: 1200931953}
-  - component: {fileID: 1200931952}
+  - component: {fileID: 1200931956}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -1002,42 +1015,6 @@ Transform:
   m_Father: {fileID: 897673093}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1200931952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200931950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b7635e934b2684486546c578dcba7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_version: 1.102
-  m_ifHead: 1
-  m_tree: []
-  m_animated: 0
-  m_simType: 0
-  m_targetDistance: 1.03
-  m_targetFlip: 0
-  m_tension: 30
-  m_inercia: 0.5
-  m_lookAxis: 2
-  m_lookAxisFlip: 0
-  m_sourceUpAxis: 1
-  m_sourceUpAxisFlip: 0
-  m_upWorld: 0
-  m_upNode: {fileID: 0}
-  m_upNodeAxis: 1
-  m_upnodeControl: 1
-  m_gravity: {x: 0, y: 0, z: 0}
-  m_colliders: []
-  m_optShowGizmosAtPlaying: 0
-  m_optShowGizmosAtEditor: 1
-  m_optGizmoSize: 0.1
-  m_optShowHiddenNodes: 0
-  m_hierarchyChanged: 0
 --- !u!65 &1200931953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1101,6 +1078,49 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200931950}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1200931956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200931950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f4a93502ee6be4896850a8849e80d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_version: 1.102
+  m_animated: 0
+  m_keepInitialRotation: 1
+  m_nodes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_jiggleboneHeads: []
+  wavesets:
+  - m_rotateAxis: 0
+    m_frequency: -20
+    m_frequencyProxy: -0.19999999
+    m_strengthStart: 5
+    m_strengthEnd: 40
+    m_speed: 5
+    m_offset: 0
+    m_nodesSaveStrengths:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  m_bakeTime: 1
+  m_bakeSamples: 30
+  m_bakeLoopTime: 1
+  m_bakeDisableTentacle: 1
+  m_optimizeThresholdTangent: 1
+  m_optimizeThresholdDefaultStrength: 10
+  m_optimizeThresholdStrengthRate: 0
 --- !u!1 &1777365507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,7 +1133,7 @@ GameObject:
   - component: {fileID: 1777365512}
   - component: {fileID: 1777365511}
   - component: {fileID: 1777365510}
-  - component: {fileID: 1777365509}
+  - component: {fileID: 1777365513}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -1137,42 +1157,6 @@ Transform:
   m_Father: {fileID: 1200931951}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1777365509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777365507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b7635e934b2684486546c578dcba7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_version: 1.102
-  m_ifHead: 1
-  m_tree: []
-  m_animated: 0
-  m_simType: 0
-  m_targetDistance: 1.03
-  m_targetFlip: 0
-  m_tension: 30
-  m_inercia: 0.5
-  m_lookAxis: 2
-  m_lookAxisFlip: 0
-  m_sourceUpAxis: 1
-  m_sourceUpAxisFlip: 0
-  m_upWorld: 0
-  m_upNode: {fileID: 0}
-  m_upNodeAxis: 1
-  m_upnodeControl: 1
-  m_gravity: {x: 0, y: 0, z: 0}
-  m_colliders: []
-  m_optShowGizmosAtPlaying: 0
-  m_optShowGizmosAtEditor: 1
-  m_optGizmoSize: 0.1
-  m_optShowHiddenNodes: 0
-  m_hierarchyChanged: 0
 --- !u!65 &1777365510
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1236,6 +1220,49 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777365507}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1777365513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777365507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f4a93502ee6be4896850a8849e80d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_version: 1.102
+  m_animated: 0
+  m_keepInitialRotation: 1
+  m_nodes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_jiggleboneHeads: []
+  wavesets:
+  - m_rotateAxis: 0
+    m_frequency: -20
+    m_frequencyProxy: -0.19999999
+    m_strengthStart: 5
+    m_strengthEnd: 40
+    m_speed: 5
+    m_offset: 0
+    m_nodesSaveStrengths:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  m_bakeTime: 1
+  m_bakeSamples: 30
+  m_bakeLoopTime: 1
+  m_bakeDisableTentacle: 1
+  m_optimizeThresholdTangent: 1
+  m_optimizeThresholdDefaultStrength: 10
+  m_optimizeThresholdStrengthRate: 0
 --- !u!1 &2030136532
 GameObject:
   m_ObjectHideFlags: 0
