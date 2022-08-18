@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
  
 public class PlayerController : MonoBehaviour
 {
@@ -23,18 +24,25 @@ public class PlayerController : MonoBehaviour
     public float steering = 80f;
     public float gravity = 10f;
     public LayerMask layerMask;
+    private Vector2 inputDirection;
+    private bool inputDrift;
     void Start ()
     {
+    }
+    public void OnTurn(InputAction.CallbackContext ctx){
+        inputDirection=ctx.ReadValue<Vector2>();
+    }
+    public void OnDrift(InputAction.CallbackContext ctx){
+        inputDrift=ctx.ReadValueAsButton();
     }
     void Update()
     {
         transform.position = rb.transform.position + new Vector3(0, 0.4f, 0);
-        Vector2 inputDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if(inputDirection.sqrMagnitude > 1)
         {
             inputDirection = inputDirection.normalized;
         }
-        if (Input.GetAxis("Vertical") != 0)
+        if (inputDirection.y != 0)
         {
             speed = Mathf.Abs(inputDirection.y)*acceleration;
         }
@@ -45,33 +53,33 @@ public class PlayerController : MonoBehaviour
             }
         
         //drift?
-        if (Input.GetButtonDown("Jump") && !drifting && Input.GetAxis("Horizontal") != 0)
+        if (inputDrift && !drifting && inputDirection.y != 0)
         {
             drifting = true;
-            driftDirection = Input.GetAxis("Horizontal") > 0 ? 1 : -1;
+            driftDirection = inputDirection.x > 0 ? 1 : -1;
 
             //playerModel.parent.DOComplete();psa
             //playerModel.parent.DOPunchPosition(transform.up * .2f, .3f, 5, 1);psa
 
         }
         //steer?
-        if (Input.GetAxis("Horizontal") != 0&&!drifting)
+        if (inputDirection.x != 0&&!drifting)
         {
-            int dir = Input.GetAxis("Horizontal") > 0 ? 1 : -1;
+            int dir = inputDirection.x > 0 ? 1 : -1;
             float amount = Mathf.Abs(inputDirection.x);
             Steer(dir, amount*2);
         }
         
         if (drifting)
         {
-            float control = (driftDirection == 1) ? Remap(Input.GetAxis("Horizontal"), -1, 1, 0, 2) : Remap(Input.GetAxis("Horizontal"), -1, 1, 2, 0);
-            float powerControl = (driftDirection == 1) ? Remap(Input.GetAxis("Horizontal"), -1, 1, .2f, 1) : Remap(Input.GetAxis("Horizontal"), -1, 1, 1, .2f);
+            float control = (driftDirection == 1) ? Remap(inputDirection.x, -1, 1, 0, 2) : Remap(inputDirection.x, -1, 1, 2, 0);
+            float powerControl = (driftDirection == 1) ? Remap(inputDirection.x, -1, 1, .2f, 1) : Remap(inputDirection.x, -1, 1, 1, .2f);
             Steer(driftDirection, control);
             driftPower += powerControl;
 
             //ColorDrift();
         }
-        if (Input.GetButtonUp("Jump") && drifting)
+        if (inputDrift && drifting)
         {
             //Boost();
             drifting=false;
@@ -82,11 +90,11 @@ public class PlayerController : MonoBehaviour
         //a) Kart
         if (!drifting)
         {
-            playerModel.localEulerAngles = Vector3.Lerp(playerModel.localEulerAngles, new Vector3(0, 90 + (Input.GetAxis("Horizontal") * 15), playerModel.localEulerAngles.z), 10f/Time.deltaTime);
+            playerModel.localEulerAngles = Vector3.Lerp(playerModel.localEulerAngles, new Vector3(0, 90 + (inputDirection.x * 15), playerModel.localEulerAngles.z), 10f/Time.deltaTime);
         }
         else
         {
-            float control = (driftDirection == 1) ? Remap(Input.GetAxis("Horizontal"), -1, 1, .5f, 2) : Remap(Input.GetAxis("Horizontal"), -1, 1, 2, .5f);
+            float control = (driftDirection == 1) ? Remap(inputDirection.x, -1, 1, .5f, 2) : Remap(inputDirection.x, -1, 1, 2, .5f);
             //playerModel.parent.localRotation = Quaternion.Euler(0, Mathf.LerpAngle(playerModel.parent.localEulerAngles.y,(control * 15) * driftDirection, .2f), 0);
         }
         /*
@@ -102,7 +110,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate ()
     {
         // CHANGED -- This limits movement speed so you won't move faster when holding a diagonal. It's just a pet peeve of mine
-        Vector2 inputDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if(inputDirection.sqrMagnitude > 1)
         {
             inputDirection = inputDirection.normalized;
@@ -110,10 +117,10 @@ public class PlayerController : MonoBehaviour
         
         // CHANGED -- This takes the camera's facing into account and flattens the controls to a 2-D plane
         
-        Vector3 newRight = Vector3.Cross(Vector3.up, cam.forward);
-        Vector3 newForward = Vector3.Cross(newRight, Vector3.up);
-        Vector3 movement = (newRight * inputDirection.x) + (newForward * inputDirection.y);
-        
+        //Vector3 newRight = Vector3.Cross(Vector3.up, cam.forward);
+        //Vector3 newForward = Vector3.Cross(newRight, Vector3.up);
+        //Vector3 movement = (newRight * inputDirection.x) + (newForward * inputDirection.y);
+        Vector3 movement = (transform.right * inputDirection.x) + (transform.forward * inputDirection.y);
         //rb.AddForce(movement * speed);
         
         //Forward Acceleration
@@ -121,9 +128,9 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(movement * currentSpeed, ForceMode.Acceleration);
         }
         else{
-            rb.AddForce(transform.forward * Input.GetAxis("Vertical") * currentSpeed, ForceMode.Acceleration);
+            rb.AddForce(transform.forward * inputDirection.y * currentSpeed, ForceMode.Acceleration);
         }
-        transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(transform.eulerAngles.x, cam.eulerAngles.y+ currentRotate, transform.eulerAngles.z), 10f/Time.deltaTime);
+        transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(transform.eulerAngles.x, transform.eulerAngles.y+ currentRotate, transform.eulerAngles.z), 10f/Time.deltaTime);
         //Gravity
         rb.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
 

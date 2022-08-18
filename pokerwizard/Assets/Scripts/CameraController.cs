@@ -17,10 +17,11 @@ public class CameraController : MonoBehaviour
      }
      
      void Update () {
-       Quaternion q = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * sensitivity, Vector3.up);
+        /*Quaternion q = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * sensitivity, Vector3.up);
         // Quaternion r = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * sensitivity, Vector3.right);
-        offset = q * offset;
-        transform.rotation = q  * transform.rotation;
+        */
+        offset = target.rotation * offset;
+        transform.rotation = Quaternion.Lerp(transform.rotation,target.rotation,360.0f);
         transform.position = target.position + offset;
      }
 }
