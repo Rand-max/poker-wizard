@@ -36,7 +36,7 @@ public class SpellActivate : MonoBehaviour
 
     public void ButtonClicked(){
 
-
+        fadeval=0f;
         isEnabled=!isEnabled;
         ripeffect.Play();
         
@@ -74,16 +74,26 @@ public class SpellActivate : MonoBehaviour
         //     default:
         //         break;
         // }
-
+        /*
         if(isUnDissolving){
             fadeval+=Time.deltaTime;
-            if(fadeval>2f){
-                fadeval=2f;
+            if(fadeval>1f){
+                fadeval=1f;
+                isUnDissolving=false;
+            }
+            FireMat.SetFloat("_FadeValue",fadeval);
+        }*/
+
+    }
+    void Update(){
+        if(isUnDissolving){
+            fadeval+=Time.deltaTime;
+            if(fadeval>1f){
+                fadeval=1f;
                 isUnDissolving=false;
             }
             FireMat.SetFloat("_FadeValue",fadeval);
         }
-
     }
 
 }
