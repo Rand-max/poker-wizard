@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SpellActivate : MonoBehaviour
 {
@@ -15,77 +16,108 @@ public class SpellActivate : MonoBehaviour
 
     private GameObject SpellIcon;
 
-    public float fadeval;
-    public float countdown=1.5f;
-    public bool counting=false;
-    bool isUnDissolving=false;
+    //spell text
+    public VertexGradient fire_color;
+    public VertexGradient accel_color;
+    public VertexGradient shield_color;
+    public VertexGradient ice_color;
+    public VertexGradient love_color;
+    public VertexGradient thunder_color;
 
+    public TextMeshProUGUI spellname;
+    
     //ripple
     [SerializeField]
     public ParticleSystem ripeffect=null;
 
-    //spell tag
-    string FireTag="FireIcon";
-
-    private string SpellTag;
+    public float fadeval;
+    public float countdown;
+    public bool counting=false;
+    bool isUnDissolving=false;
 
     //spell material
     Material FireMat;
+    Material AccelMat;
+    Material ShieldMat;
+    Material IceMat;
+    Material LoveMat;
+    Material ThunderMat;
     
     public bool isEnabled=true;
 
     public void ButtonClicked(){
 
         fadeval=0f;
+        countdown=1f;
         isEnabled=!isEnabled;
         ripeffect.Play();
         
-        FireMat=FireIcon.GetComponent<Image>().material;
-        // FireMat.SetFloat("_FadeValue",fadeval);
         SpellIcon=FireIcon;
-        SpellIcon.SetActive(isEnabled);
+        
+        spellname.text = "Flame";
+        spellname.colorGradient=fire_color;
 
-        isUnDissolving=true;
-
-        // FireIcon=GameObject.FindGameObjectWithTag(FireTag);
-        // FireMat=FireIcon.GetComponent<Image>().material;
+        counting=true;
+        isUnDissolving=false;
 
         // int spellNum=Random.Range(0,6);
         // switch (spellNum)
         // {
         //     case 0:
         //         SpellIcon=FireIcon;
+        //         spellname.text = "Flame";
+        //         spellname.colorGradient=fire_color;
         //         break;
         //     case 1:
         //         SpellIcon=AccelIcon;
+        //         spellname.text = "Boost";
+        //         spellname.colorGradient=accel_color;
         //         break;
         //     case 2:
         //         SpellIcon=ShieldIcon;
+        //         spellname.text = "Shield";
+        //         spellname.colorGradient=shield_color;
         //         break;
         //     case 3 :
         //         SpellIcon=IceIcon;
+        //         spellname.text = "Ice";
+        //         spellname.colorGradient=ice_color;
         //         break;
         //     case 4:
         //         SpellIcon=LoveIcon;
+        //         spellname.text = "Chaos";
+        //         spellname.colorGradient=love_color;
         //         break;
         //     case 5:
         //         SpellIcon=ThunderIcon;
+        //         spellname.text = "Thunder";
+        //         spellname.colorGradient=thunder_color;
         //         break;
         //     default:
         //         break;
         // }
-        /*
-        if(isUnDissolving){
-            fadeval+=Time.deltaTime;
-            if(fadeval>1f){
-                fadeval=1f;
-                isUnDissolving=false;
-            }
-            FireMat.SetFloat("_FadeValue",fadeval);
-        }*/
-
+ 
+    }
+    void Start() {
+        FireMat=FireIcon.GetComponent<Image>().material;
+        AccelMat=AccelIcon.GetComponent<Image>().material;
+        ShieldMat=ShieldIcon.GetComponent<Image>().material;
+        IceMat=IceIcon.GetComponent<Image>().material;
+        LoveMat=LoveIcon.GetComponent<Image>().material;
+        ThunderMat=ThunderIcon.GetComponent<Image>().material;
     }
     void Update(){
+        //dissolve delay
+        if(counting){
+            countdown-=Time.deltaTime;
+            if(countdown<0){
+                countdown=0;
+                isUnDissolving=true;
+                counting=false;
+                SpellIcon.SetActive(isEnabled);
+            }
+        }
+
         if(isUnDissolving){
             fadeval+=Time.deltaTime;
             if(fadeval>1f){
