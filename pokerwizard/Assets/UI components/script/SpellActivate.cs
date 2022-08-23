@@ -24,7 +24,14 @@ public class SpellActivate : MonoBehaviour
     public VertexGradient love_color;
     public VertexGradient thunder_color;
 
+    public VertexGradient brown_color;
+    public VertexGradient purp_color;
+
     public TextMeshProUGUI spellname;
+
+    //place text
+    public TextMeshProUGUI placeNum;
+    public TextMeshProUGUI placeEng;
     
     //ripple
     [SerializeField]
@@ -53,13 +60,44 @@ public class SpellActivate : MonoBehaviour
         ripeffect.Play();
         
         SpellIcon=FireIcon;
-        
         spellname.text = "Flame";
         spellname.colorGradient=fire_color;
 
         counting=true;
         isUnDissolving=false;
 
+        //名次
+        int Whichplace=Random.Range(0,4);
+        switch(Whichplace){
+            case 0:
+                placeNum.text="1";
+                placeEng.text="st";
+                placeNum.colorGradient=fire_color;
+                placeEng.colorGradient=fire_color;
+                break;
+            case 1:
+                placeNum.text="2";
+                placeEng.text="nd";
+                placeNum.colorGradient=ice_color;
+                placeEng.colorGradient=ice_color;
+                break;
+            case 2:
+                placeNum.text="3";
+                placeEng.text="rd";
+                placeNum.colorGradient=brown_color;
+                placeEng.colorGradient=brown_color;
+                break;
+            case 3 :
+                placeNum.text="4";
+                placeEng.text="th";
+                placeNum.colorGradient=purp_color;
+                placeEng.colorGradient=purp_color;
+                break;
+            default:
+                break;
+        }
+        
+        //咒語
         // int spellNum=Random.Range(0,6);
         // switch (spellNum)
         // {
