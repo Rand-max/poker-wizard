@@ -99,41 +99,41 @@ public class SpellActivate : MonoBehaviour
         
         //咒語
         // int spellNum=Random.Range(0,6);
-        // switch (spellNum)
-        // {
-        //     case 0:
-        //         SpellIcon=FireIcon;
-        //         spellname.text = "Flame";
-        //         spellname.colorGradient=fire_color;
-        //         break;
-        //     case 1:
-        //         SpellIcon=AccelIcon;
-        //         spellname.text = "Boost";
-        //         spellname.colorGradient=accel_color;
-        //         break;
-        //     case 2:
-        //         SpellIcon=ShieldIcon;
-        //         spellname.text = "Shield";
-        //         spellname.colorGradient=shield_color;
-        //         break;
-        //     case 3 :
-        //         SpellIcon=IceIcon;
-        //         spellname.text = "Ice";
-        //         spellname.colorGradient=ice_color;
-        //         break;
-        //     case 4:
-        //         SpellIcon=LoveIcon;
-        //         spellname.text = "Chaos";
-        //         spellname.colorGradient=love_color;
-        //         break;
-        //     case 5:
-        //         SpellIcon=ThunderIcon;
-        //         spellname.text = "Thunder";
-        //         spellname.colorGradient=thunder_color;
-        //         break;
-        //     default:
-        //         break;
-        // }
+        /*switch (spellNum)
+        {
+            case 0:
+                SpellIcon=FireIcon;
+                spellname.text = "Flame";
+                spellname.colorGradient=fire_color;
+                break;
+            case 1:
+                SpellIcon=AccelIcon;
+                spellname.text = "Boost";
+                spellname.colorGradient=accel_color;
+                break;
+            case 2:
+                SpellIcon=ShieldIcon;
+                spellname.text = "Shield";
+                spellname.colorGradient=shield_color;
+                break;
+            case 3 :
+                SpellIcon=IceIcon;
+                spellname.text = "Ice";
+                spellname.colorGradient=ice_color;
+                break;
+            case 4:
+                SpellIcon=LoveIcon;
+                spellname.text = "Chaos";
+                spellname.colorGradient=love_color;
+                break;
+            case 5:
+                SpellIcon=ThunderIcon;
+                spellname.text = "Thunder";
+                spellname.colorGradient=thunder_color;
+                break;
+            default:
+                break;
+        }*/
  
     }
     void Start() {
