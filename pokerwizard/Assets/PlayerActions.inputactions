@@ -129,6 +129,17 @@
                 },
                 {
                     "name": "",
+                    "id": "1d0ff3af-7702-4b56-bec9-602bf1749949",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5dd83e9c-1309-4e3a-b25d-8028b1ed1e94",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
@@ -186,6 +197,17 @@
                     "name": "",
                     "id": "bf6b9bd2-7232-40af-afcf-c13fb9792c3f",
                     "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drift",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca51e26d-4b98-4e8b-a2f0-6d8db2413f7e",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button6",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

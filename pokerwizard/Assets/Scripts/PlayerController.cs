@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask layerMask;
     private Vector2 inputDirection;
     private bool inputDrift;
+    public LayerMask playerlayer;
     void Start ()
     {
     }

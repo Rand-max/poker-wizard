@@ -29,12 +29,14 @@ public class cpController : MonoBehaviour
     void OnTriggerEnter(Collider collision){
         Debug.Log(collision.gameObject.tag);
         if(collision.gameObject.tag == "Player"){
-            alive=false;
-            if(selfindex+1<GetComponentInParent<CheckpointController>().Checkpoints.Length){
-                GetComponentInParent<CheckpointController>().Checkpoints[selfindex+1].SetActive(true);
-            }
-            else{
-                GetComponentInParent<CheckpointController>().Checkpoints[0].SetActive(true);
+            if(((1<<this.gameObject.layer) & collision.transform.parent.GetComponentInChildren<PlayerController>().playerlayer) != 0){
+                alive=false;
+                if(selfindex+1<GetComponentInParent<CheckpointController>().Checkpoints.Length){
+                    GetComponentInParent<CheckpointController>().Checkpoints[selfindex+1].SetActive(true);
+                }
+                else{
+                    GetComponentInParent<CheckpointController>().Checkpoints[0].SetActive(true);
+                }
             }
         }
     }
