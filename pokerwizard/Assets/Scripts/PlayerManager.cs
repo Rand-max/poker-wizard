@@ -13,6 +13,7 @@
         [SerializeField]
         private List<LayerMask> playerLayers;
         private PlayerInputManager playerInputManager;
+        public List<GameObject>checkpointmanagers;
 
         private void Awake()
         {
@@ -40,6 +41,7 @@
             //need to use the parent due to the structure of the prefab
             Transform playerParent = player.transform.parent;
             minimap.GetComponent<MapController>().player.Add(player.GetComponent<PlayerController>().Normal.gameObject);
+            checkpointmanagers[players.Count-1].GetComponent<CheckpointController>().player=player.GetComponent<PlayerController>().Normal.gameObject;
             //playerParent.position = startingPoints[players.Count - 1].position;
 
             //convert layer mask (bit) to an integer 

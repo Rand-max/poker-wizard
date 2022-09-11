@@ -7,6 +7,7 @@ public class cpController : MonoBehaviour
     public GameObject pb;
     public int selfindex;
     public bool alive;
+    
     private GameObject effec;
     // Start is called before the first frame update
     
@@ -33,9 +34,12 @@ public class cpController : MonoBehaviour
                 alive=false;
                 if(selfindex+1<GetComponentInParent<CheckpointController>().Checkpoints.Length){
                     GetComponentInParent<CheckpointController>().Checkpoints[selfindex+1].SetActive(true);
+                    GetComponentInParent<CheckpointController>().activeindex=selfindex+1;
                 }
                 else{
+                    GetComponentInParent<CheckpointController>().lap+=1;
                     GetComponentInParent<CheckpointController>().Checkpoints[0].SetActive(true);
+                    GetComponentInParent<CheckpointController>().activeindex=0;
                 }
             }
         }
