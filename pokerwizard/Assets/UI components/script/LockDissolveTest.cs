@@ -63,7 +63,7 @@ public class LockDissolveTest : MonoBehaviour
         fadeval=1.5f;
         countdown=1f;
         isEnabled=!isEnabled;
-        playernum_club.text="P1";
+        playernum_club.text="1p";
         isDissolving=true;
         circleAppear=true; 
         //controller
@@ -71,10 +71,10 @@ public class LockDissolveTest : MonoBehaviour
         Connected2.text="Connected !";
         Connected3.text="Connected !";
         Connected4.text="Connected !";
-        p1_text.text="P1";
-        p2_text.text="P2";
-        p3_text.text="P3";
-        p4_text.text="P4";
+        p1_text.text="1p";
+        p2_text.text="2p";
+        p3_text.text="3p";
+        p4_text.text="4p";
         //key
         key_p1.SetActive(isEnabled);
     }
