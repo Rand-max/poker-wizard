@@ -12,7 +12,7 @@ public class ScrollDown : MonoBehaviour
     void Start()
     {
         AsyncBaby();
-        // AsyncBtn();
+        AsyncBtn();
     }
 
     // Update is called once per frame
@@ -29,10 +29,11 @@ public class ScrollDown : MonoBehaviour
             await flg.DOMoveY(-8,Random.Range(.7f,1f)).SetEase(Ease.InOutQuad).AsyncWaitForCompletion();
         }
     }
-     async void AsyncBtn(){
+    
+    async void AsyncBtn(){
         foreach (var btn in okbtn)
         {
-            await btn.DOAnchorPosY(1,Random.Range(.7f,1f)).SetEase(Ease.InOutQuad).AsyncWaitForCompletion();
+            await btn.DOAnchorPosY(-462,Random.Range(.7f,1f)).SetEase(Ease.InOutQuad).AsyncWaitForCompletion();
         }
      }
     #endregion
