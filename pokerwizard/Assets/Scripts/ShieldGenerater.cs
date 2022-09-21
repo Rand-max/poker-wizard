@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ShieldGenerater : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class ShieldGenerater : MonoBehaviour
     void GenerateShield()
     {
         //Again();
-        if (Input.GetKeyDown(KeyCode.B)&&isDestroy)
+        if (Keyboard.current.bKey.wasPressedThisFrame&&isDestroy)
         {
             ReCreate();
             isGenerate = true; 

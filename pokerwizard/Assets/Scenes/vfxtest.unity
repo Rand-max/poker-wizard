@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1729683840154006739, guid: 5cc9757b1dc664b4ca27dfc55bc622d3, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1729683840154006740, guid: 5cc9757b1dc664b4ca27dfc55bc622d3, type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.x
@@ -188,7 +188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7697647255786307932, guid: 5cc9757b1dc664b4ca27dfc55bc622d3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7697647256834943114, guid: 5cc9757b1dc664b4ca27dfc55bc622d3, type: 3}
       propertyPath: cam

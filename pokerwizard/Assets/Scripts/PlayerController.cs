@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public bool drifting;
     [Header("Parameters")]
     public float acceleration = 10f;
-    public float steering = 80f;
+    public float steering = 1f;
     public float gravity = 10f;
     public LayerMask layerMask;
     private Vector2 inputDirection;
@@ -54,10 +54,10 @@ public class PlayerController : MonoBehaviour
             }
         
         //drift?
-        if (inputDrift && !drifting && inputDirection.y != 0)
+        if (inputDrift && !drifting && Mathf.Abs(inputDirection.y)>= 0.1)
         {
             drifting = true;
-            driftDirection = inputDirection.x > 0 ? 1 : -1;
+            driftDirection = inputDirection.x > 0.1 ? 1 : inputDirection.x < -0.1?-1:0;
 
             //playerModel.parent.DOComplete();psa
             //playerModel.parent.DOPunchPosition(transform.up * .2f, .3f, 5, 1);psa
@@ -68,10 +68,10 @@ public class PlayerController : MonoBehaviour
         {
             int dir = inputDirection.x > 0 ? 1 : -1;
             float amount = Mathf.Abs(inputDirection.x);
-            Steer(dir, amount*2);
+            Steer(dir, amount*1.2f);
         }
         
-        if (drifting)
+        if (Mathf.Abs(inputDirection.x) >= 0.1&&drifting)
         {
             float control = (driftDirection == 1) ? Remap(inputDirection.x, -1, 1, 0, 2) : Remap(inputDirection.x, -1, 1, 2, 0);
             float powerControl = (driftDirection == 1) ? Remap(inputDirection.x, -1, 1, .2f, 1) : Remap(inputDirection.x, -1, 1, 1, .2f);

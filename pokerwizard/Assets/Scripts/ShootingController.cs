@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ShootingController : MonoBehaviour
 {
     public float maxdistance;
-    public GameObject player;
+    public GameObject playernormal;
     public GameObject animateplayer;
     public GameObject wandposition;
     public LayerMask mousecolliderlayermask;
@@ -20,23 +21,24 @@ public class ShootingController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         Cursor.lockState=CursorLockMode.Locked;
+        transform.position=playernormal.transform.position;
+        //Cursor.lockState=CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
+        animateplayer=playernormal.GetComponentInChildren<Animator>().transform.gameObject;
         if(cooldown>0){
             cooldown-=Time.deltaTime;
         }
-        Ray ray=Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray,out RaycastHit raycasthit,maxdistance,mousecolliderlayermask)){
+        if(Physics.Raycast(wandposition.transform.position, wandposition.transform.TransformDirection(wandposition.transform.forward),out RaycastHit raycasthit,maxdistance,mousecolliderlayermask)){
             transform.position=raycasthit.point;
         }
         else{
-            transform.position=ray.GetPoint(maxdistance);
+            transform.position=wandposition.transform.position+wandposition.transform.forward*maxdistance;
         }
-        if(Input.GetMouseButton(0)&&!shootprepared&&cooldown<=0){
+        if(Mouse.current.leftButton.isPressed&&!shootprepared&&cooldown<=0){
             cooldown=preparetime;
             animateplayer.GetComponent<Animator>().Play("Armature_shoot",0,0f);
             shootprepared=true;
