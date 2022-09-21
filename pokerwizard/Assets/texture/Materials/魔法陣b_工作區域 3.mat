@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: club_lock
-  m_Shader: {fileID: -6465566751694194690, guid: 09fb1f3894a864a41a65596fe0aa43d5, type: 3}
+  m_Name: "\u9B54\u6CD5\u9663b_\u5DE5\u4F5C\u5340\u57DF 3"
+  m_Shader: {fileID: -6465566751694194690, guid: 01004acb1b727764d87ccdf691df1130, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,11 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cb7474aad7c566540808294c53193b88, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: 3ec42f2567b46b345989ffcbd9b74f19, type: 3}
+        m_Texture: {fileID: 2800000, guid: a1bbf04f397eb9349938878661bb4630, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -41,8 +37,21 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FadeValue: 0
-    - _NoiseScale: 45
+    - _QueueControl: 0
+    - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 1.5120226, g: 2.9960785, b: 0.6431373, a: 1}
+    - _Color: {r: 6.7248507, g: 2.6054397, b: 1.1266766, a: 1}
   m_BuildTextureStacks: []
+--- !u!114 &1075299590757354930
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
