@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
         /*Quaternion q = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * sensitivity, Vector3.up);
         // Quaternion r = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * sensitivity, Vector3.right);
         */
-        offset = target.rotation * offset;
+        //offset = target.rotation * offset;
         transform.rotation = Quaternion.Lerp(transform.rotation,target.rotation,360.0f);
         transform.position = target.position + offset;
      }
