@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
+using DG.Tweening;
 
-public class SelectScroll : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,IPointerEnterHandler,IPointerExitHandler
+public class SelectScroll : MonoBehaviour
 {
-    [SerializeField] private Image greenbtn;
-    [SerializeField] private Sprite btn_before,btn_after;
-    
-    public void OnPointerDown(PointerEventData eventData){
-        greenbtn.sprite=btn_after;
+    public RectTransform ctlctn;
+    // Start is called before the first frame update
+    void Start()
+    {
+      AsyncRight();
     }
-    public void OnPointerUp(PointerEventData eventData){
-        greenbtn.sprite=btn_before;
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
-    public void OnPointerEnter(PointerEventData eventData){
-        greenbtn.sprite=btn_after;
+    #region Async Workflow
+
+    async void AsyncRight(){ 
+        await ctlctn.DOAnchorPosX(210,Random.Range(.7f,1f)).SetEase(Ease.InOutQuad).AsyncWaitForCompletion();
     }
-    public void OnPointerExit(PointerEventData eventData){
-        greenbtn.sprite=btn_before;
-    }
+    #endregion
 }
