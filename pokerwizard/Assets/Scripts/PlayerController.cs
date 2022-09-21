@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
         {
             int dir = inputDirection.x > 0 ? 1 : -1;
             float amount = Mathf.Abs(inputDirection.x);
-            Steer(dir, amount*1.2f);
+            Steer(dir, amount*1.6f);
         }
         
         if (Mathf.Abs(inputDirection.x) >= 0.1&&drifting)

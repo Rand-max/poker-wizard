@@ -493,11 +493,11 @@ Rigidbody:
   m_GameObject: {fileID: 4512524093642247519}
   serializedVersion: 2
   m_Mass: 20
-  m_Drag: 0.2
+  m_Drag: 0.5
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
 --- !u!1 &4512524094206809524
@@ -647,13 +647,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSpeed: 0
   currentRotate: 0
-  driftSpeed: 1.4
+  driftSpeed: 1.3
   cam: {fileID: 0}
   playerModel: {fileID: 4512524094206809525}
   Normal: {fileID: 4512524092795239542}
   rb: {fileID: 4512524093642247488}
   drifting: 0
-  acceleration: 35
+  acceleration: 55
   steering: 0.5
   gravity: 10
   layerMask:
