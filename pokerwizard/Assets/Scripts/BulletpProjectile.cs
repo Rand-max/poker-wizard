@@ -33,12 +33,14 @@ public class BulletpProjectile : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other){
         if(((1<<other.gameObject.layer) & layer) != 0){
+            if(other.gameObject.tag=="Player"){
             triggered=true;
-            Debug.Log("HP-1");
-            if(end!=null){
-                end.SetActive(true);
+                Debug.Log("HP-1");
+                if(end!=null){
+                    end.SetActive(true);
+                }
+                Destroy(gameObject,0.5f);
             }
-            Destroy(gameObject,0.5f);
         }
     }
 }

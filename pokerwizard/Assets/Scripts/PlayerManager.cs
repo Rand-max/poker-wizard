@@ -37,6 +37,8 @@
             Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
             GameObject playerchar=Instantiate(characters[players.Count - 1]);
             playerchar.transform.SetParent(player.GetComponentInChildren<PlayerController>().Normal,false);
+            playerchar.tag="Player";
+            
             player.GetComponentInChildren<PlayerController>().playerlayer=playerLayers[players.Count - 1];
             //need to use the parent due to the structure of the prefab
             Transform playerParent = player.transform.parent;
@@ -47,7 +49,7 @@
             //convert layer mask (bit) to an integer 
             
             int layerToAdd = (int)Mathf.Log(playerLayers[players.Count - 1].value, 2);
-
+            playerchar.layer=layerToAdd;
             //set the layer
             playerParent.GetComponentInChildren<CinemachineVirtualCamera>().gameObject.layer = layerToAdd;
             //add the layer

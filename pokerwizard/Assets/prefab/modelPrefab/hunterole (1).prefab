@@ -1834,6 +1834,7 @@ GameObject:
   - component: {fileID: 4134506390465314553}
   - component: {fileID: 4533452283187247856}
   - component: {fileID: 7837565199943130336}
+  - component: {fileID: 6293143331183783762}
   m_Layer: 0
   m_Name: hunterole (1)
   m_TagString: Untagged
@@ -1927,6 +1928,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 4533452283187247856}
   accelbuf: {fileID: 0}
+--- !u!136 &6293143331183783762
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615096395187627075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 4
+  m_Height: 10
+  m_Direction: 1
+  m_Center: {x: 0, y: 6, z: 0}
 --- !u!1 &3697439582175369844
 GameObject:
   m_ObjectHideFlags: 0
