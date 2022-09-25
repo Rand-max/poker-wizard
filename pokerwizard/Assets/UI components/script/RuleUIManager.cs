@@ -54,7 +54,7 @@ public class RuleUIManager : MonoBehaviour
     public Texture buff_tex;
     
 
-    public static int pagenum;
+    public static int pagenum=1;
 
     //declare dotween
     // public RectTransform titlecard;
@@ -147,7 +147,6 @@ public class RuleUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pagenum=1;
         card.SetActive(false);
         right_content.SetActive(true);
         leftimg.SetActive(true);
