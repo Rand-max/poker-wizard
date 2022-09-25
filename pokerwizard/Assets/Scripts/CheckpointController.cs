@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckpointController : MonoBehaviour
 {
-    public float lap;
+    public int lap;
     public float distance;
     public float simulationspeed=20;
     public GameObject player;

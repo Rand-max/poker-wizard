@@ -32,7 +32,7 @@ public class ShootingController : MonoBehaviour
         if(cooldown>0){
             cooldown-=Time.deltaTime;
         }
-        if(Physics.Raycast(wandposition.transform.position, wandposition.transform.TransformDirection(wandposition.transform.forward),out RaycastHit raycasthit,maxdistance,mousecolliderlayermask)){
+        if(Physics.Raycast(wandposition.transform.position, wandposition.transform.forward,out RaycastHit raycasthit,maxdistance,mousecolliderlayermask)){
             transform.position=raycasthit.point;
         }
         else{
