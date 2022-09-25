@@ -10237,7 +10237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playercount: 1
-  lap: {fileID: 520019055}
+  lap: {fileID: 0}
 --- !u!134 &223572694
 PhysicMaterial:
   m_ObjectHideFlags: 0
@@ -66563,7 +66563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3732898607558865032, guid: a685ee8eecb8af44c9b7037796ee4102, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a685ee8eecb8af44c9b7037796ee4102, type: 3}

@@ -54,7 +54,14 @@
             playerParent.GetComponentInChildren<Camera>().cullingMask |= 1 << layerToAdd;
             //set the action in the custom cinemachine Input Handler
             //playerParent.GetComponentInChildren<InputHandler>().horizontal = player.actions.FindAction("Look");
-
+            if(players.Count==2){
+                Rect cmrect=new Rect(0f,0f,0.5f,0.5f);
+                playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+            }
+            if(players.Count==3){
+                Rect cmrect=new Rect(0.5f,0.5f,0.5f,0.5f);
+                playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+            }
         }
     }
 
