@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletpProjectile : MonoBehaviour
 {
     private Rigidbody bulletrigid;
-    private float lifetime;
+    public float lifetime=3;
     public float bspeed=100;
     public GameObject end;
     public LayerMask layer= 1<<0;
@@ -13,7 +13,6 @@ public class BulletpProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lifetime=3;
         bulletrigid=GetComponent<Rigidbody>();
     }
 
