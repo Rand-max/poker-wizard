@@ -1114,7 +1114,7 @@ MonoBehaviour:
   wandposition: {fileID: 7640310719716678479}
   mousecolliderlayermask:
     serializedVersion: 2
-    m_Bits: 897
+    m_Bits: 1
   bullet: {fileID: 3921215467468970123, guid: 6e7c48a6fcd449f488f35de2c93eb026, type: 3}
   bulleteffect: {fileID: 5219434945743950400, guid: 6e562935c8aade4428732cf5d9d24e37, type: 3}
   bulletendeffect: {fileID: 416447120630474777, guid: e2764498610bb3542bc1cf4894871529, type: 3}
