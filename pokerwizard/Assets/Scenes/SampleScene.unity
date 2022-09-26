@@ -4723,7 +4723,7 @@ MonoBehaviour:
   m_NotificationBehavior: 3
   m_MaxPlayerCount: 4
   m_AllowJoining: 1
-  m_JoinBehavior: 1
+  m_JoinBehavior: 0
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4741,14 +4741,6 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: b7d79ee2-4684-41b9-8520-d03bce07b7f2
-        m_Path: <Keyboard>/anyKey
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Join
-        m_Flags: 0
-      - m_Name: 
         m_Id: f9016ff6-ed1f-4d3d-b45a-009f95fe7200
         m_Path: <Gamepad>/buttonSouth
         m_Interactions: 
@@ -4764,8 +4756,32 @@ MonoBehaviour:
         m_Groups: 
         m_Action: Join
         m_Flags: 0
+      - m_Name: Two Modifiers
+        m_Id: 51d33c4d-01dc-4f8e-9137-9b16232646b4
+        m_Path: TwoModifiers
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 4
+      - m_Name: modifier1
+        m_Id: ece78970-5cf5-4378-ba0c-e9fb4feb0dec
+        m_Path: <Keyboard>/anyKey
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 8
+      - m_Name: modifier2
+        m_Id: 8bfe99e2-3d0a-41f5-bcd9-f5bd40e86148
+        m_Path: <Mouse>/leftButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 8
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 8083019731447944452, guid: 68c34d96871554b40963b5af83709e4f, type: 3}
   m_PlayerPrefab: {fileID: 4512524093152580066, guid: da5761748a0186b4dbf0a5a464a54161, type: 3}
   m_SplitScreen: 1
   m_MaintainAspectRatioInSplitScreen: 1

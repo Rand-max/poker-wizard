@@ -18,6 +18,7 @@ public class ShootingController : MonoBehaviour
     public float preparetime;
     private float cooldown;
     bool shootprepared=false;
+    bool iscasted=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,16 @@ public class ShootingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(iscasted&&!shootprepared&&cooldown<=0){
+            cooldown=preparetime;
+            animateplayer.GetComponent<Animator>().Play("Armature_shoot",0,0f);
+            shootprepared=true;
+        }
+        /*if(Mouse.current.leftButton.isPressed&&!shootprepared&&cooldown<=0){
+            cooldown=preparetime;
+            animateplayer.GetComponent<Animator>().Play("Armature_shoot",0,0f);
+            shootprepared=true;
+        }*/
         animateplayer=playernormal.GetComponentInChildren<Animator>().transform.gameObject;
         if(cooldown>0){
             cooldown-=Time.deltaTime;
@@ -37,11 +48,6 @@ public class ShootingController : MonoBehaviour
         }
         else{
             transform.position=wandposition.transform.position+wandposition.transform.forward*maxdistance;
-        }
-        if(Mouse.current.leftButton.isPressed&&!shootprepared&&cooldown<=0){
-            cooldown=preparetime;
-            animateplayer.GetComponent<Animator>().Play("Armature_shoot",0,0f);
-            shootprepared=true;
         }
         if(shootprepared&&cooldown<=0){
             shootprepared=false;
@@ -58,5 +64,9 @@ public class ShootingController : MonoBehaviour
             neweffect.SetActive(true);
             boomeffect.SetActive(false);
         }
+    }
+    public void OnCast(InputAction.CallbackContext ctx){
+        Debug.Log("casted");
+        iscasted=ctx.ReadValueAsButton();
     }
 }
