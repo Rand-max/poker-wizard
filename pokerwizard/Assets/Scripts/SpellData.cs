@@ -15,14 +15,15 @@ public class SpellData : ScriptableObject
     public float BulletCoolDownTime=0.4f;
     [TextArea(4,4)]
     public string SpellInfo="will pursuit target enemy utill die";
-    [Tooltip("0=ground 1=enemy 2=self 3=ground&enemy")]
+    [Tooltip("0=ground 1=enemy 2=self 3=ground or enemy")]
     [Range(0,3)]
     public int targettype=3;
     [Space(10)]
     [Header("Bullet effect")]
     public float BulletLifeTime=3f;
     public float MaxDistance=10;
-    public bool IsAttachedToPlayer;
+    [Tooltip("0=not attached 1=enemy 2=player")]
+    public int AttachedTarget;
     public bool HasMovement=true;
     public float BulletSpeed=70f;
     public bool HasPursuit=true;
@@ -43,7 +44,8 @@ public class SpellData : ScriptableObject
     [Space(10)]
     [Header("Bullet effects when started")]
     public float EffectLifeTime=0.5f;
-    public bool IsAttachedToPlayer_Effect;
+    [Tooltip("0=not attached 1=enemy 2=player")]
+    public int AttachedTarget_Effect;
     public bool EffectHasMovement;
     public float EffectSpeed;
     public bool HasPursuit_Effect;
@@ -64,7 +66,8 @@ public class SpellData : ScriptableObject
     [Space(10)]
     [Header("Bullet effects when contact")]
     public float BoomLifeTime=3f;
-    public bool IsAttachedToPlayer_Boom;
+    [Tooltip("0=not attached 1=enemy 2=player")]
+    public int AttachedTarget_Boom;
     public bool BoomHasMovement;
     public float BoomSpeed;
     public bool HasPursuit_Boom;
