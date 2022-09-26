@@ -61,7 +61,22 @@
                 playerParent.GetComponentInChildren<Camera>().rect=cmrect;
             }
             if(players.Count==3){
+                playerParent = players[1].transform.parent;
                 Rect cmrect=new Rect(0.5f,0.5f,0.5f,0.5f);
+                playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+                playerParent = players[2].transform.parent;
+                cmrect=new Rect(0.5f,0.5f,0.5f,0.5f);
+                playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+            }
+            if(players.Count==4){
+                playerParent = players[1].transform.parent;
+                Rect cmrect=new Rect(0.5f,0.5f,0.5f,0.5f);
+                playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+                playerParent = players[2].transform.parent;
+                cmrect=new Rect(0.5f,0.5f,0.5f,0.5f);
+                playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+                playerParent = players[3].transform.parent;
+                cmrect=new Rect(0.5f,0.5f,0.5f,0.5f);
                 playerParent.GetComponentInChildren<Camera>().rect=cmrect;
             }
         }

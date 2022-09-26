@@ -34,8 +34,16 @@ public class BulletpProjectile : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if(((1<<other.gameObject.layer) & layer) != 0){
             if(other.gameObject.tag=="Player"){
-            triggered=true;
+                triggered=true;
                 Debug.Log("HP-1");
+                if(end!=null){
+                    end.SetActive(true);
+                }
+                Destroy(gameObject,0.5f);
+            }
+            else if(other.gameObject.layer==0){
+                triggered=true;
+                Debug.Log("collide with wall");
                 if(end!=null){
                     end.SetActive(true);
                 }
