@@ -41,6 +41,14 @@ public class BulletpProjectile : MonoBehaviour
                 }
                 Destroy(gameObject,0.5f);
             }
+            else if(other.gameObject.tag=="bullet"){
+                triggered=true;
+                Debug.Log("shield brek");
+                if(end!=null){
+                    end.SetActive(true);
+                }
+                Destroy(gameObject,0.5f);
+            }
             else if(other.gameObject.layer==0){
                 triggered=true;
                 Debug.Log("collide with wall");
