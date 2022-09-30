@@ -22,6 +22,7 @@ public class ButtonEvent : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,I
     public void OnPointerEnter(PointerEventData eventData){
         greenbtn.sprite=btn_after;
         btn.GetComponent<Animator>().Play("btn_hover");
+        FindObjectOfType<AudioManager>().Play("btn_hover");
     }
     public void OnPointerExit(PointerEventData eventData){
         greenbtn.sprite=btn_before;
