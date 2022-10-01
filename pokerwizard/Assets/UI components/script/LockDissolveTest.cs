@@ -66,6 +66,7 @@ public class LockDissolveTest : MonoBehaviour
         playernum_club.text="1p";
         isDissolving=true;
         circleAppear=true; 
+        FindObjectOfType<AudioManager>().Play("unlock");
         //controller
         Connected1.text="Connected !";
         Connected2.text="Connected !";
