@@ -46,8 +46,8 @@ public class GamePlayUIMulti : MonoBehaviour
         int spellNum=Random.Range(0,6);
 
         //名次
-        int Whichplace=Random.Range(0,4);
-        switch(Whichplace){
+        // int Whichplace=Random.Range(0,4);
+        /*switch(Whichplace){
             case 0:
                 placeNum.text="1";
                 placeEng.text="st";
@@ -74,7 +74,7 @@ public class GamePlayUIMulti : MonoBehaviour
                 break;
             default:
                 break;
-        }
+        }*/
     }
     //Use Spell
     public void UseSpell(){
