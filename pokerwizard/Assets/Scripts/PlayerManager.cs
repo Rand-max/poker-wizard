@@ -50,7 +50,7 @@
             
             int layerToAdd = (int)Mathf.Log(playerLayers[players.Count - 1].value, 2);
             playerchar.layer=layerToAdd;
-            playerchar.GetComponentInChildren<ShootingController>().mousecolliderlayermask|= (1 << layerToAdd);
+            playerParent.GetComponentInChildren<ShootingController>().mousecolliderlayermask|= (1 << layerToAdd);
             //set the layer
             playerParent.GetComponentInChildren<CinemachineVirtualCamera>().gameObject.layer = layerToAdd;
             //add the layer
