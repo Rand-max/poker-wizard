@@ -11,6 +11,7 @@ public class SelectScroll : MonoBehaviour
     void Start()
     {
       AsyncRight();
+      FindObjectOfType<AudioManager>().Play("desk_open");
     }
 
     // Update is called once per frame
