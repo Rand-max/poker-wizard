@@ -140,6 +140,17 @@
                 },
                 {
                     "name": "",
+                    "id": "db3d4bb9-ae3f-43e2-8973-4ec83ec6bc1a",
+                    "path": "<Joystick>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "genric",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5dd83e9c-1309-4e3a-b25d-8028b1ed1e94",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
