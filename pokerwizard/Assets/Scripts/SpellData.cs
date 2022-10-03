@@ -6,9 +6,6 @@ public class SpellData : ScriptableObject
 {
     public int ID;
     public string SpellName="Unnammed";
-    public GameObject Bullet;
-    public GameObject BulletEffect;
-    public GameObject BulletEndEffect;
     public GameObject SpellIcon;
     public int SpellAmout=1;
     public float BulletPrepareTime=0.5f;
@@ -22,6 +19,18 @@ public class SpellData : ScriptableObject
     [Header("Bullet effect")]
     public float BulletLifeTime=3f;
     public float MaxDistance=10;
+    public List<BulletEffect> Bullets;
+    [Space(10)]
+    [Header("Bullet effects when started")]
+    public float EffectLifeTime=0.5f;
+    public List<BulletEffect> BulletStartEffects;
+    [Space(10)]
+    [Header("Bullet effects when contact")]
+    public float BoomLifeTime=3f;
+    public List<BulletEffect> BulletEndEffects;
+    [System.Serializable]public class BulletEffect{
+    public GameObject Object;
+    public float LifeTime=3f;
     [Tooltip("0=not attached 1=enemy 2=player")]
     public int AttachedTarget;
     public bool HasMovement=true;
@@ -35,54 +44,12 @@ public class SpellData : ScriptableObject
     public bool HasClear;
     public bool HasConfusion;
     public float BulletConfusionTime;
-    public bool HasShield;
+    public bool IsShield;
     public bool BulletShieldTime;
-    public bool HasBurst;
+    public bool IsAccelerator;
     public float BulletBurstTime;
     public float BulletBurstSpeed;
-    public bool HasTeleport;
-    [Space(10)]
-    [Header("Bullet effects when started")]
-    public float EffectLifeTime=0.5f;
-    [Tooltip("0=not attached 1=enemy 2=player")]
-    public int AttachedTarget_Effect;
-    public bool EffectHasMovement;
-    public float EffectSpeed;
-    public bool HasPursuit_Effect;
-    public bool HasSlowdown_Effect;
-    public float EffectSlowdownRate;
-    public float EffectSlowdownTime;
-    public bool HasStun_Effect;
-    public float EffectStundownTime;
-    public bool HasClear_Effect;
-    public bool HasConfusion_Effect;
-    public float EffectConfusionTime;
-    public bool HasShield_Effect;
-    public bool EffectShieldTime;
-    public bool HasBurst_Effect;
-    public float EffectBurstTime;
-    public float EffectBurstSpeed;
-    public bool HasTeleport_Effect;
-    [Space(10)]
-    [Header("Bullet effects when contact")]
-    public float BoomLifeTime=3f;
-    [Tooltip("0=not attached 1=enemy 2=player")]
-    public int AttachedTarget_Boom;
-    public bool BoomHasMovement;
-    public float BoomSpeed;
-    public bool HasPursuit_Boom;
-    public bool HasSlowdown_Boom=true;
-    public float BoomSlowdownRate=0.3f;
-    public float BoomSlowdownTime=3f;
-    public bool HasStun_Boom;
-    public float BoomStundownTime;
-    public bool HasClear_Boom;
-    public bool HasConfusion_Boom;
-    public float BoomConfusionTime;
-    public bool HasShield_Boom;
-    public bool BoomShieldTime;
-    public bool HasBurst_Boom;
-    public float BoomBurstTime;
-    public float BoomBurstSpeed;
-    public bool HasTeleport_Boom;
+    public bool IsTeleporter;
+    public float TeleportTiming;
+    }
 }
