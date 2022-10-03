@@ -24,17 +24,17 @@ public class ScrollDown : MonoBehaviour
     void Update()
     {
         AudioPlay();   
-        /*for(int i=0;i<5;i++){
-            if(cdtime==wait_time[i]){
-                FindObjectOfType<AudioManager>().Play("point_appear"); 
-                i++;
-            }
-        }
-        if(cdtime==9f){
-            FindObjectOfType<AudioManager>().Play("crown");
-        }else if(cdtime==10f){
-            FindObjectOfType<AudioManager>().Play("cheer");
-        }*/
+        // for(int i=0;i<5;i++){
+        //     if(cdtime==wait_time[i]){
+        //         FindObjectOfType<AudioManager>().Play("point_appear"); 
+        //         i++;
+        //     }
+        // }
+        // if(cdtime==9f){
+        //     FindObjectOfType<AudioManager>().Play("crown");
+        // }else if(cdtime==10f){
+        //     FindObjectOfType<AudioManager>().Play("cheer");
+        // }
     }
 
     void AudioPlay(){
