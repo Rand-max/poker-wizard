@@ -63,11 +63,13 @@ public class RuleUIManager : MonoBehaviour
     public void BtnNext(){
         if(pagenum<4){
             pagenum +=1;
+            FindObjectOfType<AudioManager>().Play("btn_click");
         }
     }
     public void BtnPre(){
         if(pagenum>1){
             pagenum -=1;
+            FindObjectOfType<AudioManager>().Play("btn_click");
         }
     }
     //判定頁數
