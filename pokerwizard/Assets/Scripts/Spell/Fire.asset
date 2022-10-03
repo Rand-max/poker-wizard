@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   SpellName: Fire
-  Bullet: {fileID: 3921215467468970123, guid: 6e7c48a6fcd449f488f35de2c93eb026, type: 3}
-  BulletEffect: {fileID: 5219434945743950400, guid: 6e562935c8aade4428732cf5d9d24e37, type: 3}
-  BulletEndEffect: {fileID: 416447120630474777, guid: e2764498610bb3542bc1cf4894871529, type: 3}
   SpellIcon: {fileID: 630789384092907970, guid: e2ceaa05ad89b7d4a85febe6c7b2840c, type: 3}
   SpellAmout: 1
   BulletPrepareTime: 0.5
@@ -25,59 +22,29 @@ MonoBehaviour:
   targettype: 3
   BulletLifeTime: 3
   MaxDistance: 10
-  IsAttachedToPlayer: 0
-  HasMovement: 1
-  BulletSpeed: 70
-  HasPursuit: 0
-  HasSlowdown: 0
-  BulletSlowdownRate: 0
-  BulletSlowdownTime: 0
-  HasStun: 0
-  BulletStundownTime: 0
-  HasClear: 0
-  HasConfusion: 0
-  BulletConfusionTime: 0
-  HasShield: 0
-  BulletShieldTime: 0
-  HasBurst: 0
-  BulletBurstTime: 0
-  BulletBurstSpeed: 0
-  HasTeleport: 0
+  Bullets:
+  - Object: {fileID: 0}
+    LifeTime: 0
+    AttachedTarget: 0
+    HasMovement: 0
+    BulletSpeed: 0
+    HasPursuit: 0
+    HasSlowdown: 0
+    BulletSlowdownRate: 0
+    BulletSlowdownTime: 0
+    HasStun: 0
+    BulletStundownTime: 0
+    HasClear: 0
+    HasConfusion: 0
+    BulletConfusionTime: 0
+    IsShield: 0
+    BulletShieldTime: 0
+    IsAccelerator: 0
+    BulletBurstTime: 0
+    BulletBurstSpeed: 0
+    IsTeleporter: 0
+    TeleportTiming: 0
   EffectLifeTime: 0.5
-  IsAttachedToPlayer_Effect: 0
-  EffectHasMovement: 0
-  EffectSpeed: 0
-  HasPursuit_Effect: 0
-  HasSlowdown_Effect: 0
-  EffectSlowdownRate: 0
-  EffectSlowdownTime: 0
-  HasStun_Effect: 0
-  EffectStundownTime: 0
-  HasClear_Effect: 0
-  HasConfusion_Effect: 0
-  EffectConfusionTime: 0
-  HasShield_Effect: 0
-  EffectShieldTime: 0
-  HasBurst_Effect: 0
-  EffectBurstTime: 0
-  EffectBurstSpeed: 0
-  HasTeleport_Effect: 0
+  BulletStartEffects: []
   BoomLifeTime: 3
-  IsAttachedToPlayer_Boom: 0
-  BoomHasMovement: 0
-  BoomSpeed: 0
-  HasPursuit_Boom: 0
-  HasSlowdown_Boom: 0
-  BoomSlowdownRate: 0.3
-  BoomSlowdownTime: 0
-  HasStun_Boom: 0
-  BoomStundownTime: 0
-  HasClear_Boom: 0
-  HasConfusion_Boom: 0
-  BoomConfusionTime: 0
-  HasShield_Boom: 0
-  BoomShieldTime: 0
-  HasBurst_Boom: 0
-  BoomBurstTime: 0
-  BoomBurstSpeed: 0
-  HasTeleport_Boom: 0
+  BulletEndEffects: []

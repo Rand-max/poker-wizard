@@ -10,6 +10,8 @@ public class ShootingController : MonoBehaviour
     public GameObject animateplayer;
     public GameObject wandposition;
     public LayerMask mousecolliderlayermask;
+    public LayerMask enemyLayer;
+    public LayerMask FriendLayer;
     public GameObject bullet;
     public GameObject bulleteffect;
     public GameObject bulletendeffect;
@@ -58,7 +60,9 @@ public class ShootingController : MonoBehaviour
             GameObject boomeffect=Instantiate(bulletendeffect,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
             newbullet.GetComponent<BulletpProjectile>().end=boomeffect;
             newbullet.GetComponent<BulletpProjectile>().bspeed=bulletspeed;
-            newbullet.GetComponent<BulletpProjectile>().layer=mousecolliderlayermask;
+            newbullet.GetComponent<BulletpProjectile>().selfLayer=mousecolliderlayermask;
+            newbullet.GetComponent<BulletpProjectile>().enemyLayer=enemyLayer;
+            newbullet.GetComponent<BulletpProjectile>().FriendLayer=FriendLayer;
             neweffect.transform.parent=wandposition.transform;
             boomeffect.transform.parent=newbullet.transform;
             neweffect.SetActive(true);

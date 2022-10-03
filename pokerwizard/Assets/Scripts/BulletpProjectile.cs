@@ -8,7 +8,9 @@ public class BulletpProjectile : MonoBehaviour
     public float lifetime=3;
     public float bspeed=100;
     public GameObject end;
-    public LayerMask layer= 1<<0;
+    public LayerMask selfLayer= 1<<0;
+    public LayerMask enemyLayer;
+    public LayerMask FriendLayer;
     private bool triggered=false;
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class BulletpProjectile : MonoBehaviour
         }
     }
     private void OnTriggerEnter(Collider other){
-        if(((1<<other.gameObject.layer) & layer) != 0){
+        if(((1<<other.gameObject.layer) & selfLayer) != 0){
             if(other.gameObject.tag=="Player"){
                 triggered=true;
                 Debug.Log("HP-1");

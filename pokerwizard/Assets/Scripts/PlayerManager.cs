@@ -12,6 +12,10 @@
         private List<Transform> startingPoints;
         [SerializeField]
         private List<LayerMask> playerLayers;
+        [SerializeField]
+        private List<LayerMask> enemyLayers;
+        [SerializeField]
+        private List<LayerMask> FriendLayers;
         private PlayerInputManager playerInputManager;
         public List<GameObject>checkpointmanagers;
 
@@ -51,6 +55,8 @@
             int layerToAdd = (int)Mathf.Log(playerLayers[players.Count - 1].value, 2);
             playerchar.layer=layerToAdd;
             playerParent.GetComponentInChildren<ShootingController>().mousecolliderlayermask|= (1 << layerToAdd);
+            playerParent.GetComponentInChildren<ShootingController>().enemyLayer|= (1 << enemyLayers[players.Count]);
+            playerParent.GetComponentInChildren<ShootingController>().FriendLayer|= (1 << FriendLayers[players.Count]);
             //set the layer
             playerParent.GetComponentInChildren<CinemachineVirtualCamera>().gameObject.layer = layerToAdd;
             //add the layer

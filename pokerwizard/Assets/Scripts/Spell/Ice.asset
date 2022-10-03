@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   SpellName: Ice
-  Bullet: {fileID: 9030374658988531655, guid: 4a157f62f730d4b4eab069fb5dd26a35, type: 3}
-  BulletEffect: {fileID: 3098136464652354338, guid: 73a11c61df025dc428e83e5bea9ee3c3, type: 3}
-  BulletEndEffect: {fileID: 3453488477136196560, guid: d5eeb9e46622e0e4ba2d3adc478e3aad, type: 3}
   SpellIcon: {fileID: 722035195171793640, guid: 87414d7a666af764ea6ab823af511d0b, type: 3}
   SpellAmout: 1
   BulletPrepareTime: 0.5
@@ -25,59 +22,8 @@ MonoBehaviour:
   targettype: 3
   BulletLifeTime: 3
   MaxDistance: 10
-  AttachedTarget: 0
-  HasMovement: 1
-  BulletSpeed: 70
-  HasPursuit: 1
-  HasSlowdown: 0
-  BulletSlowdownRate: 0
-  BulletSlowdownTime: 0
-  HasStun: 0
-  BulletStundownTime: 0
-  HasClear: 0
-  HasConfusion: 0
-  BulletConfusionTime: 0
-  HasShield: 0
-  BulletShieldTime: 0
-  HasBurst: 0
-  BulletBurstTime: 0
-  BulletBurstSpeed: 0
-  HasTeleport: 0
+  Bullets: []
   EffectLifeTime: 0.5
-  AttachedTarget_Effect: 0
-  EffectHasMovement: 0
-  EffectSpeed: 0
-  HasPursuit_Effect: 0
-  HasSlowdown_Effect: 0
-  EffectSlowdownRate: 0
-  EffectSlowdownTime: 0
-  HasStun_Effect: 0
-  EffectStundownTime: 0
-  HasClear_Effect: 0
-  HasConfusion_Effect: 0
-  EffectConfusionTime: 0
-  HasShield_Effect: 0
-  EffectShieldTime: 0
-  HasBurst_Effect: 0
-  EffectBurstTime: 0
-  EffectBurstSpeed: 0
-  HasTeleport_Effect: 0
+  BulletStartEffects: []
   BoomLifeTime: 3
-  AttachedTarget_Boom: 0
-  BoomHasMovement: 0
-  BoomSpeed: 0
-  HasPursuit_Boom: 0
-  HasSlowdown_Boom: 1
-  BoomSlowdownRate: 0.3
-  BoomSlowdownTime: 3
-  HasStun_Boom: 0
-  BoomStundownTime: 0
-  HasClear_Boom: 0
-  HasConfusion_Boom: 0
-  BoomConfusionTime: 0
-  HasShield_Boom: 0
-  BoomShieldTime: 0
-  HasBurst_Boom: 0
-  BoomBurstTime: 0
-  BoomBurstSpeed: 0
-  HasTeleport_Boom: 0
+  BulletEndEffects: []

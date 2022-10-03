@@ -4869,6 +4869,24 @@ MonoBehaviour:
     m_Bits: 256
   - serializedVersion: 2
     m_Bits: 512
+  enemyLayers:
+  - serializedVersion: 2
+    m_Bits: 768
+  - serializedVersion: 2
+    m_Bits: 768
+  - serializedVersion: 2
+    m_Bits: 192
+  - serializedVersion: 2
+    m_Bits: 192
+  FriendLayers:
+  - serializedVersion: 2
+    m_Bits: 128
+  - serializedVersion: 2
+    m_Bits: 64
+  - serializedVersion: 2
+    m_Bits: 512
+  - serializedVersion: 2
+    m_Bits: 256
   checkpointmanagers:
   - {fileID: 1517628198}
   - {fileID: 520019055}
