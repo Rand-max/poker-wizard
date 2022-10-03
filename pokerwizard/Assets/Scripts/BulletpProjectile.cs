@@ -45,7 +45,7 @@ public class BulletpProjectile : MonoBehaviour
             }
         }
         else if(((1<<other.gameObject.layer) & enemyLayer) != 0){
-            if(other.gameObject.tag=="player"){
+            if(other.gameObject.tag=="Player"){
                 triggered=true;
                 Debug.Log("HP-1");
                 if(end!=null){
