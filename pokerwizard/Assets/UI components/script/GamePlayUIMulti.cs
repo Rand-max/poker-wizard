@@ -22,75 +22,132 @@ public class GamePlayUIMulti : MonoBehaviour
         _Color : dissolve color
         _NoiseScale
     */
-    //spell icon
-    public GameObject[] SpellIcon=new GameObject[4];
+    //spell icon,4 player val
+    public GameObject[] SpellIcon;
     public Texture[] si_tex;
     public Color[] si_color;
-    Material[] SpellMat=new Material[4];
+    public Material[] SpellMat;
+    public Sprite[] SpellSprite;
+    // public Sprite[] player_sprite;
+    float[] fadeval=new float[1];
 
     //spell text
-    public TextMeshProUGUI[] spellname=new TextMeshProUGUI[4];
+    public TextMeshProUGUI[] spellname;
     public VertexGradient[] st_color;
 
     //place text
-    public TextMeshProUGUI[] placeNum=new TextMeshProUGUI[4];
-    public TextMeshProUGUI[] placeEng=new TextMeshProUGUI[4];
+    public TextMeshProUGUI[] placeNum;
+    public TextMeshProUGUI[] placeEng;
+
+    // private text fstnum="1";
+    // private text sndnum="2";
+    // private text trdnum="3";
+    // private text fthnum="4";
+
+    // private text fsteng="st";
+    // private text sndeng="nd";
+    // private text trdeng="rd";
+    // private text ftheng="th";
 
     //ripple
     [SerializeField]
     public ParticleSystem[] ripeffect=null;
 
+    public float countdown;
+    public bool counting=false;
+    bool isUnDissolving=false;
+    bool isDissolving=false;
+
     //Get Spell
     public void GetSpell(){
         //random spell
-        int spellNum=Random.Range(0,6);
+        // int spellNum=Random.Range(0,6);
 
-        //名次
-        // int Whichplace=Random.Range(0,4);
-        /*switch(Whichplace){
+        /*switch (spellNum)
+        {
             case 0:
-                placeNum.text="1";
-                placeEng.text="st";
-                // placeNum.colorGradient=fire_color;
-                // placeEng.colorGradient=fire_color;
+                SpellIcon=FireIcon;
+                spellname.text = "Flame";
+                spellname.colorGradient=fire_color;
                 break;
             case 1:
-                placeNum.text="2";
-                placeEng.text="nd";
-                // placeNum.colorGradient=ice_color;
-                // placeEng.colorGradient=ice_color;
+                SpellIcon=AccelIcon;
+                spellname.text = "Boost";
+                spellname.colorGradient=accel_color;
                 break;
             case 2:
-                placeNum.text="3";
-                placeEng.text="rd";
-                // placeNum.colorGradient=brown_color;
-                // placeEng.colorGradient=brown_color;
+                SpellIcon=ShieldIcon;
+                spellname.text = "Shield";
+                spellname.colorGradient=shield_color;
                 break;
             case 3 :
-                placeNum.text="4";
-                placeEng.text="th";
-                // placeNum.colorGradient=purp_color;
-                // placeEng.colorGradient=purp_color;
+                SpellIcon=IceIcon;
+                spellname.text = "Ice";
+                spellname.colorGradient=ice_color;
+                break;
+            case 4:
+                SpellIcon=LoveIcon;
+                spellname.text = "Chaos";
+                spellname.colorGradient=love_color;
+                break;
+            case 5:
+                SpellIcon=ThunderIcon;
+                spellname.text = "Thunder";
+                spellname.colorGradient=thunder_color;
                 break;
             default:
                 break;
         }*/
+        spellname[0].text="Flame";
+        spellname[0].colorGradient=st_color[0];
+        SpellMat[0].SetColor("_Color",si_color[0]);
+        SpellMat[0].SetTexture("_MainTex",si_tex[4]);
+
+        ripeffect[0].Play();
+        fadeval[0]=0f;
+        countdown=1f;
+        counting=true;
+        isUnDissolving=false;
     }
     //Use Spell
     public void UseSpell(){
-        
+        isDissolving=true;
     }
-    void Awake()
+    void Start()
     {
-        //player material declare
-        for(int i=0;i<6;i++){
-            SpellMat[i]=SpellIcon[i].GetComponent<Image>().material;
-        }
+        fadeval[0]=0f;
+        isUnDissolving=false;
+        SpellMat[0].SetFloat("_FadeValue",fadeval[0]);
+        SpellIcon[0].GetComponent<Image>().sprite=SpellSprite[4];
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        //dissolve delay
+        if(counting){
+            countdown-=Time.deltaTime;
+            if(countdown<0){
+                countdown=0;
+                isUnDissolving=true;
+                counting=false;
+            }
+        }
+
+        if(isUnDissolving){
+            fadeval[0]+=Time.deltaTime;
+            if(fadeval[0]>1f){
+                fadeval[0]=1f;
+                isUnDissolving=false;
+            }
+            SpellMat[0].SetFloat("_FadeValue",fadeval[0]);
+        }
+        if(isDissolving){
+            fadeval[0]-=Time.deltaTime;
+            if(fadeval[0]<0f){
+                fadeval[0]=0f;
+                isDissolving=false;
+            }
+            SpellMat[0].SetFloat("_FadeValue",fadeval[0]);
+        }
     }
 }

@@ -7190,7 +7190,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1443515138}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9095,9 +9095,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SpellActivate, Assembly-CSharp
-        m_MethodName: ButtonClicked
+      - m_Target: {fileID: 747490864}
+        m_TargetAssemblyTypeName: GamePlayUIMulti, Assembly-CSharp
+        m_MethodName: GetSpell
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9169,13 +9169,55 @@ MonoBehaviour:
   - {fileID: 2800000, guid: cd93bfd4c39c3fc4fa19c5df32114b68, type: 3}
   - {fileID: 2800000, guid: 1bac23a65ec4f5a4d9927e1713e73f69, type: 3}
   - {fileID: 2800000, guid: 6693b6aa543649e4c9f96d6c52e8c62a, type: 3}
-  si_color: []
+  si_color:
+  - {r: 1, g: 0.88080025, b: 0.38113207, a: 1}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  SpellMat:
+  - {fileID: 2100000, guid: 21a3e6b3cbaefd3459d86ef8300f9e2b, type: 2}
+  - {fileID: 2100000, guid: a359c7eb0f5b8d741b051a352d45fbe2, type: 2}
+  - {fileID: 2100000, guid: 73cc7003da754334e973c3ce6c582409, type: 2}
+  - {fileID: 2100000, guid: f84ed5bb6c75d654da400ff552b11453, type: 2}
+  SpellSprite:
+  - {fileID: 21300000, guid: 3ec42f2567b46b345989ffcbd9b74f19, type: 3}
+  - {fileID: 21300000, guid: 3bd225c09953e4e499db09354dbcc783, type: 3}
+  - {fileID: 21300000, guid: ed11e2b4372f4c34687cd74196d20af7, type: 3}
+  - {fileID: 21300000, guid: cd93bfd4c39c3fc4fa19c5df32114b68, type: 3}
+  - {fileID: 21300000, guid: 1bac23a65ec4f5a4d9927e1713e73f69, type: 3}
+  - {fileID: 21300000, guid: 6693b6aa543649e4c9f96d6c52e8c62a, type: 3}
   spellname:
   - {fileID: 1918989281}
   - {fileID: 224636231}
   - {fileID: 1298421356}
   - {fileID: 1828899631}
-  st_color: []
+  st_color:
+  - topLeft: {r: 0, g: 0, b: 0, a: 0}
+    topRight: {r: 0, g: 0, b: 0, a: 0}
+    bottomLeft: {r: 0, g: 0, b: 0, a: 0}
+    bottomRight: {r: 0, g: 0, b: 0, a: 0}
+  - topLeft: {r: 0, g: 0, b: 0, a: 0}
+    topRight: {r: 0, g: 0, b: 0, a: 0}
+    bottomLeft: {r: 0, g: 0, b: 0, a: 0}
+    bottomRight: {r: 0, g: 0, b: 0, a: 0}
+  - topLeft: {r: 0, g: 0, b: 0, a: 0}
+    topRight: {r: 0, g: 0, b: 0, a: 0}
+    bottomLeft: {r: 0, g: 0, b: 0, a: 0}
+    bottomRight: {r: 0, g: 0, b: 0, a: 0}
+  - topLeft: {r: 0, g: 0, b: 0, a: 0}
+    topRight: {r: 0, g: 0, b: 0, a: 0}
+    bottomLeft: {r: 0, g: 0, b: 0, a: 0}
+    bottomRight: {r: 0, g: 0, b: 0, a: 0}
+  - topLeft: {r: 0, g: 0, b: 0, a: 0}
+    topRight: {r: 0, g: 0, b: 0, a: 0}
+    bottomLeft: {r: 0, g: 0, b: 0, a: 0}
+    bottomRight: {r: 0, g: 0, b: 0, a: 0}
+  - topLeft: {r: 0, g: 0, b: 0, a: 0}
+    topRight: {r: 0, g: 0, b: 0, a: 0}
+    bottomLeft: {r: 0, g: 0, b: 0, a: 0}
+    bottomRight: {r: 0, g: 0, b: 0, a: 0}
   placeNum:
   - {fileID: 576115733}
   - {fileID: 706798709}
@@ -9191,6 +9233,8 @@ MonoBehaviour:
   - {fileID: 70763372}
   - {fileID: 1901923239}
   - {fileID: 1173338680}
+  countdown: 1.5
+  counting: 0
 --- !u!1 &757623844
 GameObject:
   m_ObjectHideFlags: 0
@@ -9771,7 +9815,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1443515138}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14892,7 +14936,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1443515138}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21271,7 +21315,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1443515138}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21757,7 +21801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1443515138
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21770,14 +21814,13 @@ RectTransform:
   m_LocalScale: {x: 18.15899, y: 18.15899, z: 18.15899}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1919100087}
   - {fileID: 1070181877}
   - {fileID: 392965113}
   - {fileID: 1383554612}
   - {fileID: 849528272}
   - {fileID: 1937467851}
   m_Father: {fileID: 1684885630}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -22906,6 +22949,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 469675008}
+  - {fileID: 1919100087}
   - {fileID: 1443515138}
   m_Father: {fileID: 687782247}
   m_RootOrder: 0
@@ -28623,7 +28667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3ec42f2567b46b345989ffcbd9b74f19, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28650,15 +28694,15 @@ RectTransform:
   m_GameObject: {fileID: 1919100084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.017708363, y: 0.017708363, z: 0.017708363}
+  m_LocalScale: {x: 0.321566, y: 0.321566, z: 0.321566}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1443515138}
-  m_RootOrder: 0
+  m_Father: {fileID: 1684885630}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.2699585, y: 0.000015258789}
+  m_AnchoredPosition: {x: 9.693337, y: -68.774254}
   m_SizeDelta: {x: 2114.884, y: 2114.884}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1932340357
@@ -28903,7 +28947,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1443515138}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
