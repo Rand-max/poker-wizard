@@ -638,7 +638,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -6001,7 +6001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &253322515
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7496,6 +7496,7 @@ GameObject:
   - component: {fileID: 447543289}
   - component: {fileID: 447543288}
   - component: {fileID: 447543287}
+  - component: {fileID: 447543290}
   m_Layer: 5
   m_Name: usebtn
   m_TagString: Untagged
@@ -7568,70 +7569,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1919100084}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1070181876}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 392965112}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1383554611}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 849528271}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1937467850}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 447543290}
+        m_TargetAssemblyTypeName: GamePlayUIMulti, Assembly-CSharp
+        m_MethodName: UseSpell
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7678,6 +7619,100 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447543285}
   m_CullTransparentMesh: 1
+--- !u!114 &447543290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447543285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d9c693d67f78a9449e2439127c546fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpellIcon:
+  - {fileID: 1919100084}
+  - {fileID: 1267857932}
+  - {fileID: 340728054}
+  - {fileID: 372344734}
+  si_tex:
+  - {fileID: 2800000, guid: 3ec42f2567b46b345989ffcbd9b74f19, type: 3}
+  - {fileID: 2800000, guid: 3bd225c09953e4e499db09354dbcc783, type: 3}
+  - {fileID: 2800000, guid: ed11e2b4372f4c34687cd74196d20af7, type: 3}
+  - {fileID: 2800000, guid: cd93bfd4c39c3fc4fa19c5df32114b68, type: 3}
+  - {fileID: 2800000, guid: 1bac23a65ec4f5a4d9927e1713e73f69, type: 3}
+  - {fileID: 2800000, guid: 6693b6aa543649e4c9f96d6c52e8c62a, type: 3}
+  si_color:
+  - {r: 1, g: 0.8520421, b: 0.22075468, a: 1}
+  - {r: 0.9811321, g: 0.9315164, b: 0.4017088, a: 1}
+  - {r: 0.5415094, g: 0.8504922, b: 1, a: 1}
+  - {r: 0.35884652, g: 0.9644672, b: 0.990566, a: 1}
+  - {r: 1, g: 0.53207546, b: 0.53207546, a: 1}
+  - {r: 0.89095575, g: 1, b: 0.5226415, a: 1}
+  SpellMat:
+  - {fileID: 2100000, guid: 21a3e6b3cbaefd3459d86ef8300f9e2b, type: 2}
+  - {fileID: 2100000, guid: a359c7eb0f5b8d741b051a352d45fbe2, type: 2}
+  - {fileID: 2100000, guid: 73cc7003da754334e973c3ce6c582409, type: 2}
+  - {fileID: 2100000, guid: f84ed5bb6c75d654da400ff552b11453, type: 2}
+  SpellSprite:
+  - {fileID: 21300000, guid: 3ec42f2567b46b345989ffcbd9b74f19, type: 3}
+  - {fileID: 21300000, guid: 3bd225c09953e4e499db09354dbcc783, type: 3}
+  - {fileID: 21300000, guid: ed11e2b4372f4c34687cd74196d20af7, type: 3}
+  - {fileID: 21300000, guid: cd93bfd4c39c3fc4fa19c5df32114b68, type: 3}
+  - {fileID: 21300000, guid: 1bac23a65ec4f5a4d9927e1713e73f69, type: 3}
+  - {fileID: 21300000, guid: 6693b6aa543649e4c9f96d6c52e8c62a, type: 3}
+  spellname:
+  - {fileID: 1918989281}
+  - {fileID: 224636231}
+  - {fileID: 1298421356}
+  - {fileID: 1828899631}
+  st_color:
+  - topLeft: {r: 1, g: 0.94222534, b: 0.3433962, a: 1}
+    topRight: {r: 1, g: 0.94509804, b: 0.34509805, a: 1}
+    bottomLeft: {r: 0.9150943, g: 0.57363325, b: 0.14158057, a: 1}
+    bottomRight: {r: 0.91764706, g: 0.5764706, b: 0.14509805, a: 1}
+  - topLeft: {r: 1, g: 0.8626421, b: 0.40943396, a: 1}
+    topRight: {r: 1, g: 0.8627451, b: 0.4117647, a: 1}
+    bottomLeft: {r: 1, g: 0.8924737, b: 0.2396226, a: 1}
+    bottomRight: {r: 1, g: 0.89411765, b: 0.24313726, a: 1}
+  - topLeft: {r: 0.35283017, g: 0.9937209, b: 1, a: 1}
+    topRight: {r: 0.3529412, g: 0.99215686, b: 1, a: 1}
+    bottomLeft: {r: 0.3433962, g: 0.72534674, b: 1, a: 1}
+    bottomRight: {r: 0.34509805, g: 0.7254902, b: 1, a: 1}
+  - topLeft: {r: 0.37169808, g: 1, b: 0.98242664, a: 1}
+    topRight: {r: 0.37254903, g: 1, b: 0.9843137, a: 1}
+    bottomLeft: {r: 0.13157704, g: 0.8300327, b: 0.9056604, a: 1}
+    bottomRight: {r: 0.13333334, g: 0.83137256, b: 0.90588236, a: 1}
+  - topLeft: {r: 1, g: 0.82452834, b: 0.82452834, a: 1}
+    topRight: {r: 1, g: 0.827451, b: 0.827451, a: 1}
+    bottomLeft: {r: 1, g: 0.6264151, b: 0.79919815, a: 1}
+    bottomRight: {r: 1, g: 0.627451, b: 0.8, a: 1}
+  - topLeft: {r: 1, g: 0.994632, b: 0.6264151, a: 1}
+    topRight: {r: 1, g: 0.99607843, b: 0.627451, a: 1}
+    bottomLeft: {r: 0.9064634, g: 1, b: 0.29622638, a: 1}
+    bottomRight: {r: 0.9098039, g: 1, b: 0.29803923, a: 1}
+  placeNum:
+  - {fileID: 576115733}
+  - {fileID: 706798709}
+  - {fileID: 159816189}
+  - {fileID: 2020266563}
+  placeEng:
+  - {fileID: 141058249}
+  - {fileID: 631395673}
+  - {fileID: 1758263338}
+  - {fileID: 1557643167}
+  ripeffect:
+  - {fileID: 875917071}
+  - {fileID: 70763372}
+  - {fileID: 1901923239}
+  - {fileID: 1173338680}
+  countdown: 1.5
+  use_countdown: 1.5
+  counting: 0
+  use_counting: 0
+  isUnDissolving: 0
+  isDissolving: 0
 --- !u!1 &454778343
 GameObject:
   m_ObjectHideFlags: 0
@@ -9170,12 +9205,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 1bac23a65ec4f5a4d9927e1713e73f69, type: 3}
   - {fileID: 2800000, guid: 6693b6aa543649e4c9f96d6c52e8c62a, type: 3}
   si_color:
-  - {r: 1, g: 0.88080025, b: 0.38113207, a: 1}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 1, g: 0.8520421, b: 0.22075468, a: 1}
+  - {r: 0.9811321, g: 0.9315164, b: 0.4017088, a: 1}
+  - {r: 0.5415094, g: 0.8504922, b: 1, a: 1}
+  - {r: 0.35884652, g: 0.9644672, b: 0.990566, a: 1}
+  - {r: 1, g: 0.53207546, b: 0.53207546, a: 1}
+  - {r: 0.89095575, g: 1, b: 0.5226415, a: 1}
   SpellMat:
   - {fileID: 2100000, guid: 21a3e6b3cbaefd3459d86ef8300f9e2b, type: 2}
   - {fileID: 2100000, guid: a359c7eb0f5b8d741b051a352d45fbe2, type: 2}
@@ -9194,30 +9229,30 @@ MonoBehaviour:
   - {fileID: 1298421356}
   - {fileID: 1828899631}
   st_color:
-  - topLeft: {r: 0, g: 0, b: 0, a: 0}
-    topRight: {r: 0, g: 0, b: 0, a: 0}
-    bottomLeft: {r: 0, g: 0, b: 0, a: 0}
-    bottomRight: {r: 0, g: 0, b: 0, a: 0}
-  - topLeft: {r: 0, g: 0, b: 0, a: 0}
-    topRight: {r: 0, g: 0, b: 0, a: 0}
-    bottomLeft: {r: 0, g: 0, b: 0, a: 0}
-    bottomRight: {r: 0, g: 0, b: 0, a: 0}
-  - topLeft: {r: 0, g: 0, b: 0, a: 0}
-    topRight: {r: 0, g: 0, b: 0, a: 0}
-    bottomLeft: {r: 0, g: 0, b: 0, a: 0}
-    bottomRight: {r: 0, g: 0, b: 0, a: 0}
-  - topLeft: {r: 0, g: 0, b: 0, a: 0}
-    topRight: {r: 0, g: 0, b: 0, a: 0}
-    bottomLeft: {r: 0, g: 0, b: 0, a: 0}
-    bottomRight: {r: 0, g: 0, b: 0, a: 0}
-  - topLeft: {r: 0, g: 0, b: 0, a: 0}
-    topRight: {r: 0, g: 0, b: 0, a: 0}
-    bottomLeft: {r: 0, g: 0, b: 0, a: 0}
-    bottomRight: {r: 0, g: 0, b: 0, a: 0}
-  - topLeft: {r: 0, g: 0, b: 0, a: 0}
-    topRight: {r: 0, g: 0, b: 0, a: 0}
-    bottomLeft: {r: 0, g: 0, b: 0, a: 0}
-    bottomRight: {r: 0, g: 0, b: 0, a: 0}
+  - topLeft: {r: 1, g: 0.94222534, b: 0.3433962, a: 1}
+    topRight: {r: 1, g: 0.94509804, b: 0.34509805, a: 1}
+    bottomLeft: {r: 0.9150943, g: 0.57363325, b: 0.14158057, a: 1}
+    bottomRight: {r: 0.91764706, g: 0.5764706, b: 0.14509805, a: 1}
+  - topLeft: {r: 1, g: 0.8626421, b: 0.40943396, a: 1}
+    topRight: {r: 1, g: 0.8627451, b: 0.4117647, a: 1}
+    bottomLeft: {r: 1, g: 0.8924737, b: 0.2396226, a: 1}
+    bottomRight: {r: 1, g: 0.89411765, b: 0.24313726, a: 1}
+  - topLeft: {r: 0.35283017, g: 0.9937209, b: 1, a: 1}
+    topRight: {r: 0.3529412, g: 0.99215686, b: 1, a: 1}
+    bottomLeft: {r: 0.3433962, g: 0.72534674, b: 1, a: 1}
+    bottomRight: {r: 0.34509805, g: 0.7254902, b: 1, a: 1}
+  - topLeft: {r: 0.37169808, g: 1, b: 0.98242664, a: 1}
+    topRight: {r: 0.37254903, g: 1, b: 0.9843137, a: 1}
+    bottomLeft: {r: 0.13157704, g: 0.8300327, b: 0.9056604, a: 1}
+    bottomRight: {r: 0.13333334, g: 0.83137256, b: 0.90588236, a: 1}
+  - topLeft: {r: 1, g: 0.82452834, b: 0.82452834, a: 1}
+    topRight: {r: 1, g: 0.827451, b: 0.827451, a: 1}
+    bottomLeft: {r: 1, g: 0.6264151, b: 0.79919815, a: 1}
+    bottomRight: {r: 1, g: 0.627451, b: 0.8, a: 1}
+  - topLeft: {r: 1, g: 0.994632, b: 0.6264151, a: 1}
+    topRight: {r: 1, g: 0.99607843, b: 0.627451, a: 1}
+    bottomLeft: {r: 0.9064634, g: 1, b: 0.29622638, a: 1}
+    bottomRight: {r: 0.9098039, g: 1, b: 0.29803923, a: 1}
   placeNum:
   - {fileID: 576115733}
   - {fileID: 706798709}
@@ -9234,7 +9269,11 @@ MonoBehaviour:
   - {fileID: 1901923239}
   - {fileID: 1173338680}
   countdown: 1.5
+  use_countdown: 0
   counting: 0
+  use_counting: 0
+  isUnDissolving: 0
+  isDissolving: 0
 --- !u!1 &757623844
 GameObject:
   m_ObjectHideFlags: 0
@@ -9987,7 +10026,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -15575,7 +15614,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -22322,7 +22361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1523572803
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23401,7 +23440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1762192310
 Transform:
   m_ObjectHideFlags: 0
@@ -23804,7 +23843,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
