@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class GamePlayUIMulti : MonoBehaviour
 {
@@ -56,6 +57,10 @@ public class GamePlayUIMulti : MonoBehaviour
             RandSpell(i);
             fadeval[i]=0f;
             ripeffect[i].Play();
+            SpellMat[0].SetFloat("_FadeValue",0);
+            SpellMat[1].SetFloat("_FadeValue",0);
+            SpellMat[2].SetFloat("_FadeValue",0);
+            SpellMat[3].SetFloat("_FadeValue",0); 
         }
         countdown=1f;
         counting=true;
@@ -127,6 +132,9 @@ public class GamePlayUIMulti : MonoBehaviour
 
     void Update()
     {
+        if(Keyboard.current.zKey.wasPressedThisFrame){
+            GetSpell();
+        }
         //dissolve delay
         if(counting){
             countdown-=Time.deltaTime;
