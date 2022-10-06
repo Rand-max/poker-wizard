@@ -7,6 +7,7 @@ public class GainMagicItem : MonoBehaviour
 {
     [SerializeField]
     public ParticleSystem boom=null;
+    public GameObject uiMulti;
 
     public GameObject crown_obj;
     public float respawn_time;
@@ -54,6 +55,7 @@ public class GainMagicItem : MonoBehaviour
     if(collision.gameObject.tag == "Player"){
         alive=false;
         par_start=true;
+        uiMulti.GetComponent<GamePlayUIMulti>().GetSpell();
     }
  }
 }

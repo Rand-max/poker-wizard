@@ -4991,6 +4991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boom: {fileID: 1663827388408440402}
+  uiMulti: {fileID: 0}
   crown_obj: {fileID: 1360400888443231653}
   respawn_time: 0
   alive: 0
