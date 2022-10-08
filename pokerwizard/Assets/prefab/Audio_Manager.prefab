@@ -58,7 +58,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: btn_click
-    clip: {fileID: 8300000, guid: b9fe827b527469c428eb6beec2ff7232, type: 3}
+    clip: {fileID: 8300000, guid: 6008192d71ca49041bbd275b51f1fae8, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
@@ -83,6 +83,24 @@ MonoBehaviour:
     loop: 0
   - name: pick_key
     clip: {fileID: 8300000, guid: 53e9ec3be2bd47046a110664326e4b10, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: crown
+    clip: {fileID: 8300000, guid: 276c8d98e6b6ba045ab08823e3544a6f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: flag_scroll
+    clip: {fileID: 8300000, guid: 0dab6ea497ab7ef44b128c0d70106af5, type: 3}
+    volume: 1
+    pitch: 1.5
+    source: {fileID: 0}
+    loop: 0
+  - name: cheer
+    clip: {fileID: 8300000, guid: 5b6fe293d40f7da43b114790438b1ac1, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
