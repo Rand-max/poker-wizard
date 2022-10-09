@@ -6138,7 +6138,6 @@ GameObject:
   - component: {fileID: 1601197401}
   - component: {fileID: 1601197400}
   - component: {fileID: 1601197399}
-  - component: {fileID: 1601197398}
   - component: {fileID: 1601197397}
   - component: {fileID: 1601197396}
   m_Layer: 5
@@ -6205,20 +6204,6 @@ MonoBehaviour:
   greenbtn: {fileID: 1601197400}
   btn_before: {fileID: 21300000, guid: 8a42c812292b93b459dfc6f729b80d4d, type: 3}
   btn_after: {fileID: 21300000, guid: a38b05324620506499fda4f7ea55e254, type: 3}
---- !u!114 &1601197398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601197394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cbd617465c58d4182379f214fd315a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ReadyUI: {fileID: 1989124381}
-  isEnabled: 1
 --- !u!114 &1601197399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6263,16 +6248,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1601197398}
-        m_TargetAssemblyTypeName: ReadyCallOut, Assembly-CSharp
-        m_MethodName: ButtonClicked
-        m_Mode: 1
+      - m_Target: {fileID: 258352246}
+        m_TargetAssemblyTypeName: ChangeScene_btn, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Menu_UI
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1601197400
