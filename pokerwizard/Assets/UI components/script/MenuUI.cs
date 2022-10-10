@@ -25,7 +25,7 @@ public class MenuUI : MonoBehaviour
         foreach (var btn in btns)
         {
             FindObjectOfType<AudioManager>().Play("btn_hover");
-            await btn.DOAnchorPosX(-9.45f,Random.Range(.7f,1f)).SetEase(Ease.InOutQuad).AsyncWaitForCompletion();
+            await btn.DOAnchorPosX(-9.45f,.5f).SetEase(Ease.InOutQuad).AsyncWaitForCompletion();
         }
     }
     
