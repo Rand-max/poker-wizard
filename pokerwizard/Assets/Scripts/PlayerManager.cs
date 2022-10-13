@@ -44,6 +44,7 @@
             playerchar.tag="Player";
             
             player.GetComponentInChildren<PlayerController>().playerlayer=playerLayers[players.Count - 1];
+            player.GetComponentInChildren<PlayerController>().playerNumber=players.Count-1;
             //need to use the parent due to the structure of the prefab
             Transform playerParent = player.transform.parent;
             minimap.GetComponent<MapController>().player.Add(player.GetComponent<PlayerController>().Normal.gameObject);

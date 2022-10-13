@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
  
 public class PlayerController : MonoBehaviour
 {
+    public int playerNumber;
     [SerializeField] float currentSpeed;
     float speed;
     float rotate;
