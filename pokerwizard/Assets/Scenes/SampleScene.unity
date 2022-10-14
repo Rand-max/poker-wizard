@@ -3725,7 +3725,13 @@ MonoBehaviour:
   - {fileID: 2860833182306902401, guid: cf9b2e051cc82f74395a94594a57873b, type: 3}
   - {fileID: 5378277446041368653, guid: 5cdb169a88c07d54bb727a74925ed16e, type: 3}
   - {fileID: 2304057042063654093, guid: 8b3473ac3539d5040a8e436b6302a5b2, type: 3}
+  playerheads:
+  - {fileID: 1092207813}
+  - {fileID: 1041189246}
+  - {fileID: 1751301978}
+  - {fileID: 1261018187}
   minimap: {fileID: 910979611}
+  mirrorController: {fileID: 1185675891}
   startingPoints:
   - {fileID: 319842830}
   - {fileID: 319842830}
@@ -25553,11 +25559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: []
   minimap: {fileID: 910979611}
-  playerhead:
-  - {fileID: 1261018187}
-  - {fileID: 1041189246}
-  - {fileID: 1092207813}
-  - {fileID: 1751301978}
+  playerhead: []
   mprescaleamount: 1
   mpoffset: {x: 0, y: 0, z: 0}
 --- !u!114 &910979614
@@ -32232,6 +32234,7 @@ GameObject:
   - component: {fileID: 1185675893}
   - component: {fileID: 1185675892}
   - component: {fileID: 1185675891}
+  - component: {fileID: 1185675895}
   m_Layer: 5
   m_Name: Get spell
   m_TagString: Untagged
@@ -32272,6 +32275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d9c693d67f78a9449e2439127c546fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerman: {fileID: 138604660}
   SpellIcon:
   - {fileID: 1703842753}
   - {fileID: 1819493773}
@@ -32456,6 +32460,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185675889}
   m_CullTransparentMesh: 1
+--- !u!114 &1185675895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185675889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c926245da312042bc85a75e04820fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allSpell:
+  - {fileID: 11400000, guid: 18f0250202c8bec48882827e40f3e90c, type: 2}
+  - {fileID: 11400000, guid: ddffc95a97616c74f8c60a1ad75cd183, type: 2}
+  - {fileID: 11400000, guid: 797de316377e1f841bec7500fb504a6e, type: 2}
+  - {fileID: 11400000, guid: f4034d7027159a84cb560e3599a8e757, type: 2}
+  - {fileID: 11400000, guid: d5383c99de087b94e9c40014295836a9, type: 2}
+  - {fileID: 11400000, guid: 88084522366ee0c4b92dda23cb503a68, type: 2}
 --- !u!1001 &1198792011
 PrefabInstance:
   m_ObjectHideFlags: 0

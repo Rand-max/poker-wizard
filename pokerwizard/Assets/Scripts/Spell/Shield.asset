@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd058d19d38c7004185e1d31dba8d3f0, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  ID: 0
-  SpellName: Unnammed
+  ID: 2
+  SpellName: Shield
   SpellIcon: {fileID: 630789384092907970, guid: e2ceaa05ad89b7d4a85febe6c7b2840c, type: 3}
   SpellAmout: 1
   BulletPrepareTime: 0.5
