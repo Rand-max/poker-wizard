@@ -24,6 +24,7 @@ public class GamePlayUIMulti : MonoBehaviour
         _NoiseScale
     */
     //spell icon,4 player val
+    public PlayerManager playerman;
     public GameObject[] SpellIcon;
     public Texture[] si_tex;
     public Color[] si_color;
@@ -52,43 +53,31 @@ public class GamePlayUIMulti : MonoBehaviour
     public bool[] isDissolving=new bool[4];
 
     //Get Spell
-    public void GetSpell(int playerNumber){
-        RandSpell(playerNumber);
-        fadeval[playerNumber]=0f;
-        ripeffect[playerNumber].Play();
-        countdown[playerNumber]=1f;
-        counting[playerNumber]=true;
-        isUnDissolving[playerNumber]=false;
+    public bool GetSpell(int playerNumber){
+        if(!isDissolving[playerNumber]){
+            RandSpell(playerNumber);
+            fadeval[playerNumber]=0f;
+            ripeffect[playerNumber].Play();
+            countdown[playerNumber]=1f;
+            counting[playerNumber]=true;
+            isUnDissolving[playerNumber]=false;
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     public void RandSpell(int player_num){
         int srand_num=Random.Range(0,6);
+        ShootingController playershooter=playerman.Players[player_num].transform.parent.GetComponentInChildren<ShootingController>();
+        playershooter.CurrentSpell=GetComponent<SpellManager>().allSpell[srand_num];
         SpellIcon[player_num].GetComponent<Image>().sprite=SpellSprite[srand_num];
         SpellMat[player_num].SetTexture("_MainTex",si_tex[srand_num]);
         SpellMat[player_num].SetColor("_Color",si_color[srand_num]);
         SpellMat[player_num].SetFloat("_FadeValue",0);
+        spellname[player_num].alpha=0.0f;
         spellname[player_num].colorGradient=st_color[srand_num];
-        switch(srand_num){
-            case 0:
-                spellname[player_num].text="Flame";
-                break;
-            case 1:
-                spellname[player_num].text="Accel";
-                break;
-            case 2:
-                spellname[player_num].text="Shield";
-                break;
-            case 3:
-                spellname[player_num].text="Ice";
-                break;
-            case 4:
-                spellname[player_num].text="Chaos";
-                break;
-            case 5:
-                spellname[player_num].text="Thunder";
-                break;
-            default:
-                break;
-        }
+        spellname[player_num].text=GetComponent<SpellManager>().allSpell[srand_num].SpellName;
     }
     //Use Spell
     public void UseSpell(int playerNumber){
@@ -105,6 +94,7 @@ public class GamePlayUIMulti : MonoBehaviour
             use_counting[i]=false;
             isUnDissolving[i]=false;
             isDissolving[i]=false;
+            spellname[i].alpha=0.0f;
         }
     }
     void Update(){
@@ -118,14 +108,14 @@ public class GamePlayUIMulti : MonoBehaviour
                     counting[i]=false;
                 }
             }
-            if(use_counting[i]){
+            /*if(use_counting[i]){
                 use_countdown[i]-=Time.deltaTime;
                 if(use_countdown[i]<0){
                     use_countdown[i]=0;
                     isDissolving[i]=true;
                     use_counting[i]=false;
                 }
-            }
+            }*/
             if(isUnDissolving[i]&&!isDissolving[i]){
                 fadeval[i]+=Time.deltaTime;
                 if(fadeval[i]>1f){
@@ -133,14 +123,19 @@ public class GamePlayUIMulti : MonoBehaviour
                     isUnDissolving[i]=false;
                 }
                 SpellMat[i].SetFloat("_FadeValue",fadeval[i]);
+                spellname[i].alpha=fadeval[i];
             }
             if(isDissolving[i]&&!isUnDissolving[i]){
                 fadeval[i]-=Time.deltaTime;
                 if(fadeval[i]<0f){
                     fadeval[i]=0f;
                     isDissolving[i]=false;
+                    ShootingController playershooter=playerman.Players[i].transform.parent.GetComponentInChildren<ShootingController>();
+                    playershooter.CurrentSpell=null;
+                    spellname[i].text="";
                 }
                 SpellMat[i].SetFloat("_FadeValue",fadeval[i]);
+                spellname[i].alpha=fadeval[i];
             }
         }
     }

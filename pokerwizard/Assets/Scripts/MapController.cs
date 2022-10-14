@@ -21,7 +21,7 @@ public class MapController : MonoBehaviour
         Vector3 playerpos;
         Vector2 mapsize=minimap.GetComponent<RectTransform>().sizeDelta;
         Vector3 newpos;
-        for(int i=0;i<4;i++){
+        for(int i=0;i<player.Count;i++){
             playerpos=player[i].transform.position;
             newpos.x=mapsize.y/2-playerpos.x/1000*mapsize.y;
             newpos.y=mapsize.x/2-playerpos.z/1000*mapsize.x;

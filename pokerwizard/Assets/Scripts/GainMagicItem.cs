@@ -53,10 +53,10 @@ public class GainMagicItem : MonoBehaviour
     }
     void OnTriggerEnter(Collider collision){
     if(collision.gameObject.GetComponent<PlayerController>()!=null){
-        alive=false;
-        par_start=true;
-        Debug.Log(collision.gameObject);
-        uiMulti.GetComponent<GamePlayUIMulti>().GetSpell(collision.gameObject.GetComponent<PlayerController>().playerNumber);
+        if(uiMulti.GetComponent<GamePlayUIMulti>().GetSpell(collision.gameObject.GetComponent<PlayerController>().playerNumber)){
+            alive=false;
+            par_start=true;
+        }
     }
  }
 }

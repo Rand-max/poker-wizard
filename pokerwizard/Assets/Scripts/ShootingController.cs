@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class ShootingController : MonoBehaviour
 {
     public float maxdistance;
+    public SpellData CurrentSpell;
+    public GamePlayUIMulti mirrorController;
     public GameObject playernormal;
     public GameObject animateplayer;
     public GameObject wandposition;
@@ -31,10 +33,12 @@ public class ShootingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(iscasted&&!shootprepared&&cooldown<=0){
+        int selfnumber=transform.parent.GetComponentsInChildren<PlayerController>()[0].playerNumber;
+        if(iscasted&&!shootprepared&&cooldown<=0&&CurrentSpell!=null&&!mirrorController.isUnDissolving[selfnumber]&&!mirrorController.counting[selfnumber]&&!mirrorController.isDissolving[selfnumber]){
             cooldown=preparetime;
             animateplayer.GetComponent<Animator>().Play("Armature_shoot",0,0f);
             shootprepared=true;
+            mirrorController.UseSpell(selfnumber);
         }
         /*if(Mouse.current.leftButton.isPressed&&!shootprepared&&cooldown<=0){
             cooldown=preparetime;
