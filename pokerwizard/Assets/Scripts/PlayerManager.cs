@@ -6,8 +6,11 @@
     public class PlayerManager : MonoBehaviour
     {
         public List<GameObject>characters;
+        public List<GameObject>playerheads;
         public GameObject minimap;
+        public GamePlayUIMulti mirrorController;
         private List<PlayerInput> players = new List<PlayerInput>();
+        public List<PlayerInput> Players=>players;
         [SerializeField]
         private List<Transform> startingPoints;
         [SerializeField]
@@ -44,9 +47,11 @@
             playerchar.tag="Player";
             
             player.GetComponentInChildren<PlayerController>().playerlayer=playerLayers[players.Count - 1];
+            player.GetComponentInChildren<PlayerController>().playerNumber=players.Count-1;
             //need to use the parent due to the structure of the prefab
             Transform playerParent = player.transform.parent;
             minimap.GetComponent<MapController>().player.Add(player.GetComponent<PlayerController>().Normal.gameObject);
+            minimap.GetComponent<MapController>().playerhead.Add(playerheads[players.Count-1]);
             checkpointmanagers[players.Count-1].GetComponent<CheckpointController>().player=player.GetComponent<PlayerController>().Normal.gameObject;
             //playerParent.position = startingPoints[players.Count - 1].position;
 
@@ -57,6 +62,7 @@
             playerParent.GetComponentInChildren<ShootingController>().mousecolliderlayermask|= (1 << layerToAdd);
             playerParent.GetComponentInChildren<ShootingController>().enemyLayer=enemyLayers[players.Count - 1];
             playerParent.GetComponentInChildren<ShootingController>().FriendLayer=FriendLayers[players.Count-1];
+            playerParent.GetComponentInChildren<ShootingController>().mirrorController=mirrorController;
             //set the layer
             playerParent.GetComponentInChildren<CinemachineVirtualCamera>().gameObject.layer = layerToAdd;
             //add the layer

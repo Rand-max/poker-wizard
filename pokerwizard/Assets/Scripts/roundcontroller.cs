@@ -16,6 +16,6 @@ public class roundcontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMeshProUGUI>().text=lap.GetComponent<CheckpointController>().lap.ToString();
+        if(lap!=null)GetComponent<TextMeshProUGUI>().text=lap.GetComponent<CheckpointController>().lap.ToString();
     }
 }

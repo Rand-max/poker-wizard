@@ -24,6 +24,7 @@ public class GamePlayUIMulti : MonoBehaviour
         _NoiseScale
     */
     //spell icon,4 player val
+    public PlayerManager playerman;
     public GameObject[] SpellIcon;
     public Texture[] si_tex;
     public Color[] si_color;
@@ -44,158 +45,98 @@ public class GamePlayUIMulti : MonoBehaviour
     [SerializeField]
     public ParticleSystem[] ripeffect=null;
 
-    public float countdown;
-    public float use_countdown;
-    public bool counting=false;
-    public bool use_counting=false;
-    public bool isUnDissolving=false;
-    public bool isDissolving=false;
+    public float[] countdown=new float[4];
+    public float[] use_countdown=new float[4];
+    public bool[] counting=new bool[4];
+    public bool[] use_counting=new bool[4];
+    public bool[] isUnDissolving=new bool[4];
+    public bool[] isDissolving=new bool[4];
 
     //Get Spell
-    public void GetSpell(){
-        for(int i=0;i<4;i++){
-            RandSpell(i);
-            fadeval[i]=0f;
-            ripeffect[i].Play();
-            SpellMat[0].SetFloat("_FadeValue",0);
-            SpellMat[1].SetFloat("_FadeValue",0);
-            SpellMat[2].SetFloat("_FadeValue",0);
-            SpellMat[3].SetFloat("_FadeValue",0); 
+    public bool GetSpell(int playerNumber){
+        if(!isDissolving[playerNumber]){
+            RandSpell(playerNumber);
+            fadeval[playerNumber]=0f;
+            ripeffect[playerNumber].Play();
+            countdown[playerNumber]=1f;
+            counting[playerNumber]=true;
+            isUnDissolving[playerNumber]=false;
+            return true;
         }
-        countdown=1f;
-        counting=true;
-        isUnDissolving=false;
+        else{
+            return false;
+        }
     }
     public void RandSpell(int player_num){
         int srand_num=Random.Range(0,6);
-        switch(srand_num){
-            case 0:
-                SpellIcon[player_num].GetComponent<Image>().sprite=SpellSprite[0];
-                SpellMat[player_num].SetTexture("_MainTex",si_tex[0]);
-                SpellMat[player_num].SetColor("_Color",si_color[0]);
-                spellname[player_num].text="Flame";
-                spellname[player_num].colorGradient=st_color[0];
-                break;
-            case 1:
-                SpellIcon[player_num].GetComponent<Image>().sprite=SpellSprite[1];
-                SpellMat[player_num].SetTexture("_MainTex",si_tex[1]);
-                SpellMat[player_num].SetColor("_Color",si_color[1]);
-                spellname[player_num].text="Accel";
-                spellname[player_num].colorGradient=st_color[1];
-                break;
-            case 2:
-                SpellIcon[player_num].GetComponent<Image>().sprite=SpellSprite[2];
-                SpellMat[player_num].SetTexture("_MainTex",si_tex[2]);
-                SpellMat[player_num].SetColor("_Color",si_color[2]);
-                spellname[player_num].text="Shield";
-                spellname[player_num].colorGradient=st_color[2];
-                break;
-            case 3:
-                SpellIcon[player_num].GetComponent<Image>().sprite=SpellSprite[3];
-                SpellMat[player_num].SetTexture("_MainTex",si_tex[3]);
-                SpellMat[player_num].SetColor("_Color",si_color[3]);
-                spellname[player_num].text="Ice";
-                spellname[player_num].colorGradient=st_color[3];
-                break;
-            case 4:
-                SpellIcon[player_num].GetComponent<Image>().sprite=SpellSprite[4];
-                SpellMat[player_num].SetTexture("_MainTex",si_tex[4]);
-                SpellMat[player_num].SetColor("_Color",si_color[4]);
-                spellname[player_num].text="Chaos";
-                spellname[player_num].colorGradient=st_color[4];
-                break;
-            case 5:
-                SpellIcon[player_num].GetComponent<Image>().sprite=SpellSprite[5];
-                SpellMat[player_num].SetTexture("_MainTex",si_tex[5]);
-                SpellMat[player_num].SetColor("_Color",si_color[5]);
-                spellname[player_num].text="Thunder";
-                spellname[player_num].colorGradient=st_color[5];
-                break;
-            default:
-                break;
-        }
+        ShootingController playershooter=playerman.Players[player_num].transform.parent.GetComponentInChildren<ShootingController>();
+        playershooter.CurrentSpell=GetComponent<SpellManager>().allSpell[srand_num];
+        SpellIcon[player_num].GetComponent<Image>().sprite=SpellSprite[srand_num];
+        SpellMat[player_num].SetTexture("_MainTex",si_tex[srand_num]);
+        SpellMat[player_num].SetColor("_Color",si_color[srand_num]);
+        SpellMat[player_num].SetFloat("_FadeValue",0);
+        spellname[player_num].alpha=0.0f;
+        spellname[player_num].colorGradient=st_color[srand_num];
+        spellname[player_num].text=GetComponent<SpellManager>().allSpell[srand_num].SpellName;
     }
     //Use Spell
-    public void UseSpell(){
-        use_countdown=1f;
-        use_counting=true;
-        isDissolving=true;
+    public void UseSpell(int playerNumber){
+        use_countdown[playerNumber]=1f;
+        use_counting[playerNumber]=true;
+        isDissolving[playerNumber]=true;
     }
     void Start()
     {
         for(int i=0;i<4;i++){
             SpellIcon[i].GetComponent<Image>().sprite=null;
             SpellMat[i].SetFloat("_FadeValue",0);
+            counting[i]=false;
+            use_counting[i]=false;
+            isUnDissolving[i]=false;
+            isDissolving[i]=false;
+            spellname[i].alpha=0.0f;
         }
-        isUnDissolving=false;
     }
-
-    void Update()
-    {
-        if(Keyboard.current.zKey.wasPressedThisFrame){
-            GetSpell();
-        }
-        //dissolve delay
-        if(counting){
-            countdown-=Time.deltaTime;
-            if(countdown<0){
-                countdown=0;
-                isUnDissolving=true;
-                counting=false;
+    void Update(){
+        for (int i = 0; i < 4; i++)
+        {
+            if(counting[i]){
+                countdown[i]-=Time.deltaTime;
+                if(countdown[i]<0){
+                    countdown[i]=0;
+                    isUnDissolving[i]=true;
+                    counting[i]=false;
+                }
             }
-        }
-        if(use_counting){
-            use_countdown-=Time.deltaTime;
-            if(use_countdown<0){
-                use_countdown=0;
-                isDissolving=true;
-                use_counting=false;
-            }
-        }
-
-        if(isUnDissolving){
-            /*for(int i=0;i<4;i++){
+            /*if(use_counting[i]){
+                use_countdown[i]-=Time.deltaTime;
+                if(use_countdown[i]<0){
+                    use_countdown[i]=0;
+                    isDissolving[i]=true;
+                    use_counting[i]=false;
+                }
+            }*/
+            if(isUnDissolving[i]&&!isDissolving[i]){
                 fadeval[i]+=Time.deltaTime;
                 if(fadeval[i]>1f){
                     fadeval[i]=1f;
                     isUnDissolving[i]=false;
                 }
-                
                 SpellMat[i].SetFloat("_FadeValue",fadeval[i]);
-            }*/
-            fadeval[0]+=Time.deltaTime;
-            fadeval[1]+=Time.deltaTime;
-            fadeval[2]+=Time.deltaTime;
-            fadeval[3]+=Time.deltaTime;
-            if(fadeval[0]>1f){
-                fadeval[0]=1f;
-                fadeval[1]=1f;
-                fadeval[2]=1f;
-                fadeval[3]=1f;
-                isUnDissolving=false;
+                spellname[i].alpha=fadeval[i];
             }
-            SpellMat[0].SetFloat("_FadeValue",fadeval[0]);
-            SpellMat[1].SetFloat("_FadeValue",fadeval[1]);
-            SpellMat[2].SetFloat("_FadeValue",fadeval[2]);
-            SpellMat[3].SetFloat("_FadeValue",fadeval[3]); 
-        }        
-        
-        if(isDissolving&&!isUnDissolving){
-            fadeval[0]-=Time.deltaTime;
-            fadeval[1]-=Time.deltaTime;
-            fadeval[2]-=Time.deltaTime;
-            fadeval[3]-=Time.deltaTime;
-            if(fadeval[0]<0f){
-                fadeval[0]=0f;
-                fadeval[1]=0f;
-                fadeval[2]=0f;
-                fadeval[3]=0f;
-                isDissolving=false;
+            if(isDissolving[i]&&!isUnDissolving[i]){
+                fadeval[i]-=Time.deltaTime;
+                if(fadeval[i]<0f){
+                    fadeval[i]=0f;
+                    isDissolving[i]=false;
+                    ShootingController playershooter=playerman.Players[i].transform.parent.GetComponentInChildren<ShootingController>();
+                    playershooter.CurrentSpell=null;
+                    spellname[i].text="";
+                }
+                SpellMat[i].SetFloat("_FadeValue",fadeval[i]);
+                spellname[i].alpha=fadeval[i];
             }
-            SpellMat[0].SetFloat("_FadeValue",fadeval[0]);
-            SpellMat[1].SetFloat("_FadeValue",fadeval[1]);
-            SpellMat[2].SetFloat("_FadeValue",fadeval[2]);
-            SpellMat[3].SetFloat("_FadeValue",fadeval[3]); 
         }
     }
 }

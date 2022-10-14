@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine; 
 [CreateAssetMenu(menuName ="Create Spell/a spell")]
+[System.Serializable]
 public class SpellData : ScriptableObject
 {
     public int ID;

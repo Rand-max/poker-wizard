@@ -23,7 +23,8 @@ public class CheckpointController : MonoBehaviour
     {
         if(innertimer>1/simulationspeed){
             innertimer=0;
-            distance=Vector3.Distance(player.transform.position,GetComponentInParent<CheckpointController>().Checkpoints[activeindex].transform.position);
+            if(!player)distance=9999;
+            else distance=Vector3.Distance(player.transform.position,GetComponentInParent<CheckpointController>().Checkpoints[activeindex].transform.position);
         }
         innertimer+=Time.deltaTime;
     }
