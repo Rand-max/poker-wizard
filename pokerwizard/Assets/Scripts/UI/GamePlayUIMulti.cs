@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class GamePlayUIMulti : MonoBehaviour
 {
@@ -53,9 +54,16 @@ public class GamePlayUIMulti : MonoBehaviour
     public bool[] isDissolving=new bool[4];
 
     //Get Spell
-    public bool GetSpell(int playerNumber){
+    public bool GetSpell(int playerNumber,int spellnumber=-1){
         if(!isDissolving[playerNumber]){
-            RandSpell(playerNumber);
+            int srand;
+            if(spellnumber==-1){
+                srand=Random.Range(0,GetComponent<SpellManager>().allSpell.Count);
+            }
+            else{
+                srand=spellnumber;
+            }
+            RandSpell(playerNumber,srand);
             fadeval[playerNumber]=0f;
             ripeffect[playerNumber].Play();
             counting[playerNumber]=true;
@@ -66,8 +74,7 @@ public class GamePlayUIMulti : MonoBehaviour
             return false;
         }
     }
-    public void RandSpell(int player_num){
-        int srand_num=Random.Range(0,6);
+    public void RandSpell(int player_num,int srand_num){
         ShootingController playershooter=playerman.Players[player_num].transform.parent.GetComponentInChildren<ShootingController>();
         playershooter.CurrentSpell=GetComponent<SpellManager>().allSpell[srand_num];
         playershooter.ammo=playershooter.CurrentSpell.SpellAmout;
@@ -101,6 +108,11 @@ public class GamePlayUIMulti : MonoBehaviour
         }
     }
     void Update(){
+        for(int i=0;i<(GetComponent<SpellManager>().allSpell.Count<=10?GetComponent<SpellManager>().allSpell.Count:10);i++){
+            if(((KeyControl)Keyboard.current[i.ToString()]).wasPressedThisFrame){
+                GetSpell(0,i);
+            }
+        }
         for (int i = 0; i < 4; i++)
         {
             if(counting[i]){
