@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine; 
+using UnityEngine;
+using TMPro;
 [CreateAssetMenu(menuName ="Create Spell/a spell")]
 [System.Serializable]
 public class SpellData : ScriptableObject
 {
     public int ID;
     public string SpellName="Unnammed";
+    public Sprite SpellSprite;
+    public Texture IconTexture;
+    public Color IconColor;
+    public VertexGradient TextColor;
     public GameObject SpellIcon;
     public int SpellAmout=1;
     public float BulletPrepareTime=0.5f;

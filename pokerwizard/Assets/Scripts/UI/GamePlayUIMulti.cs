@@ -73,14 +73,14 @@ public class GamePlayUIMulti : MonoBehaviour
         playershooter.ammo=playershooter.CurrentSpell.SpellAmout;
         playershooter.preparetime=playershooter.CurrentSpell.BulletCoolDownTime;
         playershooter.maxdistance=playershooter.CurrentSpell.MaxDistance;
-        SpellIcon[player_num].GetComponent<Image>().sprite=SpellSprite[srand_num];
-        SpellMat[player_num].SetTexture("_MainTex",si_tex[srand_num]);
-        SpellMat[player_num].SetColor("_Color",si_color[srand_num]);
+        SpellIcon[player_num].GetComponent<Image>().sprite=playershooter.CurrentSpell.SpellSprite;
+        SpellMat[player_num].SetTexture("_MainTex",playershooter.CurrentSpell.IconTexture);
+        SpellMat[player_num].SetColor("_Color",playershooter.CurrentSpell.IconColor);
         SpellMat[player_num].SetFloat("_FadeValue",0);
         spellname[player_num].alpha=0.0f;
-        spellname[player_num].colorGradient=st_color[srand_num];
-        spellname[player_num].text=GetComponent<SpellManager>().allSpell[srand_num].SpellName;
-        countdown[player_num]=GetComponent<SpellManager>().allSpell[srand_num].BulletPrepareTime;
+        spellname[player_num].colorGradient=playershooter.CurrentSpell.TextColor;
+        spellname[player_num].text=playershooter.CurrentSpell.SpellName;
+        countdown[player_num]=playershooter.CurrentSpell.BulletPrepareTime;
     }
     //Use Spell
     public void UseSpell(int playerNumber){
