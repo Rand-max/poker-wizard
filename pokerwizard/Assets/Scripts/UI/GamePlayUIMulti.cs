@@ -58,7 +58,6 @@ public class GamePlayUIMulti : MonoBehaviour
             RandSpell(playerNumber);
             fadeval[playerNumber]=0f;
             ripeffect[playerNumber].Play();
-            countdown[playerNumber]=1f;
             counting[playerNumber]=true;
             isUnDissolving[playerNumber]=false;
             return true;
@@ -71,6 +70,9 @@ public class GamePlayUIMulti : MonoBehaviour
         int srand_num=Random.Range(0,6);
         ShootingController playershooter=playerman.Players[player_num].transform.parent.GetComponentInChildren<ShootingController>();
         playershooter.CurrentSpell=GetComponent<SpellManager>().allSpell[srand_num];
+        playershooter.ammo=playershooter.CurrentSpell.SpellAmout;
+        playershooter.preparetime=playershooter.CurrentSpell.BulletCoolDownTime;
+        playershooter.maxdistance=playershooter.CurrentSpell.MaxDistance;
         SpellIcon[player_num].GetComponent<Image>().sprite=SpellSprite[srand_num];
         SpellMat[player_num].SetTexture("_MainTex",si_tex[srand_num]);
         SpellMat[player_num].SetColor("_Color",si_color[srand_num]);
@@ -78,6 +80,7 @@ public class GamePlayUIMulti : MonoBehaviour
         spellname[player_num].alpha=0.0f;
         spellname[player_num].colorGradient=st_color[srand_num];
         spellname[player_num].text=GetComponent<SpellManager>().allSpell[srand_num].SpellName;
+        countdown[player_num]=GetComponent<SpellManager>().allSpell[srand_num].BulletPrepareTime;
     }
     //Use Spell
     public void UseSpell(int playerNumber){

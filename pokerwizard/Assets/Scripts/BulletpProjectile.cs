@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletpProjectile : MonoBehaviour
 {
+    public SpellData isSpell;
     private Rigidbody bulletrigid;
     public float lifetime=3;
     public float bspeed=100;
@@ -15,7 +16,16 @@ public class BulletpProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bulletrigid=GetComponent<Rigidbody>();
+        if(GetComponent<Rigidbody>()){
+            bulletrigid=GetComponent<Rigidbody>();
+        }else{
+            gameObject.AddComponent<Rigidbody>();
+            bulletrigid=GetComponent<Rigidbody>();
+            bulletrigid.useGravity=false;
+        }
+        if(GetComponent<DeleteSelf>()){
+            Destroy(GetComponent<DeleteSelf>());
+        }
     }
 
     // Update is called once per frame
@@ -41,7 +51,7 @@ public class BulletpProjectile : MonoBehaviour
                 if(end!=null){
                     end.SetActive(true);
                 }
-                Destroy(gameObject,0.5f);
+                Destroy(gameObject,isSpell.BoomLifeTime);
             }
         }
         else if(((1<<other.gameObject.layer) & enemyLayer) != 0){
@@ -51,7 +61,7 @@ public class BulletpProjectile : MonoBehaviour
                 if(end!=null){
                     end.SetActive(true);
                 }
-                Destroy(gameObject,0.5f);
+                Destroy(gameObject,isSpell.BoomLifeTime);
             }
             else if(other.gameObject.tag=="bullet"){
                 triggered=true;
@@ -59,7 +69,7 @@ public class BulletpProjectile : MonoBehaviour
                 if(end!=null){
                     end.SetActive(true);
                 }
-                Destroy(gameObject,0.5f);
+                Destroy(gameObject,isSpell.BoomLifeTime);
             }
         }
     }

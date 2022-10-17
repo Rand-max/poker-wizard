@@ -63,6 +63,8 @@
             playerParent.GetComponentInChildren<ShootingController>().enemyLayer=enemyLayers[players.Count - 1];
             playerParent.GetComponentInChildren<ShootingController>().FriendLayer=FriendLayers[players.Count-1];
             playerParent.GetComponentInChildren<ShootingController>().mirrorController=mirrorController;
+            playerParent.GetComponentInChildren<ShootingController>().animateplayer=playerchar;
+            Debug.Log(playerParent.GetComponentInChildren<ShootingController>().animateplayer);
             //set the layer
             playerParent.GetComponentInChildren<CinemachineVirtualCamera>().gameObject.layer = layerToAdd;
             //add the layer
