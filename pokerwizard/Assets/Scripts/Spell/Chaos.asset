@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 4
   SpellName: Chaos
+  SpellSprite: {fileID: 21300000, guid: 1bac23a65ec4f5a4d9927e1713e73f69, type: 3}
+  IconTexture: {fileID: 2800000, guid: 1bac23a65ec4f5a4d9927e1713e73f69, type: 3}
+  IconColor: {r: 1, g: 0.53333336, b: 0.53333336, a: 1}
+  TextColor:
+    topLeft: {r: 1, g: 0.82452834, b: 0.82452834, a: 1}
+    topRight: {r: 1, g: 0.827451, b: 0.827451, a: 1}
+    bottomLeft: {r: 1, g: 0.6264151, b: 0.79919815, a: 1}
+    bottomRight: {r: 1, g: 0.627451, b: 0.8, a: 1}
   SpellIcon: {fileID: 630789384092907970, guid: e2ceaa05ad89b7d4a85febe6c7b2840c, type: 3}
   SpellAmout: 1
   BulletPrepareTime: 0.5
@@ -22,8 +30,71 @@ MonoBehaviour:
   targettype: 3
   BulletLifeTime: 3
   MaxDistance: 10
-  Bullets: []
+  Bullets:
+  - Object: {fileID: 852493557634586081, guid: b7517e16e4e40824b925b07103a83ec4, type: 3}
+    LifeTime: 3
+    AttachedTarget: 0
+    HasMovement: 0
+    BulletSpeed: 70
+    HasPursuit: 0
+    HasSlowdown: 0
+    BulletSlowdownRate: 0
+    BulletSlowdownTime: 0
+    HasStun: 0
+    BulletStundownTime: 0
+    HasClear: 0
+    HasConfusion: 0
+    BulletConfusionTime: 0
+    IsShield: 0
+    BulletShieldTime: 0
+    IsAccelerator: 0
+    BulletBurstTime: 0
+    BulletBurstSpeed: 0
+    IsTeleporter: 0
+    TeleportTiming: 0
   EffectLifeTime: 0.5
-  BulletStartEffects: []
+  BulletStartEffects:
+  - Object: {fileID: 3098136464652354338, guid: f72144af1e65d164fadf4faeb1114728, type: 3}
+    LifeTime: 0.5
+    AttachedTarget: 0
+    HasMovement: 0
+    BulletSpeed: 0
+    HasPursuit: 0
+    HasSlowdown: 0
+    BulletSlowdownRate: 0
+    BulletSlowdownTime: 0
+    HasStun: 0
+    BulletStundownTime: 0
+    HasClear: 0
+    HasConfusion: 0
+    BulletConfusionTime: 0
+    IsShield: 0
+    BulletShieldTime: 0
+    IsAccelerator: 0
+    BulletBurstTime: 0
+    BulletBurstSpeed: 0
+    IsTeleporter: 0
+    TeleportTiming: 0
   BoomLifeTime: 3
-  BulletEndEffects: []
+  BulletEndEffects:
+  - Object: {fileID: 1911298753794809787, guid: f2bc7211fa4e03f4a934d91f8c60e8c9, type: 3}
+    LifeTime: 3
+    AttachedTarget: 0
+    HasMovement: 0
+    BulletSpeed: 0
+    HasPursuit: 0
+    HasSlowdown: 0
+    BulletSlowdownRate: 0
+    BulletSlowdownTime: 0
+    HasStun: 0
+    BulletStundownTime: 0
+    HasClear: 0
+    HasConfusion: 0
+    BulletConfusionTime: 0
+    IsShield: 0
+    BulletShieldTime: 0
+    IsAccelerator: 0
+    BulletBurstTime: 0
+    BulletBurstSpeed: 0
+    IsTeleporter: 0
+    TeleportTiming: 0

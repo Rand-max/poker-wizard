@@ -32472,6 +32472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c926245da312042bc85a75e04820fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FetchDataInEditor: 1
   allSpell:
   - {fileID: 11400000, guid: 18f0250202c8bec48882827e40f3e90c, type: 2}
   - {fileID: 11400000, guid: ddffc95a97616c74f8c60a1ad75cd183, type: 2}
@@ -32479,6 +32480,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f4034d7027159a84cb560e3599a8e757, type: 2}
   - {fileID: 11400000, guid: d5383c99de087b94e9c40014295836a9, type: 2}
   - {fileID: 11400000, guid: 88084522366ee0c4b92dda23cb503a68, type: 2}
+  - {fileID: 11400000, guid: d5d6bbaeb7f2ea546a2d848de34726be, type: 2}
 --- !u!1001 &1198792011
 PrefabInstance:
   m_ObjectHideFlags: 0

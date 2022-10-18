@@ -6,13 +6,15 @@ using System.Linq;
 [ExecuteInEditMode]
 public class SpellManager : MonoBehaviour
 {
+    public bool FetchDataInEditor;
     public List<SpellData> allSpell;
+    private List<SpellData> tempSpell;
     void Update()
     {
         UpdateList();
     }
     void UpdateList(){
-        List<SpellData> tempSpell=new List<SpellData>();
+        tempSpell=new List<SpellData>();
         string[] assetNames = AssetDatabase.FindAssets("", new[] { "Assets/Scripts/Spell" });
 
         foreach (string spellname in assetNames)

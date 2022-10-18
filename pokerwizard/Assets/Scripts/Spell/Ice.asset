@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   SpellName: Ice
+  SpellSprite: {fileID: 21300000, guid: cd93bfd4c39c3fc4fa19c5df32114b68, type: 3}
+  IconTexture: {fileID: 2800000, guid: cd93bfd4c39c3fc4fa19c5df32114b68, type: 3}
+  IconColor: {r: 0.36078432, g: 0.9647059, b: 0.99215686, a: 1}
+  TextColor:
+    topLeft: {r: 0.37169808, g: 1, b: 0.98242664, a: 1}
+    topRight: {r: 0.37254903, g: 1, b: 0.9843137, a: 1}
+    bottomLeft: {r: 0.13157704, g: 0.8300327, b: 0.9056604, a: 1}
+    bottomRight: {r: 0.13333334, g: 0.83137256, b: 0.90588236, a: 1}
   SpellIcon: {fileID: 722035195171793640, guid: 87414d7a666af764ea6ab823af511d0b, type: 3}
   SpellAmout: 1
   BulletPrepareTime: 0.5
@@ -22,8 +30,92 @@ MonoBehaviour:
   targettype: 3
   BulletLifeTime: 3
   MaxDistance: 10
-  Bullets: []
+  Bullets:
+  - Object: {fileID: 9030374658988531655, guid: 4a157f62f730d4b4eab069fb5dd26a35, type: 3}
+    LifeTime: 3
+    AttachedTarget: 0
+    HasMovement: 0
+    BulletSpeed: 70
+    HasPursuit: 0
+    HasSlowdown: 0
+    BulletSlowdownRate: 0
+    BulletSlowdownTime: 0
+    HasStun: 0
+    BulletStundownTime: 0
+    HasClear: 0
+    HasConfusion: 0
+    BulletConfusionTime: 0
+    IsShield: 0
+    BulletShieldTime: 0
+    IsAccelerator: 0
+    BulletBurstTime: 0
+    BulletBurstSpeed: 0
+    IsTeleporter: 0
+    TeleportTiming: 0
   EffectLifeTime: 0.5
-  BulletStartEffects: []
+  BulletStartEffects:
+  - Object: {fileID: 3098136464652354338, guid: 73a11c61df025dc428e83e5bea9ee3c3, type: 3}
+    LifeTime: 0.5
+    AttachedTarget: 0
+    HasMovement: 0
+    BulletSpeed: 0
+    HasPursuit: 0
+    HasSlowdown: 0
+    BulletSlowdownRate: 0
+    BulletSlowdownTime: 0
+    HasStun: 0
+    BulletStundownTime: 0
+    HasClear: 0
+    HasConfusion: 0
+    BulletConfusionTime: 0
+    IsShield: 0
+    BulletShieldTime: 0
+    IsAccelerator: 0
+    BulletBurstTime: 0
+    BulletBurstSpeed: 0
+    IsTeleporter: 0
+    TeleportTiming: 0
   BoomLifeTime: 3
-  BulletEndEffects: []
+  BulletEndEffects:
+  - Object: {fileID: 3453488477136196560, guid: d5eeb9e46622e0e4ba2d3adc478e3aad, type: 3}
+    LifeTime: 3
+    AttachedTarget: 0
+    HasMovement: 0
+    BulletSpeed: 0
+    HasPursuit: 0
+    HasSlowdown: 0
+    BulletSlowdownRate: 0
+    BulletSlowdownTime: 0
+    HasStun: 0
+    BulletStundownTime: 0
+    HasClear: 0
+    HasConfusion: 0
+    BulletConfusionTime: 0
+    IsShield: 0
+    BulletShieldTime: 0
+    IsAccelerator: 0
+    BulletBurstTime: 0
+    BulletBurstSpeed: 0
+    IsTeleporter: 0
+    TeleportTiming: 0
+  - Object: {fileID: 7970671739509672891, guid: 01c3d97c5f9001b4e873a7849f2ff61a, type: 3}
+    LifeTime: 3
+    AttachedTarget: 0
+    HasMovement: 0
+    BulletSpeed: 0
+    HasPursuit: 0
+    HasSlowdown: 0
+    BulletSlowdownRate: 0
+    BulletSlowdownTime: 0
+    HasStun: 0
+    BulletStundownTime: 0
+    HasClear: 0
+    HasConfusion: 0
+    BulletConfusionTime: 0
+    IsShield: 0
+    BulletShieldTime: 0
+    IsAccelerator: 0
+    BulletBurstTime: 0
+    BulletBurstSpeed: 0
+    IsTeleporter: 0
+    TeleportTiming: 0
