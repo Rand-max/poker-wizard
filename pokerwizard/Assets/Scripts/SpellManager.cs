@@ -14,7 +14,7 @@ public class SpellManager : MonoBehaviour
         UpdateList();
     }
     void UpdateList(){
-        tempSpell=new List<SpellData>();
+        tempSpell.Clear();
         string[] assetNames = AssetDatabase.FindAssets("", new[] { "Assets/Scripts/Spell" });
 
         foreach (string spellname in assetNames)
