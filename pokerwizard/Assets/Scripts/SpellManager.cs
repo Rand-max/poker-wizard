@@ -8,7 +8,7 @@ public class SpellManager : MonoBehaviour
 {
     public bool FetchDataInEditor;
     public List<SpellData> allSpell;
-    private List<SpellData> tempSpell;
+    private List<SpellData> tempSpell=new List<SpellData>();
     void Update()
     {
         UpdateList();
