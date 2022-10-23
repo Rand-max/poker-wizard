@@ -47,6 +47,29 @@ public class BulletpProjectile : MonoBehaviour
         else{
             bulletrigid.velocity=new Vector3(0,0,0);
         }
+        if(be.targettype[0]){
+        }
+        if(be.targettype[1]){
+            if(be.HasPursuit){
+                transform.LookAt(Vector3.Distance(this.transform.position,enemy[0].transform.position)>Vector3.Distance(this.transform.position,enemy[1].transform.position)?enemy[1].transform:enemy[0].transform);
+            }
+        }
+        if(be.targettype[2]){
+            if(be.HasPursuit){
+                transform.LookAt(origin.transform);
+            }
+        }
+        if(be.targettype[3]){
+            if(be.HasPursuit){
+                transform.LookAt(friend.transform);
+            }
+        }
+        if(be.targettype[4]){
+            if(be.HasPursuit){
+                //No.
+            }
+        }
+        
     }
     private void OnTriggerEnter(Collider other){
         if(be.targettype[2]){

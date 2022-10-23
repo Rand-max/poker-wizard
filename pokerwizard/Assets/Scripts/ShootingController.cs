@@ -93,6 +93,7 @@ public class ShootingController : MonoBehaviour
                 newbullets.GetComponent<BulletpProjectile>().enemy=enemy;
                 newbullets.GetComponent<BulletpProjectile>().origin=wandposition;
                 newbullets.GetComponent<BulletpProjectile>().friend=friend;
+                newbullets.GetComponent<BulletpProjectile>().be=CurrentSpell.Bullets[i];
                 newbullets.transform.parent=newbullet.transform;
                 for(int j=0;j<CurrentSpell.BulletStartEffects.Count;j++){
                     GameObject neweffects;
@@ -122,6 +123,7 @@ public class ShootingController : MonoBehaviour
                     neweffects.GetComponent<BulletpProjectile>().enemy=enemy;
                     neweffects.GetComponent<BulletpProjectile>().origin=wandposition;
                     neweffects.GetComponent<BulletpProjectile>().friend=friend;
+                    neweffects.GetComponent<BulletpProjectile>().be=CurrentSpell.BulletStartEffects[i];
                     neweffects.transform.parent=neweffect.transform;
                 }
                 for(int j=0;j<CurrentSpell.BulletEndEffects.Count;j++){
@@ -135,6 +137,7 @@ public class ShootingController : MonoBehaviour
                     boomeffects.GetComponent<BulletpProjectile>().enemy=enemy;
                     boomeffects.GetComponent<BulletpProjectile>().origin=wandposition;
                     boomeffects.GetComponent<BulletpProjectile>().friend=friend;
+                    boomeffects.GetComponent<BulletpProjectile>().be=CurrentSpell.BulletEndEffects[i];
                     boomeffects.transform.parent=boomeffect.transform;
                 }
                 newbullets.GetComponent<BulletpProjectile>().end=boomeffect;
