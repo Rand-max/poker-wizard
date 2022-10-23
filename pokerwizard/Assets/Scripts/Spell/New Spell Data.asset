@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd058d19d38c7004185e1d31dba8d3f0, type: 3}
   m_Name: New Spell Data
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 7
   SpellName: Unnammed
   SpellSprite: {fileID: 0}
   IconTexture: {fileID: 0}
@@ -27,10 +27,30 @@ MonoBehaviour:
   BulletPrepareTime: 0.5
   BulletCoolDownTime: 0.4
   SpellInfo: will pursuit target enemy utill die
-  targettype: 0101000000
   BulletLifeTime: 3
   MaxDistance: 10
-  Bullets: []
+  Bullets:
+  - Object: {fileID: 0}
+    LifeTime: 0
+    targettype: 0101000000
+    AttachedTarget: 0
+    BulletSpeed: 0
+    HasPursuit: 0
+    HasSlowdown: 0
+    BulletSlowdownRate: 0
+    BulletSlowdownTime: 0
+    HasStun: 0
+    BulletStundownTime: 0
+    HasClear: 0
+    HasConfusion: 0
+    BulletConfusionTime: 0
+    IsShield: 0
+    BulletShieldTime: 0
+    IsAccelerator: 0
+    BulletBurstTime: 0
+    BulletBurstSpeed: 0
+    IsTeleporter: 0
+    TeleportTiming: 0
   EffectLifeTime: 0.5
   BulletStartEffects: []
   BoomLifeTime: 3
