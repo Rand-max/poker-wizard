@@ -40,6 +40,7 @@ public class SpellData : ScriptableObject
     public int AttachedTarget;
     public float BulletSpeed=70f;
     public bool HasPursuit=true;
+    public float PursuitStrength=3f;
     public bool HasSlowdown;
     [Range(0.01f,0.99f)]
     public float BulletSlowdownRate;
@@ -55,5 +56,6 @@ public class SpellData : ScriptableObject
     public float BulletBurstSpeed;
     public bool IsTeleporter;
     public float TeleportTiming;
+    public Vector3 EffectOffset;
     }
 }

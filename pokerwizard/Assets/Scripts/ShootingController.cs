@@ -69,19 +69,19 @@ public class ShootingController : MonoBehaviour
                 GameObject newbullets;
                 switch(CurrentSpell.Bullets[i].AttachedTarget){
                     default:
-                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
+                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position+CurrentSpell.Bullets[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
                     break;
                     case 0:
-                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
+                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position+CurrentSpell.Bullets[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
                     break;
                     case 1:
-                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up),enemy[0].transform);
+                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position+CurrentSpell.Bullets[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up),enemy[0].transform);
                     break;
                     case 2:
-                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up),wandposition.transform);
+                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position+CurrentSpell.Bullets[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up),wandposition.transform);
                     break;
                     case 3:
-                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up),friend.transform);
+                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position+CurrentSpell.Bullets[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up),friend.transform);
                     break;
                 }
                 if(!newbullets.GetComponent<BulletpProjectile>()){
@@ -99,19 +99,19 @@ public class ShootingController : MonoBehaviour
                     GameObject neweffects;
                     switch(CurrentSpell.BulletStartEffects[i].AttachedTarget){
                         default:
-                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
                         break;
                         case 0:
-                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
                         break;
                         case 1:
-                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up),enemy[0].transform);
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up),enemy[0].transform);
                         break;
                         case 2:
-                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up),wandposition.transform);
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up),wandposition.transform);
                         break;
                         case 3:
-                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up),friend.transform);
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up),friend.transform);
                         break;
                     }
                     if(!neweffects.GetComponent<BulletpProjectile>()){
@@ -127,7 +127,7 @@ public class ShootingController : MonoBehaviour
                     neweffects.transform.parent=neweffect.transform;
                 }
                 for(int j=0;j<CurrentSpell.BulletEndEffects.Count;j++){
-                    GameObject boomeffects=Instantiate(CurrentSpell.BulletEndEffects[j].Object,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
+                    GameObject boomeffects=Instantiate(CurrentSpell.BulletEndEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletEndEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
                     if(!boomeffects.GetComponent<BulletpProjectile>()){
                         boomeffects.AddComponent<BulletpProjectile>();
                     }

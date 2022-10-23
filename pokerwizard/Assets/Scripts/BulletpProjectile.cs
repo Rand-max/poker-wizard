@@ -17,8 +17,8 @@ public class BulletpProjectile : MonoBehaviour
     public GameObject friend;
     public GameObject origin;
     private bool triggered=false;
-    public List<float> multipliers;
-    public List<float> multipliers_timer;
+    public List<float> multipliers=new List<float>();
+    public List<float> multipliers_timer=new List<float>();
     // Start is called before the first frame update
     void Start()
     {
@@ -57,26 +57,29 @@ public class BulletpProjectile : MonoBehaviour
         else{
             bulletrigid.velocity=new Vector3(0,0,0);
         }
+    }
+    void FixedUpdate(){
+        Vector3 direction=Vector3.forward;
         if(be.targettype[0]){
         }
         if(be.targettype[1]){
             if(be.HasPursuit){
                 if(enemy.Count>1){
-                    transform.LookAt(Vector3.Distance(this.transform.position,enemy[0].transform.position)>Vector3.Distance(this.transform.position,enemy[1].transform.position)?enemy[1].transform:enemy[0].transform);
+                    direction=(Vector3.Distance(this.transform.position,enemy[0].transform.position)>Vector3.Distance(this.transform.position,enemy[1].transform.position)?enemy[1].transform.position:enemy[0].transform.position)-transform.position;
                 }
                 else{
-                    transform.LookAt(enemy[0].transform);
+                    direction=enemy[0].transform.position-transform.position;
                 }
             }
         }
         if(be.targettype[2]){
             if(be.HasPursuit){
-                transform.LookAt(origin.transform);
+                direction=origin.transform.position-transform.position;
             }
         }
         if(be.targettype[3]){
             if(be.HasPursuit){
-                transform.LookAt(friend.transform);
+                direction=friend.transform.position-transform.position;
             }
         }
         if(be.targettype[4]){
@@ -84,7 +87,10 @@ public class BulletpProjectile : MonoBehaviour
                 //No.
             }
         }
-        
+        if(be.HasPursuit){
+            Quaternion toRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, be.PursuitStrength * Time.deltaTime);
+        }
     }
     private void OnTriggerEnter(Collider other){
         if(be.targettype[2]){
