@@ -36,7 +36,7 @@ public class SpellData : ScriptableObject
     public float LifeTime=3f;
     [Tooltip("Will Collide with: 0=ground 1=enemy 2=self 3=friend 4=bullet")]
     public List<bool> targettype=new List<bool>(5){true,true,false,false,false};
-    [Tooltip("Parent is: 0=not attached 1=enemy 2=player 3=friend")]
+    [Tooltip("Parent is: 0=not attached 1=enemy 2=player 3=friend 4=bullet")]
     public int AttachedTarget;
     public float BulletSpeed=70f;
     public bool HasPursuit=true;
@@ -50,7 +50,6 @@ public class SpellData : ScriptableObject
     public bool HasConfusion;
     public float BulletConfusionTime;
     public bool IsShield;
-    public bool BulletShieldTime;
     public bool IsAccelerator;
     public float BulletBurstTime;
     public float BulletBurstSpeed;

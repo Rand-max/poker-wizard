@@ -46,7 +46,7 @@ public class ShootingController : MonoBehaviour
             animateplayer.GetComponent<Animator>().Play("Armature_shoot",0,0f);
             shootprepared=true;
             if(ammo<1){
-            mirrorController.UseSpell(selfnumber);
+                mirrorController.UseSpell(selfnumber);
             }
         }
         if(cooldown>0){
