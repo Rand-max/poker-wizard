@@ -250,6 +250,17 @@
                 },
                 {
                     "name": "",
+                    "id": "8da993e3-7b8a-488d-af1b-512a180b14b7",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "genric",
+                    "action": "Cast",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d863b530-48cb-4b47-9cf3-b99513abbe33",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",

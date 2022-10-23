@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     [Header("Bools")]
     public bool drifting;
     [Header("Parameters")]
+    public List<float> multipliers;
+    public List<float> multipliers_timer;
     public float acceleration = 10f;
     public float steering = 1f;
     public float gravity = 10f;
@@ -47,6 +49,20 @@ public class PlayerController : MonoBehaviour
         if (inputDirection.y != 0)
         {
             speed = Mathf.Abs(inputDirection.y)*acceleration;
+        }
+        for(int i=0;i<multipliers.Count;i++){
+            speed*=multipliers[i];
+            if(speed<0){
+                inputDirection=-inputDirection;
+            }
+            if(speed==0){
+                inputDirection.x=0f;
+            }
+            multipliers_timer[i]-=Time.deltaTime;
+            if(multipliers_timer[i]<=0){
+                multipliers_timer.RemoveAt(i);
+                multipliers.RemoveAt(i);
+            }
         }
         if (driftPower > 0)
             {
@@ -92,7 +108,7 @@ public class PlayerController : MonoBehaviour
         //a) Kart
         if (!drifting)
         {
-            playerModel.localEulerAngles = Vector3.Lerp(playerModel.localEulerAngles, new Vector3(0, 90 + (inputDirection.x * 15), playerModel.localEulerAngles.z), 10f/Time.deltaTime);
+            playerModel.localEulerAngles = Vector3.Lerp(playerModel.localEulerAngles, new Vector3(0, (inputDirection.x * 15), playerModel.localEulerAngles.z), 10f/Time.deltaTime);
         }
         else
         {
@@ -184,5 +200,13 @@ public class PlayerController : MonoBehaviour
     public float Remap(float value, float from1, float to1, float from2, float to2)
     {
         return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+    }
+    public void MultiplySpeed(float rate,float time){
+        multipliers.Add(1+rate);
+        multipliers_timer.Add(time);
+    }
+    public void InvertAxis(float time){
+        multipliers.Add(-1);
+        multipliers_timer.Add(time);
     }
 }

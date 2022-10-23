@@ -27,14 +27,13 @@ MonoBehaviour:
   BulletPrepareTime: 0.5
   BulletCoolDownTime: 0.4
   SpellInfo: will pursuit target enemy utill die
-  targettype: 3
   BulletLifeTime: 3
   MaxDistance: 10
   Bullets:
   - Object: {fileID: 9030374658988531655, guid: 4a157f62f730d4b4eab069fb5dd26a35, type: 3}
     LifeTime: 3
+    targettype: 0101000000
     AttachedTarget: 0
-    HasMovement: 0
     BulletSpeed: 70
     HasPursuit: 0
     HasSlowdown: 0
@@ -56,8 +55,8 @@ MonoBehaviour:
   BulletStartEffects:
   - Object: {fileID: 3098136464652354338, guid: 73a11c61df025dc428e83e5bea9ee3c3, type: 3}
     LifeTime: 0.5
+    targettype: 0000010000
     AttachedTarget: 0
-    HasMovement: 0
     BulletSpeed: 0
     HasPursuit: 0
     HasSlowdown: 0
@@ -79,8 +78,8 @@ MonoBehaviour:
   BulletEndEffects:
   - Object: {fileID: 3453488477136196560, guid: d5eeb9e46622e0e4ba2d3adc478e3aad, type: 3}
     LifeTime: 3
+    targettype: 0001000000
     AttachedTarget: 0
-    HasMovement: 0
     BulletSpeed: 0
     HasPursuit: 0
     HasSlowdown: 0
@@ -100,8 +99,8 @@ MonoBehaviour:
     TeleportTiming: 0
   - Object: {fileID: 7970671739509672891, guid: 01c3d97c5f9001b4e873a7849f2ff61a, type: 3}
     LifeTime: 3
+    targettype: 0101000000
     AttachedTarget: 0
-    HasMovement: 0
     BulletSpeed: 0
     HasPursuit: 0
     HasSlowdown: 0

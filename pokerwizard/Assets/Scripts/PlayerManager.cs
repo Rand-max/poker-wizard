@@ -48,6 +48,7 @@
             
             player.GetComponentInChildren<PlayerController>().playerlayer=playerLayers[players.Count - 1];
             player.GetComponentInChildren<PlayerController>().playerNumber=players.Count-1;
+            player.GetComponentInChildren<PlayerController>().playerModel=playerchar.transform;
             //need to use the parent due to the structure of the prefab
             Transform playerParent = player.transform.parent;
             minimap.GetComponent<MapController>().player.Add(player.GetComponent<PlayerController>().Normal.gameObject);
@@ -74,6 +75,8 @@
             if(players.Count==2){
                 Rect cmrect=new Rect(0f,0f,0.5f,0.5f);
                 playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+                playerParent.GetComponentInChildren<ShootingController>().friend=players[0].gameObject;
+                players[0].transform.parent.GetComponentInChildren<ShootingController>().friend=player.gameObject;
             }
             if(players.Count==3){
                 playerParent = players[1].transform.parent;
@@ -82,6 +85,10 @@
                 playerParent = players[2].transform.parent;
                 cmrect=new Rect(0.5f,0.5f,0.5f,0.5f);
                 playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+                players[0].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[2].gameObject);
+                players[1].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[2].gameObject);
+                players[2].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[0].gameObject);
+                players[2].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[1].gameObject);
             }
             if(players.Count==4){
                 playerParent = players[1].transform.parent;
@@ -90,6 +97,16 @@
                 playerParent = players[2].transform.parent;
                 cmrect=new Rect(0.5f,0.5f,0.5f,0.5f);
                 playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+                players[2].transform.parent.GetComponentInChildren<ShootingController>().friend=players[3].gameObject;
+                players[3].transform.parent.GetComponentInChildren<ShootingController>().friend=players[2].gameObject;
+                players[0].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[2].gameObject);
+                players[0].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[3].gameObject);
+                players[1].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[2].gameObject);
+                players[1].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[3].gameObject);
+                players[2].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[0].gameObject);
+                players[2].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[1].gameObject);
+                players[3].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[0].gameObject);
+                players[3].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[1].gameObject);
             }
         }
     }

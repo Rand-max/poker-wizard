@@ -18,9 +18,6 @@ public class SpellData : ScriptableObject
     public float BulletCoolDownTime=0.4f;
     [TextArea(4,4)]
     public string SpellInfo="will pursuit target enemy utill die";
-    [Tooltip("0=ground 1=enemy 2=self 3=ground or enemy 4=friend 5=friend or ground 6=anything exclude player")]
-    [Range(0,3)]
-    public int targettype=3;
     [Space(10)]
     [Header("Bullet effect")]
     public float BulletLifeTime=3f;
@@ -37,12 +34,15 @@ public class SpellData : ScriptableObject
     [System.Serializable]public class BulletEffect{
     public GameObject Object;
     public float LifeTime=3f;
-    [Tooltip("0=not attached 1=enemy 2=player 3=friend")]
+    [Tooltip("Will Collide with: 0=ground 1=enemy 2=self 3=friend 4=bullet")]
+    public List<bool> targettype=new List<bool>(5){true,true,false,false,false};
+    [Tooltip("Parent is: 0=not attached 1=enemy 2=player 3=friend 4=bullet")]
     public int AttachedTarget;
-    public bool HasMovement=true;
     public float BulletSpeed=70f;
     public bool HasPursuit=true;
+    public float PursuitStrength=3f;
     public bool HasSlowdown;
+    [Range(0.01f,0.99f)]
     public float BulletSlowdownRate;
     public float BulletSlowdownTime;
     public bool HasStun;
@@ -51,11 +51,11 @@ public class SpellData : ScriptableObject
     public bool HasConfusion;
     public float BulletConfusionTime;
     public bool IsShield;
-    public bool BulletShieldTime;
     public bool IsAccelerator;
     public float BulletBurstTime;
     public float BulletBurstSpeed;
     public bool IsTeleporter;
     public float TeleportTiming;
+    public Vector3 EffectOffset;
     }
 }
