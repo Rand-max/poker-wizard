@@ -12,7 +12,10 @@ public class BulletpProjectile : MonoBehaviour
     public GameObject end;
     public LayerMask selfLayer;
     public LayerMask enemyLayer;
+    public List<GameObject>enemy;
     public LayerMask FriendLayer;
+    public GameObject friend;
+    public GameObject origin;
     private bool triggered=false;
     // Start is called before the first frame update
     void Start()
@@ -52,41 +55,49 @@ public class BulletpProjectile : MonoBehaviour
             if(other.gameObject.layer==0){
                 triggered=true;
                 Debug.Log("collide with wall");
-                if(end!=null){
-                    end.SetActive(true);
-                }
-                Destroy(gameObject,isSpell.BoomLifeTime);
+                Terminate();
             }
         }else if(other.gameObject.tag=="bullet"&&be.targettype[4]){
             if(((1<<other.gameObject.GetComponent<BulletpProjectile>().enemyLayer)&selfLayer)!=0){
                 triggered=true;
                 Debug.Log("shield brek");
-                if(end!=null){
-                    end.SetActive(true);
-                }
-                Destroy(gameObject,isSpell.BoomLifeTime);
+                Terminate();
             }
         }else if((((1<<other.gameObject.layer) & enemyLayer) != 0)&&be.targettype[1]){
             if(other.gameObject.tag=="Player"){
                 triggered=true;
                 Debug.Log("HP-1");
-                if(end!=null){
-                    end.SetActive(true);
-                }
-                Destroy(gameObject,isSpell.BoomLifeTime);
+                Terminate();
             }
             
         }else if((((1<<other.gameObject.layer) & FriendLayer) != 0)&&be.targettype[3]){
             if(other.gameObject.tag=="Player"){
                 triggered=true;
                 Debug.Log("friend hit");
-                if(end!=null){
-                    end.SetActive(true);
-                }
-                Destroy(gameObject,isSpell.BoomLifeTime);
+                Terminate();
             }
         }else{
             Debug.Log("a ghast encounter");
         }
+    }
+    public void Terminate(){
+        if(end!=null){
+            foreach (SpellData.BulletEffect bee in isSpell.BulletEndEffects)
+            {
+                switch(bee.AttachedTarget){
+                    case 1:
+                    end.transform.parent=enemy[0].transform;
+                    break;
+                    case 2:
+                    end.transform.parent=origin.transform;
+                    break;
+                    case 3:
+                    end.transform.parent=friend.transform;
+                    break;
+                }
+            }
+            end.SetActive(true);
+        }
+        Destroy(gameObject,isSpell.BoomLifeTime);
     }
 }

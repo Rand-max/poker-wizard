@@ -90,15 +90,38 @@ public class ShootingController : MonoBehaviour
                 newbullets.GetComponent<BulletpProjectile>().bspeed=CurrentSpell.Bullets[i].BulletSpeed;
                 newbullets.GetComponent<BulletpProjectile>().lifetime=CurrentSpell.Bullets[i].LifeTime;
                 newbullets.GetComponent<BulletpProjectile>().isSpell=CurrentSpell;
+                newbullets.GetComponent<BulletpProjectile>().enemy=enemy;
+                newbullets.GetComponent<BulletpProjectile>().origin=wandposition;
+                newbullets.GetComponent<BulletpProjectile>().friend=friend;
                 newbullets.transform.parent=newbullet.transform;
                 for(int j=0;j<CurrentSpell.BulletStartEffects.Count;j++){
-                    GameObject neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
+                    GameObject neweffects;
+                    switch(CurrentSpell.BulletStartEffects[i].AttachedTarget){
+                        default:
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
+                        break;
+                        case 0:
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
+                        break;
+                        case 1:
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up),enemy[0].transform);
+                        break;
+                        case 2:
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up),wandposition.transform);
+                        break;
+                        case 3:
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up),friend.transform);
+                        break;
+                    }
                     if(!neweffects.GetComponent<BulletpProjectile>()){
                         neweffects.AddComponent<BulletpProjectile>();
                     }
                     neweffects.GetComponent<BulletpProjectile>().bspeed=CurrentSpell.BulletStartEffects[i].BulletSpeed;
                     neweffects.GetComponent<BulletpProjectile>().lifetime=CurrentSpell.BulletStartEffects[i].LifeTime;
                     neweffects.GetComponent<BulletpProjectile>().isSpell=CurrentSpell;
+                    neweffects.GetComponent<BulletpProjectile>().enemy=enemy;
+                    neweffects.GetComponent<BulletpProjectile>().origin=wandposition;
+                    neweffects.GetComponent<BulletpProjectile>().friend=friend;
                     neweffects.transform.parent=neweffect.transform;
                 }
                 for(int j=0;j<CurrentSpell.BulletEndEffects.Count;j++){
@@ -109,6 +132,9 @@ public class ShootingController : MonoBehaviour
                     boomeffects.GetComponent<BulletpProjectile>().bspeed=CurrentSpell.BulletEndEffects[i].BulletSpeed;
                     boomeffects.GetComponent<BulletpProjectile>().lifetime=CurrentSpell.BulletEndEffects[i].LifeTime;
                     boomeffects.GetComponent<BulletpProjectile>().isSpell=CurrentSpell;
+                    boomeffects.GetComponent<BulletpProjectile>().enemy=enemy;
+                    boomeffects.GetComponent<BulletpProjectile>().origin=wandposition;
+                    boomeffects.GetComponent<BulletpProjectile>().friend=friend;
                     boomeffects.transform.parent=boomeffect.transform;
                 }
                 newbullets.GetComponent<BulletpProjectile>().end=boomeffect;
