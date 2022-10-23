@@ -33,6 +33,24 @@ public class BulletpProjectile : MonoBehaviour
         if(GetComponent<DeleteSelf>()){
             Destroy(GetComponent<DeleteSelf>());
         }
+        if(be.targettype[2]){
+            if(be.HasSlowdown){
+                origin.GetComponentInParent<PlayerController>().MultiplySpeed(-be.BulletSlowdownRate,be.BulletSlowdownTime);
+            }
+            if(be.HasConfusion){
+                origin.GetComponentInParent<PlayerController>().InvertAxis(be.BulletConfusionTime);
+            }
+            if(be.HasStun){
+                origin.GetComponentInParent<PlayerController>().MultiplySpeed(-1,be.BulletStundownTime);
+            }
+            if(be.IsAccelerator){
+                origin.GetComponentInParent<PlayerController>().MultiplySpeed(be.BulletBurstSpeed,be.BulletBurstTime);
+            }
+            if(be.HasClear){
+                origin.GetComponentInParent<PlayerController>().transform.parent.GetComponentInChildren<ShootingController>().mirrorController.UseSpell(origin.GetComponentInParent<PlayerController>().playerNumber);
+            }
+            Debug.Log("No shoot");
+        }
     }
 
     // Update is called once per frame
@@ -93,24 +111,7 @@ public class BulletpProjectile : MonoBehaviour
         }
     }
     private void OnTriggerEnter(Collider other){
-        if(be.targettype[2]){
-            if(be.HasSlowdown){
-                origin.GetComponentInParent<PlayerController>().MultiplySpeed(-be.BulletSlowdownRate,be.BulletSlowdownTime);
-            }
-            if(be.HasConfusion){
-                origin.GetComponentInParent<PlayerController>().InvertAxis(be.BulletConfusionTime);
-            }
-            if(be.HasStun){
-                origin.GetComponentInParent<PlayerController>().MultiplySpeed(-1,be.BulletStundownTime);
-            }
-            if(be.IsAccelerator){
-                origin.GetComponentInParent<PlayerController>().MultiplySpeed(be.BulletBurstSpeed,be.BulletBurstTime);
-            }
-            if(be.HasClear){
-                origin.GetComponentInParent<PlayerController>().transform.parent.GetComponentInChildren<ShootingController>().mirrorController.UseSpell(origin.GetComponentInParent<PlayerController>().playerNumber);
-            }
-            Debug.Log("No shoot");
-        }else if((other.gameObject.layer==0)&&be.targettype[0]){
+        if((other.gameObject.layer==0)&&be.targettype[0]){
             if(other.gameObject.layer==0){
                 triggered=true;
                 if(be.HasSlowdown){
@@ -180,7 +181,9 @@ public class BulletpProjectile : MonoBehaviour
                     other.gameObject.GetComponentInParent<PlayerController>().transform.parent.GetComponentInChildren<ShootingController>().mirrorController.UseSpell(other.gameObject.GetComponentInParent<PlayerController>().playerNumber);
                 }
                 if(be.IsTeleporter){
+                    Vector3 pos=origin.transform.GetComponentInParent<PlayerController>().transform.position;
                     origin.gameObject.GetComponentInParent<PlayerController>().rb.transform.position=other.transform.position;
+                    other.gameObject.GetComponentInParent<PlayerController>().rb.transform.position=pos;
                 }
                 Debug.Log("HP-1");
                 Terminate();

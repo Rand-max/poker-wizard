@@ -48,10 +48,10 @@ MonoBehaviour:
     IsShield: 0
     IsAccelerator: 1
     BulletBurstTime: 3
-    BulletBurstSpeed: 0.5
+    BulletBurstSpeed: 0.3
     IsTeleporter: 0
     TeleportTiming: 0
-    EffectOffset: {x: 0, y: 0, z: 0}
+    EffectOffset: {x: 0, y: -2, z: 0}
   EffectLifeTime: 0.5
   BulletStartEffects:
   - Object: {fileID: 1991488009939240996, guid: f00c234a206cb534885c8f46ba25a176, type: 3}
@@ -75,6 +75,6 @@ MonoBehaviour:
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
-    EffectOffset: {x: 0, y: 0, z: 0}
+    EffectOffset: {x: 0, y: -1, z: 0}
   BoomLifeTime: 3
   BulletEndEffects: []
