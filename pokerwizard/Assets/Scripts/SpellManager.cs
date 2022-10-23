@@ -27,7 +27,7 @@ public class SpellManager : MonoBehaviour
             allSpell.Clear();
             for(int i=0;i<tempSpell.Count;i++){
                 if(tempSpell[i].ID==0&&tempSpell[i].SpellName!="Flame"){
-                    tempSpell[i].ID=tempSpell.Count;
+                    tempSpell[i].ID=tempSpell.Count-1;
                 }
             }
             allSpell=tempSpell.OrderBy(s => s.ID).ToList();
