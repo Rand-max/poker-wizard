@@ -50,7 +50,7 @@ public class BulletpProjectile : MonoBehaviour
             }
             if(lifetime<0){
                 Debug.Log("No hit");
-                Destroy(transform.parent.gameObject);
+                Destroy(gameObject);
             }
             lifetime-=Time.deltaTime;
         }
