@@ -68,6 +68,20 @@ public class LockDissolveTest : MonoBehaviour
         circleAppear=true; 
         FindObjectOfType<AudioManager>().Play("unlock");
         //controller
+        /*Connected1.text="Connected !";
+        Connected2.text="Connected !";
+        Connected3.text="Connected !";
+        Connected4.text="Connected !";
+        p1_text.text="1p";
+        p2_text.text="2p";
+        p3_text.text="3p";
+        p4_text.text="4p";*/
+        //key
+        key_p1.SetActive(isEnabled);
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
         Connected1.text="Connected !";
         Connected2.text="Connected !";
         Connected3.text="Connected !";
@@ -76,12 +90,6 @@ public class LockDissolveTest : MonoBehaviour
         p2_text.text="2p";
         p3_text.text="3p";
         p4_text.text="4p";
-        //key
-        key_p1.SetActive(isEnabled);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
         Matclub=lock_club.GetComponent<Image>().material;
         Matclub.SetFloat("_FadeValue",1f);
         circleAppear=false;
