@@ -85,6 +85,10 @@
                 playerParent = players[2].transform.parent;
                 cmrect=new Rect(0.5f,0.5f,0.5f,0.5f);
                 playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+                players[0].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[2].gameObject);
+                players[1].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[2].gameObject);
+                players[2].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[0].gameObject);
+                players[2].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[1].gameObject);
             }
             if(players.Count==4){
                 playerParent = players[1].transform.parent;

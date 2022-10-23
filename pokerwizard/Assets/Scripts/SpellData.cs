@@ -41,6 +41,7 @@ public class SpellData : ScriptableObject
     public float BulletSpeed=70f;
     public bool HasPursuit=true;
     public bool HasSlowdown;
+    [Range(0.01f,0.99f)]
     public float BulletSlowdownRate;
     public float BulletSlowdownTime;
     public bool HasStun;

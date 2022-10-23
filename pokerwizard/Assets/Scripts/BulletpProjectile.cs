@@ -17,6 +17,8 @@ public class BulletpProjectile : MonoBehaviour
     public GameObject friend;
     public GameObject origin;
     private bool triggered=false;
+    public List<float> multipliers;
+    public List<float> multipliers_timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,14 @@ public class BulletpProjectile : MonoBehaviour
     {
         if(!triggered){
             bulletrigid.velocity=transform.forward*bspeed;
+            for(int i=0;i<multipliers.Count;i++){
+                bulletrigid.velocity*=multipliers[i];
+                multipliers_timer[i]-=Time.deltaTime;
+                if(multipliers_timer[i]<=0){
+                    multipliers_timer.RemoveAt(i);
+                    multipliers.RemoveAt(i);
+                }
+            }
             if(lifetime<0){
                 Debug.Log("No hit");
                 Destroy(transform.parent.gameObject);
@@ -51,7 +61,12 @@ public class BulletpProjectile : MonoBehaviour
         }
         if(be.targettype[1]){
             if(be.HasPursuit){
-                transform.LookAt(Vector3.Distance(this.transform.position,enemy[0].transform.position)>Vector3.Distance(this.transform.position,enemy[1].transform.position)?enemy[1].transform:enemy[0].transform);
+                if(enemy.Count>1){
+                    transform.LookAt(Vector3.Distance(this.transform.position,enemy[0].transform.position)>Vector3.Distance(this.transform.position,enemy[1].transform.position)?enemy[1].transform:enemy[0].transform);
+                }
+                else{
+                    transform.LookAt(enemy[0].transform);
+                }
             }
         }
         if(be.targettype[2]){
@@ -73,22 +88,70 @@ public class BulletpProjectile : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other){
         if(be.targettype[2]){
+            if(be.HasSlowdown){
+                origin.GetComponentInParent<PlayerController>().MultiplySpeed(-be.BulletSlowdownRate,be.BulletSlowdownTime);
+            }
+            if(be.HasConfusion){
+                origin.GetComponentInParent<PlayerController>().InvertAxis(be.BulletConfusionTime);
+            }
+            if(be.HasStun){
+                origin.GetComponentInParent<PlayerController>().MultiplySpeed(0,be.BulletStundownTime);
+            }
+            if(be.IsAccelerator){
+                origin.GetComponentInParent<PlayerController>().MultiplySpeed(be.BulletBurstSpeed,be.BulletBurstTime);
+            }
             Debug.Log("No shoot");
         }else if((other.gameObject.layer==0)&&be.targettype[0]){
             if(other.gameObject.layer==0){
                 triggered=true;
+                if(be.HasSlowdown){
+                    //No.
+                }
+                if(be.HasConfusion){
+                    //No.
+                }
+                if(be.HasStun){
+                    //No.
+                }
+                if(be.IsAccelerator){
+                    //No.
+                }
                 Debug.Log("collide with wall");
                 Terminate();
             }
         }else if(other.gameObject.tag=="bullet"&&be.targettype[4]){
             if(((1<<other.gameObject.GetComponent<BulletpProjectile>().enemyLayer)&selfLayer)!=0){
                 triggered=true;
+                if(be.HasSlowdown){
+                    other.gameObject.GetComponent<BulletpProjectile>().MultiplySpeed(be.BulletSlowdownRate,be.BulletSlowdownTime);
+                }
+                if(be.HasConfusion){
+                    other.gameObject.GetComponent<BulletpProjectile>().MultiplySpeed(-1,be.BulletConfusionTime);
+                }
+                if(be.HasStun){
+                    other.gameObject.GetComponent<BulletpProjectile>().MultiplySpeed(0,be.BulletStundownTime);
+                }
+                if(be.IsAccelerator){
+                    other.gameObject.GetComponent<BulletpProjectile>().MultiplySpeed(be.BulletBurstSpeed,be.BulletBurstTime);
+                }
                 Debug.Log("shield brek");
                 Terminate();
             }
         }else if((((1<<other.gameObject.layer) & enemyLayer) != 0)&&be.targettype[1]){
             if(other.gameObject.tag=="Player"){
                 triggered=true;
+                if(be.HasSlowdown){
+                    other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(-be.BulletSlowdownRate,be.BulletSlowdownTime);
+                }
+                if(be.HasConfusion){
+                    other.gameObject.GetComponentInParent<PlayerController>().InvertAxis(be.BulletConfusionTime);
+                }
+                if(be.HasStun){
+                    other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(0,be.BulletStundownTime);
+                }
+                if(be.IsAccelerator){
+                    other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(be.BulletBurstSpeed,be.BulletBurstTime);
+                }
                 Debug.Log("HP-1");
                 Terminate();
             }
@@ -96,6 +159,18 @@ public class BulletpProjectile : MonoBehaviour
         }else if((((1<<other.gameObject.layer) & FriendLayer) != 0)&&be.targettype[3]){
             if(other.gameObject.tag=="Player"){
                 triggered=true;
+                if(be.HasSlowdown){
+                    other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(-be.BulletSlowdownRate,be.BulletSlowdownTime);
+                }
+                if(be.HasConfusion){
+                    other.gameObject.GetComponentInParent<PlayerController>().InvertAxis(be.BulletConfusionTime);
+                }
+                if(be.HasStun){
+                    other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(0,be.BulletStundownTime);
+                }
+                if(be.IsAccelerator){
+                    other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(be.BulletBurstSpeed,be.BulletBurstTime);
+                }
                 Debug.Log("friend hit");
                 Terminate();
             }
@@ -122,5 +197,9 @@ public class BulletpProjectile : MonoBehaviour
             end.SetActive(true);
         }
         Destroy(gameObject,isSpell.BoomLifeTime);
+    }
+    public void MultiplySpeed(float rate,float time){
+        multipliers.Add(1+rate);
+        multipliers_timer.Add(time);
     }
 }
