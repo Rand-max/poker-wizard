@@ -11,6 +11,8 @@ public class ShootingController : MonoBehaviour
     public GameObject playernormal;
     public GameObject animateplayer;
     public GameObject wandposition;
+    public List<GameObject> enemy;
+    public GameObject friend;
     public LayerMask mousecolliderlayermask;
     public LayerMask enemyLayer;
     public LayerMask FriendLayer;
@@ -47,11 +49,6 @@ public class ShootingController : MonoBehaviour
             mirrorController.UseSpell(selfnumber);
             }
         }
-        /*if(Mouse.current.leftButton.isPressed&&!shootprepared&&cooldown<=0){
-            cooldown=preparetime;
-            animateplayer.GetComponent<Animator>().Play("Armature_shoot",0,0f);
-            shootprepared=true;
-        }*/
         if(cooldown>0){
             cooldown-=Time.deltaTime;
         }
@@ -69,7 +66,24 @@ public class ShootingController : MonoBehaviour
             for(int i=0;i<CurrentSpell.Bullets.Count;i++){
                 GameObject neweffect=Instantiate(bulleteffect,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
                 GameObject boomeffect=Instantiate(bulletendeffect,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
-                GameObject newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
+                GameObject newbullets;
+                switch(CurrentSpell.Bullets[i].AttachedTarget){
+                    default:
+                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
+                    break;
+                    case 0:
+                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
+                    break;
+                    case 1:
+                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up),enemy[0].transform);
+                    break;
+                    case 2:
+                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up),wandposition.transform);
+                    break;
+                    case 3:
+                    newbullets=Instantiate(CurrentSpell.Bullets[i].Object,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up),friend.transform);
+                    break;
+                }
                 if(!newbullets.GetComponent<BulletpProjectile>()){
                     newbullets.AddComponent<BulletpProjectile>();
                 }

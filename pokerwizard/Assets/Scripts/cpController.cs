@@ -28,9 +28,8 @@ public class cpController : MonoBehaviour
         }
     }
     void OnTriggerEnter(Collider collision){
-        Debug.Log(collision.gameObject.tag);
         if(collision.gameObject.tag == "Player"){
-            if(((1<<this.gameObject.layer) & collision.transform.parent.GetComponentInChildren<PlayerController>().playerlayer) != 0){
+            if(this.gameObject.layer == collision.gameObject.layer){
                 alive=false;
                 if(selfindex+1<GetComponentInParent<CheckpointController>().Checkpoints.Length){
                     GetComponentInParent<CheckpointController>().Checkpoints[selfindex+1].SetActive(true);

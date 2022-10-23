@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         //a) Kart
         if (!drifting)
         {
-            playerModel.localEulerAngles = Vector3.Lerp(playerModel.localEulerAngles, new Vector3(0, 90 + (inputDirection.x * 15), playerModel.localEulerAngles.z), 10f/Time.deltaTime);
+            playerModel.localEulerAngles = Vector3.Lerp(playerModel.localEulerAngles, new Vector3(0, (inputDirection.x * 15), playerModel.localEulerAngles.z), 10f/Time.deltaTime);
         }
         else
         {
