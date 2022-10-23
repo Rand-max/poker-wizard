@@ -36,21 +36,22 @@ MonoBehaviour:
     AttachedTarget: 0
     BulletSpeed: 70
     HasPursuit: 0
-    HasSlowdown: 0
-    BulletSlowdownRate: 0
-    BulletSlowdownTime: 0
+    PursuitStrength: 3
+    HasSlowdown: 1
+    BulletSlowdownRate: 0.6
+    BulletSlowdownTime: 3
     HasStun: 0
     BulletStundownTime: 0
     HasClear: 0
     HasConfusion: 0
     BulletConfusionTime: 0
     IsShield: 0
-    BulletShieldTime: 0
     IsAccelerator: 0
     BulletBurstTime: 0
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
+    EffectOffset: {x: 0, y: 0, z: 0}
   EffectLifeTime: 0.5
   BulletStartEffects:
   - Object: {fileID: 3098136464652354338, guid: 73a11c61df025dc428e83e5bea9ee3c3, type: 3}
@@ -59,6 +60,7 @@ MonoBehaviour:
     AttachedTarget: 0
     BulletSpeed: 0
     HasPursuit: 0
+    PursuitStrength: 3
     HasSlowdown: 0
     BulletSlowdownRate: 0
     BulletSlowdownTime: 0
@@ -68,12 +70,12 @@ MonoBehaviour:
     HasConfusion: 0
     BulletConfusionTime: 0
     IsShield: 0
-    BulletShieldTime: 0
     IsAccelerator: 0
     BulletBurstTime: 0
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
+    EffectOffset: {x: 0, y: 0, z: 0}
   BoomLifeTime: 3
   BulletEndEffects:
   - Object: {fileID: 3453488477136196560, guid: d5eeb9e46622e0e4ba2d3adc478e3aad, type: 3}
@@ -82,39 +84,41 @@ MonoBehaviour:
     AttachedTarget: 0
     BulletSpeed: 0
     HasPursuit: 0
+    PursuitStrength: 3
     HasSlowdown: 0
     BulletSlowdownRate: 0
     BulletSlowdownTime: 0
-    HasStun: 0
-    BulletStundownTime: 0
+    HasStun: 1
+    BulletStundownTime: 2
     HasClear: 0
     HasConfusion: 0
     BulletConfusionTime: 0
     IsShield: 0
-    BulletShieldTime: 0
     IsAccelerator: 0
     BulletBurstTime: 0
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
+    EffectOffset: {x: 0, y: 0, z: 0}
   - Object: {fileID: 7970671739509672891, guid: 01c3d97c5f9001b4e873a7849f2ff61a, type: 3}
     LifeTime: 3
     targettype: 0101000000
     AttachedTarget: 0
     BulletSpeed: 0
     HasPursuit: 0
+    PursuitStrength: 3
     HasSlowdown: 0
     BulletSlowdownRate: 0
     BulletSlowdownTime: 0
-    HasStun: 0
-    BulletStundownTime: 0
+    HasStun: 1
+    BulletStundownTime: 2
     HasClear: 0
     HasConfusion: 0
     BulletConfusionTime: 0
     IsShield: 0
-    BulletShieldTime: 0
     IsAccelerator: 0
     BulletBurstTime: 0
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
+    EffectOffset: {x: 0, y: 0, z: 0}

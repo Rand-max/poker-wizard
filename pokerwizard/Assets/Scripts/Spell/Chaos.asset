@@ -36,21 +36,22 @@ MonoBehaviour:
     AttachedTarget: 0
     BulletSpeed: 70
     HasPursuit: 0
+    PursuitStrength: 3
     HasSlowdown: 0
     BulletSlowdownRate: 0
     BulletSlowdownTime: 0
     HasStun: 0
     BulletStundownTime: 0
     HasClear: 0
-    HasConfusion: 0
-    BulletConfusionTime: 0
+    HasConfusion: 1
+    BulletConfusionTime: 3
     IsShield: 0
-    BulletShieldTime: 0
     IsAccelerator: 0
     BulletBurstTime: 0
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
+    EffectOffset: {x: 0, y: 0, z: 0}
   EffectLifeTime: 0.5
   BulletStartEffects:
   - Object: {fileID: 3098136464652354338, guid: f72144af1e65d164fadf4faeb1114728, type: 3}
@@ -59,6 +60,7 @@ MonoBehaviour:
     AttachedTarget: 0
     BulletSpeed: 0
     HasPursuit: 0
+    PursuitStrength: 3
     HasSlowdown: 0
     BulletSlowdownRate: 0
     BulletSlowdownTime: 0
@@ -68,12 +70,12 @@ MonoBehaviour:
     HasConfusion: 0
     BulletConfusionTime: 0
     IsShield: 0
-    BulletShieldTime: 0
     IsAccelerator: 0
     BulletBurstTime: 0
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
+    EffectOffset: {x: 0, y: 0, z: 0}
   BoomLifeTime: 3
   BulletEndEffects:
   - Object: {fileID: 1911298753794809787, guid: f2bc7211fa4e03f4a934d91f8c60e8c9, type: 3}
@@ -82,6 +84,7 @@ MonoBehaviour:
     AttachedTarget: 0
     BulletSpeed: 0
     HasPursuit: 0
+    PursuitStrength: 3
     HasSlowdown: 0
     BulletSlowdownRate: 0
     BulletSlowdownTime: 0
@@ -91,9 +94,9 @@ MonoBehaviour:
     HasConfusion: 0
     BulletConfusionTime: 0
     IsShield: 0
-    BulletShieldTime: 0
     IsAccelerator: 0
     BulletBurstTime: 0
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
+    EffectOffset: {x: 0, y: 0, z: 0}

@@ -101,7 +101,7 @@ public class BulletpProjectile : MonoBehaviour
                 origin.GetComponentInParent<PlayerController>().InvertAxis(be.BulletConfusionTime);
             }
             if(be.HasStun){
-                origin.GetComponentInParent<PlayerController>().MultiplySpeed(0,be.BulletStundownTime);
+                origin.GetComponentInParent<PlayerController>().MultiplySpeed(-1,be.BulletStundownTime);
             }
             if(be.IsAccelerator){
                 origin.GetComponentInParent<PlayerController>().MultiplySpeed(be.BulletBurstSpeed,be.BulletBurstTime);
@@ -144,7 +144,7 @@ public class BulletpProjectile : MonoBehaviour
                 other.gameObject.GetComponent<BulletpProjectile>().MultiplySpeed(-1,be.BulletConfusionTime);
             }
             if(be.HasStun){
-                other.gameObject.GetComponent<BulletpProjectile>().MultiplySpeed(0,be.BulletStundownTime);
+                other.gameObject.GetComponent<BulletpProjectile>().MultiplySpeed(-1,be.BulletStundownTime);
             }
             if(be.IsAccelerator){
                 other.gameObject.GetComponent<BulletpProjectile>().MultiplySpeed(be.BulletBurstSpeed,be.BulletBurstTime);
@@ -156,12 +156,13 @@ public class BulletpProjectile : MonoBehaviour
                 Destroy(other.gameObject.GetComponent<BulletpProjectile>().gameObject);
             }
             if(be.IsTeleporter){
-                origin.gameObject.GetComponentInParent<PlayerController>().transform.position=other.transform.position;
+                origin.gameObject.GetComponentInParent<PlayerController>().rb.transform.position=other.transform.position;
             }
             Debug.Log("shield brek");
             Terminate();
         }else if((((1<<other.gameObject.layer) & enemyLayer) != 0)&&be.targettype[1]){
             if(other.gameObject.tag=="Player"){
+                Debug.Log(be.HasStun);
                 triggered=true;
                 if(be.HasSlowdown){
                     other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(-be.BulletSlowdownRate,be.BulletSlowdownTime);
@@ -170,7 +171,7 @@ public class BulletpProjectile : MonoBehaviour
                     other.gameObject.GetComponentInParent<PlayerController>().InvertAxis(be.BulletConfusionTime);
                 }
                 if(be.HasStun){
-                    other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(0,be.BulletStundownTime);
+                    other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(-1,be.BulletStundownTime);
                 }
                 if(be.IsAccelerator){
                     other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(be.BulletBurstSpeed,be.BulletBurstTime);
@@ -179,7 +180,7 @@ public class BulletpProjectile : MonoBehaviour
                     other.gameObject.GetComponentInParent<PlayerController>().transform.parent.GetComponentInChildren<ShootingController>().mirrorController.UseSpell(other.gameObject.GetComponentInParent<PlayerController>().playerNumber);
                 }
                 if(be.IsTeleporter){
-                    origin.gameObject.GetComponentInParent<PlayerController>().transform.position=other.transform.position;
+                    origin.gameObject.GetComponentInParent<PlayerController>().rb.transform.position=other.transform.position;
                 }
                 Debug.Log("HP-1");
                 Terminate();
@@ -195,7 +196,7 @@ public class BulletpProjectile : MonoBehaviour
                     other.gameObject.GetComponentInParent<PlayerController>().InvertAxis(be.BulletConfusionTime);
                 }
                 if(be.HasStun){
-                    other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(0,be.BulletStundownTime);
+                    other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(-1,be.BulletStundownTime);
                 }
                 if(be.IsAccelerator){
                     other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(be.BulletBurstSpeed,be.BulletBurstTime);
@@ -204,7 +205,7 @@ public class BulletpProjectile : MonoBehaviour
                     other.gameObject.GetComponentInParent<PlayerController>().transform.parent.GetComponentInChildren<ShootingController>().mirrorController.UseSpell(other.gameObject.GetComponentInParent<PlayerController>().playerNumber);
                 }
                 if(be.IsTeleporter){
-                    origin.gameObject.GetComponentInParent<PlayerController>().transform.position=other.transform.position;
+                    origin.gameObject.GetComponentInParent<PlayerController>().rb.transform.position=other.transform.position;
                 }
                 Debug.Log("friend hit");
                 Terminate();

@@ -31,7 +31,7 @@ MonoBehaviour:
   MaxDistance: 10
   Bullets:
   - Object: {fileID: 1991488009939240996, guid: f00c234a206cb534885c8f46ba25a176, type: 3}
-    LifeTime: 0
+    LifeTime: 3
     targettype: 0101000000
     AttachedTarget: 0
     BulletSpeed: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
     IsAccelerator: 0
     BulletBurstTime: 0
     BulletBurstSpeed: 0
-    IsTeleporter: 0
+    IsTeleporter: 1
     TeleportTiming: 0
     EffectOffset: {x: 0, y: 0, z: 0}
   EffectLifeTime: 0.5

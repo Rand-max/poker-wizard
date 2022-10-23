@@ -30,70 +30,29 @@ MonoBehaviour:
   BulletLifeTime: 3
   MaxDistance: 10
   Bullets:
-  - Object: {fileID: 6658189105157661244, guid: 27ca4a2330e9e534fb719f874df81a44, type: 3}
-    LifeTime: 3
-    targettype: 0000010000
-    AttachedTarget: 0
-    BulletSpeed: 0
-    HasPursuit: 0
-    HasSlowdown: 0
-    BulletSlowdownRate: 0
-    BulletSlowdownTime: 0
-    HasStun: 0
-    BulletStundownTime: 0
-    HasClear: 0
-    HasConfusion: 0
-    BulletConfusionTime: 0
-    IsShield: 0
-    BulletShieldTime: 0
-    IsAccelerator: 0
-    BulletBurstTime: 0
-    BulletBurstSpeed: 0
-    IsTeleporter: 0
-    TeleportTiming: 0
-  EffectLifeTime: 0.5
-  BulletStartEffects:
-  - Object: {fileID: 7664000146498155418, guid: fd579adcb4b6e294ea5ccbe0f55cd4a5, type: 3}
-    LifeTime: 0.5
-    targettype: 0000010000
-    AttachedTarget: 0
-    BulletSpeed: 0
-    HasPursuit: 0
-    HasSlowdown: 0
-    BulletSlowdownRate: 0
-    BulletSlowdownTime: 0
-    HasStun: 0
-    BulletStundownTime: 0
-    HasClear: 0
-    HasConfusion: 0
-    BulletConfusionTime: 0
-    IsShield: 0
-    BulletShieldTime: 0
-    IsAccelerator: 0
-    BulletBurstTime: 0
-    BulletBurstSpeed: 0
-    IsTeleporter: 0
-    TeleportTiming: 0
-  BoomLifeTime: 3
-  BulletEndEffects:
   - Object: {fileID: 7664000146498155418, guid: fd579adcb4b6e294ea5ccbe0f55cd4a5, type: 3}
     LifeTime: 3
     targettype: 0001000001
     AttachedTarget: 0
     BulletSpeed: 0
     HasPursuit: 0
-    HasSlowdown: 0
-    BulletSlowdownRate: 0
-    BulletSlowdownTime: 0
-    HasStun: 0
-    BulletStundownTime: 0
-    HasClear: 0
+    PursuitStrength: 3
+    HasSlowdown: 1
+    BulletSlowdownRate: 0.2
+    BulletSlowdownTime: 2
+    HasStun: 1
+    BulletStundownTime: 1
+    HasClear: 1
     HasConfusion: 0
     BulletConfusionTime: 0
     IsShield: 0
-    BulletShieldTime: 0
     IsAccelerator: 0
     BulletBurstTime: 0
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
+    EffectOffset: {x: 0, y: 0, z: 0}
+  EffectLifeTime: 0.5
+  BulletStartEffects: []
+  BoomLifeTime: 3
+  BulletEndEffects: []

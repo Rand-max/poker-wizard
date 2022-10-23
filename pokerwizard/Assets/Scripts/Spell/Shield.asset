@@ -32,56 +32,11 @@ MonoBehaviour:
   Bullets:
   - Object: {fileID: 1009217233085233779, guid: bf4a4b1b376e40d47b65f88f7992a1dc, type: 3}
     LifeTime: 3
-    targettype: 0000010000
-    AttachedTarget: 0
-    BulletSpeed: 0
-    HasPursuit: 0
-    HasSlowdown: 0
-    BulletSlowdownRate: 0
-    BulletSlowdownTime: 0
-    HasStun: 0
-    BulletStundownTime: 0
-    HasClear: 0
-    HasConfusion: 0
-    BulletConfusionTime: 0
-    IsShield: 0
-    BulletShieldTime: 0
-    IsAccelerator: 0
-    BulletBurstTime: 0
-    BulletBurstSpeed: 0
-    IsTeleporter: 0
-    TeleportTiming: 0
-  EffectLifeTime: 0.5
-  BulletStartEffects:
-  - Object: {fileID: 1009217233085233779, guid: bf4a4b1b376e40d47b65f88f7992a1dc, type: 3}
-    LifeTime: 0.5
-    targettype: 0000010000
-    AttachedTarget: 0
-    BulletSpeed: 0
-    HasPursuit: 0
-    HasSlowdown: 0
-    BulletSlowdownRate: 0
-    BulletSlowdownTime: 0
-    HasStun: 0
-    BulletStundownTime: 0
-    HasClear: 0
-    HasConfusion: 0
-    BulletConfusionTime: 0
-    IsShield: 0
-    BulletShieldTime: 0
-    IsAccelerator: 0
-    BulletBurstTime: 0
-    BulletBurstSpeed: 0
-    IsTeleporter: 0
-    TeleportTiming: 0
-  BoomLifeTime: 3
-  BulletEndEffects:
-  - Object: {fileID: 2283794885593609554, guid: a18bc178e557069448ba36e5fe52e399, type: 3}
-    LifeTime: 3
     targettype: 0000000001
-    AttachedTarget: 0
+    AttachedTarget: 2
     BulletSpeed: 0
     HasPursuit: 0
+    PursuitStrength: 3
     HasSlowdown: 0
     BulletSlowdownRate: 0
     BulletSlowdownTime: 0
@@ -90,10 +45,14 @@ MonoBehaviour:
     HasClear: 0
     HasConfusion: 0
     BulletConfusionTime: 0
-    IsShield: 0
-    BulletShieldTime: 0
+    IsShield: 1
     IsAccelerator: 0
     BulletBurstTime: 0
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
+    EffectOffset: {x: 0, y: 0, z: 0}
+  EffectLifeTime: 0.5
+  BulletStartEffects: []
+  BoomLifeTime: 3
+  BulletEndEffects: []

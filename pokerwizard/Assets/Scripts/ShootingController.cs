@@ -123,6 +123,8 @@ public class ShootingController : MonoBehaviour
                     neweffects.GetComponent<BulletpProjectile>().origin=wandposition;
                     neweffects.GetComponent<BulletpProjectile>().friend=friend;
                     neweffects.GetComponent<BulletpProjectile>().be=CurrentSpell.BulletStartEffects[i];
+                    neweffects.GetComponent<BulletpProjectile>().selfLayer=mousecolliderlayermask;
+                    neweffects.GetComponent<BulletpProjectile>().enemyLayer=enemyLayer;
                 }
                 for(int j=0;j<CurrentSpell.BulletEndEffects.Count;j++){
                     GameObject boomeffects=Instantiate(CurrentSpell.BulletEndEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletEndEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
@@ -136,6 +138,8 @@ public class ShootingController : MonoBehaviour
                     boomeffects.GetComponent<BulletpProjectile>().origin=wandposition;
                     boomeffects.GetComponent<BulletpProjectile>().friend=friend;
                     boomeffects.GetComponent<BulletpProjectile>().be=CurrentSpell.BulletEndEffects[i];
+                    boomeffects.GetComponent<BulletpProjectile>().selfLayer=mousecolliderlayermask;
+                    boomeffects.GetComponent<BulletpProjectile>().enemyLayer=enemyLayer;
                     boomeffects.transform.parent=boomeffect.transform;
                 }
                 newbullets.GetComponent<BulletpProjectile>().end=boomeffect;
