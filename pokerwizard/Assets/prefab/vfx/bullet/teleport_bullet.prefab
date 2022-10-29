@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4554306038935435636}
   - component: {fileID: 473907579610769516}
   m_Layer: 0
-  m_Name: love_bullet
+  m_Name: teleport_bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -553,7 +553,7 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 7.995197, y: 1.9674045, z: 6.151085, w: 0}
+      - m_Value: {x: 3.428298, y: 1.9674045, z: 7.995197, w: 0}
         m_Name: purple magic
         m_Overridden: 1
     m_Uint:
