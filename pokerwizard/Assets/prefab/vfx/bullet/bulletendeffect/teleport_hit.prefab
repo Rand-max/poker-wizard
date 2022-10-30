@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1729683840255180922}
   - component: {fileID: 1729683840255180923}
   - component: {fileID: 1729683840255180924}
+  - component: {fileID: 352530303480501685}
   m_Layer: 0
   m_Name: teleport_hit
   m_TagString: Untagged
@@ -125,3 +126,16 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &352530303480501685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729683840255180925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1973274d3b29a9d4fac10a3e4ead1dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1.5
