@@ -39,9 +39,10 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _alphanum: 0
     - _scroll_speed: 0.3
     m_Colors:
-    - _Color: {r: 1.2830191, g: 14.518422, b: 16, a: 0}
+    - _Color: {r: 0.2509804, g: 2.7294118, b: 2.9960785, a: 0}
     - _hologram_tiling: {r: 1, g: 4, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7728928089895902958

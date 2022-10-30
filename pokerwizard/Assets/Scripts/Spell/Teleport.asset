@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Teleport
   m_EditorClassIdentifier: 
   ID: 6
-  SpellName: Glitched Wings
-  SpellSprite: {fileID: 21300000, guid: 3bd225c09953e4e499db09354dbcc783, type: 3}
+  SpellName: Teleport
+  SpellSprite: {fileID: 21300000, guid: 0450aa1385e70de44adcd774340a25be, type: 3}
   IconTexture: {fileID: 0}
   IconColor: {r: 0.09433961, g: 0.058008194, b: 0, a: 1}
   TextColor:
-    topLeft: {r: 0.3018868, g: 0, b: 0, a: 1}
-    topRight: {r: 0.3018868, g: 0.119019166, b: 0, a: 1}
-    bottomLeft: {r: 0.11320752, g: 0, b: 0.040671103, a: 1}
-    bottomRight: {r: 0.047169805, g: 0.0272656, b: 0, a: 1}
+    topLeft: {r: 0.9359627, g: 0.8528302, b: 1, a: 1}
+    topRight: {r: 0.9372549, g: 0.85490197, b: 1, a: 1}
+    bottomLeft: {r: 0.7181872, g: 0.67358494, b: 1, a: 1}
+    bottomRight: {r: 0.72156864, g: 0.6745098, b: 1, a: 1}
   SpellIcon: {fileID: 6567333872716079284, guid: 7dc7ee6c1f0bfa64589d3046f1e9b3f3, type: 3}
   SpellAmout: 1
   BulletPrepareTime: 0.5
@@ -30,11 +30,81 @@ MonoBehaviour:
   BulletLifeTime: 3
   MaxDistance: 10
   Bullets:
-  - Object: {fileID: 1991488009939240996, guid: f00c234a206cb534885c8f46ba25a176, type: 3}
+  - Object: {fileID: 852493557634586081, guid: b2878f14814f06d4485de45677b05e9d, type: 3}
     LifeTime: 3
     targettype: 0101000000
     AttachedTarget: 0
     BulletSpeed: 80
+    HasPursuit: 0
+    PursuitStrength: 3
+    HasSlowdown: 1
+    BulletSlowdownRate: 0.6
+    BulletSlowdownTime: 3
+    HasStun: 0
+    BulletStundownTime: 0
+    HasClear: 0
+    HasConfusion: 0
+    BulletConfusionTime: 0
+    IsShield: 0
+    IsAccelerator: 0
+    BulletBurstTime: 0
+    BulletBurstSpeed: 0
+    IsTeleporter: 1
+    TeleportTiming: 0
+    EffectOffset: {x: 0, y: 0, z: 0}
+  EffectLifeTime: 0.5
+  BulletStartEffects:
+  - Object: {fileID: 7006112819736610612, guid: 1f2c9c6e0dbb68e4581bad841306d546, type: 3}
+    LifeTime: 0.5
+    targettype: 0000010000
+    AttachedTarget: 0
+    BulletSpeed: 0
+    HasPursuit: 0
+    PursuitStrength: 3
+    HasSlowdown: 0
+    BulletSlowdownRate: 0
+    BulletSlowdownTime: 0
+    HasStun: 0
+    BulletStundownTime: 0
+    HasClear: 0
+    HasConfusion: 0
+    BulletConfusionTime: 0
+    IsShield: 0
+    IsAccelerator: 0
+    BulletBurstTime: 0
+    BulletBurstSpeed: 0
+    IsTeleporter: 0
+    TeleportTiming: 0
+    EffectOffset: {x: 0, y: 0, z: 0}
+  BoomLifeTime: 3
+  BulletEndEffects:
+  - Object: {fileID: 1729683840255180925, guid: ce58857cddecb324f9525560add37572, type: 3}
+    LifeTime: 3
+    targettype: 
+    AttachedTarget: 0
+    BulletSpeed: 0
+    HasPursuit: 0
+    PursuitStrength: 0
+    HasSlowdown: 0
+    BulletSlowdownRate: 0
+    BulletSlowdownTime: 0
+    HasStun: 0
+    BulletStundownTime: 0
+    HasClear: 0
+    HasConfusion: 0
+    BulletConfusionTime: 0
+    IsShield: 0
+    IsAccelerator: 0
+    BulletBurstTime: 0
+    BulletBurstSpeed: 0
+    IsTeleporter: 0
+    TeleportTiming: 0
+    EffectOffset: {x: 0, y: 0, z: 0}
+  - Object: {fileID: 9115696960605115508, guid: cecd591a9aa163b488ea6a5fc0da93eb, type: 3}
+    LifeTime: 5
+    targettype: 0101000000
+    AttachedTarget: 0
+    BulletSpeed: 0
     HasPursuit: 0
     PursuitStrength: 0
     HasSlowdown: 0
@@ -52,7 +122,3 @@ MonoBehaviour:
     IsTeleporter: 1
     TeleportTiming: 0
     EffectOffset: {x: 0, y: 0, z: 0}
-  EffectLifeTime: 0.5
-  BulletStartEffects: []
-  BoomLifeTime: 3
-  BulletEndEffects: []
