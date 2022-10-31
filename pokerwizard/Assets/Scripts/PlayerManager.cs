@@ -52,7 +52,9 @@
                 GameObject playerchar=Instantiate(characters[player.playerIndex]);
                 playerchar.transform.SetParent(player.GetComponentInChildren<PlayerController>().Normal,false);
                 playerchar.tag="Player";
-                
+                player.transform.parent.GetComponentInChildren<ShootingController>().bullet=new GameObject("Bullet");
+                player.transform.parent.GetComponentInChildren<ShootingController>().bulleteffect=new GameObject("Effect");
+                player.transform.parent.GetComponentInChildren<ShootingController>().bulletendeffect=new GameObject("Boom");
                 player.GetComponentInChildren<PlayerController>().playerlayer=playerLayers[player.playerIndex];
                 player.GetComponentInChildren<PlayerController>().playerNumber=player.playerIndex;
                 player.GetComponentInChildren<PlayerController>().playerModel=playerchar.transform;

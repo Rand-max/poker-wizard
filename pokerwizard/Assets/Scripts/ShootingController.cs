@@ -29,9 +29,6 @@ public class ShootingController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bullet=new GameObject("Bullet");
-        bulleteffect=new GameObject("Effect");
-        bulletendeffect=new GameObject("Boom");
         transform.position=playernormal.transform.position;
         //Cursor.lockState=CursorLockMode.Locked;
     }
