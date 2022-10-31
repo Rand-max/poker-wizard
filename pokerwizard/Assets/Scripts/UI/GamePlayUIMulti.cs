@@ -97,6 +97,7 @@ public class GamePlayUIMulti : MonoBehaviour
     }
     void Start()
     {
+        playerman=FindObjectOfType<PlayerManager>(false);
         for(int i=0;i<4;i++){
             SpellIcon[i].GetComponent<Image>().sprite=null;
             SpellMat[i].SetFloat("_FadeValue",0);
