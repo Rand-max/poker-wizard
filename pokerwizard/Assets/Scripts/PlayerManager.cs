@@ -2,6 +2,8 @@
     using UnityEngine;
     using Cinemachine;
     using UnityEngine.InputSystem;
+    using UnityEngine.SceneManagement;
+    using UnityEngine.EventSystems;
 
     public class PlayerManager : MonoBehaviour
     {
@@ -24,7 +26,92 @@
 
         private void Awake()
         {
+            DontDestroyOnLoad(this.gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
             playerInputManager = FindObjectOfType<PlayerInputManager>();
+        }
+        void Update(){
+            if(Keyboard.current.kKey.wasPressedThisFrame){
+                SceneManager.LoadScene("SampleScene");
+            }
+        }
+        void OnSceneLoaded(Scene scene, LoadSceneMode mode){
+            Debug.Log("OnSceneLoaded: " + scene.name);
+            Debug.Log(mode);
+            PlayerManager retiredplayerman=FindObjectOfType<EventSystem>().GetComponent<PlayerManager>();
+            this.startingPoints=retiredplayerman.startingPoints;
+            this.playerheads=retiredplayerman.playerheads;
+            this.minimap=retiredplayerman.minimap;
+            this.mirrorController=retiredplayerman.mirrorController;
+            this.checkpointmanagers=retiredplayerman.checkpointmanagers;
+            foreach (var player in players)
+            {
+                Debug.Log(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
+                Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
+                player.GetComponent<PlayerController>().rb.transform.position=startingPoints[player.playerIndex].position;
+                GameObject playerchar=Instantiate(characters[player.playerIndex]);
+                playerchar.transform.SetParent(player.GetComponentInChildren<PlayerController>().Normal,false);
+                playerchar.tag="Player";
+                
+                player.GetComponentInChildren<PlayerController>().playerlayer=playerLayers[player.playerIndex];
+                player.GetComponentInChildren<PlayerController>().playerNumber=player.playerIndex;
+                player.GetComponentInChildren<PlayerController>().playerModel=playerchar.transform;
+                //need to use the parent due to the structure of the prefab
+                Transform playerParent = player.transform.parent;
+                minimap.GetComponent<MapController>().player.Add(player.GetComponent<PlayerController>().Normal.gameObject);
+                minimap.GetComponent<MapController>().playerhead.Add(playerheads[player.playerIndex]);
+                checkpointmanagers[player.playerIndex].GetComponent<CheckpointController>().player=player.GetComponent<PlayerController>().Normal.gameObject;
+                //playerParent.position = startingPoints[player.playerIndex].position;
+
+                //convert layer mask (bit) to an integer 
+                
+                int layerToAdd = (int)Mathf.Log(playerLayers[player.playerIndex].value, 2);
+                playerchar.layer=layerToAdd;
+                playerParent.GetComponentInChildren<ShootingController>().mousecolliderlayermask|= (1 << layerToAdd);
+                playerParent.GetComponentInChildren<ShootingController>().enemyLayer=enemyLayers[player.playerIndex];
+                playerParent.GetComponentInChildren<ShootingController>().FriendLayer=FriendLayers[player.playerIndex];
+                playerParent.GetComponentInChildren<ShootingController>().mirrorController=mirrorController;
+                playerParent.GetComponentInChildren<ShootingController>().animateplayer=playerchar;
+                Debug.Log(playerParent.GetComponentInChildren<ShootingController>().animateplayer);
+                //set the layer
+                playerParent.GetComponentInChildren<CinemachineVirtualCamera>().gameObject.layer = layerToAdd;
+                //add the layer
+                playerParent.GetComponentInChildren<Camera>().cullingMask |= 1 << layerToAdd;
+                //set the action in the custom cinemachine Input Handler
+                //playerParent.GetComponentInChildren<InputHandler>().horizontal = player.actions.FindAction("Look");
+                if(player.playerIndex==1){
+                    Rect cmrect=new Rect(0f,0f,0.5f,0.5f);
+                    playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+                    playerParent.GetComponentInChildren<ShootingController>().friend=players[0].gameObject;
+                    players[0].transform.parent.GetComponentInChildren<ShootingController>().friend=player.gameObject;
+                }
+                if(player.playerIndex==2){
+                    playerParent = players[1].transform.parent;
+                    Rect cmrect=new Rect(0f,0f,0.5f,0.5f);
+                    playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+                    playerParent = players[2].transform.parent;
+                    cmrect=new Rect(0.5f,0.5f,0.5f,0.5f);
+                    playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+                    players[0].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[2].gameObject);
+                    players[1].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[2].gameObject);
+                    players[2].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[0].gameObject);
+                    players[2].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[1].gameObject);
+                }
+                if(player.playerIndex==3){
+                    playerParent = players[1].transform.parent;
+                    Rect cmrect=new Rect(0f,0f,0.5f,0.5f);
+                    playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+                    playerParent = players[2].transform.parent;
+                    cmrect=new Rect(0.5f,0.5f,0.5f,0.5f);
+                    playerParent.GetComponentInChildren<Camera>().rect=cmrect;
+                    players[2].transform.parent.GetComponentInChildren<ShootingController>().friend=players[3].gameObject;
+                    players[3].transform.parent.GetComponentInChildren<ShootingController>().friend=players[2].gameObject;
+                    players[0].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[3].gameObject);
+                    players[1].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[3].gameObject);
+                    players[3].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[0].gameObject);
+                    players[3].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[1].gameObject);
+                }
+            }
         }
 
         private void OnEnable()
@@ -40,29 +127,30 @@
         public void AddPlayer(PlayerInput player)
         {
             players.Add(player);
+            /*
             Debug.Log(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
             Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
-            GameObject playerchar=Instantiate(characters[players.Count - 1]);
+            GameObject playerchar=Instantiate(characters[player.playerIndex]);
             playerchar.transform.SetParent(player.GetComponentInChildren<PlayerController>().Normal,false);
             playerchar.tag="Player";
             
-            player.GetComponentInChildren<PlayerController>().playerlayer=playerLayers[players.Count - 1];
-            player.GetComponentInChildren<PlayerController>().playerNumber=players.Count-1;
+            player.GetComponentInChildren<PlayerController>().playerlayer=playerLayers[player.playerIndex];
+            player.GetComponentInChildren<PlayerController>().playerNumber=player.playerIndex;
             player.GetComponentInChildren<PlayerController>().playerModel=playerchar.transform;
             //need to use the parent due to the structure of the prefab
             Transform playerParent = player.transform.parent;
             minimap.GetComponent<MapController>().player.Add(player.GetComponent<PlayerController>().Normal.gameObject);
-            minimap.GetComponent<MapController>().playerhead.Add(playerheads[players.Count-1]);
-            checkpointmanagers[players.Count-1].GetComponent<CheckpointController>().player=player.GetComponent<PlayerController>().Normal.gameObject;
-            //playerParent.position = startingPoints[players.Count - 1].position;
+            minimap.GetComponent<MapController>().playerhead.Add(playerheads[player.playerIndex]);
+            checkpointmanagers[player.playerIndex].GetComponent<CheckpointController>().player=player.GetComponent<PlayerController>().Normal.gameObject;
+            //playerParent.position = startingPoints[player.playerIndex].position;
 
             //convert layer mask (bit) to an integer 
             
-            int layerToAdd = (int)Mathf.Log(playerLayers[players.Count - 1].value, 2);
+            int layerToAdd = (int)Mathf.Log(playerLayers[player.playerIndex].value, 2);
             playerchar.layer=layerToAdd;
             playerParent.GetComponentInChildren<ShootingController>().mousecolliderlayermask|= (1 << layerToAdd);
-            playerParent.GetComponentInChildren<ShootingController>().enemyLayer=enemyLayers[players.Count - 1];
-            playerParent.GetComponentInChildren<ShootingController>().FriendLayer=FriendLayers[players.Count-1];
+            playerParent.GetComponentInChildren<ShootingController>().enemyLayer=enemyLayers[player.playerIndex];
+            playerParent.GetComponentInChildren<ShootingController>().FriendLayer=FriendLayers[player.playerIndex];
             playerParent.GetComponentInChildren<ShootingController>().mirrorController=mirrorController;
             playerParent.GetComponentInChildren<ShootingController>().animateplayer=playerchar;
             Debug.Log(playerParent.GetComponentInChildren<ShootingController>().animateplayer);
@@ -72,13 +160,13 @@
             playerParent.GetComponentInChildren<Camera>().cullingMask |= 1 << layerToAdd;
             //set the action in the custom cinemachine Input Handler
             //playerParent.GetComponentInChildren<InputHandler>().horizontal = player.actions.FindAction("Look");
-            if(players.Count==2){
+            if(player.playerIndex==2){
                 Rect cmrect=new Rect(0f,0f,0.5f,0.5f);
                 playerParent.GetComponentInChildren<Camera>().rect=cmrect;
                 playerParent.GetComponentInChildren<ShootingController>().friend=players[0].gameObject;
                 players[0].transform.parent.GetComponentInChildren<ShootingController>().friend=player.gameObject;
             }
-            if(players.Count==3){
+            if(player.playerIndex==3){
                 playerParent = players[1].transform.parent;
                 Rect cmrect=new Rect(0f,0f,0.5f,0.5f);
                 playerParent.GetComponentInChildren<Camera>().rect=cmrect;
@@ -90,7 +178,7 @@
                 players[2].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[0].gameObject);
                 players[2].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[1].gameObject);
             }
-            if(players.Count==4){
+            if(player.playerIndex==4){
                 playerParent = players[1].transform.parent;
                 Rect cmrect=new Rect(0f,0f,0.5f,0.5f);
                 playerParent.GetComponentInChildren<Camera>().rect=cmrect;
@@ -104,6 +192,7 @@
                 players[3].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[0].gameObject);
                 players[3].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[1].gameObject);
             }
+            */
         }
     }
 

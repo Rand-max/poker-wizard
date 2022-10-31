@@ -571,6 +571,8 @@ MonoBehaviour:
   Normal: {fileID: 4512524092795239542}
   rb: {fileID: 4512524093642247488}
   drifting: 0
+  multipliers: []
+  multipliers_timer: []
   acceleration: 55
   steering: 0.4
   gravity: 10
@@ -1150,7 +1152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3732898607558865029, guid: a685ee8eecb8af44c9b7037796ee4102, type: 3}
       propertyPath: m_Depth
-      value: 99
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3732898607558865029, guid: a685ee8eecb8af44c9b7037796ee4102, type: 3}
       propertyPath: orthographic

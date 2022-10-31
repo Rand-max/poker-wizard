@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask playerlayer;
     void Start ()
     {
+        DontDestroyOnLoad(this.transform.parent);
     }
     public void OnTurn(InputAction.CallbackContext ctx){
         inputDirection=ctx.ReadValue<Vector2>();
