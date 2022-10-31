@@ -12,7 +12,7 @@ public class CursorKey : MonoBehaviour
     void Start()
     {
         cursor= GetComponent<RectTransform>();
-        Cursor.visible=false;
+        Cursor.SetCursor(GetComponent<Image>().sprite)=false;
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
