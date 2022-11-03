@@ -13,17 +13,17 @@ public class CursorKey : MonoBehaviour
     void Start()
     {
         cursor= GetComponent<RectTransform>();
-        Cursor.SetCursor(cursortext,Vector2.zero,CursorMode.Auto);
-        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.SetCursor(cursortext,Vector2.zero,CursorMode.Auto);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
+        
         Vector2 cursorpos= Mouse.current.position.ReadValue();
 
         cursor.anchoredPosition = cursorpos;
-        */
+        
     }
 }
