@@ -8,6 +8,7 @@
     public class PlayerManager : MonoBehaviour
     {
         public List<GameObject>characters;
+        public List<GameObject>Cursors;
         public List<GameObject>playerheads;
         public GameObject minimap;
         public GamePlayUIMulti mirrorController;
@@ -129,6 +130,7 @@
         public void AddPlayer(PlayerInput player)
         {
             players.Add(player);
+            player.GetComponentInChildren<PlayerController>().playerCursor=Cursors[player.playerIndex];
             /*
             Debug.Log(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
             Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);

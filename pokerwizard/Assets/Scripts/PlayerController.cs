@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public int playerNumber;
+    public GameObject playerCursor;
     [SerializeField] float currentSpeed;
     float speed;
     float rotate;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
     }
     public void OnTurn(InputAction.CallbackContext ctx){
         inputDirection=ctx.ReadValue<Vector2>();
+        playerCursor.GetComponent<CursorKey>().movecursor(inputDirection);
     }
     public void OnDrift(InputAction.CallbackContext ctx){
         inputDrift=ctx.ReadValueAsButton();
