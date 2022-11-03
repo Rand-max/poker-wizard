@@ -1786,8 +1786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb548e8bd29cc6c47ae1ae4f2b534003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursoraccel: 3
-  Maxspeed: 7
+  cursoraccel: 75
+  Maxspeed: 750
   cursorfloattime: 0.5
   currentaccel: {x: 0, y: 0}
   currentSpeed: {x: 0, y: 0}

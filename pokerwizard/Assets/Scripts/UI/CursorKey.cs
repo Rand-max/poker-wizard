@@ -28,10 +28,30 @@ public class CursorKey : MonoBehaviour
         //Vector2 cursorpos= Mouse.current.position.ReadValue();
         //cursor.anchoredPosition = cursorpos;
         if(currentSpeed.magnitude>Maxspeed){
-            currentSpeed=Vector2.Lerp(currentSpeed,Vector2.zero,cursorfloattime);
+            currentSpeed=currentSpeed.normalized*Maxspeed;
         }
         currentSpeed+=currentaccel;
-        cursor.anchoredPosition+=currentSpeed;
+        if(cursor.anchoredPosition.x>Screen.width){
+            if(currentSpeed.x>0){
+                currentSpeed.x=0;
+            }
+        }
+        if(cursor.anchoredPosition.x<0){
+            if(currentSpeed.x<0){
+                currentSpeed.x=0;
+            }
+        }
+        if(cursor.anchoredPosition.y>Screen.height){
+            if(currentSpeed.y>0){
+                currentSpeed.y=0;
+            }
+        }
+        if(cursor.anchoredPosition.y<0){
+            if(currentSpeed.y<0){
+                currentSpeed.y=0;
+            }
+        }
+        cursor.anchoredPosition+=currentSpeed*Time.deltaTime;
         if(currentaccel.magnitude<=new Vector2(0.1f,0.1f).magnitude){
             currentSpeed=Vector2.Lerp(currentSpeed,Vector2.zero,cursorfloattime);
         }
