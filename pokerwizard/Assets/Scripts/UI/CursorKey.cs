@@ -14,7 +14,7 @@ public class CursorKey : MonoBehaviour
     {
         cursor= GetComponent<RectTransform>();
         //Cursor.SetCursor(cursortext,Vector2.zero,CursorMode.Auto);
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
