@@ -982,7 +982,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 484.80005, y: -301.5042}
+  m_AnchoredPosition: {x: 1178.2133, y: 138.27896}
   m_SizeDelta: {x: 128.7944, y: 200.4339}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &264129674
@@ -1038,8 +1038,10 @@ MonoBehaviour:
   cursoraccel: 75
   Maxspeed: 750
   cursorfloattime: 0.5
-  currentaccel: {x: 0, y: 0}
+  currentaccel: 0
   currentSpeed: {x: 0, y: 0}
+  vm: {fileID: 0}
+  innertimer: 0
 --- !u!1 &300869140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,6 +1729,7 @@ GameObject:
   - component: {fileID: 444963588}
   - component: {fileID: 444963587}
   - component: {fileID: 444963589}
+  - component: {fileID: 444963590}
   m_Layer: 5
   m_Name: p1key
   m_TagString: Untagged
@@ -1751,7 +1754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 80.00769, y: -301.28717}
+  m_AnchoredPosition: {x: 773.4209, y: 138.49591}
   m_SizeDelta: {x: 128.79443, y: 200.4339}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &444963587
@@ -1806,9 +1809,112 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursoraccel: 75
   Maxspeed: 750
-  cursorfloattime: 0.5
-  currentaccel: {x: 0, y: 0}
+  cursorfloattime: 0.9
+  currentaccel: 0
   currentSpeed: {x: 0, y: 0}
+  vm: {fileID: 0}
+  innertimer: 0
+--- !u!114 &444963590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444963585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424b6720ff5999446843ba414e58a907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CursorMode: 0
+  m_CursorGraphic: {fileID: 444963587}
+  m_CursorTransform: {fileID: 444963586}
+  m_CursorSpeed: 400
+  m_ScrollSpeed: 45
+  m_StickAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Stick
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 6d6d8a5a-3f7f-4784-b1e9-3fe8e0593e60
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 8083019731447944452, guid: 68c34d96871554b40963b5af83709e4f, type: 3}
+  m_LeftButtonAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 44f8c8e0-c847-4a67-8156-e36d8a9bd5e7
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 3605817605829001662, guid: 68c34d96871554b40963b5af83709e4f, type: 3}
+  m_MiddleButtonAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Middle Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: a65ec93a-bc74-4c5d-a6a6-67d9365e80cf
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_RightButtonAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: ea8506b7-3a0f-4ce0-8117-a281c24e30b8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -1188063976747909804, guid: 68c34d96871554b40963b5af83709e4f, type: 3}
+  m_ForwardButtonAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Forward Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 7dccda6e-b44d-42b6-850e-7fefd469bbce
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_BackButtonAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Back Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: a13f4ff2-bcf9-4348-a21d-2b8f4776955c
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_ScrollWheelAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Scroll Wheel
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b7bf7b8b-b92e-42da-868a-4ab8c73c880d
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &454874338
 GameObject:
   m_ObjectHideFlags: 0
@@ -7036,10 +7142,10 @@ RectTransform:
   m_Father: {fileID: 805632923}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 533.1736, y: 200.4339}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1771913077
 GameObject:
@@ -7305,7 +7411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 350.00006, y: -301.5042}
+  m_AnchoredPosition: {x: 1043.4133, y: 138.27896}
   m_SizeDelta: {x: 128.7944, y: 200.4339}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1905517750
@@ -7361,8 +7467,10 @@ MonoBehaviour:
   cursoraccel: 75
   Maxspeed: 750
   cursorfloattime: 0.5
-  currentaccel: {x: 0, y: 0}
+  currentaccel: 0
   currentSpeed: {x: 0, y: 0}
+  vm: {fileID: 0}
+  innertimer: 0
 --- !u!1 &1977893272
 GameObject:
   m_ObjectHideFlags: 0
@@ -7399,7 +7507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 214.79999, y: -301.50415}
+  m_AnchoredPosition: {x: 908.21313, y: 138.27896}
   m_SizeDelta: {x: 128.7944, y: 200.4339}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1977893274
@@ -7455,8 +7563,10 @@ MonoBehaviour:
   cursoraccel: 75
   Maxspeed: 750
   cursorfloattime: 0.5
-  currentaccel: {x: 0, y: 0}
+  currentaccel: 0
   currentSpeed: {x: 0, y: 0}
+  vm: {fileID: 0}
+  innertimer: 0
 --- !u!1 &1989124381
 GameObject:
   m_ObjectHideFlags: 0
