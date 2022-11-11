@@ -8,6 +8,7 @@
     public class PlayerManager : MonoBehaviour
     {
         public List<GameObject>characters;
+        public List<int>playerheadnumber;
         public List<GameObject>Cursors;
         public List<GameObject>playerheads;
         public GameObject minimap;
@@ -41,15 +42,20 @@
             Debug.Log(mode);
             PlayerManager retiredplayerman=FindObjectOfType<EventSystem>().GetComponent<PlayerManager>();
             this.startingPoints=retiredplayerman.startingPoints;
-            this.playerheads=retiredplayerman.playerheads;
+            for(int i=0;i<players.Count;i++)
+            {
+                Debug.Log(retiredplayerman.playerheads[0]);
+                playerheads[i]=retiredplayerman.playerheads[playerheadnumber[i]];
+            }
             this.minimap=retiredplayerman.minimap;
             this.mirrorController=retiredplayerman.mirrorController;
             this.checkpointmanagers=retiredplayerman.checkpointmanagers;
             foreach (var player in players)
             {
-                Debug.Log(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
                 Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
+                player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().OnTargetObjectWarped(player.GetComponent<PlayerController>().Normal,startingPoints[player.playerIndex].position-player.GetComponent<PlayerController>().rb.transform.position);
                 player.GetComponent<PlayerController>().rb.transform.position=startingPoints[player.playerIndex].position;
+                player.GetComponent<PlayerController>().transform.forward=Vector3.back;
                 GameObject playerchar=Instantiate(characters[player.playerIndex]);
                 playerchar.transform.SetParent(player.GetComponentInChildren<PlayerController>().Normal,false);
                 playerchar.tag="Player";

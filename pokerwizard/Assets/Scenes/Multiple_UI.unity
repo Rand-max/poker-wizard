@@ -1035,13 +1035,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb548e8bd29cc6c47ae1ae4f2b534003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursoraccel: 75
-  Maxspeed: 750
+  cursorname: 4p
+  cursoraccel: 150
+  Maxspeed: 900
   cursorfloattime: 0.5
-  currentaccel: 0
+  currentaccel: {x: 0, y: 0}
   currentSpeed: {x: 0, y: 0}
-  vm: {fileID: 0}
-  innertimer: 0
+  m_Raycaster: {fileID: 805632920}
+  m_EventSystem: {fileID: 1555891205}
 --- !u!1 &300869140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,6 +1244,7 @@ MonoBehaviour:
   - {fileID: 2860833182306902401, guid: cf9b2e051cc82f74395a94594a57873b, type: 3}
   - {fileID: 8793460132122728066, guid: 2bf00452f5a457546a5f4023371190f2, type: 3}
   - {fileID: 2304057042063654093, guid: 8b3473ac3539d5040a8e436b6302a5b2, type: 3}
+  playerheadnumber: 00000000000000000000000000000000
   Cursors:
   - {fileID: 444963585}
   - {fileID: 1977893272}
@@ -1729,7 +1731,6 @@ GameObject:
   - component: {fileID: 444963588}
   - component: {fileID: 444963587}
   - component: {fileID: 444963589}
-  - component: {fileID: 444963590}
   m_Layer: 5
   m_Name: p1key
   m_TagString: Untagged
@@ -1807,114 +1808,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb548e8bd29cc6c47ae1ae4f2b534003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursoraccel: 75
-  Maxspeed: 750
-  cursorfloattime: 0.9
-  currentaccel: 0
+  cursorname: 1p
+  cursoraccel: 150
+  Maxspeed: 900
+  cursorfloattime: 0.5
+  currentaccel: {x: 0, y: 0}
   currentSpeed: {x: 0, y: 0}
-  vm: {fileID: 0}
-  innertimer: 0
---- !u!114 &444963590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444963585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424b6720ff5999446843ba414e58a907, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CursorMode: 0
-  m_CursorGraphic: {fileID: 444963587}
-  m_CursorTransform: {fileID: 444963586}
-  m_CursorSpeed: 400
-  m_ScrollSpeed: 45
-  m_StickAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Stick
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 6d6d8a5a-3f7f-4784-b1e9-3fe8e0593e60
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 8083019731447944452, guid: 68c34d96871554b40963b5af83709e4f, type: 3}
-  m_LeftButtonAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Left Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 44f8c8e0-c847-4a67-8156-e36d8a9bd5e7
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 3605817605829001662, guid: 68c34d96871554b40963b5af83709e4f, type: 3}
-  m_MiddleButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Middle Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: a65ec93a-bc74-4c5d-a6a6-67d9365e80cf
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_RightButtonAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Right Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: ea8506b7-3a0f-4ce0-8117-a281c24e30b8
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -1188063976747909804, guid: 68c34d96871554b40963b5af83709e4f, type: 3}
-  m_ForwardButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Forward Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 7dccda6e-b44d-42b6-850e-7fefd469bbce
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_BackButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Back Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: a13f4ff2-bcf9-4348-a21d-2b8f4776955c
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_ScrollWheelAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Scroll Wheel
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: b7bf7b8b-b92e-42da-868a-4ab8c73c880d
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
+  m_Raycaster: {fileID: 805632920}
+  m_EventSystem: {fileID: 1555891205}
 --- !u!1 &454874338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,7 +2088,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d233c5f6c433844a89004230f67772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCursor: {fileID: 0}
   button: {fileID: 487531148}
+  unlock: {fileID: 1573085290}
+  shake: {fileID: 1113571739}
+  isclicked: 0
 --- !u!95 &487531153
 Animator:
   serializedVersion: 4
@@ -2263,7 +2168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d233c5f6c433844a89004230f67772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCursor: {fileID: 0}
   button: {fileID: 583512535}
+  unlock: {fileID: 1573085290}
+  shake: {fileID: 1113571739}
+  isclicked: 0
 --- !u!95 &583512537
 Animator:
   serializedVersion: 4
@@ -2496,7 +2405,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Rules
           m_BoolArgument: 0
@@ -4133,7 +4042,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d233c5f6c433844a89004230f67772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCursor: {fileID: 0}
   button: {fileID: 974864288}
+  unlock: {fileID: 1573085290}
+  shake: {fileID: 1113571739}
+  isclicked: 0
 --- !u!95 &974864290
 Animator:
   serializedVersion: 4
@@ -5235,7 +5148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d233c5f6c433844a89004230f67772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCursor: {fileID: 0}
   button: {fileID: 1282216114}
+  unlock: {fileID: 1573085290}
+  shake: {fileID: 1113571739}
+  isclicked: 0
 --- !u!95 &1282216116
 Animator:
   serializedVersion: 4
@@ -6346,18 +6263,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372eed94744bdee4da70ce964e1002ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key_p1: {fileID: 444963585}
-  key_p2: {fileID: 1977893272}
-  key_p3: {fileID: 1905517748}
-  key_p4: {fileID: 264129672}
-  lock_club: {fileID: 190224642}
-  lock_diamond: {fileID: 1148872409}
-  lock_heart: {fileID: 1810089225}
-  lock_spade: {fileID: 1488577148}
-  playernum_club: {fileID: 1706932700}
-  playernum_diamond: {fileID: 1441746690}
-  playernum_heart: {fileID: 800150174}
-  playernum_spade: {fileID: 1297414362}
+  playerManager: {fileID: 369257615}
+  keys:
+  - {fileID: 444963585}
+  - {fileID: 1977893272}
+  - {fileID: 1905517748}
+  - {fileID: 264129672}
+  players:
+  - {fileID: 8793460132122728066, guid: 2bf00452f5a457546a5f4023371190f2, type: 3}
+  - {fileID: 1094305755175539417, guid: abe946a6443a3b84297ab0272343e877, type: 3}
+  - {fileID: 2860833182306902401, guid: cf9b2e051cc82f74395a94594a57873b, type: 3}
+  - {fileID: 2304057042063654093, guid: 8b3473ac3539d5040a8e436b6302a5b2, type: 3}
+  playerhead: 
+  locks:
+  - {fileID: 190224642}
+  - {fileID: 1148872409}
+  - {fileID: 1810089225}
+  - {fileID: 1488577148}
+  red: {fileID: 0}
+  Mat:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playernum:
+  - {fileID: 1706932700}
+  - {fileID: 1441746690}
+  - {fileID: 800150174}
+  - {fileID: 1297414362}
   Connected1: {fileID: 262175706}
   Connected2: {fileID: 903627636}
   Connected3: {fileID: 911988008}
@@ -6366,11 +6299,16 @@ MonoBehaviour:
   p2_text: {fileID: 1395240752}
   p3_text: {fileID: 775492942}
   p4_text: {fileID: 688275332}
-  cirimg1: {fileID: 45788945}
-  cirimg2: {fileID: 953616206}
-  cirimg3: {fileID: 1066918420}
-  cirimg4: {fileID: 954906616}
-  circolor: {r: 0, g: 0, b: 0, a: 0}
+  cirimg:
+  - {fileID: 45788945}
+  - {fileID: 953616206}
+  - {fileID: 1066918420}
+  - {fileID: 954906616}
+  circolor:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1573085291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7464,13 +7402,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb548e8bd29cc6c47ae1ae4f2b534003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursoraccel: 75
-  Maxspeed: 750
+  cursorname: 3p
+  cursoraccel: 150
+  Maxspeed: 900
   cursorfloattime: 0.5
-  currentaccel: 0
+  currentaccel: {x: 0, y: 0}
   currentSpeed: {x: 0, y: 0}
-  vm: {fileID: 0}
-  innertimer: 0
+  m_Raycaster: {fileID: 805632920}
+  m_EventSystem: {fileID: 1555891205}
 --- !u!1 &1977893272
 GameObject:
   m_ObjectHideFlags: 0
@@ -7483,7 +7422,6 @@ GameObject:
   - component: {fileID: 1977893275}
   - component: {fileID: 1977893274}
   - component: {fileID: 1977893276}
-  - component: {fileID: 1977893277}
   m_Layer: 5
   m_Name: p2key
   m_TagString: Untagged
@@ -7561,114 +7499,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb548e8bd29cc6c47ae1ae4f2b534003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursoraccel: 75
-  Maxspeed: 750
+  cursorname: 2p
+  cursoraccel: 150
+  Maxspeed: 900
   cursorfloattime: 0.5
-  currentaccel: 0
+  currentaccel: {x: 0, y: 0}
   currentSpeed: {x: 0, y: 0}
-  vm: {fileID: 0}
-  innertimer: 0
---- !u!114 &1977893277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977893272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424b6720ff5999446843ba414e58a907, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CursorMode: 0
-  m_CursorGraphic: {fileID: 1977893274}
-  m_CursorTransform: {fileID: 1977893273}
-  m_CursorSpeed: 400
-  m_ScrollSpeed: 45
-  m_StickAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Stick
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 6d6d8a5a-3f7f-4784-b1e9-3fe8e0593e60
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 8083019731447944452, guid: 68c34d96871554b40963b5af83709e4f, type: 3}
-  m_LeftButtonAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Left Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 44f8c8e0-c847-4a67-8156-e36d8a9bd5e7
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 3605817605829001662, guid: 68c34d96871554b40963b5af83709e4f, type: 3}
-  m_MiddleButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Middle Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: a65ec93a-bc74-4c5d-a6a6-67d9365e80cf
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_RightButtonAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Right Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: ea8506b7-3a0f-4ce0-8117-a281c24e30b8
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -1188063976747909804, guid: 68c34d96871554b40963b5af83709e4f, type: 3}
-  m_ForwardButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Forward Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 7dccda6e-b44d-42b6-850e-7fefd469bbce
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_BackButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Back Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: a13f4ff2-bcf9-4348-a21d-2b8f4776955c
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_ScrollWheelAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Scroll Wheel
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: b7bf7b8b-b92e-42da-868a-4ab8c73c880d
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
+  m_Raycaster: {fileID: 805632920}
+  m_EventSystem: {fileID: 1555891205}
 --- !u!1 &1989124381
 GameObject:
   m_ObjectHideFlags: 0

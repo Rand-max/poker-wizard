@@ -156,5 +156,6 @@ public class ShootingController : MonoBehaviour
     public void OnCast(InputAction.CallbackContext ctx){
         Debug.Log("casted");
         iscasted=ctx.ReadValueAsButton();
+        if(transform.parent.GetComponentInChildren<PlayerController>().playerCursor)transform.parent.GetComponentInChildren<PlayerController>().playerCursor.GetComponent<CursorKey>().clickcursor();
     }
 }

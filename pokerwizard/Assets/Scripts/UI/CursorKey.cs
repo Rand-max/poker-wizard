@@ -3,26 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
 using TMPro;
 
 public class CursorKey : MonoBehaviour
 {
+    public string cursorname;
     RectTransform cursor;
     public float cursoraccel=1f;
     public float Maxspeed=5f;
-    public float cursorfloattime=0.9f;
-    public float currentaccel;
+    public float cursorfloattime=0.5f;
+    public Vector2 currentaccel;
     public Vector2 currentSpeed;
-    public VirtualMouseInput vm;
-    public float innertimer;
-    // Start is called before the first frame update
+    //Method
+    [SerializeField]  GraphicRaycaster m_Raycaster;
+    PointerEventData m_PointerEventData;
+    [SerializeField] EventSystem m_EventSystem;
+    SelectImgBtn imgbtn;
     void Start()
     {
         cursor= GetComponent<RectTransform>();
         //Cursor.SetCursor(cursortext,Vector2.zero,CursorMode.Auto);
         Cursor.visible = false;
-        vm=gameObject.GetComponent<VirtualMouseInput>();
     }
 
     // Update is called once per frame
@@ -31,31 +34,67 @@ public class CursorKey : MonoBehaviour
         
         //Vector2 cursorpos= Mouse.current.position.ReadValue();
         //cursor.anchoredPosition = cursorpos;
-        vm.cursorSpeed+=currentaccel;
-        if(vm.cursorSpeed>Maxspeed){
-            vm.cursorSpeed=Maxspeed;
+        if(currentSpeed.magnitude>Maxspeed){
+            currentSpeed=currentSpeed.normalized*Maxspeed;
         }
-        
-        if(vm.cursorTransform.anchoredPosition.x>Screen.width){
-            vm.cursorTransform.anchoredPosition+=new Vector2(Screen.width-vm.cursorTransform.anchoredPosition.x,0);
+        currentSpeed+=currentaccel;
+        if(cursor.anchoredPosition.x>Screen.width){
+            if(currentSpeed.x>0){
+                currentSpeed.x=0;
+            }
         }
-        if(vm.cursorTransform.anchoredPosition.x<0){
-            vm.cursorTransform.anchoredPosition+=new Vector2(-vm.cursorTransform.anchoredPosition.x,0);
+        if(cursor.anchoredPosition.x<0){
+            if(currentSpeed.x<0){
+                currentSpeed.x=0;
+            }
         }
-        if(vm.cursorTransform.anchoredPosition.y>Screen.height){
-            vm.cursorTransform.anchoredPosition+=new Vector2(0,Screen.height-vm.cursorTransform.anchoredPosition.y);
+        if(cursor.anchoredPosition.y>Screen.height){
+            if(currentSpeed.y>0){
+                currentSpeed.y=0;
+            }
         }
-        if(vm.cursorTransform.anchoredPosition.y<0){
-            vm.cursorTransform.anchoredPosition+=new Vector2(0,-vm.cursorTransform.anchoredPosition.y);
+        if(cursor.anchoredPosition.y<0){
+            if(currentSpeed.y<0){
+                currentSpeed.y=0;
+            }
         }
-        //vm.cursorTransform.anchoredPosition+=currentSpeed*Time.deltaTime;
-        //cursor.anchoredPosition+=currentSpeed*Time.deltaTime;
-        if(currentaccel<=new Vector2(0.1f,0.1f).magnitude){
-            //currentSpeed=Vector2.Lerp(currentSpeed,Vector2.zero,cursorfloattime);
-            vm.cursorSpeed=cursorfloattime/vm.cursorSpeed;
+        cursor.anchoredPosition+=currentSpeed*Time.deltaTime;
+        if(currentaccel.magnitude<=new Vector2(0.1f,0.1f).magnitude){
+            currentSpeed=Vector2.Lerp(currentSpeed,Vector2.zero,cursorfloattime);
         }
+        //Set up the new Pointer Event
+        m_PointerEventData = new PointerEventData(m_EventSystem);
+        //Set the Pointer Event Position to that of the game object
+        m_PointerEventData.position = cursor.anchoredPosition;
+
+        //Create a list of Raycast Results
+        List<RaycastResult> results = new List<RaycastResult>();
+
+        //Raycast using the Graphics Raycaster and mouse click position
+        m_Raycaster.Raycast(m_PointerEventData, results);
+
+        if(results.Count > 0){
+            if(results[0].gameObject.GetComponent<SelectImgBtn>()){
+                if(imgbtn!=null&&imgbtn!=results[0].gameObject.GetComponent<SelectImgBtn>()){
+                    imgbtn.OnPointerExit(this);
+                }
+                imgbtn=results[0].gameObject.GetComponent<SelectImgBtn>();
+                imgbtn.OnPointerEnter(this);
+            }
+            else{
+                if(imgbtn!=null){
+                    imgbtn.OnPointerExit(this);
+                    imgbtn=null;
+                }
+            }
+        } 
     }
     public void movecursor(Vector2 dire){
-        currentaccel=dire.magnitude*cursoraccel;
+        currentaccel=dire*cursoraccel;
+    }
+    public void clickcursor(){
+        if(imgbtn!=null){
+            imgbtn.OnPointerDown(this,imgbtn.gameObject);
+        }
     }
 }
