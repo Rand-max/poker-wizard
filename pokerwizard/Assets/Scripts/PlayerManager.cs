@@ -82,9 +82,8 @@
                 playerchar.layer=layerToAdd;
                 foreach (var vm in playerParent.GetComponentsInChildren<CinemachineVirtualCamera>(true))
                 {
-                    vm.gameObject.layer=playerLayers[player.playerIndex];
+                    vm.gameObject.layer=layerToAdd;
                 }
-                playerParent.GetComponentInChildren<Camera>().cullingMask|= (1 << layerToAdd);
                 playerParent.GetComponentInChildren<ShootingController>().mousecolliderlayermask|= (1 << layerToAdd);
                 playerParent.GetComponentInChildren<ShootingController>().enemyLayer=enemyLayers[player.playerIndex];
                 playerParent.GetComponentInChildren<ShootingController>().FriendLayer=FriendLayers[player.playerIndex];
@@ -93,7 +92,7 @@
                 playerParent.GetComponentInChildren<ShootingController>().scoreManager=scoreManager;
                 Debug.Log(playerParent.GetComponentInChildren<ShootingController>().animateplayer);
                 //set the layer
-                playerParent.GetComponentInChildren<CinemachineVirtualCamera>().gameObject.layer = layerToAdd;
+                //playerParent.GetComponentInChildren<CinemachineVirtualCamera>().gameObject.layer = layerToAdd;
                 //add the layer
                 playerParent.GetComponentInChildren<Camera>().cullingMask |= 1 << layerToAdd;
                 //set the action in the custom cinemachine Input Handler
