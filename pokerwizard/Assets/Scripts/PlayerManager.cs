@@ -80,8 +80,10 @@
                 
                 int layerToAdd = (int)Mathf.Log(playerLayers[player.playerIndex].value, 2);
                 playerchar.layer=layerToAdd;
-                playerParent.GetComponentsInChildren<CinemachineVirtualCamera>()[0].gameObject.layer=playerLayers[player.playerIndex];
-                playerParent.GetComponentsInChildren<CinemachineVirtualCamera>()[1].gameObject.layer=playerLayers[player.playerIndex];
+                foreach (var vm in playerParent.GetComponentsInChildren<CinemachineVirtualCamera>())
+                {
+                    vm.gameObject.layer=playerLayers[player.playerIndex];
+                }
                 playerParent.GetComponentInChildren<Camera>().cullingMask|= (1 << layerToAdd);
                 playerParent.GetComponentInChildren<ShootingController>().mousecolliderlayermask|= (1 << layerToAdd);
                 playerParent.GetComponentInChildren<ShootingController>().enemyLayer=enemyLayers[player.playerIndex];
