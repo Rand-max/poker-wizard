@@ -57,5 +57,7 @@ public class SpellData : ScriptableObject
     public bool IsTeleporter;
     public float TeleportTiming;
     public Vector3 EffectOffset;
+    public bool canScore;
+    public int score;
     }
 }

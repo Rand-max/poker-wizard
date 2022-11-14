@@ -14,11 +14,13 @@ public class BulletpProjectile : MonoBehaviour
     public LayerMask enemyLayer;
     public List<GameObject>enemy;
     public LayerMask FriendLayer;
+    public ScoreManager scoreman;
     public GameObject friend;
     public GameObject origin;
     private bool triggered=false;
     public List<float> multipliers=new List<float>();
     public List<float> multipliers_timer=new List<float>();
+    bool alreadyScore=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -186,6 +188,10 @@ public class BulletpProjectile : MonoBehaviour
                     other.gameObject.GetComponentInParent<PlayerController>().rb.transform.position=pos;
                 }
                 Debug.Log("HP-1");
+                if(be.canScore){
+                    alreadyScore=true;
+                    scoreman.AddScore(origin.GetComponentInParent<PlayerController>().playerNumber,be.score);
+                }
                 Terminate();
             }
             

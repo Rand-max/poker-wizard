@@ -52,6 +52,8 @@ MonoBehaviour:
     IsTeleporter: 0
     TeleportTiming: 0
     EffectOffset: {x: 0, y: 0, z: 0}
+    canScore: 1
+    score: 1
   EffectLifeTime: 0.5
   BulletStartEffects:
   - Object: {fileID: 3098136464652354338, guid: f72144af1e65d164fadf4faeb1114728, type: 3}
@@ -76,6 +78,8 @@ MonoBehaviour:
     IsTeleporter: 0
     TeleportTiming: 0
     EffectOffset: {x: 0, y: 0, z: 0}
+    canScore: 0
+    score: 0
   BoomLifeTime: 3
   BulletEndEffects:
   - Object: {fileID: 1911298753794809787, guid: f2bc7211fa4e03f4a934d91f8c60e8c9, type: 3}
@@ -100,3 +104,5 @@ MonoBehaviour:
     IsTeleporter: 0
     TeleportTiming: 0
     EffectOffset: {x: 0, y: 0, z: 0}
+    canScore: 0
+    score: 0

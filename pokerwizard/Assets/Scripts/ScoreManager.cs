@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -8,10 +9,12 @@ public class ScoreManager : MonoBehaviour
     public List<int> leaderboard;
     public List<float> rank;
     public List<float> sortedrank;
+    public List<int>ShootPoint;
+    public List<TextMeshProUGUI>shootpointui;
+    public List<int>gold;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -32,5 +35,10 @@ public class ScoreManager : MonoBehaviour
                 }
             }
         }
+    }
+    public void AddScore(int playernum,int score){
+        ShootPoint[playernum]+=score;
+        shootpointui[0].text=(ShootPoint[0]+ShootPoint[1]).ToString();
+        shootpointui[1].text=(ShootPoint[2]+ShootPoint[3]).ToString();
     }
 }

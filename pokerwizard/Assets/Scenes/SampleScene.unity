@@ -3587,7 +3587,7 @@ GameObject:
   - component: {fileID: 138604660}
   - component: {fileID: 138604659}
   m_Layer: 0
-  m_Name: PlayerManager
+  m_Name: unusedPlayerManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3748,6 +3748,7 @@ MonoBehaviour:
   - {fileID: 1261018187}
   minimap: {fileID: 910979611}
   mirrorController: {fileID: 1185675891}
+  scoreManager: {fileID: 0}
   startingPoints:
   - {fileID: 319842830}
   - {fileID: 319842830}
@@ -28909,6 +28910,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  ShootPoint: 00000000000000000000000000000000
+  shootpointui:
+  - {fileID: 1443278325}
+  - {fileID: 1372903418}
+  gold: 00000000000000000000000000000000
 --- !u!4 &1026211998
 Transform:
   m_ObjectHideFlags: 0
@@ -52191,6 +52197,7 @@ MonoBehaviour:
   - {fileID: 1261018187}
   minimap: {fileID: 910979611}
   mirrorController: {fileID: 1185675891}
+  scoreManager: {fileID: 1026211997}
   startingPoints:
   - {fileID: 319842830}
   - {fileID: 24482524}

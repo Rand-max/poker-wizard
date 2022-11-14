@@ -7,6 +7,7 @@ public class ShootingController : MonoBehaviour
 {
     public float maxdistance;
     public SpellData CurrentSpell;
+    public ScoreManager scoreManager;
     public GamePlayUIMulti mirrorController;
     public GameObject playernormal;
     public GameObject animateplayer;
@@ -91,6 +92,7 @@ public class ShootingController : MonoBehaviour
                 newbullets.GetComponent<BulletpProjectile>().origin=wandposition;
                 newbullets.GetComponent<BulletpProjectile>().friend=friend;
                 newbullets.GetComponent<BulletpProjectile>().be=CurrentSpell.Bullets[i];
+                newbullets.GetComponent<BulletpProjectile>().scoreman=scoreManager;
                 for(int j=0;j<CurrentSpell.BulletStartEffects.Count;j++){
                     GameObject neweffects;
                     switch(CurrentSpell.BulletStartEffects[i].AttachedTarget){
@@ -122,6 +124,7 @@ public class ShootingController : MonoBehaviour
                     neweffects.GetComponent<BulletpProjectile>().be=CurrentSpell.BulletStartEffects[i];
                     neweffects.GetComponent<BulletpProjectile>().selfLayer=mousecolliderlayermask;
                     neweffects.GetComponent<BulletpProjectile>().enemyLayer=enemyLayer;
+                    neweffects.GetComponent<BulletpProjectile>().scoreman=scoreManager;
                 }
                 for(int j=0;j<CurrentSpell.BulletEndEffects.Count;j++){
                     GameObject boomeffects=Instantiate(CurrentSpell.BulletEndEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletEndEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
@@ -137,6 +140,7 @@ public class ShootingController : MonoBehaviour
                     boomeffects.GetComponent<BulletpProjectile>().be=CurrentSpell.BulletEndEffects[i];
                     boomeffects.GetComponent<BulletpProjectile>().selfLayer=mousecolliderlayermask;
                     boomeffects.GetComponent<BulletpProjectile>().enemyLayer=enemyLayer;
+                    boomeffects.GetComponent<BulletpProjectile>().scoreman=scoreManager;
                     boomeffects.transform.parent=boomeffect.transform;
                 }
                 newbullets.GetComponent<BulletpProjectile>().end=boomeffect;

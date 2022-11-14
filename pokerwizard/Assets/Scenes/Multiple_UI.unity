@@ -1190,6 +1190,7 @@ GameObject:
   - component: {fileID: 369257616}
   - component: {fileID: 369257615}
   - component: {fileID: 369257614}
+  - component: {fileID: 369257618}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -1257,6 +1258,7 @@ MonoBehaviour:
   - {fileID: 0}
   minimap: {fileID: 0}
   mirrorController: {fileID: 0}
+  scoreManager: {fileID: 0}
   startingPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -1393,6 +1395,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &369257618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369257613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ab8d9ffa009b44dbb90611962bdabe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreManager: {fileID: 0}
+  rank: 
+  hitpoint: 
+  gold: 
 --- !u!1 &374595632
 GameObject:
   m_ObjectHideFlags: 0

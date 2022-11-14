@@ -13,6 +13,7 @@
         public List<GameObject>playerheads;
         public GameObject minimap;
         public GamePlayUIMulti mirrorController;
+        public ScoreManager scoreManager;
         private List<PlayerInput> players = new List<PlayerInput>();
         public List<PlayerInput> Players=>players;
         [SerializeField]
@@ -50,6 +51,8 @@
             this.minimap=retiredplayerman.minimap;
             this.mirrorController=retiredplayerman.mirrorController;
             this.checkpointmanagers=retiredplayerman.checkpointmanagers;
+            this.scoreManager=retiredplayerman.scoreManager;
+            GetComponent<ScoreContainer>().scoreManager=scoreManager;
             foreach (var player in players)
             {
                 Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
@@ -64,6 +67,7 @@
                 player.transform.parent.GetComponentInChildren<ShootingController>().bulletendeffect=new GameObject("Boom");
                 player.GetComponentInChildren<PlayerController>().playerlayer=playerLayers[player.playerIndex];
                 player.GetComponentInChildren<PlayerController>().playerNumber=player.playerIndex;
+                player.GetComponentInChildren<PlayerController>().TeamNumber=Mathf.FloorToInt(player.playerIndex/2f);
                 player.GetComponentInChildren<PlayerController>().playerModel=playerchar.transform;
                 //need to use the parent due to the structure of the prefab
                 Transform playerParent = player.transform.parent;
@@ -81,6 +85,7 @@
                 playerParent.GetComponentInChildren<ShootingController>().FriendLayer=FriendLayers[player.playerIndex];
                 playerParent.GetComponentInChildren<ShootingController>().mirrorController=mirrorController;
                 playerParent.GetComponentInChildren<ShootingController>().animateplayer=playerchar;
+                playerParent.GetComponentInChildren<ShootingController>().scoreManager=scoreManager;
                 Debug.Log(playerParent.GetComponentInChildren<ShootingController>().animateplayer);
                 //set the layer
                 playerParent.GetComponentInChildren<CinemachineVirtualCamera>().gameObject.layer = layerToAdd;

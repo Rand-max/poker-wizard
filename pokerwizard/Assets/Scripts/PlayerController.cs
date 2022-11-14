@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public int playerNumber;
+    public int TeamNumber;
     public GameObject playerCursor;
     [SerializeField] float currentSpeed;
     float speed;
