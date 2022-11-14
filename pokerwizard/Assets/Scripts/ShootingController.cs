@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using Cinemachine;
 public class ShootingController : MonoBehaviour
 {
     public float maxdistance;
@@ -20,11 +20,13 @@ public class ShootingController : MonoBehaviour
     public GameObject bullet;
     public GameObject bulleteffect;
     public GameObject bulletendeffect;
+    public CinemachineVirtualCamera cvm;
     public float cooldowntime;
     public float bulletspeed;
     public float preparetime;
     public int ammo=0;
     private float cooldown;
+    float casttimer=0f;
     bool shootprepared=false;
     bool iscasted=false;
     // Start is called before the first frame update
@@ -37,8 +39,11 @@ public class ShootingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(iscasted){
+            casttimer+=Time.deltaTime;
+        }
         int selfnumber=transform.parent.GetComponentsInChildren<PlayerController>()[0].playerNumber;
-        if(iscasted&&!shootprepared&&cooldown<=0&&CurrentSpell!=null&&!mirrorController.isUnDissolving[selfnumber]&&!mirrorController.counting[selfnumber]&&!mirrorController.isDissolving[selfnumber]&&ammo>0){
+        if(iscasted&&!shootprepared&&cooldown<=0&&CurrentSpell!=null&&!mirrorController.isUnDissolving[selfnumber]&&!mirrorController.counting[selfnumber]&&!mirrorController.isDissolving[selfnumber]&&ammo>0&&casttimer<0f){
             ammo--;
             cooldown=preparetime;
             animateplayer.GetComponent<Animator>().Play("Armature_shoot",0,0f);
@@ -46,6 +51,10 @@ public class ShootingController : MonoBehaviour
             if(ammo<1){
                 mirrorController.UseSpell(selfnumber);
             }
+        }
+        if(iscasted&&casttimer<0){
+            cvm.gameObject.SetActive(false);
+            casttimer=0f;
         }
         if(cooldown>0){
             cooldown-=Time.deltaTime;
@@ -160,6 +169,13 @@ public class ShootingController : MonoBehaviour
     public void OnCast(InputAction.CallbackContext ctx){
         Debug.Log("casted");
         iscasted=ctx.ReadValueAsButton();
+        if(iscasted&&casttimer>0.1f){
+            cvm.gameObject.SetActive(true);
+        }
+        if(!iscasted&&casttimer>0){
+            casttimer=-1f;
+            iscasted=true;
+        }
         if(transform.parent.GetComponentInChildren<PlayerController>().playerCursor)transform.parent.GetComponentInChildren<PlayerController>().playerCursor.GetComponent<CursorKey>().clickcursor();
     }
 }
