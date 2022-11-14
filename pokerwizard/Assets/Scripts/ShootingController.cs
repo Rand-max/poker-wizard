@@ -169,7 +169,7 @@ public class ShootingController : MonoBehaviour
     public void OnCast(InputAction.CallbackContext ctx){
         Debug.Log("casted");
         iscasted=ctx.ReadValueAsButton();
-        if(iscasted&&casttimer>0.1f){
+        if(iscasted&&casttimer>0.5f){
             cvm.gameObject.SetActive(true);
         }
         if(!iscasted&&casttimer>0){
