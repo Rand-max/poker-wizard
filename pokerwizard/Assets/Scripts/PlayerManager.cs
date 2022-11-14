@@ -80,7 +80,7 @@
                 
                 int layerToAdd = (int)Mathf.Log(playerLayers[player.playerIndex].value, 2);
                 playerchar.layer=layerToAdd;
-                foreach (var vm in playerParent.GetComponentsInChildren<CinemachineVirtualCamera>())
+                foreach (var vm in playerParent.GetComponentsInChildren<CinemachineVirtualCamera>(true))
                 {
                     vm.gameObject.layer=playerLayers[player.playerIndex];
                 }

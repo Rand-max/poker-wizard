@@ -55,6 +55,10 @@ public class ShootingController : MonoBehaviour
         if(iscasted&&casttimer<0){
             cvm.gameObject.SetActive(false);
             casttimer=0f;
+            iscasted=false;
+        }
+        if(iscasted&&casttimer>0.2f){
+            cvm.gameObject.SetActive(true);
         }
         if(cooldown>0){
             cooldown-=Time.deltaTime;
@@ -169,9 +173,6 @@ public class ShootingController : MonoBehaviour
     public void OnCast(InputAction.CallbackContext ctx){
         Debug.Log("casted");
         iscasted=ctx.ReadValueAsButton();
-        if(iscasted&&casttimer>0.5f){
-            cvm.gameObject.SetActive(true);
-        }
         if(!iscasted&&casttimer>0){
             casttimer=-1f;
             iscasted=true;
