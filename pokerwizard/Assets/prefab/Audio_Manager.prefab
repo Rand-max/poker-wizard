@@ -105,3 +105,75 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: magic_shoot
+    clip: {fileID: 8300000, guid: 6c3d706d335a4714db133802dc31e63d, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: magic_hit
+    clip: {fileID: 8300000, guid: 83213261e9701d2458b600d44402d05d, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: magic_hit2
+    clip: {fileID: 8300000, guid: cbcc003f3844d1141a549e77f5c2f09a, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: accel
+    clip: {fileID: 8300000, guid: a3e59dcc864c8ed44b12e2cc322fd3c2, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: shield
+    clip: {fileID: 8300000, guid: 99e8401974c5e6d4c9a31be25de06fc7, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: shield_defend
+    clip: {fileID: 8300000, guid: 6e00360a191963448bb402fb0c853f4f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: ice_impact
+    clip: {fileID: 8300000, guid: 593895ee453186f468ca4f2c0a5e1b27, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: spell_crown
+    clip: {fileID: 8300000, guid: fd193d17a6b11c343a2259bad59b9dad, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: male_shoot
+    clip: {fileID: 8300000, guid: f4460553ccbe1fe4e9079b170005342a, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: female_shoot
+    clip: {fileID: 8300000, guid: ba19d129ad3f2394ea4ef4f625403ee8, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: male_hitten
+    clip: {fileID: 8300000, guid: b232dc1a0ac668e4b8c497d34bb34567, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: female_hitten
+    clip: {fileID: 8300000, guid: b6c942f1499a32b44943fcf7cdec7d1b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
