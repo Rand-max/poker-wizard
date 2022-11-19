@@ -2111,6 +2111,7 @@ MonoBehaviour:
   unlock: {fileID: 1573085290}
   shake: {fileID: 1113571739}
   isclicked: 0
+  punch: {x: 5, y: 5}
 --- !u!95 &487531153
 Animator:
   serializedVersion: 4
@@ -2191,6 +2192,7 @@ MonoBehaviour:
   unlock: {fileID: 1573085290}
   shake: {fileID: 1113571739}
   isclicked: 0
+  punch: {x: 5, y: 5}
 --- !u!95 &583512537
 Animator:
   serializedVersion: 4
@@ -4065,6 +4067,7 @@ MonoBehaviour:
   unlock: {fileID: 1573085290}
   shake: {fileID: 1113571739}
   isclicked: 0
+  punch: {x: 5, y: 5}
 --- !u!95 &974864290
 Animator:
   serializedVersion: 4
@@ -5171,6 +5174,7 @@ MonoBehaviour:
   unlock: {fileID: 1573085290}
   shake: {fileID: 1113571739}
   isclicked: 0
+  punch: {x: 5, y: 5}
 --- !u!95 &1282216116
 Animator:
   serializedVersion: 4

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using DG.Tweening;
 
 public class SelectImgBtn : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 {
@@ -11,6 +12,7 @@ public class SelectImgBtn : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
     public LockDissolveTest unlock;
     public CameraShake shake;
     public bool isclicked=false;
+    public Vector2 punch;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +40,14 @@ public class SelectImgBtn : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
             isclicked=true;
             unlock.ButtonClicked(cursor,locker);
             shake.ShakeIt();
+            AsyncPunch();
             OnPointerExit(currentCursor);
         }
     }
+    #region Async Workflow
+
+    async void AsyncPunch(){ 
+       await button.DOPunchAnchorPos(punch,.5f,20,1).SetEase(Ease.InOutBounce).AsyncWaitForCompletion();
+    }
+    #endregion
 }
