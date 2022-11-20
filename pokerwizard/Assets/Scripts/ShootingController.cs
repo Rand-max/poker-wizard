@@ -20,6 +20,7 @@ public class ShootingController : MonoBehaviour
     public GameObject bullet;
     public GameObject bulleteffect;
     public GameObject bulletendeffect;
+    public GameObject aim;
     public CinemachineVirtualCamera cvm;
     public float cooldowntime;
     public float bulletspeed;
@@ -56,9 +57,11 @@ public class ShootingController : MonoBehaviour
             cvm.gameObject.SetActive(false);
             casttimer=0f;
             iscasted=false;
+            aim.SetActive(false);
         }
         if(iscasted&&casttimer>0.2f){
             cvm.gameObject.SetActive(true);
+            aim.SetActive(true);
         }
         if(cooldown>0){
             cooldown-=Time.deltaTime;

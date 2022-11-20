@@ -27,6 +27,7 @@ public class GamePlayUIMulti : MonoBehaviour
     //spell icon,4 player val
     public PlayerManager playerman;
     public GameObject[] SpellIcon;
+    public GameObject[] aim;
     public Texture[] si_tex;
     public Color[] si_color;
     public Material[] SpellMat;

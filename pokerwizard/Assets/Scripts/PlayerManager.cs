@@ -90,6 +90,7 @@
                 playerParent.GetComponentInChildren<ShootingController>().mirrorController=mirrorController;
                 playerParent.GetComponentInChildren<ShootingController>().animateplayer=playerchar;
                 playerParent.GetComponentInChildren<ShootingController>().scoreManager=scoreManager;
+                playerParent.GetComponentInChildren<ShootingController>().aim=mirrorController.aim[player.playerIndex];
                 Debug.Log(playerParent.GetComponentInChildren<ShootingController>().animateplayer);
                 //set the layer
                 //playerParent.GetComponentInChildren<CinemachineVirtualCamera>().gameObject.layer = layerToAdd;
