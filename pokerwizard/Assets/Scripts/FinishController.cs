@@ -18,9 +18,11 @@ public class FinishController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other){
         PlayerController playercon=other.GetComponent<PlayerController>();
-        if(playercon!=null){
+        if(playercon!=null&&scoreman.rank[playercon.playerNumber]>300f){
             scoreman.finish(playercon.playerNumber);
-            Destroy(playercon.transform.parent.gameObject);
+            Destroy(playercon.rb);
+            Destroy(playercon.Normal.GetChild(0).gameObject);
+            Destroy(playercon.transform.parent.GetComponentInChildren<ShootingController>());
         }
     }
 }

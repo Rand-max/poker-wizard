@@ -6958,6 +6958,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1433091527}
   - component: {fileID: 1433091526}
+  - component: {fileID: 1433091528}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -6992,6 +6993,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1433091528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433091525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75468a3436c9934db3225a948747bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreContainer: {fileID: 0}
+  rank:
+  - {fileID: 1449546095}
+  - {fileID: 507622396}
+  - {fileID: 1806512164}
+  - {fileID: 574271910}
+  hitpoint:
+  - {fileID: 2111008807}
+  - {fileID: 806478607}
+  - {fileID: 2090048970}
+  - {fileID: 1053472972}
+  gold:
+  - {fileID: 555283003}
+  - {fileID: 525008900}
+  - {fileID: 1769473290}
+  - {fileID: 421928833}
+  totalscore: 00000000000000000000000000000000
+  total:
+  - {fileID: 1438254728}
+  - {fileID: 412349152}
+  - {fileID: 530598028}
+  - {fileID: 1324718250}
+  teamtotal:
+  - {fileID: 398866262}
+  - {fileID: 1676515109}
 --- !u!1 &1438254726
 GameObject:
   m_ObjectHideFlags: 0
@@ -7306,63 +7344,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1001 &1465554373
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5018007351539145561, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5018007351539145561, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5018007351539145561, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5018007351539145561, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5018007351539145561, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5018007351539145561, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5018007351539145561, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5018007351539145561, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5018007351539145561, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5018007351539145561, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5018007351539145561, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5018007351539145575, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-      propertyPath: m_Name
-      value: Audio_Manager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
 --- !u!1 &1498280897
 GameObject:
   m_ObjectHideFlags: 0

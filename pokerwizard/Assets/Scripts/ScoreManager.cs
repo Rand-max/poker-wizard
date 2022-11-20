@@ -38,6 +38,13 @@ public class ScoreManager : MonoBehaviour
                 }
             }
         }
+        if(finished[0]&&finished[1]&&finished[2]&&finished[3]){
+            scoreContainer.SaveScore();
+            loadScene.LoadtheScene(3);
+            for(int i=0;i<4;i++){
+                Destroy(checkpointmanager[i].GetComponent<CheckpointController>().player.transform.parent.parent.gameObject);
+            }
+        }
     }
     public void AddScore(int playernum,int score){
         ShootPoint[playernum]+=score;
@@ -47,10 +54,6 @@ public class ScoreManager : MonoBehaviour
     public void finish(int index){
         if(rank[index]>300f){
             finished[index]=true;
-        }
-        if(finished[0]==finished[1]==finished[2]==finished[3]==true){
-            scoreContainer.SaveScore();
-            loadScene.LoadtheScene(3);
         }
     }
 }
