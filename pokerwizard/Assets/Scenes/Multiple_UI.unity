@@ -6060,6 +6060,7 @@ GameObject:
   - component: {fileID: 1555891206}
   - component: {fileID: 1555891205}
   - component: {fileID: 1555891207}
+  - component: {fileID: 1555891208}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -6125,6 +6126,74 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
+--- !u!114 &1555891208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555891203}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed34b23206dfed942a8110938f0c8972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 1094305755175539417, guid: abe946a6443a3b84297ab0272343e877, type: 3}
+  - {fileID: 2860833182306902401, guid: cf9b2e051cc82f74395a94594a57873b, type: 3}
+  - {fileID: 8793460132122728066, guid: 2bf00452f5a457546a5f4023371190f2, type: 3}
+  - {fileID: 2304057042063654093, guid: 8b3473ac3539d5040a8e436b6302a5b2, type: 3}
+  playerheadnumber: 00000000000000000000000000000000
+  Cursors:
+  - {fileID: 444963585}
+  - {fileID: 1977893272}
+  - {fileID: 1905517748}
+  - {fileID: 264129672}
+  playerheads:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  minimap: {fileID: 0}
+  mirrorController: {fileID: 0}
+  scoreManager: {fileID: 0}
+  startingPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerLayers:
+  - serializedVersion: 2
+    m_Bits: 64
+  - serializedVersion: 2
+    m_Bits: 128
+  - serializedVersion: 2
+    m_Bits: 256
+  - serializedVersion: 2
+    m_Bits: 512
+  enemyLayers:
+  - serializedVersion: 2
+    m_Bits: 768
+  - serializedVersion: 2
+    m_Bits: 768
+  - serializedVersion: 2
+    m_Bits: 192
+  - serializedVersion: 2
+    m_Bits: 192
+  FriendLayers:
+  - serializedVersion: 2
+    m_Bits: 128
+  - serializedVersion: 2
+    m_Bits: 64
+  - serializedVersion: 2
+    m_Bits: 512
+  - serializedVersion: 2
+    m_Bits: 256
+  checkpointmanagers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1573085285
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,9 +26,18 @@
         private List<LayerMask> FriendLayers;
         private PlayerInputManager playerInputManager;
         public List<GameObject>checkpointmanagers;
+        public static PlayerManager instance;
 
         private void Awake()
         {
+            if(instance==null&&!GetComponent<EventSystem>()){
+                instance=this;
+            }
+            else if(!GetComponent<EventSystem>())
+            {
+                Destroy(gameObject);
+                return;
+            }
             if(!GetComponent<EventSystem>()){
                 DontDestroyOnLoad(this.gameObject);
                 SceneManager.sceneLoaded += OnSceneLoaded;
@@ -44,22 +53,28 @@
             Debug.Log("OnSceneLoaded: " + scene.name);
             Debug.Log(mode);
             PlayerManager retiredplayerman=FindObjectOfType<EventSystem>().GetComponent<PlayerManager>();
-            this.startingPoints=retiredplayerman.startingPoints;
-            for(int i=0;i<players.Count;i++)
-            {
-                Debug.Log(retiredplayerman.playerheads[0]);
-                playerheads[i]=retiredplayerman.playerheads[playerheadnumber[i]];
+            if(retiredplayerman){
+                this.startingPoints=retiredplayerman.startingPoints;
+                for(int i=0;i<players.Count;i++)
+                {
+                    playerheads[i]=retiredplayerman.playerheads[playerheadnumber[i]];
+                }
+                this.Cursors=retiredplayerman.Cursors;
+                this.minimap=retiredplayerman.minimap;
+                this.mirrorController=retiredplayerman.mirrorController;
+                this.checkpointmanagers=retiredplayerman.checkpointmanagers;
+                this.scoreManager=retiredplayerman.scoreManager;
             }
-            this.minimap=retiredplayerman.minimap;
-            this.mirrorController=retiredplayerman.mirrorController;
-            this.checkpointmanagers=retiredplayerman.checkpointmanagers;
-            this.scoreManager=retiredplayerman.scoreManager;
-            Debug.Log(this.GetComponent<ScoreContainer>());
-            
             GetComponent<ScoreContainer>().scoreManager=scoreManager;
-            scoreManager.scoreContainer=this.GetComponent<ScoreContainer>();
+            if(scoreManager){
+                scoreManager.scoreContainer=this.GetComponent<ScoreContainer>();
+            }
             foreach (var player in players)
             {
+                ScrollDown sd=FindObjectOfType<ScrollDown>();
+                if(sd){
+                    player.transform.parent.GetComponentInChildren<ShootingController>().SD=sd;
+                }
                 Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
                 player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().OnTargetObjectWarped(player.GetComponent<PlayerController>().Normal,startingPoints[player.playerIndex].position-player.GetComponent<PlayerController>().rb.transform.position);
                 player.GetComponent<PlayerController>().rb.transform.position=startingPoints[player.playerIndex].position;
@@ -218,6 +233,10 @@
                 players[3].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[1].gameObject);
             }
             */
+        }
+        public void RemovePlayer(PlayerInput player)
+        {
+            players.Remove(player);
         }
     }
 

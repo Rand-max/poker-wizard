@@ -30,13 +30,13 @@ public class ShootingController : MonoBehaviour
     float casttimer=0f;
     bool shootprepared=false;
     bool iscasted=false;
+    public ScrollDown SD;
     // Start is called before the first frame update
     void Start()
     {
         transform.position=playernormal.transform.position;
         //Cursor.lockState=CursorLockMode.Locked;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -181,5 +181,20 @@ public class ShootingController : MonoBehaviour
             iscasted=true;
         }
         if(transform.parent.GetComponentInChildren<PlayerController>().playerCursor)transform.parent.GetComponentInChildren<PlayerController>().playerCursor.GetComponent<CursorKey>().clickcursor();
+    }
+    public void OnEngine(InputAction.CallbackContext ctx){
+        Debug.Log("back");
+        if(SD!=null&&SD.isdone){
+            foreach (var item in FindObjectsOfType<PlayerController>())
+            {
+                Destroy(item.transform.parent.gameObject);
+            }
+            PlayerManager pm=FindObjectOfType<PlayerManager>();
+            foreach (var item in pm.Players)
+            {
+                pm.RemovePlayer(item);
+            }
+            FindObjectOfType<LoadScene>().LoadtheScene(2);
+        }
     }
 }

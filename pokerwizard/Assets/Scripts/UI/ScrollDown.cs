@@ -11,6 +11,7 @@ public class ScrollDown : MonoBehaviour
     public float[] wait_time;
 
     public float cdtime;
+    public bool isdone=false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,7 @@ public class ScrollDown : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("flag_scroll");
             await flg.DOMoveY(-8,Random.Range(.7f,1f)).SetEase(Ease.InOutQuad).AsyncWaitForCompletion();
         }
+        isdone=true;
     }
     
     async void AsyncBtn(){
