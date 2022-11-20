@@ -29,9 +29,11 @@
 
         private void Awake()
         {
-            DontDestroyOnLoad(this.gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded;
-            playerInputManager = FindObjectOfType<PlayerInputManager>();
+            if(!GetComponent<EventSystem>()){
+                DontDestroyOnLoad(this.gameObject);
+                SceneManager.sceneLoaded += OnSceneLoaded;
+                playerInputManager = FindObjectOfType<PlayerInputManager>();
+            }
         }
         void Update(){
             if(Keyboard.current.kKey.wasPressedThisFrame){
@@ -52,7 +54,10 @@
             this.mirrorController=retiredplayerman.mirrorController;
             this.checkpointmanagers=retiredplayerman.checkpointmanagers;
             this.scoreManager=retiredplayerman.scoreManager;
+            Debug.Log(this.GetComponent<ScoreContainer>());
+            
             GetComponent<ScoreContainer>().scoreManager=scoreManager;
+            scoreManager.scoreContainer=this.GetComponent<ScoreContainer>();
             foreach (var player in players)
             {
                 Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
