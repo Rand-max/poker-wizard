@@ -31,6 +31,7 @@ public class ShootingController : MonoBehaviour
     bool shootprepared=false;
     bool iscasted=false;
     public ScrollDown SD;
+    public AudioManager am;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,9 @@ public class ShootingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!am){
+            am=FindObjectOfType<AudioManager>();
+        }
         if(iscasted){
             casttimer+=Time.deltaTime;
         }
@@ -78,6 +82,7 @@ public class ShootingController : MonoBehaviour
             Vector3 aimdir=(transform.position-wandposition.transform.position).normalized;
             GameObject newbullet=Instantiate(bullet,wandposition.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
             for(int i=0;i<CurrentSpell.Bullets.Count;i++){
+                if(CurrentSpell.Bullets[i].sounfx!=null)am.Play(CurrentSpell.Bullets[i].sounfx.clip);
                 GameObject neweffect=Instantiate(bulleteffect,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
                 GameObject boomeffect=Instantiate(bulletendeffect,newbullet.transform.position,Quaternion.LookRotation(aimdir,Vector3.up));
                 GameObject newbullets;

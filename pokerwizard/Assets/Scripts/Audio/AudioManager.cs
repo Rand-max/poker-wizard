@@ -38,4 +38,12 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
     }
+    public void Play(AudioClip clip){
+        Sound s=Array.Find(sounds,sound => sound.clip==clip);
+        if(s==null){
+            Debug.LogWarning("Sound: "+clip.name+" not found");
+            return;
+        }
+        s.source.Play();
+    }
 }

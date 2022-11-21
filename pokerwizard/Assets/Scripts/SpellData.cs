@@ -33,6 +33,7 @@ public class SpellData : ScriptableObject
     public List<BulletEffect> BulletEndEffects;
     [System.Serializable]public class BulletEffect{
     public GameObject Object;
+    public Sound sounfx;
     public float LifeTime=3f;
     [Tooltip("Will Collide with: 0=ground 1=enemy 2=self 3=friend 4=bullet")]
     public List<bool> targettype=new List<bool>(5){true,true,false,false,false};

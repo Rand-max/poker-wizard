@@ -31,6 +31,13 @@ MonoBehaviour:
   MaxDistance: 10
   Bullets:
   - Object: {fileID: 1009217233085233779, guid: bf4a4b1b376e40d47b65f88f7992a1dc, type: 3}
+    sounfx:
+      name: 
+      clip: {fileID: 8300000, guid: 99e8401974c5e6d4c9a31be25de06fc7, type: 3}
+      volume: 1
+      pitch: 1
+      source: {fileID: 0}
+      loop: 0
     LifeTime: 3
     targettype: 0000000001
     AttachedTarget: 2
@@ -52,6 +59,8 @@ MonoBehaviour:
     IsTeleporter: 0
     TeleportTiming: 0
     EffectOffset: {x: 0, y: 0, z: 0}
+    canScore: 0
+    score: 0
   EffectLifeTime: 0.5
   BulletStartEffects: []
   BoomLifeTime: 3

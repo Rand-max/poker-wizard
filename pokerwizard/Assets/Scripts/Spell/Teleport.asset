@@ -31,12 +31,19 @@ MonoBehaviour:
   MaxDistance: 10
   Bullets:
   - Object: {fileID: 852493557634586081, guid: b2878f14814f06d4485de45677b05e9d, type: 3}
+    sounfx:
+      name: 
+      clip: {fileID: 8300000, guid: 6c3d706d335a4714db133802dc31e63d, type: 3}
+      volume: 1
+      pitch: 1
+      source: {fileID: 0}
+      loop: 0
     LifeTime: 3
     targettype: 0101000000
     AttachedTarget: 0
     BulletSpeed: 80
-    HasPursuit: 0
-    PursuitStrength: 3
+    HasPursuit: 1
+    PursuitStrength: 1
     HasSlowdown: 1
     BulletSlowdownRate: 0.6
     BulletSlowdownTime: 3
@@ -52,9 +59,18 @@ MonoBehaviour:
     IsTeleporter: 1
     TeleportTiming: 0
     EffectOffset: {x: 0, y: 0, z: 0}
+    canScore: 0
+    score: 0
   EffectLifeTime: 0.5
   BulletStartEffects:
   - Object: {fileID: 7006112819736610612, guid: 1f2c9c6e0dbb68e4581bad841306d546, type: 3}
+    sounfx:
+      name: 
+      clip: {fileID: 0}
+      volume: 0
+      pitch: 0
+      source: {fileID: 0}
+      loop: 0
     LifeTime: 0.5
     targettype: 0000010000
     AttachedTarget: 0
@@ -76,9 +92,18 @@ MonoBehaviour:
     IsTeleporter: 0
     TeleportTiming: 0
     EffectOffset: {x: 0, y: 0, z: 0}
+    canScore: 0
+    score: 0
   BoomLifeTime: 3
   BulletEndEffects:
   - Object: {fileID: 1729683840255180925, guid: ce58857cddecb324f9525560add37572, type: 3}
+    sounfx:
+      name: 
+      clip: {fileID: 8300000, guid: cbcc003f3844d1141a549e77f5c2f09a, type: 3}
+      volume: 1
+      pitch: 1
+      source: {fileID: 0}
+      loop: 0
     LifeTime: 3
     targettype: 
     AttachedTarget: 0
@@ -100,7 +125,16 @@ MonoBehaviour:
     IsTeleporter: 0
     TeleportTiming: 0
     EffectOffset: {x: 0, y: 0, z: 0}
+    canScore: 0
+    score: 0
   - Object: {fileID: 6258868738055463275, guid: 87e5b6f9253b0904098e9eb1c1ec79d0, type: 3}
+    sounfx:
+      name: 
+      clip: {fileID: 0}
+      volume: 0
+      pitch: 0
+      source: {fileID: 0}
+      loop: 0
     LifeTime: 5
     targettype: 0101000000
     AttachedTarget: 0
@@ -122,3 +156,5 @@ MonoBehaviour:
     IsTeleporter: 1
     TeleportTiming: 0
     EffectOffset: {x: 0, y: 0, z: 0}
+    canScore: 0
+    score: 0

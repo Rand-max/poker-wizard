@@ -31,6 +31,13 @@ MonoBehaviour:
   MaxDistance: 10
   Bullets:
   - Object: {fileID: 7664000146498155418, guid: fd579adcb4b6e294ea5ccbe0f55cd4a5, type: 3}
+    sounfx:
+      name: 
+      clip: {fileID: 8300000, guid: a562c65e3f62bfb4ca78b5f4f17c36bb, type: 3}
+      volume: 1
+      pitch: 1
+      source: {fileID: 0}
+      loop: 0
     LifeTime: 3
     targettype: 0001000001
     AttachedTarget: 0

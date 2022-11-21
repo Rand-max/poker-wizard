@@ -31,12 +31,19 @@ MonoBehaviour:
   MaxDistance: 10
   Bullets:
   - Object: {fileID: 3921215467468970123, guid: 6e7c48a6fcd449f488f35de2c93eb026, type: 3}
+    sounfx:
+      name: 
+      clip: {fileID: 8300000, guid: 6c3d706d335a4714db133802dc31e63d, type: 3}
+      volume: 1
+      pitch: 1
+      source: {fileID: 0}
+      loop: 0
     LifeTime: 3
     targettype: 0101000000
     AttachedTarget: 0
     BulletSpeed: 70
     HasPursuit: 1
-    PursuitStrength: 3
+    PursuitStrength: 4
     HasSlowdown: 1
     BulletSlowdownRate: 0.5
     BulletSlowdownTime: 5
@@ -57,6 +64,13 @@ MonoBehaviour:
   EffectLifeTime: 0.5
   BulletStartEffects:
   - Object: {fileID: 5219434945743950400, guid: 6e562935c8aade4428732cf5d9d24e37, type: 3}
+    sounfx:
+      name: 
+      clip: {fileID: 0}
+      volume: 0
+      pitch: 0
+      source: {fileID: 0}
+      loop: 0
     LifeTime: 0.5
     targettype: 0000010000
     AttachedTarget: 0
@@ -83,6 +97,13 @@ MonoBehaviour:
   BoomLifeTime: 3
   BulletEndEffects:
   - Object: {fileID: 416447120630474777, guid: e2764498610bb3542bc1cf4894871529, type: 3}
+    sounfx:
+      name: 
+      clip: {fileID: 8300000, guid: cbcc003f3844d1141a549e77f5c2f09a, type: 3}
+      volume: 1
+      pitch: 1
+      source: {fileID: 0}
+      loop: 0
     LifeTime: 3
     targettype: 0001000000
     AttachedTarget: 0

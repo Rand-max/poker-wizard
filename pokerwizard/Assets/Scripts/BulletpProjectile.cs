@@ -24,6 +24,8 @@ public class BulletpProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager am=FindObjectOfType<AudioManager>();
+        if(be.sounfx!=null)am.Play(be.sounfx.clip);
         tag="bullet";
         if(GetComponent<Rigidbody>()){
             bulletrigid=GetComponent<Rigidbody>();
