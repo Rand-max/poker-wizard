@@ -43,7 +43,7 @@ MonoBehaviour:
     AttachedTarget: 0
     BulletSpeed: 70
     HasPursuit: 1
-    PursuitStrength: 1
+    PursuitStrength: 0.5
     HasSlowdown: 1
     BulletSlowdownRate: 0.6
     BulletSlowdownTime: 3
