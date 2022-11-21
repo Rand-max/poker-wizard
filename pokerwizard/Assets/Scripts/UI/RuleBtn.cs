@@ -22,4 +22,14 @@ public class RuleBtn : MonoBehaviour,IPointerDownHandler,IPointerEnterHandler,IP
     public void OnPointerExit(PointerEventData eventData){
         button.GetComponent<Animator>().Play("bookhover_off");
     }
+    public void OnPointerDown(CursorKey cursor){
+        FindObjectOfType<AudioManager>().Play("book_flip");
+    }
+    public void OnPointerEnter(CursorKey cursor){
+        button.GetComponent<Animator>().Play("bookhover_on");
+        FindObjectOfType<AudioManager>().Play("btn_hover");
+    }
+    public void OnPointerExit(CursorKey cursor){
+        button.GetComponent<Animator>().Play("bookhover_off");
+    }
 }

@@ -21,6 +21,8 @@ public class CursorKey : MonoBehaviour
     PointerEventData m_PointerEventData;
     [SerializeField] EventSystem m_EventSystem;
     SelectImgBtn imgbtn;
+    RuleBtn rlbtn;
+    ButtonEvent btne;
     void Start()
     {
         cursor= GetComponent<RectTransform>();
@@ -87,6 +89,32 @@ public class CursorKey : MonoBehaviour
                     imgbtn=null;
                 }
             }
+            if(results[0].gameObject.GetComponent<RuleBtn>()){
+                if(rlbtn!=null&&rlbtn!=results[0].gameObject.GetComponent<RuleBtn>()){
+                    rlbtn.OnPointerExit(this);
+                }
+                rlbtn=results[0].gameObject.GetComponent<RuleBtn>();
+                rlbtn.OnPointerEnter(this);
+            }
+            else{
+                if(rlbtn!=null){
+                    rlbtn.OnPointerExit(this);
+                    rlbtn=null;
+                }
+            }
+            if(results[0].gameObject.GetComponent<ButtonEvent>()){
+                if(btne!=null&&btne!=results[0].gameObject.GetComponent<ButtonEvent>()){
+                    btne.OnPointerExit(this);
+                }
+                btne=results[0].gameObject.GetComponent<ButtonEvent>();
+                btne.OnPointerEnter(this);
+            }
+            else{
+                if(btne!=null){
+                    btne.OnPointerExit(this);
+                    btne=null;
+                }
+            }
         } 
     }
     public void movecursor(Vector2 dire){
@@ -95,6 +123,12 @@ public class CursorKey : MonoBehaviour
     public void clickcursor(){
         if(imgbtn!=null){
             imgbtn.OnPointerDown(this,imgbtn.gameObject);
+        }
+        if(rlbtn!=null){
+            rlbtn.OnPointerDown(this);
+        }
+        if(btne!=null){
+            btne.OnPointerDown(this);
         }
     }
 }
