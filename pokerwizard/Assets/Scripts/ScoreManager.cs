@@ -15,6 +15,7 @@ public class ScoreManager : MonoBehaviour
     public List<bool>finished;
     public LoadScene loadScene;
     public ScoreContainer scoreContainer;
+    public bool goldspawned=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,10 @@ public class ScoreManager : MonoBehaviour
         if(finished[0]&&finished[1]&&finished[2]&&finished[3]){
             scoreContainer.SaveScore();
             loadScene.LoadtheScene(3);
+        }
+        if(!goldspawned&&sortedrank[3]>200f){
+            GetComponent<GoldEggSpawner>().spawn(2);
+            goldspawned=true;
         }
     }
     public void AddScore(int playernum,int score){

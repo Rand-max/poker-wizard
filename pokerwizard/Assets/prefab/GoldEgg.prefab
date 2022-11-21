@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1842565951281550650}
   - component: {fileID: 1842565951281550653}
   - component: {fileID: 942723336609873930}
+  - component: {fileID: 8059572702824567598}
   m_Layer: 0
   m_Name: GoldEgg
   m_TagString: Untagged
@@ -51,6 +52,13 @@ MonoBehaviour:
   egg: {fileID: 5972190719224082336}
   alive: 0
   countdown: 0
+  nmA: {fileID: 8059572702824567598}
+  players: []
+  AlarmDistance: 0
+  spawnPoint: {x: 0, y: 0, z: 0}
+  arearange: 0
+  playerinrange: 0
+  cooldown: 0
 --- !u!136 &942723336609873930
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -65,6 +73,28 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.12, z: 0}
+--- !u!195 &8059572702824567598
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842565951281550652}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 50
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 3
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1842565950671206175
 PrefabInstance:
   m_ObjectHideFlags: 0

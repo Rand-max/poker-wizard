@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GoldenEgg : MonoBehaviour
 {
@@ -10,6 +11,14 @@ public class GoldenEgg : MonoBehaviour
     public bool alive;
     public float countdown;
     private bool par_start;
+    public NavMeshAgent nmA;
+    public List<GameObject> players;
+    public float AlarmDistance;
+    public Vector3 spawnPoint;
+    public float arearange;
+    public bool playerinrange;
+    public float cooldown;
+    float innertimer=0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +43,33 @@ public class GoldenEgg : MonoBehaviour
         }
         if(countdown==0){
             Destroy(this.gameObject);
+        }
+        playerinrange=false;
+        for (int i = 0; i < players.Count; i++)
+        {
+            if(players[i]&&Vector3.Distance(players[i].transform.position,transform.position)<AlarmDistance){
+                playerinrange=true;
+            }
+        }
+        if(playerinrange){
+            if(innertimer<cooldown/2){
+                innertimer+=Time.deltaTime;
+            }
+            else{
+                innertimer=0;
+                Vector2 randomvec=Random.insideUnitCircle*arearange;
+                nmA.SetDestination(spawnPoint+new Vector3(randomvec.x,0f,randomvec.y));
+            }
+        }
+        else{
+            if(nmA.isStopped||innertimer<cooldown){
+                innertimer=0;
+                Vector2 randomvec=Random.insideUnitCircle*arearange;
+                nmA.SetDestination(spawnPoint+new Vector3(randomvec.x,0f,randomvec.y));
+            }
+            else{
+                innertimer+=Time.deltaTime;
+            }
         }
     }
     void OnTriggerEnter(Collider col){

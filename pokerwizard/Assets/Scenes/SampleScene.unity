@@ -4106,6 +4106,11 @@ MonoBehaviour:
   - {fileID: 520019055}
   - {fileID: 53265523}
   - {fileID: 70168548}
+  readyUI: {fileID: 0}
+  goIcon: {fileID: 0}
+  allReady: 0
+  isDissolving: 0
+  countdown: 0
 --- !u!1001 &140009582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10377,7 +10382,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424962589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 583, y: 0, z: 192}
+  m_LocalPosition: {x: 583, y: 2, z: 192}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21060,7 +21065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630967492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 284.8, y: 0, z: 212.7}
+  m_LocalPosition: {x: 284.8, y: 2, z: 212.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29789,7 +29794,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &982985214
 BoxCollider:
@@ -30739,6 +30744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1026211998}
   - component: {fileID: 1026211997}
+  - component: {fileID: 1026211999}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -30797,6 +30803,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 79
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1026211999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026211996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7adfcd9a5df69542b85125486a79085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: {fileID: 1842565951281550652, guid: 848e7a8e455857c4bb7c23c6b9a7a927, type: 3}
+  players: []
+  AlarmDistance: 20
+  spawnPoints:
+  - {fileID: 1945934129}
+  - {fileID: 424962590}
+  - {fileID: 1657960304}
+  - {fileID: 1141386545}
+  - {fileID: 1385634486}
+  - {fileID: 630967493}
+  - {fileID: 2139832033}
+  arearange: 30
+  cooldown: 2
+  mask:
+    serializedVersion: 2
+    m_Bits: 17
 --- !u!1001 &1026619765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34082,7 +34116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141386544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 301, y: 0, z: 768}
+  m_LocalPosition: {x: 301, y: 2, z: 768}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40196,7 +40230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385634485}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 426, y: 0, z: 442}
+  m_LocalPosition: {x: 426, y: 7, z: 442}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53009,7 +53043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657960303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 614, y: 0, z: 743}
+  m_LocalPosition: {x: 614, y: 2, z: 743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55197,6 +55231,11 @@ MonoBehaviour:
   - {fileID: 520019055}
   - {fileID: 53265523}
   - {fileID: 70168548}
+  readyUI: {fileID: 0}
+  goIcon: {fileID: 0}
+  allReady: 0
+  isDissolving: 0
+  countdown: 0
 --- !u!1001 &1749758937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59276,7 +59315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945934128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 758, y: 0, z: 612}
+  m_LocalPosition: {x: 758, y: 2, z: 612}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70916,7 +70955,7 @@ TerrainCollider:
   m_Material: {fileID: 0}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 9d8c768be9a9be9489dc0df085f4c568, type: 2}
-  m_EnableTreeColliders: 1
+  m_EnableTreeColliders: 0
 --- !u!218 &2065846995
 Terrain:
   m_ObjectHideFlags: 0
@@ -72094,7 +72133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139832032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 663, y: 0, z: 400}
+  m_LocalPosition: {x: 663, y: 5, z: 400}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

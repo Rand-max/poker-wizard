@@ -21,7 +21,7 @@ public class ClownItem : MonoBehaviour
     // Use this for initialization
     void Start () {
         // Store the starting position & rotation of the object
-        posOffset = transform.position;
+        posOffset = transform.localPosition;
     }
      
     // Update is called once per frame
@@ -33,6 +33,6 @@ public class ClownItem : MonoBehaviour
         tempPos = posOffset;
         tempPos.y += Mathf.Sin (Time.fixedTime * Mathf.PI * frequency) * amplitude;
  
-        transform.position = tempPos;
+        transform.localPosition = tempPos;
     }
 }
