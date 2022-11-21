@@ -22,7 +22,7 @@ public class FinishController : MonoBehaviour
             scoreman.finish(playercon.playerNumber);
             Destroy(playercon.rb);
             Destroy(playercon.Normal.GetChild(0).gameObject);
-            Destroy(playercon.transform.parent.GetComponentInChildren<ShootingController>());
+            playercon.transform.parent.GetComponentInChildren<ShootingController>().enabled=false;
         }
     }
 }
