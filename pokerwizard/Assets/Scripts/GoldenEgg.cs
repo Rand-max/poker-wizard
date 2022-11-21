@@ -67,12 +67,12 @@ public class GoldenEgg : MonoBehaviour
             nmA.acceleration=30f;
             nmA.speed=70f;
             if(innertimer<cooldown){
+                innertimer+=Time.deltaTime;
+            }
+            else{
                 innertimer=0;
                 Vector2 randomvec=Random.insideUnitCircle*arearange;
                 nmA.SetDestination(spawnPoint+new Vector3(randomvec.x,0f,randomvec.y));
-            }
-            else{
-                innertimer+=Time.deltaTime;
             }
         }
     }
