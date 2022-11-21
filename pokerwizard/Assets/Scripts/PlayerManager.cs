@@ -37,6 +37,7 @@
         public float countdown;
         private Material mat;
         private float fadeval;
+        LoadScene loader;
 
         private void Awake()
         {
@@ -76,7 +77,16 @@
             }
             //sample scene
             if(Keyboard.current.kKey.wasPressedThisFrame){
-                SceneManager.LoadScene("SampleScene");
+                if(loader){
+                    loader.LoadtheScene(0);
+                }
+                loader=FindObjectOfType<LoadScene>();
+                if(loader){
+                    loader.LoadtheScene(0);
+                }
+                else{
+                    SceneManager.LoadScene("SampleScene");
+                }
             }
         }
         void OnSceneLoaded(Scene scene, LoadSceneMode mode){
