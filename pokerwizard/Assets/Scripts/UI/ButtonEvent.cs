@@ -9,7 +9,9 @@ public class ButtonEvent : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,I
     public RectTransform btn;
     [SerializeField] private Image greenbtn;
     [SerializeField] private Sprite btn_before,btn_after;
-    
+    public int type;
+    public LoadScene loader;
+    public ReadyCallOut setting;
     void Start(){
         // btn.GetComponent<Animator>().Play("btn_hover");
     }
@@ -32,6 +34,17 @@ public class ButtonEvent : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,I
     public void OnPointerDown(CursorKey cursor){
         greenbtn.sprite=btn_after;
         FindObjectOfType<AudioManager>().Play("btn_click");
+        switch(type){
+            case 0:
+            setting.ButtonClicked();
+            break;
+            case 1:
+            loader.LoadtheScene(1);
+            break;
+            case 2:
+            loader.LoadtheScene(2);
+            break;
+        }
     }
     public void OnPointerUp(CursorKey cursor){
         greenbtn.sprite=btn_before;

@@ -4329,6 +4329,7 @@ GameObject:
   - component: {fileID: 1303348670}
   - component: {fileID: 1303348669}
   - component: {fileID: 1303348668}
+  - component: {fileID: 1303348671}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4394,6 +4395,79 @@ Transform:
   m_Father: {fileID: 1113332956}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1303348671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303348667}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed34b23206dfed942a8110938f0c8972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 1094305755175539417, guid: abe946a6443a3b84297ab0272343e877, type: 3}
+  - {fileID: 2860833182306902401, guid: cf9b2e051cc82f74395a94594a57873b, type: 3}
+  - {fileID: 8793460132122728066, guid: 2bf00452f5a457546a5f4023371190f2, type: 3}
+  - {fileID: 2304057042063654093, guid: 8b3473ac3539d5040a8e436b6302a5b2, type: 3}
+  playerheadnumber: 00000000000000000000000000000000
+  Cursors:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerheads:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  minimap: {fileID: 0}
+  mirrorController: {fileID: 0}
+  scoreManager: {fileID: 0}
+  startingPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerLayers:
+  - serializedVersion: 2
+    m_Bits: 64
+  - serializedVersion: 2
+    m_Bits: 128
+  - serializedVersion: 2
+    m_Bits: 256
+  - serializedVersion: 2
+    m_Bits: 512
+  enemyLayers:
+  - serializedVersion: 2
+    m_Bits: 768
+  - serializedVersion: 2
+    m_Bits: 768
+  - serializedVersion: 2
+    m_Bits: 192
+  - serializedVersion: 2
+    m_Bits: 192
+  FriendLayers:
+  - serializedVersion: 2
+    m_Bits: 128
+  - serializedVersion: 2
+    m_Bits: 64
+  - serializedVersion: 2
+    m_Bits: 512
+  - serializedVersion: 2
+    m_Bits: 256
+  checkpointmanagers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  readyUI: {fileID: 0}
+  goIcon: {fileID: 0}
+  allReady: 0
+  isDissolving: 0
+  countdown: 0
 --- !u!1 &1322796444
 GameObject:
   m_ObjectHideFlags: 0
@@ -7963,6 +8037,9 @@ MonoBehaviour:
   greenbtn: {fileID: 4813319180604307462}
   btn_before: {fileID: 21300000, guid: 8a42c812292b93b459dfc6f729b80d4d, type: 3}
   btn_after: {fileID: 21300000, guid: a38b05324620506499fda4f7ea55e254, type: 3}
+  type: 2
+  loader: {fileID: 0}
+  setting: {fileID: 0}
 --- !u!1 &4813319180604307468
 GameObject:
   m_ObjectHideFlags: 0
