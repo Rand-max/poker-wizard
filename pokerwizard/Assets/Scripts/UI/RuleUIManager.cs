@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 using DG.Tweening;
 
 public class RuleUIManager : MonoBehaviour
@@ -34,6 +35,9 @@ public class RuleUIManager : MonoBehaviour
     public TextMeshProUGUI title_word;
     public TextMeshProUGUI ctwoct;
     public TextMeshProUGUI cthreect;
+
+    //guide img
+    public GameObject GuideImg;
 
     //bgc
     [SerializeField]
@@ -152,6 +156,7 @@ public class RuleUIManager : MonoBehaviour
         card.SetActive(false);
         right_content.SetActive(true);
         leftimg.SetActive(true);
+        GuideImg.SetActive(false);
     }
 
     // Update is called once per frame
@@ -160,6 +165,12 @@ public class RuleUIManager : MonoBehaviour
         JudgePage();
         c1bgc.color=c1color;
         c3bgc.color=c3color;
+        if(Keyboard.current.oKey.wasPressedThisFrame){
+            GuideImg.SetActive(true);
+        }
+        if(Keyboard.current.oKey.wasReleasedThisFrame){
+            GuideImg.SetActive(false);
+        }
     }
     
     #region Async Workflow

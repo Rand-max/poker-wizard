@@ -4,6 +4,7 @@
     using UnityEngine.InputSystem;
     using UnityEngine.SceneManagement;
     using UnityEngine.EventSystems;
+    using UnityEngine.UI;
 
     public class PlayerManager : MonoBehaviour
     {
@@ -28,8 +29,24 @@
         public List<GameObject>checkpointmanagers;
         public static PlayerManager instance;
 
+        //ready
+        public GameObject readyUI;
+        public GameObject goIcon;
+        public bool allReady;
+        public bool isDissolving;
+        public float countdown;
+        private Material mat;
+        private float fadeval;
+
         private void Awake()
         {
+            countdown=4f;
+            isDissolving=false;
+            allReady=false;
+            readyUI.SetActive(false);
+            mat=goIcon.GetComponent<Image>().material;
+            mat.SetFloat("_FadeValue",1f);
+
             if(instance==null&&!GetComponent<EventSystem>()){
                 instance=this;
             }
@@ -45,7 +62,27 @@
             }
         }
         void Update(){
+            //go dissolve and play
+            if(Keyboard.current.lKey.wasPressedThisFrame){
+                allReady=true;
+            }
+            if(allReady){
+                readyUI.SetActive(true);
+            }
+            if(Keyboard.current.pKey.wasPressedThisFrame&&allReady){
+                isDissolving=true;
+            }
+            if(isDissolving){
+                fadeval-=Time.deltaTime;
+                if(fadeval<0f){
+                    fadeval=0f;
+                    isDissolving=false;
+                }
+                mat.SetFloat("_FadeValue",fadeval);
+            }
+            //sample scene
             if(Keyboard.current.kKey.wasPressedThisFrame){
+                readyUI.SetActive(false);
                 SceneManager.LoadScene("SampleScene");
             }
         }

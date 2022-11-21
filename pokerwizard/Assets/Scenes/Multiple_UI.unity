@@ -1296,6 +1296,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  readyUI: {fileID: 1989124381}
+  goIcon: {fileID: 1185878436}
+  allReady: 0
+  isDissolving: 0
+  countdown: 0
 --- !u!114 &369257616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4379,7 +4384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1113571738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6194,6 +6199,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  readyUI: {fileID: 0}
+  goIcon: {fileID: 0}
+  allReady: 0
+  isDissolving: 0
+  countdown: 0
 --- !u!1 &1573085285
 GameObject:
   m_ObjectHideFlags: 0
@@ -6330,16 +6340,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1113571739}
-        m_TargetAssemblyTypeName: CameraShake, Assembly-CSharp
-        m_MethodName: ShakeIt
-        m_Mode: 1
+      - m_Target: {fileID: 258352246}
+        m_TargetAssemblyTypeName: ChangeScene_btn, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Rules
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1573085290
