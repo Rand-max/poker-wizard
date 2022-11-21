@@ -40,13 +40,7 @@
 
         private void Awake()
         {
-            countdown=4f;
-            isDissolving=false;
-            allReady=false;
-            readyUI.SetActive(false);
-            mat=goIcon.GetComponent<Image>().material;
-            mat.SetFloat("_FadeValue",1f);
-
+            
             if(instance==null&&!GetComponent<EventSystem>()){
                 instance=this;
             }
@@ -82,7 +76,6 @@
             }
             //sample scene
             if(Keyboard.current.kKey.wasPressedThisFrame){
-                readyUI.SetActive(false);
                 SceneManager.LoadScene("SampleScene");
             }
         }
@@ -101,7 +94,15 @@
                 this.mirrorController=retiredplayerman.mirrorController;
                 this.checkpointmanagers=retiredplayerman.checkpointmanagers;
                 this.scoreManager=retiredplayerman.scoreManager;
+                this.readyUI=retiredplayerman.readyUI;
+                this.goIcon=retiredplayerman.goIcon;
             }
+            countdown=4f;
+            isDissolving=false;
+            allReady=false;
+            if(readyUI)readyUI.SetActive(false);
+            if(goIcon)mat=goIcon.GetComponent<Image>().material;
+            mat.SetFloat("_FadeValue",1f);
             GetComponent<ScoreContainer>().scoreManager=scoreManager;
             if(scoreManager){
                 scoreManager.scoreContainer=this.GetComponent<ScoreContainer>();
@@ -112,7 +113,12 @@
                 if(sd){
                     player.transform.parent.GetComponentInChildren<ShootingController>().SD=sd;
                 }
-                Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
+                if(player.playerIndex>=0&&Cursors.Count>=0&&Cursors.Count>player.playerIndex&&Cursors[player.playerIndex]!=null){
+                    player.GetComponentInChildren<PlayerController>().playerCursor=Cursors[player.playerIndex];
+                }
+                if(player.GetComponentInChildren<PlayerController>().Normal.childCount>0){
+                    Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
+                }
                 player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().OnTargetObjectWarped(player.GetComponent<PlayerController>().Normal,startingPoints[player.playerIndex].position-player.GetComponent<PlayerController>().rb.transform.position);
                 player.GetComponent<PlayerController>().rb.transform.position=startingPoints[player.playerIndex].position;
                 player.GetComponent<PlayerController>().transform.forward=Vector3.back;
