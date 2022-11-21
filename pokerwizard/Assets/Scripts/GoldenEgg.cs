@@ -52,6 +52,8 @@ public class GoldenEgg : MonoBehaviour
             }
         }
         if(playerinrange){
+            nmA.acceleration=50f;
+            nmA.speed=80f;
             if(innertimer<cooldown/2){
                 innertimer+=Time.deltaTime;
             }
@@ -62,7 +64,9 @@ public class GoldenEgg : MonoBehaviour
             }
         }
         else{
-            if(nmA.isStopped||innertimer<cooldown){
+            nmA.acceleration=30f;
+            nmA.speed=70f;
+            if(innertimer<cooldown){
                 innertimer=0;
                 Vector2 randomvec=Random.insideUnitCircle*arearange;
                 nmA.SetDestination(spawnPoint+new Vector3(randomvec.x,0f,randomvec.y));
