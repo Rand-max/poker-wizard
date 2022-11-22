@@ -1182,6 +1182,7 @@ MonoBehaviour:
   - 7.33
   - 8.66
   cdtime: 0
+  isdone: 0
 --- !u!1 &243934319
 GameObject:
   m_ObjectHideFlags: 0
@@ -9543,13 +9544,14 @@ GameObject:
   - component: {fileID: 1857050665}
   - component: {fileID: 1857050667}
   - component: {fileID: 1857050666}
+  - component: {fileID: 1857050668}
   m_Layer: 5
   m_Name: crown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1857050665
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9608,6 +9610,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857050664}
   m_CullTransparentMesh: 1
+--- !u!95 &1857050668
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857050664}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c956516b927edd429e7da1aeba37e1d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!224 &1870649758 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1501394608288570580, guid: 41bd589d07479a24abcdc15c98168357, type: 3}

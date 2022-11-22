@@ -16,6 +16,15 @@ public class ScoreManager : MonoBehaviour
     public LoadScene loadScene;
     public ScoreContainer scoreContainer;
     public bool goldspawned=false;
+
+    //add points adding ani
+    [SerializeField]
+    GameObject TeamAPointChangePrefab;
+    [SerializeField]
+    Transform TeamAPointParent;
+    [SerializeField]
+    RectTransform endpoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,5 +66,14 @@ public class ScoreManager : MonoBehaviour
         if(rank[index]>300f){
             finished[index]=true;
         }
+    }
+    //show point changing
+    private void ShowPointChange(int change){
+        var inst =Instantiate(TeamAPointChangePrefab,Vector3.zero,Quaternion.identity);
+        inst.transform.SetParent(TeamAPointParent,false);
+        RectTransform rect=inst.GetComponent<RectTransform>();
+        LeanTween.moveY(rect,endpoint.anchoredPosition.y,1.5f).setOnComplete(()=>{
+            Destroy(inst);
+        });
     }
 }
