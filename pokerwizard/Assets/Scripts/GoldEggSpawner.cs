@@ -11,6 +11,8 @@ public class GoldEggSpawner : MonoBehaviour
     public float arearange;
     public float cooldown;
     public LayerMask mask;
+    //add gold egg hint
+    public GameObject hintAni;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,7 @@ public class GoldEggSpawner : MonoBehaviour
             golde.GetComponent<GoldenEgg>().spawnPoint=spawnp;
             golde.GetComponent<GoldenEgg>().arearange=arearange;
             golde.GetComponent<GoldenEgg>().cooldown=cooldown;
+            hintAni.GetComponent<Animator>().SetTrigger("play");
         }
     }
 }

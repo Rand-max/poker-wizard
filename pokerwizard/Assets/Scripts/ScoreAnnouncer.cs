@@ -12,6 +12,9 @@ public class ScoreAnnouncer : MonoBehaviour
     public List<int>totalscore;
     public List<TextMeshProUGUI> total;
     public List<TextMeshProUGUI> teamtotal;
+
+    public GameObject TeamAcrown;
+    public GameObject TeamBcrown;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,7 @@ public class ScoreAnnouncer : MonoBehaviour
             }
             total[i].text=totalscore[i].ToString();
         }
+        Compare();
         teamtotal[0].text=(totalscore[0]+totalscore[1]).ToString();
         teamtotal[1].text=(totalscore[2]+totalscore[3]).ToString();
     }
@@ -46,5 +50,15 @@ public class ScoreAnnouncer : MonoBehaviour
     void Update()
     {
         
+    }
+    void Compare(){
+        if(totalscore[0]+totalscore[1]>=totalscore[2]+totalscore[3]){
+            TeamAcrown.SetActive(true);
+            TeamBcrown.SetActive(false);
+        }
+        if(totalscore[0]+totalscore[1]<=totalscore[2]+totalscore[3]){
+            TeamBcrown.SetActive(true);
+            TeamAcrown.SetActive(false);
+        }
     }
 }
