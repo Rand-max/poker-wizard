@@ -1125,7 +1125,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Multiple_UI
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &906044799
@@ -1768,10 +1768,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 745046434}
-        m_TargetAssemblyTypeName: ChangeScene_btn, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 1444920035}
+        m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1870,6 +1870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1444920033}
   - component: {fileID: 1444920034}
+  - component: {fileID: 1444920035}
   m_Layer: 5
   m_Name: UI_Manager
   m_TagString: Untagged
@@ -1914,6 +1915,18 @@ MonoBehaviour:
   - {fileID: 904057152}
   - {fileID: 906044796}
   - {fileID: 1329161382}
+--- !u!114 &1444920035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444920032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8f248baa0045cd49a1080149bbf2733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1492112205
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,7 +2061,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Multiple_UI
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!95 &1492112210

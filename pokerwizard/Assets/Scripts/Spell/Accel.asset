@@ -91,7 +91,7 @@ MonoBehaviour:
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
-    EffectOffset: {x: 0, y: -1, z: 0}
+    EffectOffset: {x: 1, y: -0.5, z: 2}
     canScore: 0
     score: 0
   BoomLifeTime: 3

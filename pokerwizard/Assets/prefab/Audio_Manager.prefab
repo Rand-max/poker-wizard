@@ -47,7 +47,7 @@ MonoBehaviour:
   sounds:
   - name: bg_music
     clip: {fileID: 8300000, guid: 160734075db52c246a1dd5090f90da50, type: 3}
-    volume: 0.7
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
     loop: 1

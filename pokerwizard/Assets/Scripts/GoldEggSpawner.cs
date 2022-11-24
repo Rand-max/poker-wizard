@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 public class GoldEggSpawner : MonoBehaviour
 {
     public GameObject gold;
@@ -13,16 +14,40 @@ public class GoldEggSpawner : MonoBehaviour
     public LayerMask mask;
     //add gold egg hint
     public GameObject hintAni;
+
+    //1 min countdown timer
+    public float timeRemaining;
+    public GameObject timer;
+    [SerializeField]
+    public TMP_Text timeText;
+    public bool timerIsRunning = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        hintAni.SetActive(false);
+        timer.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+         if (timerIsRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                if (timeRemaining<0){
+                    timeRemaining=0;
+                }
+                DisplayTime(timeRemaining);
+            }     
+            else
+            {
+                Debug.Log("Time has run out!");
+                timeRemaining = 0;
+                timerIsRunning = false;
+            }
+        }
     }
     public void spawn(int amount){
         if(players.Count<1){
@@ -51,7 +76,17 @@ public class GoldEggSpawner : MonoBehaviour
             golde.GetComponent<GoldenEgg>().spawnPoint=spawnp;
             golde.GetComponent<GoldenEgg>().arearange=arearange;
             golde.GetComponent<GoldenEgg>().cooldown=cooldown;
-            hintAni.GetComponent<Animator>().SetTrigger("play");
+            hintAni.SetActive(true);
+            timer.SetActive(true);
+            timerIsRunning=true;
+            
         }
+    }
+    //timer
+    void DisplayTime(float timeToDisplay)
+    {
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        timeText.text = string.Format("{0:0}:{1:00}", minutes, seconds);
     }
 }

@@ -3211,9 +3211,9 @@ MonoBehaviour:
   cardimg:
   - {fileID: 1831335243}
   - {fileID: 1053337945}
-  hit_tex: {fileID: 2800000, guid: b8a0b3206fe42254bb979d232345a6b3, type: 3}
+  hit_tex: {fileID: 2800000, guid: b39614b8e7cc7684eb259bc52de450af, type: 3}
   shd_tex: {fileID: 2800000, guid: bd2f0de2c668e854f8f4935da7826a70, type: 3}
-  egg_tex: {fileID: 2800000, guid: 09294c2ee95eaf7438a26c659ba4057f, type: 3}
+  egg_tex: {fileID: 2800000, guid: 3e363c0e39c3d4e43a58d9afae839f24, type: 3}
   buff_tex: {fileID: 2800000, guid: 259d725fc2d8da949aaad10bb53e34fb, type: 3}
 --- !u!1 &1018188523
 GameObject:
@@ -6272,7 +6272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7821289, g: 0.97527903, b: 0.9811321, a: 1}
+  m_Color: {r: 0.6100392, g: 0.8931774, b: 0.9056604, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
     public LoadScene loadScene;
     public ScoreContainer scoreContainer;
     public bool goldspawned=false;
+    public GameObject[] finishAni;
 
     //add points adding ani
     [SerializeField]
@@ -28,6 +29,10 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        finishAni[0].SetActive(false);
+        finishAni[1].SetActive(false);
+        finishAni[2].SetActive(false);
+        finishAni[3].SetActive(false);
     }
 
     // Update is called once per frame
@@ -65,6 +70,7 @@ public class ScoreManager : MonoBehaviour
     public void finish(int index){
         if(rank[index]>300f){
             finished[index]=true;
+            finishAni[index].SetActive(true);
         }
     }
     //show point changing
