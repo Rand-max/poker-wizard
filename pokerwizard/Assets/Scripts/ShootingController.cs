@@ -52,6 +52,7 @@ public class ShootingController : MonoBehaviour
             ammo--;
             cooldown=preparetime;
             animateplayer.GetComponent<Animator>().Play("Armature_shoot",0,0f);
+            FindObjectOfType<AudioManager>().Play("female_shoot");
             shootprepared=true;
             if(ammo<1){
                 mirrorController.UseSpell(selfnumber);

@@ -76,6 +76,7 @@ public class GoldEggSpawner : MonoBehaviour
             golde.GetComponent<GoldenEgg>().spawnPoint=spawnp;
             golde.GetComponent<GoldenEgg>().arearange=arearange;
             golde.GetComponent<GoldenEgg>().cooldown=cooldown;
+            FindObjectOfType<AudioManager>().Play("egg_appear");
             hintAni.SetActive(true);
             timer.SetActive(true);
             timerIsRunning=true;

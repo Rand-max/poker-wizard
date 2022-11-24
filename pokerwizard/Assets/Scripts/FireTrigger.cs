@@ -19,6 +19,7 @@ public class FireTrigger : MonoBehaviour
     {
         if(isTrigger){
             fire_breath.Play();
+            FindObjectOfType<AudioManager>().Play("fire_cat");
             isTrigger=false;
         }
     }

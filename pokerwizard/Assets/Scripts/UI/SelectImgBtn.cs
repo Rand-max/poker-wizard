@@ -16,7 +16,7 @@ public class SelectImgBtn : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
     // Start is called before the first frame update
     void Start()
     {
-        button.GetComponent<Animator>().Play("selectimg_ho");
+        button.GetComponent<Animator>().Play("original_scale");
     }
 
     public void OnPointerEnter(PointerEventData eventData){

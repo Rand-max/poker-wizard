@@ -56,6 +56,7 @@ public class GainMagicItem : MonoBehaviour
         if(uiMulti.GetComponent<GamePlayUIMulti>().GetSpell(collision.gameObject.GetComponent<PlayerController>().playerNumber)){
             alive=false;
             par_start=true;
+            FindObjectOfType<AudioManager>().Play("magic_item");
         }
     }
  }

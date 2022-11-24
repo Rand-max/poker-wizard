@@ -47,7 +47,7 @@ MonoBehaviour:
   sounds:
   - name: bg_music
     clip: {fileID: 8300000, guid: 160734075db52c246a1dd5090f90da50, type: 3}
-    volume: 0.5
+    volume: 0.2
     pitch: 1
     source: {fileID: 0}
     loop: 1
@@ -147,12 +147,6 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  - name: spell_crown
-    clip: {fileID: 8300000, guid: fd193d17a6b11c343a2259bad59b9dad, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
   - name: male_shoot
     clip: {fileID: 8300000, guid: f4460553ccbe1fe4e9079b170005342a, type: 3}
     volume: 1
@@ -173,6 +167,42 @@ MonoBehaviour:
     loop: 0
   - name: female_hitten
     clip: {fileID: 8300000, guid: b6c942f1499a32b44943fcf7cdec7d1b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: thunder
+    clip: {fileID: 8300000, guid: a562c65e3f62bfb4ca78b5f4f17c36bb, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: countdown_start
+    clip: {fileID: 8300000, guid: b7bad7169f9efb143b6239020b874b4d, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: fire_cat
+    clip: {fileID: 8300000, guid: 54cc32f45e3c57b4fa7dcbd1c6e8010b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: magic_item
+    clip: {fileID: 8300000, guid: 46ce2f4ca649b054fa03bfdef571cddc, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: finish
+    clip: {fileID: 8300000, guid: 181b32824e74c5a43857ada1c0b373d9, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: egg_appear
+    clip: {fileID: 8300000, guid: de487f325d1a2454f82c25f8faeaf71f, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}

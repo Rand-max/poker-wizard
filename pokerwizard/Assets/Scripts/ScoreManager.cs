@@ -71,6 +71,7 @@ public class ScoreManager : MonoBehaviour
         if(rank[index]>300f){
             finished[index]=true;
             finishAni[index].SetActive(true);
+            FindObjectOfType<AudioManager>().Play("finish");
         }
     }
     //show point changing

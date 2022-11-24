@@ -8,6 +8,7 @@ public class Countdown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("countdown_start");
         StartCoroutine("StartDelay");
     }
 
