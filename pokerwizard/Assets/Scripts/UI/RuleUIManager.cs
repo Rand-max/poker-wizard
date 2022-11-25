@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class RuleUIManager : MonoBehaviour
@@ -119,7 +120,7 @@ public class RuleUIManager : MonoBehaviour
                 card3t1.SetActive(true);
                 card3t2.SetActive(false);
                 ctwoct.text="遊戲内玩家可以藉由咒語點獲得並施展咒語，撃中敵人能獲取1分";
-                cthreect.text="當第一名玩家完成第三圈時，金蛋便會隨機出現，用咒語撃中能獲得5分";
+                cthreect.text="當第一名玩家完成第2圈時，金蛋便會隨機出現，用咒語撃中能獲得5分";
                 c1color=new Color (.78f,.95f,.75f,1f);
                 c3color=new Color (.95f,.92f,.68f,1f);
                 cthreect.color=new Color(.38f,.33f,.13f,1f);
@@ -150,6 +151,24 @@ public class RuleUIManager : MonoBehaviour
                 break;
         }
     }
+    void InputBtn(){
+        if(Keyboard.current.rightArrowKey.wasPressedThisFrame){
+            if(pagenum<4){
+                pagenum +=1;
+                FindObjectOfType<AudioManager>().Play("btn_click");
+            }
+        }
+        if(Keyboard.current.leftArrowKey.wasPressedThisFrame){
+             if(pagenum>1){
+                pagenum -=1;
+                FindObjectOfType<AudioManager>().Play("btn_click");
+            }
+        }
+    }
+    public void LoadScene(string SceneName){
+        SceneManager.LoadScene(SceneName);
+        FindObjectOfType<AudioManager>().Play("btn_click");
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -171,6 +190,10 @@ public class RuleUIManager : MonoBehaviour
         if(Keyboard.current.oKey.wasReleasedThisFrame){
             GuideImg.SetActive(false);
         }
+        if(Keyboard.current.rightAltKey.wasPressedThisFrame){
+            LoadScene("Multiple_UI");
+        }
+        InputBtn();
     }
     
     #region Async Workflow

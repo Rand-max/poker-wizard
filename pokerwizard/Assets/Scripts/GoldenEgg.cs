@@ -80,7 +80,7 @@ public class GoldenEgg : MonoBehaviour
         if(col.gameObject.GetComponent<PlayerController>()!=null){
             alive=false;
             par_start=true;
-            FindObjectOfType<AudioManager>().Play("magic_item");
+            FindObjectOfType<AudioManager>().Play("get_egg");
         }
     }
 }

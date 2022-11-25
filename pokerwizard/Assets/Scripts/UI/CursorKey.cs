@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem.UI;
 using TMPro;
 
@@ -33,6 +34,10 @@ public class CursorKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Keyboard.current.rightCtrlKey.wasPressedThisFrame){
+           LoadScene("Rules");
+           FindObjectOfType<AudioManager>().Play("book_flip");
+        }
         
         //Vector2 cursorpos= Mouse.current.position.ReadValue();
         //cursor.anchoredPosition = cursorpos;
@@ -116,6 +121,9 @@ public class CursorKey : MonoBehaviour
                 }
             }
         } 
+    }
+    public void LoadScene(string SceneName){
+        SceneManager.LoadScene(SceneName);
     }
     public void movecursor(Vector2 dire){
         currentaccel=dire*cursoraccel;
