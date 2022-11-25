@@ -180,7 +180,7 @@ MonoBehaviour:
   - name: countdown_start
     clip: {fileID: 8300000, guid: b7bad7169f9efb143b6239020b874b4d, type: 3}
     volume: 0.5
-    pitch: 1
+    pitch: 1.1
     source: {fileID: 0}
     loop: 0
   - name: fire_cat
@@ -209,6 +209,30 @@ MonoBehaviour:
     loop: 0
   - name: get_egg
     clip: {fileID: 8300000, guid: 8d5b476dc1cd84f45b7e7c2226c9aabf, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: point_appear
+    clip: {fileID: 8300000, guid: d21d16c4da8453046bc8d1cbe7c72831, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: point_appear2
+    clip: {fileID: 8300000, guid: d21d16c4da8453046bc8d1cbe7c72831, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: point_appear3
+    clip: {fileID: 8300000, guid: d21d16c4da8453046bc8d1cbe7c72831, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: point_appear4
+    clip: {fileID: 8300000, guid: d21d16c4da8453046bc8d1cbe7c72831, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}

@@ -9,43 +9,41 @@ public class ScrollDown : MonoBehaviour
     public RectTransform[] flags;
     public RectTransform[] okbtn;
     public float[] wait_time;
-
-    public float cdtime;
     public bool isdone=false;
+   
 
     // Start is called before the first frame update
     void Start()
     {
-        AsyncBaby();
+        FindObjectOfType<AudioManager>().PlayDelayed("btn_hover",wait_time[0]);
+        FindObjectOfType<AudioManager>().PlayDelayed("point_appear",wait_time[1]);
+        FindObjectOfType<AudioManager>().PlayDelayed("point_appear2",wait_time[2]);
+        FindObjectOfType<AudioManager>().PlayDelayed("point_appear3",wait_time[3]);
+        FindObjectOfType<AudioManager>().PlayDelayed("point_appear4",wait_time[4]);
+        FindObjectOfType<AudioManager>().PlayDelayed("crown",wait_time[5]);
+        FindObjectOfType<AudioManager>().PlayDelayed("cheer",wait_time[5]);
         AsyncBtn();
-        cdtime=0;
+         
     }
 
     // Update is called once per frame
     void Update()
     {
-        AudioPlay();   
-        // for(int i=0;i<5;i++){
-        //     if(cdtime==wait_time[i]){
-        //         FindObjectOfType<AudioManager>().Play("point_appear"); 
-        //         i++;
-        //     }
-        // }
-        // if(cdtime==9f){
-        //     FindObjectOfType<AudioManager>().Play("crown");
-        // }else if(cdtime==10f){
-        //     FindObjectOfType<AudioManager>().Play("cheer");
+        /*for(int i=0;i<5;i++){
+            if(cdtime==wait_time[i]){
+                FindObjectOfType<AudioManager>().Play("point_appear"); 
+                i++;
+            }
+        }
+        if(cdtime==9f){
+            FindObjectOfType<AudioManager>().Play("crown");
+        }else if(cdtime==10f){
+            FindObjectOfType<AudioManager>().Play("cheer");
+        }*/
+        // if(isCele){
+        //     FindObjectOfType<AudioManager>().PlayDelayed("cheer",25f);
         // }
     }
-
-    void AudioPlay(){
-        cdtime+=Time.deltaTime;
-        if(cdtime>10f){
-            cdtime=10f;
-        }
-        
-    } 
-
     #region Async Workflow
 
     async void AsyncBaby(){

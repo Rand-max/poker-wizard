@@ -12,12 +12,19 @@ public class ScoreAnnouncer : MonoBehaviour
     public List<int>totalscore;
     public List<TextMeshProUGUI> total;
     public List<TextMeshProUGUI> teamtotal;
-
     public GameObject TeamAcrown;
     public GameObject TeamBcrown;
+    public bool Awin;
+    public bool Bwin;
+    [SerializeField]
+    public ParticleSystem CelParA;
+    [SerializeField]
+    public ParticleSystem CelParB;
     // Start is called before the first frame update
     void Start()
     {
+        Awin=false;
+        Bwin=false;
         scoreContainer=FindObjectOfType<ScoreContainer>();
         for (int i = 0; i < 4; i++)
         {
@@ -52,13 +59,25 @@ public class ScoreAnnouncer : MonoBehaviour
         
     }
     void Compare(){
-        if(totalscore[0]+totalscore[1]>=totalscore[2]+totalscore[3]){
+        if(totalscore[0]+totalscore[1]>totalscore[2]+totalscore[3]){
             TeamAcrown.SetActive(true);
             TeamBcrown.SetActive(false);
+            Awin=true;
+            CelParA.Play();
         }
-        if(totalscore[0]+totalscore[1]<=totalscore[2]+totalscore[3]){
+        if(totalscore[0]+totalscore[1]<totalscore[2]+totalscore[3]){
             TeamBcrown.SetActive(true);
             TeamAcrown.SetActive(false);
+            Bwin=true;
+            CelParB.Play();
+        }
+        if(totalscore[0]+totalscore[1]==totalscore[2]+totalscore[3]){
+            TeamBcrown.SetActive(true);
+            TeamAcrown.SetActive(true);
+            Awin=true;
+            Bwin=true;
+            CelParA.Play();
+            CelParB.Play();
         }
     }
 }
