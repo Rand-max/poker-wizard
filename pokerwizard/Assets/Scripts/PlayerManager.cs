@@ -78,6 +78,7 @@
             }
             //sample scene
             if(Keyboard.current.kKey.wasPressedThisFrame){
+                FindObjectOfType<AudioManager>().Play("ready_game");
                 if(loader){
                     loader.LoadtheScene(0);
                 }

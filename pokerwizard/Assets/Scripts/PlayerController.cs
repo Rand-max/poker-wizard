@@ -213,4 +213,7 @@ public class PlayerController : MonoBehaviour
         multipliers.Add(-1);
         multipliers_timer.Add(time);
     }
+    public void ShockedAni(){
+        this.gameObject.GetComponent<Animator>().Play("Armature_panic",0,0f);
+    }
 }

@@ -255,3 +255,21 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: get_ready
+    clip: {fileID: 8300000, guid: d4aa10e130de73946801e609c4c1c252, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: ready_game
+    clip: {fileID: 8300000, guid: 2bd7f4caabc84cc4a8878d4849aa7569, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: waterfall
+    clip: {fileID: 8300000, guid: eb5a0d49a8362b34ab00ab6b392f2d36, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
