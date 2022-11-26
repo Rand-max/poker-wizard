@@ -3330,7 +3330,7 @@ GameObject:
   - component: {fileID: 116917230}
   - component: {fileID: 116917229}
   - component: {fileID: 116917232}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: start point collider
   m_TagString: startpoint
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -27456,6 +27456,66 @@ PhysicMaterial:
   bounciness: 0
   frictionCombine: 0
   bounceCombine: 0
+--- !u!1 &876023120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 876023121}
+  - component: {fileID: 876023122}
+  - component: {fileID: 876023123}
+  m_Layer: 7
+  m_Name: audtrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &876023121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876023120}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1870058481}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &876023122
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876023120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 5, z: -13.06}
+  m_Center: {x: 0, y: 0, z: 1.72}
+--- !u!114 &876023123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876023120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4f8754e58f6334285f9104e7851544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTrigger: 1
+  AudName: audience_cheer
 --- !u!1001 &878277152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29527,6 +29587,25 @@ PhysicMaterial:
   bounciness: 0
   frictionCombine: 0
   bounceCombine: 0
+--- !u!1 &953243642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: 1452fa4119a2e694097379844bc1f107, type: 3}
+  m_PrefabInstance: {fileID: 602764204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &953243643
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953243642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.08
+  m_Height: 6.647961
+  m_Direction: 1
+  m_Center: {x: 0.6, y: 1.47, z: -0.05372883}
 --- !u!1 &954299299
 GameObject:
   m_ObjectHideFlags: 0
@@ -58736,6 +58815,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7387706064836869012, guid: 9206c187196f007409bf4f2a9d09c0c8, type: 3}
+--- !u!4 &1870058481 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9206c187196f007409bf4f2a9d09c0c8, type: 3}
+  m_PrefabInstance: {fileID: 1870058476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1870424988
 Mesh:
   m_ObjectHideFlags: 0
@@ -59572,7 +59656,7 @@ GameObject:
   - component: {fileID: 1919159603}
   - component: {fileID: 1919159605}
   - component: {fileID: 1919159604}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}

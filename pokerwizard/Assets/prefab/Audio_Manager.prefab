@@ -141,7 +141,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  - name: ice_impact
+  - name: ice_over
     clip: {fileID: 8300000, guid: 593895ee453186f468ca4f2c0a5e1b27, type: 3}
     volume: 1
     pitch: 1
@@ -234,6 +234,24 @@ MonoBehaviour:
   - name: point_appear4
     clip: {fileID: 8300000, guid: d21d16c4da8453046bc8d1cbe7c72831, type: 3}
     volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: teleport
+    clip: {fileID: 8300000, guid: fd193d17a6b11c343a2259bad59b9dad, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: fireshoot
+    clip: {fileID: 8300000, guid: ccb09030d548484418d5ab96e0ab50b3, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: audience_cheer
+    clip: {fileID: 8300000, guid: 5b6fe293d40f7da43b114790438b1ac1, type: 3}
+    volume: 0.4
     pitch: 1
     source: {fileID: 0}
     loop: 0

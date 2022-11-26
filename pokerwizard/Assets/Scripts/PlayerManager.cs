@@ -60,9 +60,10 @@
             //go dissolve and play
             if(Keyboard.current.lKey.wasPressedThisFrame){
                 allReady=true;
-            }
-            if(allReady){
                 readyUI.SetActive(true);
+            }
+            if(Keyboard.current.bKey.wasPressedThisFrame){
+                readyUI.SetActive(false);
             }
             if(Keyboard.current.pKey.wasPressedThisFrame&&allReady){
                 isDissolving=true;

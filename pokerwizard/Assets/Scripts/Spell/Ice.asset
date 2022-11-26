@@ -99,7 +99,7 @@ MonoBehaviour:
   - Object: {fileID: 3453488477136196560, guid: d5eeb9e46622e0e4ba2d3adc478e3aad, type: 3}
     sounfx:
       name: 
-      clip: {fileID: 8300000, guid: cbcc003f3844d1141a549e77f5c2f09a, type: 3}
+      clip: {fileID: 8300000, guid: 593895ee453186f468ca4f2c0a5e1b27, type: 3}
       volume: 1
       pitch: 1
       source: {fileID: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
     score: 0
   - Object: {fileID: 7970671739509672891, guid: 01c3d97c5f9001b4e873a7849f2ff61a, type: 3}
     sounfx:
-      name: 
+      name: ice_over
       clip: {fileID: 8300000, guid: 593895ee453186f468ca4f2c0a5e1b27, type: 3}
       volume: 0
       pitch: 0
