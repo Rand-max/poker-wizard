@@ -236,7 +236,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 25
+    scalar: 10.5
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -6046,11 +6046,11 @@ MonoBehaviour:
   - {fileID: 1508671965}
   - {fileID: 926929055}
   wait_time:
-  - 3.33
-  - 4.66
+  - 3
+  - 4
+  - 5
   - 6
-  - 7.33
-  - 8.66
+  - 7
   - 10.5
   isdone: 0
 --- !u!1 &243934319
@@ -9101,16 +9101,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1433091526}
-        m_TargetAssemblyTypeName: ChangeScene_btn, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 1870649759}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: LoadtheScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: Multiple_UI
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &769058542
@@ -9867,7 +9867,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 926929057}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1870649759}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: LoadtheScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &926929057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11903,6 +11915,7 @@ MonoBehaviour:
   - {fileID: 1676515109}
   TeamAcrown: {fileID: 1857050664}
   TeamBcrown: {fileID: 805773295}
+  sceneloader: {fileID: 1870649759}
   Awin: 0
   Bwin: 0
   CelParA: {fileID: 24272273}
@@ -12462,7 +12475,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1508671967}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1870649759}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: LoadtheScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1508671967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14295,7 +14320,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 25
+    scalar: 10.5
     minScalar: 0
     maxCurve:
       serializedVersion: 2

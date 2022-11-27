@@ -15,6 +15,7 @@ public class ScrollDown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AsyncBaby();
         FindObjectOfType<AudioManager>().PlayDelayed("btn_hover",wait_time[0]);
         FindObjectOfType<AudioManager>().PlayDelayed("point_appear",wait_time[1]);
         FindObjectOfType<AudioManager>().PlayDelayed("point_appear2",wait_time[2]);

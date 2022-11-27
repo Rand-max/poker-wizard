@@ -19,6 +19,7 @@ public class GoldenEgg : MonoBehaviour
     public bool playerinrange;
     public float cooldown;
     float innertimer=0f;
+    public ScoreManager sm;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +82,7 @@ public class GoldenEgg : MonoBehaviour
             alive=false;
             par_start=true;
             FindObjectOfType<AudioManager>().Play("get_egg");
+            sm.AddEgg(col.gameObject.GetComponent<PlayerController>().playerNumber,1);
         }
     }
 }

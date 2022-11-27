@@ -14,6 +14,7 @@ public class ScoreAnnouncer : MonoBehaviour
     public List<TextMeshProUGUI> teamtotal;
     public GameObject TeamAcrown;
     public GameObject TeamBcrown;
+    public LoadScene sceneloader;
     public bool Awin;
     public bool Bwin;
     [SerializeField]
@@ -56,7 +57,7 @@ public class ScoreAnnouncer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     void Compare(){
         if(totalscore[0]+totalscore[1]>totalscore[2]+totalscore[3]){
@@ -79,5 +80,8 @@ public class ScoreAnnouncer : MonoBehaviour
             CelParA.Play();
             CelParB.Play();
         }
+    }
+    public void nextround(){
+        sceneloader.LoadtheScene(2);
     }
 }

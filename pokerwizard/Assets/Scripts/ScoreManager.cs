@@ -40,7 +40,9 @@ public class ScoreManager : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            rank[i]=checkpointmanager[i].GetComponent<CheckpointController>().lap*100+checkpointmanager[i].GetComponent<CheckpointController>().activeindex+1-checkpointmanager[i].GetComponent<CheckpointController>().distance/1000f*(finished[i]?4f-leaderboard[i]:1f);
+            if(!finished[i]){
+                rank[i]=checkpointmanager[i].GetComponent<CheckpointController>().lap*100+checkpointmanager[i].GetComponent<CheckpointController>().activeindex+1-checkpointmanager[i].GetComponent<CheckpointController>().distance/1000f;
+            }
         }
         sortedrank=new List<float>(rank);
         sortedrank.Sort();
@@ -61,17 +63,37 @@ public class ScoreManager : MonoBehaviour
             GetComponent<GoldEggSpawner>().spawn(2);
             goldspawned=true;
         }
+        if(!GetComponent<GoldEggSpawner>().timerIsRunning&&sortedrank[3]>300f){
+            GetComponent<GoldEggSpawner>().TimerStart();
+        }
     }
     public void AddScore(int playernum,int score){
         ShootPoint[playernum]+=score;
-        shootpointui[0].text=(ShootPoint[0]+ShootPoint[1]).ToString();
-        shootpointui[1].text=(ShootPoint[2]+ShootPoint[3]).ToString();
+        shootpointui[0].text=(ShootPoint[0]+ShootPoint[1]+gold[0]*5+gold[1]*5).ToString();
+        shootpointui[1].text=(ShootPoint[2]+ShootPoint[3]+gold[2]*5+gold[3]*5).ToString();
+    }
+    public void AddEgg(int playernum,int egg){
+        gold[playernum]+=egg;
+        shootpointui[0].text=(ShootPoint[0]+ShootPoint[1]+gold[0]*5+gold[1]*5).ToString();
+        shootpointui[1].text=(ShootPoint[2]+ShootPoint[3]+gold[2]*5+gold[3]*5).ToString();
     }
     public void finish(int index){
         if(rank[index]>300f){
             finished[index]=true;
             finishAni[index].SetActive(true);
             FindObjectOfType<AudioManager>().Play("finish");
+            rank[index]+=400*(4-leaderboard[index]);
+        }
+    }
+    public void finishAll(){
+        for (int i = 0; i < 4; i++)
+        {
+            if(!finished[i]){
+                finished[i]=true;
+                finishAni[i].SetActive(true);
+                FindObjectOfType<AudioManager>().Play("finish");
+                rank[i]+=400*(4-leaderboard[i]);
+            }
         }
     }
     //show point changing

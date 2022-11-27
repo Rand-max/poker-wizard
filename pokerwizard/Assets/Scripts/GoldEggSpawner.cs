@@ -21,6 +21,8 @@ public class GoldEggSpawner : MonoBehaviour
     [SerializeField]
     public TMP_Text timeText;
     public bool timerIsRunning = false;
+    public ScoreManager scoreMan;
+    float innertimer=0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,13 +33,18 @@ public class GoldEggSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (timerIsRunning)
+        if(timerIsRunning){
+            innertimer+=Time.deltaTime;
+        }
+         if (timerIsRunning&&innertimer>0.033f)
         {
             if (timeRemaining > 0)
             {
-                timeRemaining -= Time.deltaTime;
+                timeRemaining -= innertimer;
+                innertimer=0f;
                 if (timeRemaining<0){
                     timeRemaining=0;
+                    scoreMan.finishAll();
                 }
                 DisplayTime(timeRemaining);
             }     
@@ -72,15 +79,13 @@ public class GoldEggSpawner : MonoBehaviour
             }
             GameObject golde=Instantiate(gold,spawnp,Quaternion.identity);
             golde.GetComponent<GoldenEgg>().players=players;
+            golde.GetComponent<GoldenEgg>().sm=scoreMan;
             golde.GetComponent<GoldenEgg>().AlarmDistance=AlarmDistance;
             golde.GetComponent<GoldenEgg>().spawnPoint=spawnp;
             golde.GetComponent<GoldenEgg>().arearange=arearange;
             golde.GetComponent<GoldenEgg>().cooldown=cooldown;
             FindObjectOfType<AudioManager>().Play("egg_appear");
             hintAni.SetActive(true);
-            timer.SetActive(true);
-            timerIsRunning=true;
-            
         }
     }
     //timer
@@ -89,5 +94,10 @@ public class GoldEggSpawner : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeText.text = string.Format("{0:0}:{1:00}", minutes, seconds);
+    }
+    public void TimerStart(){
+        timer.SetActive(true);
+        timerIsRunning=true;
+        innertimer=0;
     }
 }

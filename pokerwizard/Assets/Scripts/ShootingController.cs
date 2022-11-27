@@ -32,6 +32,7 @@ public class ShootingController : MonoBehaviour
     bool iscasted=false;
     public ScrollDown SD;
     public AudioManager am;
+    public ScoreAnnouncer sa;
     // Start is called before the first frame update
     void Start()
     {
@@ -187,6 +188,9 @@ public class ShootingController : MonoBehaviour
             iscasted=true;
         }
         if(transform.parent.GetComponentInChildren<PlayerController>().playerCursor)transform.parent.GetComponentInChildren<PlayerController>().playerCursor.GetComponent<CursorKey>().clickcursor();
+        if(sa!=null){
+            sa.nextround();
+        }
     }
     public void OnEngine(InputAction.CallbackContext ctx){
         Debug.Log("back");

@@ -31001,6 +31001,7 @@ MonoBehaviour:
   timer: {fileID: 280010045}
   timeText: {fileID: 946935135}
   timerIsRunning: 0
+  scoreMan: {fileID: 1026211997}
 --- !u!1001 &1026619765
 PrefabInstance:
   m_ObjectHideFlags: 0

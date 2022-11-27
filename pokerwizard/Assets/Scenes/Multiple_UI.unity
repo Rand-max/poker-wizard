@@ -596,8 +596,8 @@ MonoBehaviour:
   btn_before: {fileID: 21300000, guid: 8a42c812292b93b459dfc6f729b80d4d, type: 3}
   btn_after: {fileID: 21300000, guid: a38b05324620506499fda4f7ea55e254, type: 3}
   type: 0
-  loader: {fileID: 0}
-  setting: {fileID: 0}
+  loader: {fileID: 963202949}
+  setting: {fileID: 106703179}
 --- !u!95 &106703181
 Animator:
   serializedVersion: 4
@@ -6426,6 +6426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1573085286}
+  loaer: {fileID: 963202949}
 --- !u!95 &1573085292
 Animator:
   serializedVersion: 4
@@ -6603,7 +6604,7 @@ MonoBehaviour:
   btn_before: {fileID: 21300000, guid: 8a42c812292b93b459dfc6f729b80d4d, type: 3}
   btn_after: {fileID: 21300000, guid: a38b05324620506499fda4f7ea55e254, type: 3}
   type: 1
-  loader: {fileID: 0}
+  loader: {fileID: 963202949}
   setting: {fileID: 0}
 --- !u!114 &1601197399
 MonoBehaviour:

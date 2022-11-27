@@ -94,6 +94,7 @@
         void OnSceneLoaded(Scene scene, LoadSceneMode mode){
             Debug.Log("OnSceneLoaded: " + scene.name);
             Debug.Log(mode);
+            scoreManager=FindObjectOfType<ScoreManager>();
             PlayerManager retiredplayerman=FindObjectOfType<EventSystem>().GetComponent<PlayerManager>();
             if(retiredplayerman){
                 this.startingPoints=retiredplayerman.startingPoints;
@@ -121,6 +122,11 @@
             }
             foreach (var player in players)
             {
+                ShootingController sc=player.transform.parent.GetComponentInChildren<ShootingController>();
+                if(sc){
+                    Debug.Log(sc);
+                    sc.sa=FindObjectOfType<ScoreAnnouncer>();
+                }
                 ScrollDown sd=FindObjectOfType<ScrollDown>();
                 if(sd){
                     player.transform.parent.GetComponentInChildren<ShootingController>().SD=sd;

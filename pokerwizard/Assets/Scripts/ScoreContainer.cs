@@ -20,11 +20,8 @@ public class ScoreContainer : MonoBehaviour
         
     }
     public void SaveScore(){
-        for (int i = 0; i < 4; i++)
-        {
-            rank=scoreManager.leaderboard;
-            hitpoint=scoreManager.ShootPoint;
-            gold=scoreManager.gold;
-        }
+        rank=scoreManager.leaderboard;
+        hitpoint=scoreManager.ShootPoint;
+        gold=scoreManager.gold;
     }
 }

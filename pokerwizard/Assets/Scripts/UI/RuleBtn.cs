@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class RuleBtn : MonoBehaviour,IPointerDownHandler,IPointerEnterHandler,IPointerExitHandler
 {
     public RectTransform button;
+    public LoadScene loaer;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class RuleBtn : MonoBehaviour,IPointerDownHandler,IPointerEnterHandler,IP
     }
     public void OnPointerDown(CursorKey cursor){
         FindObjectOfType<AudioManager>().Play("book_flip");
+        loaer.LoadtheScene(5);
     }
     public void OnPointerEnter(CursorKey cursor){
         button.GetComponent<Animator>().Play("bookhover_on");
