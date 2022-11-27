@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System.Linq;
 [ExecuteInEditMode]
 public class SpellManager : MonoBehaviour
@@ -11,8 +13,11 @@ public class SpellManager : MonoBehaviour
     private List<SpellData> tempSpell=new List<SpellData>();
     void Update()
     {
+        #if UNITY_EDITOR
         UpdateList();
+        #endif
     }
+    #if UNITY_EDITOR
     void UpdateList(){
         if(FetchDataInEditor){
             tempSpell.Clear();
@@ -33,4 +38,5 @@ public class SpellManager : MonoBehaviour
             allSpell=tempSpell.OrderBy(s => s.ID).ToList();
         }
     }
+    #endif
 }

@@ -188,23 +188,24 @@ public class ShootingController : MonoBehaviour
             iscasted=true;
         }
         if(transform.parent.GetComponentInChildren<PlayerController>().playerCursor)transform.parent.GetComponentInChildren<PlayerController>().playerCursor.GetComponent<CursorKey>().clickcursor();
-        if(sa!=null){
-            sa.nextround();
+        if(SD!=null&&SD.isdone){
+            List<PlayerController> pc=new List<PlayerController>();
+            pc.AddRange(FindObjectsOfType<PlayerController>());
+            PlayerManager pm=FindObjectOfType<PlayerManager>();
+            while (pc.Count>0)
+            {
+                Destroy(pc[0].transform.parent.gameObject,1f);
+                pc.RemoveAt(0);
+                
+            }
+            while (pm.Players.Count>0)
+            {
+                pm.RemovePlayer(pm.Players[0]);
+            }
+            FindObjectOfType<LoadScene>().LoadtheScene("Multiple_UI");
         }
     }
     public void OnEngine(InputAction.CallbackContext ctx){
         Debug.Log("back");
-        if(SD!=null&&SD.isdone){
-            foreach (var item in FindObjectsOfType<PlayerController>())
-            {
-                Destroy(item.transform.parent.gameObject);
-            }
-            PlayerManager pm=FindObjectOfType<PlayerManager>();
-            foreach (var item in pm.Players)
-            {
-                pm.RemovePlayer(item);
-            }
-            FindObjectOfType<LoadScene>().LoadtheScene("Multiple_UI");
-        }
     }
 }
