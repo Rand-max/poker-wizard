@@ -57,7 +57,7 @@ public class ScoreManager : MonoBehaviour
         }
         if(finished[0]&&finished[1]&&finished[2]&&finished[3]){
             scoreContainer.SaveScore();
-            loadScene.LoadtheScene(3);
+            loadScene.LoadtheScene("ScoreBoard");
         }
         if(!goldspawned&&sortedrank[3]>200f){
             GetComponent<GoldEggSpawner>().spawn(2);

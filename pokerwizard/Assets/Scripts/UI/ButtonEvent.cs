@@ -39,10 +39,10 @@ public class ButtonEvent : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,I
             setting.ButtonClicked();
             break;
             case 1:
-            loader.LoadtheScene(1);
+            loader.LoadtheScene("Menu_UI");
             break;
             case 2:
-            loader.LoadtheScene(2);
+            loader.LoadtheScene("Multiple_UI");
             break;
         }
     }

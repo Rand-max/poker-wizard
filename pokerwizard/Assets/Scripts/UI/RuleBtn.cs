@@ -25,7 +25,7 @@ public class RuleBtn : MonoBehaviour,IPointerDownHandler,IPointerEnterHandler,IP
     }
     public void OnPointerDown(CursorKey cursor){
         FindObjectOfType<AudioManager>().Play("book_flip");
-        loaer.LoadtheScene(5);
+        loaer.LoadtheScene("Rules");
     }
     public void OnPointerEnter(CursorKey cursor){
         button.GetComponent<Animator>().Play("bookhover_on");

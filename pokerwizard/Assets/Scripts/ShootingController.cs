@@ -204,7 +204,7 @@ public class ShootingController : MonoBehaviour
             {
                 pm.RemovePlayer(item);
             }
-            FindObjectOfType<LoadScene>().LoadtheScene(2);
+            FindObjectOfType<LoadScene>().LoadtheScene("Multiple_UI");
         }
     }
 }

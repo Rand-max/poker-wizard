@@ -9,11 +9,11 @@ public class LoadScene : MonoBehaviour
     public GameObject LoadingScreen;
     public Image Loadingbar_fill;
     
-    public void LoadtheScene(int sceneID){
-        StartCoroutine(LoadSceneAsync(sceneID));
+    public void LoadtheScene(string sceneName){
+        StartCoroutine(LoadSceneAsync(sceneName));
     }
-    IEnumerator LoadSceneAsync(int sceneID){
-        AsyncOperation operation=SceneManager.LoadSceneAsync(sceneID);
+    IEnumerator LoadSceneAsync(string sceneName){
+        AsyncOperation operation=SceneManager.LoadSceneAsync(sceneName);
         LoadingScreen.SetActive(true);
 
         //progress bar

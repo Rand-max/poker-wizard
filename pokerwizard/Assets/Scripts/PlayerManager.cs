@@ -79,12 +79,9 @@
             //sample scene
             if(Keyboard.current.kKey.wasPressedThisFrame){
                 FindObjectOfType<AudioManager>().Play("ready_game");
-                if(loader){
-                    loader.LoadtheScene(0);
-                }
                 loader=FindObjectOfType<LoadScene>();
                 if(loader){
-                    loader.LoadtheScene(0);
+                    loader.LoadtheScene("SampleScene");
                 }
                 else{
                     SceneManager.LoadScene("SampleScene");

@@ -82,6 +82,6 @@ public class ScoreAnnouncer : MonoBehaviour
         }
     }
     public void nextround(){
-        sceneloader.LoadtheScene(2);
+        sceneloader.LoadtheScene("Multiple_UI");
     }
 }
