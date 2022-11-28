@@ -6403,14 +6403,16 @@ MonoBehaviour:
   - {fileID: 1441746690}
   - {fileID: 800150174}
   - {fileID: 1297414362}
-  Connected1: {fileID: 262175706}
-  Connected2: {fileID: 903627636}
-  Connected3: {fileID: 911988008}
-  Connected4: {fileID: 1308183381}
-  p1_text: {fileID: 300869142}
-  p2_text: {fileID: 1395240752}
-  p3_text: {fileID: 775492942}
-  p4_text: {fileID: 688275332}
+  ConnectedText:
+  - {fileID: 262175706}
+  - {fileID: 903627636}
+  - {fileID: 911988008}
+  - {fileID: 1308183381}
+  player_text:
+  - {fileID: 300869142}
+  - {fileID: 1395240752}
+  - {fileID: 775492942}
+  - {fileID: 688275332}
   cirimg:
   - {fileID: 45788945}
   - {fileID: 953616206}

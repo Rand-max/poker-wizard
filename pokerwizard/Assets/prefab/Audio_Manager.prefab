@@ -82,9 +82,9 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: pick_key
-    clip: {fileID: 8300000, guid: 53e9ec3be2bd47046a110664326e4b10, type: 3}
+    clip: {fileID: 8300000, guid: 52e7df623526d744b9d217f551b72e7c, type: 3}
     volume: 1
-    pitch: 1
+    pitch: 1.5
     source: {fileID: 0}
     loop: 0
   - name: crown

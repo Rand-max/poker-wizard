@@ -238,6 +238,8 @@
         {
             players.Add(player);
             player.GetComponentInChildren<PlayerController>().playerCursor=Cursors[player.playerIndex];
+            LockDissolveTest ldt=FindObjectOfType<LockDissolveTest>();
+            ldt.playerConnected(player.playerIndex);
             /*
             Debug.Log(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
             Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);

@@ -27,14 +27,8 @@ public class LockDissolveTest : MonoBehaviour
     //text
     public List<TextMeshProUGUI> playernum;
 
-    public TextMeshProUGUI Connected1;
-    public TextMeshProUGUI Connected2;
-    public TextMeshProUGUI Connected3;
-    public TextMeshProUGUI Connected4;
-    public TextMeshProUGUI p1_text;
-    public TextMeshProUGUI p2_text;
-    public TextMeshProUGUI p3_text;
-    public TextMeshProUGUI p4_text;
+    public List<TextMeshProUGUI> ConnectedText;
+    public List<TextMeshProUGUI> player_text;
 
     //circle
     private List<bool> circleAppear=new List<bool>(4){false,false,false,false};
@@ -82,14 +76,6 @@ public class LockDissolveTest : MonoBehaviour
     void Start()
     {
         Debug.Log("start");
-        Connected1.text="Connected !";
-        Connected2.text="Connected !";
-        Connected3.text="Connected !";
-        Connected4.text="Connected !";
-        p1_text.text="1p";
-        p2_text.text="2p";
-        p3_text.text="3p";
-        p4_text.text="4p";
         for (int i = 0; i < 4; i++)
         {
             isEnabled[i]=true;
@@ -97,6 +83,8 @@ public class LockDissolveTest : MonoBehaviour
             Mat[i].SetFloat("_FadeValue",1f);
             circleAppear[i]=false;
             circolor[i]= new Color (1, 1, 1, 0);
+            ConnectedText[i].text="";
+            player_text[i].text="";
         }
     }
 
@@ -133,5 +121,9 @@ public class LockDissolveTest : MonoBehaviour
             red.ButtonClicked();
         }
     }
-    
+    public void playerConnected(int ptext){
+        FindObjectOfType<AudioManager>().Play("pick_key");
+        ConnectedText[ptext].text="Connected !";
+        player_text[ptext].text=(ptext+1)+"p";
+    }
 }
