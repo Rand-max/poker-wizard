@@ -43,7 +43,7 @@ public class LockDissolveTest : MonoBehaviour
     [SerializeField]
     private List<Color> circolor;
 
-    public void ButtonClicked(CursorKey cursor,GameObject locker){
+    public void ButtonClicked(CursorKey cursor,GameObject locker,Texture playertexture,Texture playerfasten){
         //lock
         FindObjectOfType<AudioManager>().Play("unlock");
         //controller
@@ -72,6 +72,8 @@ public class LockDissolveTest : MonoBehaviour
                 isDissolving[i]=true;
                 circleAppear[i]=true;
                 playerManager.characters[cursornum]=players[i];
+                playerManager.Players[cursornum].GetComponent<PlayerController>().playerTexture=playertexture;
+                playerManager.Players[cursornum].GetComponent<PlayerController>().playerfastenTexture=playerfasten;
                 playerManager.playerheadnumber[cursornum]=i;
             }
         }

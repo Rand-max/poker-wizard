@@ -2115,6 +2115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCursor: {fileID: 0}
+  playertexture: {fileID: 2800000, guid: f8d23a73d0c80bd43962215628f11afb, type: 3}
+  playerfasten: {fileID: 2800000, guid: 8c3c2bd022f73a94cabd72f1e571cfcc, type: 3}
   button: {fileID: 487531148}
   unlock: {fileID: 1573085290}
   shake: {fileID: 1113571739}
@@ -2196,6 +2198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCursor: {fileID: 0}
+  playertexture: {fileID: 2800000, guid: b5d813a0f7455ac459a54ea152cd1265, type: 3}
+  playerfasten: {fileID: 2800000, guid: 173e39956548d4649a3ad3342a8385eb, type: 3}
   button: {fileID: 583512535}
   unlock: {fileID: 1573085290}
   shake: {fileID: 1113571739}
@@ -4071,6 +4075,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCursor: {fileID: 0}
+  playertexture: {fileID: 2800000, guid: 31e73e7e5336e254da2ed9fefee7b539, type: 3}
+  playerfasten: {fileID: 0}
   button: {fileID: 974864288}
   unlock: {fileID: 1573085290}
   shake: {fileID: 1113571739}
@@ -5178,6 +5184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCursor: {fileID: 0}
+  playertexture: {fileID: 2800000, guid: 4217ab4ba82ce0045b9c5b4b9df0dad5, type: 3}
+  playerfasten: {fileID: 2800000, guid: fc4ffdcea59baa646a43a186e5082ef3, type: 3}
   button: {fileID: 1282216114}
   unlock: {fileID: 1573085290}
   shake: {fileID: 1113571739}

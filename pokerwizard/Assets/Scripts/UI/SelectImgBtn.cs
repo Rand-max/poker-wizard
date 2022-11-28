@@ -8,6 +8,8 @@ using DG.Tweening;
 public class SelectImgBtn : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 {
     public CursorKey currentCursor;
+    public Texture playertexture;
+    public Texture playerfasten;
     public RectTransform button;
     public LockDissolveTest unlock;
     public CameraShake shake;
@@ -38,7 +40,7 @@ public class SelectImgBtn : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
     public void OnPointerDown(CursorKey cursor,GameObject locker){
         if(!isclicked){
             isclicked=true;
-            unlock.ButtonClicked(cursor,locker);
+            unlock.ButtonClicked(cursor,locker,playertexture,playerfasten);
             shake.ShakeIt();
             AsyncPunch();
             OnPointerExit(currentCursor);

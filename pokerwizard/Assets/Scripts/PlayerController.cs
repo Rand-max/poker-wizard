@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public int playerNumber;
     public int TeamNumber;
+    public Texture playerTexture;
+    public Texture playerfastenTexture;
     public GameObject playerCursor;
     [SerializeField] float currentSpeed;
     float speed;

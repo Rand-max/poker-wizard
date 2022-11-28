@@ -11904,6 +11904,16 @@ MonoBehaviour:
   - {fileID: 525008900}
   - {fileID: 1769473290}
   - {fileID: 421928833}
+  playerflag:
+  - {fileID: 421109535}
+  - {fileID: 1909424114}
+  - {fileID: 1886353335}
+  - {fileID: 366225298}
+  playerfasten:
+  - {fileID: 1102370412}
+  - {fileID: 1223343679}
+  - {fileID: 502771760}
+  - {fileID: 1014822166}
   totalscore: 00000000000000000000000000000000
   total:
   - {fileID: 1438254728}
@@ -12669,7 +12679,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538910885}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ed5e24ab5dc6fe439b461343b902f01, type: 3}
   m_Name: 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ScoreAnnouncer : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class ScoreAnnouncer : MonoBehaviour
     public List<TextMeshProUGUI> rank;
     public List<TextMeshProUGUI> hitpoint;
     public List<TextMeshProUGUI> gold;
+    public List<RawImage> playerflag;
+    public List<RawImage> playerfasten;
     public List<int>totalscore;
     public List<TextMeshProUGUI> total;
     public List<TextMeshProUGUI> teamtotal;
@@ -24,6 +27,15 @@ public class ScoreAnnouncer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        List<PlayerController> pc=new List<PlayerController>();
+        pc.AddRange(FindObjectsOfType<PlayerController>());
+        pc.Sort((x,y)=>x.playerNumber.CompareTo(y.playerNumber));
+        for (int i = 0; i < pc.Count; i++)
+        {
+            Debug.Log(i);
+            playerflag[i].texture=pc[i].playerTexture;
+            playerfasten[i].texture=pc[i].playerfastenTexture;
+        }
         Awin=false;
         Bwin=false;
         scoreContainer=FindObjectOfType<ScoreContainer>();
