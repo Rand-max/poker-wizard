@@ -5,10 +5,12 @@ using UnityEngine;
 public class AudTrigger : MonoBehaviour
 {
     public bool isTrigger;
+    AudioManager am;
     public string AudName;
     // Start is called before the first frame update
     void Start()
     {
+        am=FindObjectOfType<AudioManager>();
         isTrigger=false;
     }
 
@@ -16,7 +18,7 @@ public class AudTrigger : MonoBehaviour
     void Update()
     {
         if(isTrigger){
-            FindObjectOfType<AudioManager>().Play(AudName);
+            am.Play(AudName);
             isTrigger=false;
         }
     }

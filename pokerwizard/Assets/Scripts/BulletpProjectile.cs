@@ -169,6 +169,7 @@ public class BulletpProjectile : MonoBehaviour
             if(other.gameObject.tag=="Player"){
                 Debug.Log(be.HasStun);
                 triggered=true;
+                other.transform.parent.GetComponentInChildren<Animator>().Play("Armature_panic");
                 if(be.HasSlowdown){
                     other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(-be.BulletSlowdownRate,be.BulletSlowdownTime);
                 }

@@ -32,7 +32,7 @@ public class CursorKey : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(Keyboard.current.rightCtrlKey.wasPressedThisFrame){
            LoadScene("Rules");
@@ -120,7 +120,7 @@ public class CursorKey : MonoBehaviour
                     btne=null;
                 }
             }
-        } 
+        }
     }
     public void LoadScene(string SceneName){
         SceneManager.LoadScene(SceneName);

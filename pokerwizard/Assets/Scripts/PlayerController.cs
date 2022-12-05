@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 inputDirection;
     private bool inputDrift;
     public LayerMask playerlayer;
+    public bool isdrift;
     void Start ()
     {
         DontDestroyOnLoad(this.transform.parent);
@@ -79,8 +80,19 @@ public class PlayerController : MonoBehaviour
         //drift?
         if (inputDrift && !drifting && Mathf.Abs(inputDirection.y)>= 0.1)
         {
+            if(!isdrift){
+                isdrift=true;
+                if(inputDirection.x > 0.1){
+                    GetComponentInChildren<Animator>().Play("Armature_right");
+                }
+                else if(inputDirection.x < -0.1){
+                    GetComponentInChildren<Animator>().Play("Armature_left");
+                }
+            }
+            
             drifting = true;
             driftDirection = inputDirection.x > 0.1 ? 1 : inputDirection.x < -0.1?-1:0;
+            
 
             //playerModel.parent.DOComplete();psa
             //playerModel.parent.DOPunchPosition(transform.up * .2f, .3f, 5, 1);psa
@@ -114,6 +126,15 @@ public class PlayerController : MonoBehaviour
         //a) Kart
         if (!drifting)
         {
+            if(isdrift){
+                isdrift=false;
+                if(inputDirection.x > 0.1){
+                    GetComponentInChildren<Animator>().Play("Armature_right");
+                }
+                else if(inputDirection.x < -0.1){
+                    GetComponentInChildren<Animator>().Play("Armature_left");
+                }
+            }
             playerModel.localEulerAngles = Vector3.Lerp(playerModel.localEulerAngles, new Vector3(0, (inputDirection.x * 15), playerModel.localEulerAngles.z), 10f/Time.deltaTime);
         }
         else
