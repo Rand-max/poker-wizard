@@ -33,6 +33,7 @@ public class ShootingController : MonoBehaviour
     public ScrollDown SD;
     public AudioManager am;
     public ScoreAnnouncer sa;
+    public GameObject backpartical;
     // Start is called before the first frame update
     void Start()
     {
@@ -207,5 +208,17 @@ public class ShootingController : MonoBehaviour
     }
     public void OnEngine(InputAction.CallbackContext ctx){
         Debug.Log("back");
+        CheckpointController playercheck=scoreManager.checkpointmanager[transform.parent.GetComponentInChildren<PlayerController>().playerNumber].GetComponent<CheckpointController>();
+        int teleindex=playercheck.activeindex;
+        if(teleindex==0){
+            teleindex=playercheck.Checkpoints.Length;
+        }
+        else{
+            teleindex-=1;
+        }
+        transform.parent.GetComponentInChildren<PlayerController>().rb.transform.position=playercheck.Checkpoints[teleindex].transform.position;
+        GameObject parti=Instantiate(backpartical,transform.position,Quaternion.identity);
+        parti.AddComponent<DeleteSelf>();
+        parti.GetComponent<DeleteSelf>().duration=2.0f;
     }
 }

@@ -24,6 +24,7 @@ public class CursorKey : MonoBehaviour
     SelectImgBtn imgbtn;
     RuleBtn rlbtn;
     ButtonEvent btne;
+    public LoadScene loader;
     void Start()
     {
         cursor= GetComponent<RectTransform>();
@@ -34,9 +35,9 @@ public class CursorKey : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Keyboard.current.rightCtrlKey.wasPressedThisFrame){
-           LoadScene("Rules");
-           FindObjectOfType<AudioManager>().Play("book_flip");
+        if(Keyboard.current.rightCtrlKey.wasReleasedThisFrame){
+            FindObjectOfType<AudioManager>().Play("book_flip");
+            loader.LoadtheScene("Rules");
         }
         
         //Vector2 cursorpos= Mouse.current.position.ReadValue();
@@ -121,9 +122,6 @@ public class CursorKey : MonoBehaviour
                 }
             }
         }
-    }
-    public void LoadScene(string SceneName){
-        SceneManager.LoadScene(SceneName);
     }
     public void movecursor(Vector2 dire){
         currentaccel=dire*cursoraccel;
