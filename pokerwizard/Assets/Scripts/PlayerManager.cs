@@ -119,6 +119,10 @@
             }
             foreach (var player in players)
             {
+                LockDissolveTest ldt=FindObjectOfType<LockDissolveTest>();
+                if(ldt!=null){
+                    ldt.playerConnected(player.playerIndex);
+                }
                 ShootingController sc=player.transform.parent.GetComponentInChildren<ShootingController>();
                 if(sc){
                     sc.sa=FindObjectOfType<ScoreAnnouncer>();
@@ -228,11 +232,12 @@
         {
             playerInputManager.onPlayerJoined += AddPlayer;
         }
-
+        /*
         private void OnDisable()
         {
             playerInputManager.onPlayerJoined -= AddPlayer;
         }
+        */
 
         public void AddPlayer(PlayerInput player)
         {

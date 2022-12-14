@@ -803,6 +803,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 0
   TeamNumber: 0
+  playerTexture: {fileID: 0}
+  playerfastenTexture: {fileID: 0}
   playerCursor: {fileID: 0}
   currentSpeed: 0
   currentRotate: 0
@@ -823,6 +825,7 @@ MonoBehaviour:
   playerlayer:
     serializedVersion: 2
     m_Bits: 0
+  isdrift: 0
 --- !u!114 &8507479074176955731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,6 +1315,10 @@ MonoBehaviour:
   bulletspeed: 70
   preparetime: 0.4
   ammo: 0
+  SD: {fileID: 0}
+  am: {fileID: 0}
+  sa: {fileID: 0}
+  backpartical: {fileID: 3661672144544496754, guid: 878765a0c6d11a94c9fb54776c6ca516, type: 3}
 --- !u!1 &7640310719716678479
 GameObject:
   m_ObjectHideFlags: 0

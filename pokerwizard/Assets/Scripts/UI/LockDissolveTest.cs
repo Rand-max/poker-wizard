@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class LockDissolveTest : MonoBehaviour
 {
     //key
@@ -72,10 +72,12 @@ public class LockDissolveTest : MonoBehaviour
             }
         }
     }
+    void Awake(){
+        SceneManager.sceneLoaded+=OnSceneLoaded;
+    }
     // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("start");
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode){
+        Debug.Log("loaded");
         for (int i = 0; i < 4; i++)
         {
             isEnabled[i]=true;
@@ -86,6 +88,10 @@ public class LockDissolveTest : MonoBehaviour
             ConnectedText[i].text="";
             player_text[i].text="";
         }
+    }
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame

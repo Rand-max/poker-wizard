@@ -1046,6 +1046,7 @@ MonoBehaviour:
   currentSpeed: {x: 0, y: 0}
   m_Raycaster: {fileID: 805632920}
   m_EventSystem: {fileID: 1555891205}
+  loader: {fileID: 963202949}
 --- !u!1 &300869140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,6 +1843,7 @@ MonoBehaviour:
   currentSpeed: {x: 0, y: 0}
   m_Raycaster: {fileID: 805632920}
   m_EventSystem: {fileID: 1555891205}
+  loader: {fileID: 963202949}
 --- !u!1 &454874338
 GameObject:
   m_ObjectHideFlags: 0
@@ -6394,10 +6396,10 @@ MonoBehaviour:
   - {fileID: 1488577148}
   red: {fileID: 0}
   Mat:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 2e509afe8dabc64479e49237b3a1ec84, type: 2}
+  - {fileID: 2100000, guid: db9255ae5c8a5f54d9f6bd25b7db7b10, type: 2}
+  - {fileID: 2100000, guid: f595ee69661a55346b1dd7098c64bc83, type: 2}
+  - {fileID: 2100000, guid: 65e92c0ba0bdeae4381565d0b89f52d5, type: 2}
   playernum:
   - {fileID: 1706932700}
   - {fileID: 1441746690}
@@ -7528,6 +7530,7 @@ MonoBehaviour:
   currentSpeed: {x: 0, y: 0}
   m_Raycaster: {fileID: 805632920}
   m_EventSystem: {fileID: 1555891205}
+  loader: {fileID: 963202949}
 --- !u!1 &1977893272
 GameObject:
   m_ObjectHideFlags: 0
@@ -7625,6 +7628,7 @@ MonoBehaviour:
   currentSpeed: {x: 0, y: 0}
   m_Raycaster: {fileID: 805632920}
   m_EventSystem: {fileID: 1555891205}
+  loader: {fileID: 963202949}
 --- !u!1 &1989124381
 GameObject:
   m_ObjectHideFlags: 0
