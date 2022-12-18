@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.0673371, g: 0.32123342, b: 0.3679245, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: f8a60d169ab8a46b09c9b01a3e51601f, type: 2}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.002680765, g: 0.28729847, b: 0.30505028, a: 1}
+  m_IndirectSpecularColor: {r: 0.003271238, g: 0.28854823, b: 0.30656487, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -427,7 +427,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &48943898
 BoxCollider:
@@ -1361,7 +1361,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 289f3578f2df9c14da3a2a5cb47d2966, type: 2}
     - target: {fileID: 4931832179725412349, guid: 5a899076845504f4d8ed4c956f062f69, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4931832179725412349, guid: 5a899076845504f4d8ed4c956f062f69, type: 3}
       propertyPath: m_LocalScale.x
@@ -3366,8 +3366,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.4330189, g: 0.44410968, b: 0.4811321, a: 1}
+  m_Intensity: 0.6
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -32005,8 +32005,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89843306b0bc07f4e91d4a7abf0099b9, type: 2}
   - {fileID: 2100000, guid: fdfbf9d1a5f3e0c429f32022964df797, type: 2}
+  - {fileID: 2100000, guid: 89843306b0bc07f4e91d4a7abf0099b9, type: 2}
   - {fileID: 2100000, guid: 21fc962c2ed3ef0458e7d4c2d4b25b9a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
