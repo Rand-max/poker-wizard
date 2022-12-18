@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IceSP_Floor
-  m_Shader: {fileID: -6465566751694194690, guid: d9cfcb749c7b7554cb257fffdea41fdd, type: 3}
+  m_Name: pinkcrys
+  m_Shader: {fileID: -6465566751694194690, guid: 7fb6e2af7b24fb24b93254f663a4d8f8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -19,10 +19,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _IceTex:
-        m_Texture: {fileID: 2800000, guid: ffa01093856b873448237de84289ee85, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -37,23 +33,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnalPower: 2.86
-    - _Fresnal_Power: 1
-    - _Metallic: 0.876
-    - _Normal: -0.37
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RefractionAmount: -0.297
-    - _Refraction_Amount: 0
-    - _Refraction_amount: 0.62
-    - _Smoothness: 1
+    - _bottomline: 0.35
+    - _metallic: 1
+    - _smoothness: 1
+    - _topline: 0.65
     m_Colors:
-    - _Color: {r: 0.42352942, g: 1.8039216, b: 2, a: 1}
-    - _FresnalColor: {r: 1.4062492, g: 1.9819971, b: 2.3888206, a: 1}
-    - _Fresnal_Color: {r: 1.117469, g: 1.420613, b: 1.414669, a: 1}
-    - _IceTiling: {r: 2, g: 2, b: 0, a: 0}
+    - _baseColor: {r: 3.2111173, g: 1.02554, b: 2.5218198, a: 1}
+    - _bottomcolor: {r: 25.788214, g: 9.377532, b: 14.779807, a: 0}
+    - _topcolor: {r: 0.32941177, g: 1.1450981, b: 2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &2558161496150625999
+--- !u!114 &2818281065593205035
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-920063249155738082
+--- !u!114 &-8326371454846508106
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: crown_yellow
-  m_Shader: {fileID: -6465566751694194690, guid: 7fb6e2af7b24fb24b93254f663a4d8f8, type: 3}
+  m_Name: SnowSled
+  m_Shader: {fileID: -6465566751694194690, guid: d52ae498a8898724caeecf8bb74cdb23, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -32,6 +32,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Basemap:
+        m_Texture: {fileID: 2800000, guid: 7f8fe00021db11a40876b6009312431d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -48,12 +52,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _bottomline: 0.35
-    - _metallic: 1
-    - _smoothness: 1
-    - _topline: 0.65
+    - _SnowOpacity: 2.07
     m_Colors:
-    - _baseColor: {r: 1.2, g: 1.5843138, b: 1.9764706, a: 1}
-    - _bottomcolor: {r: 16.94838, g: 4.614218, b: 4.614218, a: 0}
-    - _topcolor: {r: 0.495283, g: 1, b: 0.6812314, a: 1}
+    - _SnowDirection: {r: 0.67, g: 4.9, b: 0, a: 0}
   m_BuildTextureStacks: []
