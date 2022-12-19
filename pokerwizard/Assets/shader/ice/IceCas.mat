@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: IceCas
-  m_Shader: {fileID: -6465566751694194690, guid: d9cfcb749c7b7554cb257fffdea41fdd, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2c8aa814e107c3c4ea4ff6ea4b1bb703, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -48,7 +48,7 @@ Material:
     - _Refraction_amount: 0.62
     - _Smoothness: 1
     m_Colors:
-    - _Color: {r: 0.32156864, g: 0.44705883, b: 0.7490196, a: 1}
+    - _Color: {r: 0.4874069, g: 0.67761445, b: 1.1353015, a: 1}
     - _FresnalColor: {r: 1.4062492, g: 1.9819971, b: 2.3888206, a: 1}
     - _Fresnal_Color: {r: 1.117469, g: 1.420613, b: 1.414669, a: 1}
     - _IceTiling: {r: 2, g: 2, b: 0, a: 0}
