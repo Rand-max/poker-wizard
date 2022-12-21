@@ -39,9 +39,10 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SnowOpacity: 0.59
+    - _SnowOpacity: 2.7
     m_Colors:
-    - _SnowDirection: {r: 0.6, g: 3.28, b: 0, a: 0}
+    - _Color: {r: 0.764151, g: 0.7309897, b: 0.7309897, a: 0}
+    - _SnowDirection: {r: 0.28, g: 2.35, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8337495663677423563
 MonoBehaviour:

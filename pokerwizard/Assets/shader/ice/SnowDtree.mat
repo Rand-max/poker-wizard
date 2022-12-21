@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8326371454846508106
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -7,10 +20,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dissolve_p1
-  m_Shader: {fileID: -6465566751694194690, guid: 09fb1f3894a864a41a65596fe0aa43d5, type: 3}
+  m_Name: SnowDtree
+  m_Shader: {fileID: -6465566751694194690, guid: d52ae498a8898724caeecf8bb74cdb23, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -19,8 +32,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3ec42f2567b46b345989ffcbd9b74f19, type: 3}
+    - _Basemap:
+        m_Texture: {fileID: 2800000, guid: 7f8fe00021db11a40876b6009312431d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -37,8 +50,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FadeValue: 0
-    - _NoiseScale: 50
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _SnowOpacity: 2.07
     m_Colors:
-    - _Color: {r: 1, g: 0.8509804, b: 0.21960784, a: 1}
+    - _Color: {r: 34.431248, g: 43.03906, b: 102.75575, a: 1}
+    - _SnowDirection: {r: 0.26, g: 2.33, b: 0, a: 0}
   m_BuildTextureStacks: []
