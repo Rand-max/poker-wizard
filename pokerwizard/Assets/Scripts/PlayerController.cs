@@ -232,6 +232,9 @@ public class PlayerController : MonoBehaviour
         multipliers.Add(1+rate);
         multipliers_timer.Add(time);
     }
+    public void SingleDirection(float force,Vector3 forward){
+        rb.AddForce(forward*force);
+    }
     public void InvertAxis(float time){
         multipliers.Add(-1);
         multipliers_timer.Add(time);
