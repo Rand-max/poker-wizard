@@ -52,12 +52,13 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _color_speed: 0.084
     - _dissolve_power: 2
     - _mask_power: 0.75
     - _noise_scale: 40
     - _wobble_amount: 0.05
     - _wobble_distance: 0.1
-    - _wobble_frequency: 0.1
+    - _wobble_frequency: 2
     - _wobble_speed: 3
     m_Colors:
     - _Color: {r: 3.421664, g: 11.550841, b: 8.732727, a: 1}
