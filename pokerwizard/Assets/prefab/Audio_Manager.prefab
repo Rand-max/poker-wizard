@@ -273,3 +273,9 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: shocked
+    clip: {fileID: 8300000, guid: b6c942f1499a32b44943fcf7cdec7d1b, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0

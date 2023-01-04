@@ -170,6 +170,7 @@ public class BulletpProjectile : MonoBehaviour
                 Debug.Log(be.HasStun);
                 triggered=true;
                 other.transform.parent.GetComponentInChildren<Animator>().Play("Armature_panic");
+                FindObjectOfType<AudioManager>().Play("shocked");
                 if(be.HasSlowdown){
                     other.gameObject.GetComponentInParent<PlayerController>().MultiplySpeed(-be.BulletSlowdownRate,be.BulletSlowdownTime);
                 }

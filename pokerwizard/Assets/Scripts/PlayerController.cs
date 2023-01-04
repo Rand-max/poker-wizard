@@ -241,5 +241,6 @@ public class PlayerController : MonoBehaviour
     }
     public void ShockedAni(){
         this.gameObject.GetComponent<Animator>().Play("Armature_panic",0,0f);
+        FindObjectOfType<AudioManager>().Play("shocked");
     }
 }
