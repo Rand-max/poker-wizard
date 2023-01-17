@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-309223900282791374
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -20,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: club_flag
-  m_Shader: {fileID: -6465566751694194690, guid: 849979793af26484ebd9816844c35c0e, type: 3}
+  m_Name: iceflag_club
+  m_Shader: {fileID: 4800000, guid: 2c8aa814e107c3c4ea4ff6ea4b1bb703, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -32,7 +19,7 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Texture2D:
+    - _IceTex:
         m_Texture: {fileID: 2800000, guid: c12070e30dc034e49bfd3da4114871a8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -50,8 +37,32 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _FresnalPower: -0.08
+    - _Fresnal_Power: 1
+    - _Metallic: 1
+    - _Normal: -1
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RefractionAmount: 0.39
+    - _Refraction_Amount: 0
+    - _Refraction_amount: 0.62
+    - _Smoothness: 1
     m_Colors:
-    - _Color: {r: 0.65404063, g: 0.7169812, b: 0.6249911, a: 1}
+    - _Color: {r: 0.6523531, g: 0.9607843, b: 0.39215684, a: 1}
+    - _FresnalColor: {r: 0.48295152, g: 0.81960785, b: 0.33725494, a: 1}
+    - _Fresnal_Color: {r: 1.117469, g: 1.420613, b: 1.414669, a: 1}
+    - _IceTiling: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &2558161496150625999
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

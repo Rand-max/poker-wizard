@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IceSP_roof
+  m_Name: sp_floor
   m_Shader: {fileID: 4800000, guid: 2c8aa814e107c3c4ea4ff6ea4b1bb703, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 2
@@ -39,17 +39,17 @@ Material:
     m_Floats:
     - _FresnalPower: 2.86
     - _Fresnal_Power: 1
-    - _Metallic: 0.876
-    - _Normal: -0.37
+    - _Metallic: 1
+    - _Normal: 0.51
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RefractionAmount: -0.297
+    - _RefractionAmount: -0.102
     - _Refraction_Amount: 0
     - _Refraction_amount: 0.62
     - _Smoothness: 1
     m_Colors:
-    - _Color: {r: 0.21398352, g: 0.46957496, b: 0.88565403, a: 1}
-    - _FresnalColor: {r: 1.1040368, g: 2.5164185, b: 3.1290884, a: 1}
+    - _Color: {r: 0.1932716, g: 0.3568126, b: 0.8396226, a: 1}
+    - _FresnalColor: {r: 1.4062492, g: 1.9819971, b: 2.3888206, a: 1}
     - _Fresnal_Color: {r: 1.117469, g: 1.420613, b: 1.414669, a: 1}
     - _IceTiling: {r: 2, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []

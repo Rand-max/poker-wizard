@@ -37,19 +37,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnalPower: 2.86
+    - _FresnalPower: -0.08
     - _Fresnal_Power: 1
-    - _Metallic: 1
-    - _Normal: 0.51
+    - _Metallic: 0.482
+    - _Normal: 0.93
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RefractionAmount: -0.102
+    - _RefractionAmount: 0.12
     - _Refraction_Amount: 0
     - _Refraction_amount: 0.62
     - _Smoothness: 1
     m_Colors:
-    - _Color: {r: 0.1932716, g: 0.3568126, b: 0.8396226, a: 1}
-    - _FresnalColor: {r: 1.4062492, g: 1.9819971, b: 2.3888206, a: 1}
+    - _Color: {r: 0.28830078, g: 0.6847143, b: 0.8603976, a: 1}
+    - _FresnalColor: {r: 0.33604485, g: 0.8207547, b: 0.8207547, a: 1}
     - _Fresnal_Color: {r: 1.117469, g: 1.420613, b: 1.414669, a: 1}
     - _IceTiling: {r: 2, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
