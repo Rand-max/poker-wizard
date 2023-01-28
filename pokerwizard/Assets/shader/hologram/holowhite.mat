@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dissolve_p1
-  m_Shader: {fileID: -6465566751694194690, guid: 09fb1f3894a864a41a65596fe0aa43d5, type: 3}
+  m_Name: holowhite
+  m_Shader: {fileID: -6465566751694194690, guid: eefc9a9556c7ba747bec22d09b73f9b2, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -19,8 +19,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cd93bfd4c39c3fc4fa19c5df32114b68, type: 3}
+    - _HologramTexture2D:
+        m_Texture: {fileID: 2800000, guid: 91de79d0e8bacf048bbc458c328385df, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -37,8 +37,24 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FadeValue: 1
-    - _NoiseScale: 50
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _alphanum: 0
+    - _scroll_speed: 0.2
     m_Colors:
-    - _Color: {r: 0.36078432, g: 0.9647059, b: 0.99215686, a: 1}
+    - _Color: {r: 5.3403134, g: 5.3026094, b: 4.755902, a: 1}
+    - _hologram_tiling: {r: 1, g: 4, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &2172078750495027490
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
