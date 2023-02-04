@@ -5,11 +5,11 @@ using UnityEngine;
 public class Accelerator : MonoBehaviour
 {
     public float acceleratio;
-    public Vector3 forward;
+    public float multiplies;
+    public float lasttime;
     // Start is called before the first frame update
     void Start()
     {
-        forward=transform.forward;
     }
 
     // Update is called once per frame
@@ -18,7 +18,12 @@ public class Accelerator : MonoBehaviour
     }
     void OnTriggerEnter(Collider collision){
         if(collision.gameObject.GetComponent<PlayerController>()!=null){
-            collision.gameObject.GetComponent<PlayerController>().SingleDirection(acceleratio,forward);
+            collision.gameObject.GetComponent<PlayerController>().SingleDirection(acceleratio,transform.forward);
+            collision.gameObject.GetComponent<PlayerController>().MultiplySpeed(multiplies,lasttime);
         }
+    }
+    private void OnDrawGizmosSelected(){
+        Gizmos.color=Color.white;
+        Gizmos.DrawRay(transform.position,transform.forward);
     }
 }

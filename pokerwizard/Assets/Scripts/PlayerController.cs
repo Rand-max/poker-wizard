@@ -233,7 +233,8 @@ public class PlayerController : MonoBehaviour
         multipliers_timer.Add(time);
     }
     public void SingleDirection(float force,Vector3 forward){
-        rb.AddForce(forward*force);
+        Debug.Log("boost"+forward*force);
+        rb.AddForce(forward*force*1000);
     }
     public void InvertAxis(float time){
         multipliers.Add(-1);
