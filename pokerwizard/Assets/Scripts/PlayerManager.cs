@@ -87,6 +87,16 @@
                     SceneManager.LoadScene("SampleScene");
                 }
             }
+            if(Keyboard.current.jKey.wasPressedThisFrame){
+                FindObjectOfType<AudioManager>().Play("ready_game");
+                loader=FindObjectOfType<LoadScene>();
+                if(loader){
+                    loader.LoadtheScene("IceKingdom");
+                }
+                else{
+                    SceneManager.LoadScene("IceKingdom");
+                }
+            }
         }
         void OnSceneLoaded(Scene scene, LoadSceneMode mode){
             Debug.Log("OnSceneLoaded: " + scene.name);
