@@ -932,6 +932,7 @@ GameObject:
   - component: {fileID: 157719265}
   - component: {fileID: 157719267}
   - component: {fileID: 157719266}
+  - component: {fileID: 157719268}
   m_Layer: 5
   m_Name: phonedown
   m_TagString: Untagged
@@ -997,6 +998,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157719264}
   m_CullTransparentMesh: 1
+--- !u!95 &157719268
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157719264}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e57f2c8dcb3b82d408015cacdaefd4ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &190224642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5979,11 +6000,13 @@ MonoBehaviour:
   - {fileID: 2800000, guid: e942eca36004e18448d487bd8bd72f25, type: 3}
   - {fileID: 2800000, guid: 948dc215ff793be4894ea9dec262a1d7, type: 3}
   whiteGate: {fileID: 471973040}
+  gate_cd: 1
+  gatecdAllowed: 0
   miniMap: {fileID: 71551260}
   miniTex:
   - {fileID: 2800000, guid: 005f4fb67e0b23e438280644e12b04fe, type: 3}
   - {fileID: 2800000, guid: 18d19e77684167d49954ac75fbfd2c5b, type: 3}
-  phoneNum: {fileID: 157719264}
+  phoneAni: {fileID: 157719268}
   title: {fileID: 504148789}
   uiTag: {fileID: 607350078}
   fadeTime: 1.5
