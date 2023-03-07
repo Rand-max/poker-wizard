@@ -17,6 +17,8 @@ public class MapCallOut : MonoBehaviour
     //icon
     public RawImage mapIcon;
     public Texture[] mapTex;
+    public bool iconChange;
+    public float icon_cd;
     //gate
     public RawImage mapGate;
     public Texture[] gateTex;
@@ -26,6 +28,7 @@ public class MapCallOut : MonoBehaviour
     //minimap
     public RawImage miniMap;
     public Texture[] miniTex;
+    public Image miniBg;
     //phone
     public Animator phoneAni;
     public bool aniTrigger;
@@ -46,6 +49,7 @@ public class MapCallOut : MonoBehaviour
         switchAble=false;
         gatecdAllowed=false;
         aniTrigger=false;
+        iconChange=false;
     }
 
     // Update is called once per frame
@@ -72,10 +76,12 @@ public class MapCallOut : MonoBehaviour
         if(switchAble){
             SwitchGate();
             ChangeGateImg();
+            ChangeClip();
             uiTag.text="Select Your Gate";
             JudgeMap();
         }
         whiteGate.color=new Color(1.0f, 1.0f, 1.0f, gate_cd);
+        miniBg.color=new Color(1.0f, 1.0f, 1.0f, gate_cd);
     }
     //啟動
     public void StartMapUI(){
@@ -83,7 +89,7 @@ public class MapCallOut : MonoBehaviour
             WizardFadeOut();
             startCtn=true;
             gatecdAllowed=true;
-            
+            mapIcon.texture=mapTex[0];
         }
     }
     public void WizardFadeOut(){
@@ -94,11 +100,11 @@ public class MapCallOut : MonoBehaviour
     public void MapUIFadeIn(){
         mapUI.transform.localPosition=new Vector3(0f,-1000f,0f);
         mapUI.DOAnchorPos(new Vector2(0f,0f),fadeTime,false).SetEase(Ease.OutCirc);
+        mapTag.DOAnchorPos(new Vector2(0f,-420f),fadeTime+10f,false).SetEase(Ease.OutCirc);
     }
     //flip coin,play tele ani,change gate,map,title
     public void JudgeMap(){
         if(mapNum==1){
-            mapIcon.texture=mapTex[0];
             title.text="Colossal Chessboard";
             miniMap.texture=miniTex[0];
             mapGate.texture=gateTex[0];
@@ -108,7 +114,6 @@ public class MapCallOut : MonoBehaviour
             }
         }
         if(mapNum==2){
-            mapIcon.texture=mapTex[1];
             title.text="Ice Kingdom";
             miniMap.texture=miniTex[1];
             mapGate.texture=gateTex[1];
@@ -124,6 +129,7 @@ public class MapCallOut : MonoBehaviour
                 mapNum+=1;
                 gatecdAllowed=true;
                 gate_cd=1;
+                icon_cd=0.35f;
                 aniTrigger=true;
             }
         }
@@ -132,6 +138,7 @@ public class MapCallOut : MonoBehaviour
                 mapNum-=1;
                 gatecdAllowed=true;
                 gate_cd=1;
+                icon_cd=0.35f;
                 aniTrigger=true;
             }
         }
@@ -143,8 +150,9 @@ public class MapCallOut : MonoBehaviour
             if(gate_cd<0){
                 gate_cd=0;
                 gatecdAllowed=false;
+                SpinClip();
+                iconChange=true;
             }
-            SpinClip();
         }
 
     }
@@ -152,6 +160,20 @@ public class MapCallOut : MonoBehaviour
         bgc.DOScaleY(.5f,1.0f);
     }
     public void SpinClip(){
-        clipIcon.DOPunchRotation(new Vector3(0f,90f,0f),10,1);
+        clipIcon.DOLocalRotate(new Vector3(360, 360, 360), 1f, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.Linear);
+    }
+    public void ChangeClip(){
+        if(iconChange){
+            icon_cd-=Time.deltaTime;
+            if(icon_cd<0){
+                icon_cd=0;
+                if(mapNum==1){
+                    mapIcon.texture=mapTex[0];
+                }else if(mapNum==2){
+                    mapIcon.texture=mapTex[1];
+                }
+                iconChange=false;
+            }
+        }
     }
 }
