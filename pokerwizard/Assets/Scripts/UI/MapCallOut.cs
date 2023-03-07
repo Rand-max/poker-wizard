@@ -12,6 +12,8 @@ public class MapCallOut : MonoBehaviour
     public RectTransform charUI;
     public RectTransform mapUI;
     public RectTransform mapTag;
+    public RectTransform bgc;
+    public RectTransform clipIcon;
     //icon
     public RawImage mapIcon;
     public Texture[] mapTex;
@@ -26,6 +28,7 @@ public class MapCallOut : MonoBehaviour
     public Texture[] miniTex;
     //phone
     public Animator phoneAni;
+    public bool aniTrigger;
 
     public TextMeshProUGUI title;
     public TextMeshProUGUI uiTag;
@@ -42,6 +45,7 @@ public class MapCallOut : MonoBehaviour
         startCtn=false;
         switchAble=false;
         gatecdAllowed=false;
+        aniTrigger=false;
     }
 
     // Update is called once per frame
@@ -60,6 +64,7 @@ public class MapCallOut : MonoBehaviour
             }
         }
         if(FadeInable){
+            BGScale();
             MapUIFadeIn();
             switchAble=true;
         }
@@ -70,12 +75,15 @@ public class MapCallOut : MonoBehaviour
             uiTag.text="Select Your Gate";
             JudgeMap();
         }
+        whiteGate.color=new Color(1.0f, 1.0f, 1.0f, gate_cd);
     }
     //啟動
     public void StartMapUI(){
         if(Keyboard.current.zKey.wasPressedThisFrame){
             WizardFadeOut();
             startCtn=true;
+            gatecdAllowed=true;
+            
         }
     }
     public void WizardFadeOut(){
@@ -94,16 +102,20 @@ public class MapCallOut : MonoBehaviour
             title.text="Colossal Chessboard";
             miniMap.texture=miniTex[0];
             mapGate.texture=gateTex[0];
-            phoneAni.SetBool("gate1",true);
-            phoneAni.SetBool("gate2",false);
+            if(aniTrigger){
+                phoneAni.SetTrigger("to_gate1");
+                aniTrigger=false;
+            }
         }
         if(mapNum==2){
             mapIcon.texture=mapTex[1];
             title.text="Ice Kingdom";
             miniMap.texture=miniTex[1];
             mapGate.texture=gateTex[1];
-            phoneAni.SetBool("gate1",false);
-            phoneAni.SetBool("gate2",true);
+            if(aniTrigger){
+                phoneAni.SetTrigger("to_gate2");
+                aniTrigger=false;
+            }
         }
     }
     public void SwitchGate(){
@@ -112,6 +124,7 @@ public class MapCallOut : MonoBehaviour
                 mapNum+=1;
                 gatecdAllowed=true;
                 gate_cd=1;
+                aniTrigger=true;
             }
         }
         if(Keyboard.current.leftArrowKey.wasPressedThisFrame){
@@ -119,6 +132,7 @@ public class MapCallOut : MonoBehaviour
                 mapNum-=1;
                 gatecdAllowed=true;
                 gate_cd=1;
+                aniTrigger=true;
             }
         }
     }
@@ -126,13 +140,18 @@ public class MapCallOut : MonoBehaviour
     public void ChangeGateImg(){
         if(gatecdAllowed){
             gate_cd-=Time.deltaTime;
-            whiteGate.color=new Color(1.0f, 1.0f, 1.0f, 1f);
             if(gate_cd<0){
                 gate_cd=0;
                 gatecdAllowed=false;
-                whiteGate.color=new Color(1.0f, 1.0f, 1.0f, 0f);
             }
+            SpinClip();
         }
 
+    }
+    public void BGScale(){
+        bgc.DOScaleY(.5f,1.0f);
+    }
+    public void SpinClip(){
+        clipIcon.DOPunchRotation(new Vector3(0f,90f,0f),10,1);
     }
 }
