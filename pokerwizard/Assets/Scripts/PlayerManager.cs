@@ -199,7 +199,7 @@
                     //playerParent.GetComponentInChildren<CinemachineVirtualCamera>().gameObject.layer = layerToAdd;
                     //add the layer
                     playerParent.GetComponentInChildren<Camera>().cullingMask |= 1 << layerToAdd;
-                    playerParent.GetComponentInChildren<Camera>().cullingMask |= 1 <<(int)Mathf.Log(10, 2);
+                    playerParent.GetComponentInChildren<Camera>().cullingMask |= 1 << 10;
                     //set the action in the custom cinemachine Input Handler
                     //playerParent.GetComponentInChildren<InputHandler>().horizontal = player.actions.FindAction("Look");
                     

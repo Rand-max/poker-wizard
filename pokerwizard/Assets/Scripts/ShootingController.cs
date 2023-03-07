@@ -211,7 +211,7 @@ public class ShootingController : MonoBehaviour
         CheckpointController playercheck=scoreManager.checkpointmanager[transform.parent.GetComponentInChildren<PlayerController>().playerNumber].GetComponent<CheckpointController>();
         int teleindex=playercheck.activeindex;
         if(teleindex==0){
-            teleindex=playercheck.Checkpoints.Length;
+            teleindex=playercheck.Checkpoints.Length-1;
         }
         else{
             teleindex-=1;
