@@ -818,7 +818,7 @@ MonoBehaviour:
   multipliers_timer: []
   acceleration: 55
   steering: 0.4
-  gravity: 10
+  gravity: 20
   layerMask:
     serializedVersion: 2
     m_Bits: 1075
