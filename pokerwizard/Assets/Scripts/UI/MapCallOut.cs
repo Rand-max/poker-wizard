@@ -17,7 +17,7 @@ public class MapCallOut : MonoBehaviour
     //icon
     public RawImage mapIcon;
     public Texture[] mapTex;
-    public bool iconChange;
+    public bool iconChange=false;
     public float icon_cd;
     //gate
     public RawImage mapGate;
@@ -25,31 +25,29 @@ public class MapCallOut : MonoBehaviour
     public Image whiteGate;
     public float gate_cd=1f;
     public bool gatecdAllowed;
+    public bool phoneFinish=false;
+    public float tex_cd;
     //minimap
     public RawImage miniMap;
     public Texture[] miniTex;
     public Image miniBg;
     //phone
     public Animator phoneAni;
-    public bool aniTrigger;
+    public bool aniTrigger=false;
 
     public TextMeshProUGUI title;
     public TextMeshProUGUI uiTag;
     public float fadeTime=1f;
     public float countDown=2.5f;
-    public bool FadeInable;
-    public bool startCtn;
-    public bool switchAble;
+    public bool FadeInable=false;
+    public bool startCtn=false;
+    public bool switchAble=false;
     public static int mapNum=1;
     // Start is called before the first frame update
     void Start()
     {
-        FadeInable=false;
-        startCtn=false;
-        switchAble=false;
-        gatecdAllowed=false;
-        aniTrigger=false;
-        iconChange=false;
+        miniMap.texture=miniTex[0];
+        mapGate.texture=gateTex[0];
     }
 
     // Update is called once per frame
@@ -106,17 +104,14 @@ public class MapCallOut : MonoBehaviour
     public void JudgeMap(){
         if(mapNum==1){
             title.text="Colossal Chessboard";
-            miniMap.texture=miniTex[0];
-            mapGate.texture=gateTex[0];
             if(aniTrigger){
                 phoneAni.SetTrigger("to_gate1");
                 aniTrigger=false;
+                
             }
         }
         if(mapNum==2){
             title.text="Ice Kingdom";
-            miniMap.texture=miniTex[1];
-            mapGate.texture=gateTex[1];
             if(aniTrigger){
                 phoneAni.SetTrigger("to_gate2");
                 aniTrigger=false;
@@ -128,7 +123,7 @@ public class MapCallOut : MonoBehaviour
             if(mapNum<2){
                 mapNum+=1;
                 gatecdAllowed=true;
-                gate_cd=1;
+                gate_cd=0;
                 icon_cd=0.35f;
                 aniTrigger=true;
             }
@@ -137,24 +132,31 @@ public class MapCallOut : MonoBehaviour
             if(mapNum>1){
                 mapNum-=1;
                 gatecdAllowed=true;
-                gate_cd=1;
+                gate_cd=0;
                 icon_cd=0.35f;
                 aniTrigger=true;
             }
         }
     }
     //等待1秒更換
-    public void ChangeGateImg(){
+    public void ChangeGateImg(){   
         if(gatecdAllowed){
-            gate_cd-=Time.deltaTime;
-            if(gate_cd<0){
-                gate_cd=0;
+            gate_cd+=Time.deltaTime;
+            if(gate_cd>1){
+                gate_cd=1;
                 gatecdAllowed=false;
+                phoneFinish=true;
                 SpinClip();
                 iconChange=true;
             }
         }
-
+        if(phoneFinish){
+            gate_cd-=Time.deltaTime;
+            if(gate_cd<0){
+                gate_cd=0;
+                phoneFinish=false;
+            }
+        }
     }
     public void BGScale(){
         bgc.DOScaleY(.5f,1.0f);
@@ -162,9 +164,11 @@ public class MapCallOut : MonoBehaviour
     public void SpinClip(){
         clipIcon.DOLocalRotate(new Vector3(360, 360, 360), 1f, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.Linear);
     }
+    //change tex
     public void ChangeClip(){
         if(iconChange){
             icon_cd-=Time.deltaTime;
+            tex_cd-=Time.deltaTime;
             if(icon_cd<0){
                 icon_cd=0;
                 if(mapNum==1){
@@ -173,6 +177,15 @@ public class MapCallOut : MonoBehaviour
                     mapIcon.texture=mapTex[1];
                 }
                 iconChange=false;
+            }
+            if(tex_cd<0){
+                if(mapNum==1){
+                    miniMap.texture=miniTex[0];
+                    mapGate.texture=gateTex[0];
+                }else if(mapNum==2){
+                    miniMap.texture=miniTex[1];
+                    mapGate.texture=gateTex[1];
+                }
             }
         }
     }
