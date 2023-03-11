@@ -11,6 +11,8 @@ public class MapCallOut : MonoBehaviour
     //dotween obj
     public RectTransform charUI;
     public RectTransform mapUI;
+    public RectTransform readyTable;
+    public RectTransform startWord;
     public RectTransform mapTag;
     public RectTransform bgc;
     public RectTransform clipIcon;
@@ -35,6 +37,11 @@ public class MapCallOut : MonoBehaviour
     public Animator phoneAni;
     public bool aniTrigger=false;
 
+    //ready ui
+    public GameObject readyBG;
+    public RawImage readyIcon;
+    public Texture[] readyTex;
+
     public TextMeshProUGUI title;
     public TextMeshProUGUI uiTag;
     public float fadeTime=1f;
@@ -46,8 +53,7 @@ public class MapCallOut : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        miniMap.texture=miniTex[0];
-        mapGate.texture=gateTex[0];
+        readyBG.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -77,6 +83,7 @@ public class MapCallOut : MonoBehaviour
             ChangeClip();
             uiTag.text="Select Your Gate";
             JudgeMap();
+            SelectMap();
         }
         whiteGate.color=new Color(1.0f, 1.0f, 1.0f, gate_cd);
         miniBg.color=new Color(1.0f, 1.0f, 1.0f, gate_cd);
@@ -186,6 +193,17 @@ public class MapCallOut : MonoBehaviour
                     miniMap.texture=miniTex[1];
                     mapGate.texture=gateTex[1];
                 }
+            }
+        }
+    }
+    public void SelectMap(){
+        if(Keyboard.current.f9Key.wasPressedThisFrame){
+            readyBG.gameObject.SetActive(true);
+            readyTable.DOAnchorPos(new Vector2(0f,0f),fadeTime,false).SetEase(Ease.OutCirc);
+            if(mapNum==1){
+                readyIcon.texture=readyTex[0];
+            }else if(mapNum==2){
+                readyIcon.texture=readyTex[1];
             }
         }
     }
