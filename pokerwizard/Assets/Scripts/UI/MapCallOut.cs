@@ -16,6 +16,8 @@ public class MapCallOut : MonoBehaviour
     public RectTransform mapTag;
     public RectTransform bgc;
     public RectTransform clipIcon;
+    public RectTransform joyStickIcon;
+    public RectTransform joyBox;
     //icon
     public RawImage mapIcon;
     public Texture[] mapTex;
@@ -54,6 +56,7 @@ public class MapCallOut : MonoBehaviour
     void Start()
     {
         readyBG.gameObject.SetActive(false);
+        OpenDesk();
     }
 
     // Update is called once per frame
@@ -84,9 +87,14 @@ public class MapCallOut : MonoBehaviour
             uiTag.text="Select Your Gate";
             JudgeMap();
             SelectMap();
+            PunchStart();
         }
         whiteGate.color=new Color(1.0f, 1.0f, 1.0f, gate_cd);
         miniBg.color=new Color(1.0f, 1.0f, 1.0f, gate_cd);
+    }
+    public void OpenDesk(){
+        joyStickIcon.DOAnchorPos(new Vector2(210f,136.4099f),.7f,false).SetEase(Ease.InOutQuad);
+        FindObjectOfType<AudioManager>().Play("desk_open");
     }
     //啟動
     public void StartMapUI(){
@@ -99,7 +107,10 @@ public class MapCallOut : MonoBehaviour
     }
     public void WizardFadeOut(){
         charUI.transform.localPosition=new Vector3(0f,0f,0f);
+        // joyBox.transform.localPosition=new Vector3(0,136.4094f,0f);
         charUI.DOAnchorPos(new Vector2(-2500f,0f),fadeTime,false).SetEase(Ease.InOutQuint);
+        joyBox.DOAnchorPos(new Vector2(-100f,136.4094f),fadeTime,false).SetEase(Ease.InOutQuint);
+        joyStickIcon.DOAnchorPos(new Vector2(-250f,136.4099f),.7f,false).SetEase(Ease.OutCirc);
         mapIcon.texture=mapTex[1];
     }
     public void MapUIFadeIn(){
@@ -114,7 +125,6 @@ public class MapCallOut : MonoBehaviour
             if(aniTrigger){
                 phoneAni.SetTrigger("to_gate1");
                 aniTrigger=false;
-                
             }
         }
         if(mapNum==2){
@@ -199,12 +209,17 @@ public class MapCallOut : MonoBehaviour
     public void SelectMap(){
         if(Keyboard.current.f9Key.wasPressedThisFrame){
             readyBG.gameObject.SetActive(true);
-            readyTable.DOAnchorPos(new Vector2(0f,0f),fadeTime,false).SetEase(Ease.OutCirc);
+            readyTable.DOAnchorPos(new Vector2(0f,0f),.5f,false).SetEase(Ease.OutQuart);
             if(mapNum==1){
                 readyIcon.texture=readyTex[0];
             }else if(mapNum==2){
                 readyIcon.texture=readyTex[1];
             }
         }
+    }
+    public void PunchStart(){
+        if(Keyboard.current.f8Key.wasPressedThisFrame){
+            startWord.DOPunchAnchorPos(new Vector2(5f,5f),.5f,20,1).SetEase(Ease.InOutBounce);
+        }  
     }
 }

@@ -3180,7 +3180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ruleimg: {fileID: 1712957314}
   ruleTex:
-  - {fileID: 2800000, guid: b419615316a14d34d887ddd4cccd289a, type: 3}
+  - {fileID: 2800000, guid: 3210018a014084b41a30ca03c9ef0cd8, type: 3}
   - {fileID: 2800000, guid: 0f518cf1b0d6d614f8e9ac3b51f81b7e, type: 3}
   pagedot:
   - {fileID: 1058967993}
@@ -5888,7 +5888,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b419615316a14d34d887ddd4cccd289a, type: 3}
+  m_Texture: {fileID: 2800000, guid: 3210018a014084b41a30ca03c9ef0cd8, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
