@@ -87,7 +87,6 @@ public class MapCallOut : MonoBehaviour
             uiTag.text="Select Your Gate";
             JudgeMap();
             SelectMap();
-            PunchStart();
         }
         whiteGate.color=new Color(1.0f, 1.0f, 1.0f, gate_cd);
         miniBg.color=new Color(1.0f, 1.0f, 1.0f, gate_cd);
@@ -123,6 +122,7 @@ public class MapCallOut : MonoBehaviour
         if(mapNum==1){
             title.text="Colossal Chessboard";
             if(aniTrigger){
+                FindObjectOfType<AudioManager>().Play("phone");
                 phoneAni.SetTrigger("to_gate1");
                 aniTrigger=false;
             }
@@ -130,6 +130,7 @@ public class MapCallOut : MonoBehaviour
         if(mapNum==2){
             title.text="Ice Kingdom";
             if(aniTrigger){
+                FindObjectOfType<AudioManager>().Play("phone");
                 phoneAni.SetTrigger("to_gate2");
                 aniTrigger=false;
             }
@@ -179,6 +180,7 @@ public class MapCallOut : MonoBehaviour
         bgc.DOScaleY(.5f,1.0f);
     }
     public void SpinClip(){
+        FindObjectOfType<AudioManager>().Play("gate");
         clipIcon.DOLocalRotate(new Vector3(360, 360, 360), 1f, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.Linear);
     }
     //change tex
@@ -208,6 +210,7 @@ public class MapCallOut : MonoBehaviour
     }
     public void SelectMap(){
         if(Keyboard.current.f9Key.wasPressedThisFrame){
+            FindObjectOfType<AudioManager>().Play("bot_ready");
             readyBG.gameObject.SetActive(true);
             readyTable.DOAnchorPos(new Vector2(0f,0f),.5f,false).SetEase(Ease.OutQuart);
             if(mapNum==1){
@@ -216,10 +219,5 @@ public class MapCallOut : MonoBehaviour
                 readyIcon.texture=readyTex[1];
             }
         }
-    }
-    public void PunchStart(){
-        if(Keyboard.current.f8Key.wasPressedThisFrame){
-            startWord.DOPunchAnchorPos(new Vector2(5f,5f),.5f,20,1).SetEase(Ease.InOutBounce);
-        }  
     }
 }

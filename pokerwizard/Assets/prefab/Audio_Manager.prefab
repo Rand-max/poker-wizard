@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: bg_music
-    clip: {fileID: 8300000, guid: 160734075db52c246a1dd5090f90da50, type: 3}
-    volume: 0.2
+    clip: {fileID: 8300000, guid: fd2f4de02fab8bd428fcd2f606b831da, type: 3}
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     loop: 1
@@ -255,8 +255,8 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  - name: get_ready
-    clip: {fileID: 8300000, guid: d4aa10e130de73946801e609c4c1c252, type: 3}
+  - name: bot_ready
+    clip: {fileID: 8300000, guid: 5d6c6d223e6f11946b76675dd073539b, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
@@ -275,6 +275,42 @@ MonoBehaviour:
     loop: 0
   - name: shocked
     clip: {fileID: 8300000, guid: b6c942f1499a32b44943fcf7cdec7d1b, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: bgm2
+    clip: {fileID: 8300000, guid: 160734075db52c246a1dd5090f90da50, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: bgm3
+    clip: {fileID: 8300000, guid: dbd817f093ec4f6409a5e0396205cbd7, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: bgm4
+    clip: {fileID: 8300000, guid: ac6d7e0e450a0fa448f5a9e2012feacf, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: bgm5
+    clip: {fileID: 8300000, guid: fd2f4de02fab8bd428fcd2f606b831da, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: phone
+    clip: {fileID: 8300000, guid: 2cc8dc7032a8d274099323e53449b4b7, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: gate
+    clip: {fileID: 8300000, guid: 58220033b62fc894ba41b2983a520e9c, type: 3}
     volume: 0.8
     pitch: 1
     source: {fileID: 0}
