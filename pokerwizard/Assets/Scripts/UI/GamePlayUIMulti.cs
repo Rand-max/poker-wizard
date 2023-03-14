@@ -98,7 +98,17 @@ public class GamePlayUIMulti : MonoBehaviour
     }
     void Start()
     {
-        playerman=FindObjectOfType<PlayerManager>(false);
+        PlayerManager playerman=null;
+        foreach (var plm in FindObjectsOfType<PlayerManager>())
+        {
+            if(!plm.isOld){
+                playerman=plm;
+            }
+        }
+        if(playerman==null){
+            Debug.Log("No pm");
+            return;
+        }
         for(int i=0;i<4;i++){
             SpellIcon[i].GetComponent<Image>().sprite=null;
             SpellMat[i].SetFloat("_FadeValue",0);

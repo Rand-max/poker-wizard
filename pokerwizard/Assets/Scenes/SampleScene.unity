@@ -4173,6 +4173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed34b23206dfed942a8110938f0c8972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOld: 0
   characters:
   - {fileID: 1094305755175539417, guid: abe946a6443a3b84297ab0272343e877, type: 3}
   - {fileID: 2860833182306902401, guid: cf9b2e051cc82f74395a94594a57873b, type: 3}
@@ -73984,6 +73985,10 @@ PrefabInstance:
     - target: {fileID: 3265930596250220400, guid: e2fec7ed010f62a49825c67ed958e117, type: 3}
       propertyPath: m_Name
       value: EventSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265930596250220413, guid: e2fec7ed010f62a49825c67ed958e117, type: 3}
+      propertyPath: isOld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3265930596250220413, guid: e2fec7ed010f62a49825c67ed958e117, type: 3}
       propertyPath: minimap

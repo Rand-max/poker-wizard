@@ -97,7 +97,18 @@ public class LockDissolveTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerManager==null)playerManager=FindObjectOfType<PlayerManager>();
+        if(playerManager==null){
+            foreach (var plm in FindObjectsOfType<PlayerManager>())
+            {
+                if(plm.isOld){
+                    playerManager=plm;
+                }
+            }
+            if(playerManager==null){
+                Debug.Log("No pm");
+                return;
+            }
+        }
         for(int i=0;i<4;i++){
             if(isDissolving[i]){
                 fadeval[i]-=Time.deltaTime;

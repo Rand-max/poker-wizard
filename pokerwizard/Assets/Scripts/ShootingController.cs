@@ -192,7 +192,17 @@ public class ShootingController : MonoBehaviour
         if(SD!=null&&SD.isdone){
             List<PlayerController> pc=new List<PlayerController>();
             pc.AddRange(FindObjectsOfType<PlayerController>());
-            PlayerManager pm=FindObjectOfType<PlayerManager>();
+            PlayerManager pm=null;
+            foreach (var plm in FindObjectsOfType<PlayerManager>())
+            {
+                if(!plm.isOld){
+                    pm=plm;
+                }
+            }
+            if(pm==null){
+                Debug.Log("No pm");
+                return;
+            }
             while (pc.Count>0)
             {
                 Destroy(pc[0].transform.parent.gameObject,1f);

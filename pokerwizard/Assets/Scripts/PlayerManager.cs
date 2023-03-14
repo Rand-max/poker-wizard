@@ -8,6 +8,7 @@
 
     public class PlayerManager : MonoBehaviour
     {
+        public bool isOld;
         public List<GameObject>characters;
         public List<int>playerheadnumber;
         public List<GameObject>Cursors;
@@ -102,7 +103,17 @@
             Debug.Log("OnSceneLoaded: " + scene.name);
             Debug.Log(mode);
             scoreManager=FindObjectOfType<ScoreManager>();
-            PlayerManager retiredplayerman=FindObjectOfType<EventSystem>().GetComponent<PlayerManager>();
+            PlayerManager retiredplayerman=null;
+            foreach (var plm in FindObjectsOfType<PlayerManager>())
+            {
+                if(plm.isOld){
+                    retiredplayerman=plm;
+                }
+            }
+            if(retiredplayerman==null){
+                Debug.Log("No pm");
+                return;
+            }
             if(retiredplayerman){
                 this.startingPoints=retiredplayerman.startingPoints;
                 for(int i=0;i<players.Count;i++)
