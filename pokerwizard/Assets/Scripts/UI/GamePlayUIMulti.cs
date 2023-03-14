@@ -98,7 +98,7 @@ public class GamePlayUIMulti : MonoBehaviour
     }
     void Start()
     {
-        PlayerManager playerman=null;
+        playerman=null;
         foreach (var plm in FindObjectsOfType<PlayerManager>())
         {
             if(!plm.isOld){

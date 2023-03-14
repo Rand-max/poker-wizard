@@ -31,13 +31,13 @@
         public static PlayerManager instance;
 
         //ready
-        public GameObject readyUI;
-        public GameObject goIcon;
-        public bool allReady;
-        public bool isDissolving;
-        public float countdown;
-        private Material mat;
-        private float fadeval;
+        //public GameObject readyUI;
+        //public GameObject goIcon;
+        //public bool allReady;
+        //public bool isDissolving;
+        //public float countdown;
+        //private Material mat;
+        //private float fadeval;
         LoadScene loader;
 
         private void Awake()
@@ -59,6 +59,7 @@
         }
         void Update(){
             //go dissolve and play
+            /*
             if(Keyboard.current.lKey.wasPressedThisFrame){
                 allReady=true;
                 readyUI.SetActive(true);
@@ -66,9 +67,13 @@
             if(Keyboard.current.bKey.wasPressedThisFrame){
                 readyUI.SetActive(false);
             }
+            */
+            /*
             if(Keyboard.current.pKey.wasPressedThisFrame&&allReady){
                 isDissolving=true;
             }
+            */
+            /*
             if(isDissolving){
                 fadeval-=Time.deltaTime;
                 if(fadeval<0f){
@@ -77,6 +82,7 @@
                 }
                 mat.SetFloat("_FadeValue",fadeval);
             }
+            */
             //sample scene
             if(Keyboard.current.kKey.wasPressedThisFrame){
                 FindObjectOfType<AudioManager>().Play("ready_game");
@@ -125,15 +131,15 @@
                 this.mirrorController=retiredplayerman.mirrorController;
                 this.checkpointmanagers=retiredplayerman.checkpointmanagers;
                 this.scoreManager=retiredplayerman.scoreManager;
-                this.readyUI=retiredplayerman.readyUI;
-                this.goIcon=retiredplayerman.goIcon;
+                //this.readyUI=retiredplayerman.readyUI;
+                //this.goIcon=retiredplayerman.goIcon;
             }
-            countdown=4f;
-            isDissolving=false;
-            allReady=false;
-            if(readyUI)readyUI.SetActive(false);
-            if(goIcon)mat=goIcon.GetComponent<Image>().material;
-            mat.SetFloat("_FadeValue",1f);
+            //countdown=4f;
+            //isDissolving=false;
+            //allReady=false;
+            //if(readyUI)readyUI.SetActive(false);
+            //if(goIcon)mat=goIcon.GetComponent<Image>().material;
+            //mat.SetFloat("_FadeValue",1f);
             GetComponent<ScoreContainer>().scoreManager=scoreManager;
             if(scoreManager){
                 scoreManager.scoreContainer=this.GetComponent<ScoreContainer>();
