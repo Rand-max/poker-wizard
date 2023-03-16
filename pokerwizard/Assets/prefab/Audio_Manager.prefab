@@ -315,3 +315,9 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: whoosh
+    clip: {fileID: 8300000, guid: b7366ace6b512c340b28957a8d3819b8, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0

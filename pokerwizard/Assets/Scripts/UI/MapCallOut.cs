@@ -106,6 +106,7 @@ public class MapCallOut : MonoBehaviour
     }
     public void WizardFadeOut(){
         charUI.transform.localPosition=new Vector3(0f,0f,0f);
+        FindObjectOfType<AudioManager>().PlayDelayed("whoosh",.1f);
         // joyBox.transform.localPosition=new Vector3(0,136.4094f,0f);
         charUI.DOAnchorPos(new Vector2(-2500f,0f),fadeTime,false).SetEase(Ease.InOutQuint);
         joyBox.DOAnchorPos(new Vector2(-100f,136.4094f),fadeTime,false).SetEase(Ease.InOutQuint);
@@ -210,6 +211,7 @@ public class MapCallOut : MonoBehaviour
     }
     public void SelectMap(){
         if(Keyboard.current.f9Key.wasPressedThisFrame){
+            FindObjectOfType<AudioManager>().Play("whoosh");
             FindObjectOfType<AudioManager>().Play("bot_ready");
             readyBG.gameObject.SetActive(true);
             readyTable.DOAnchorPos(new Vector2(0f,0f),.5f,false).SetEase(Ease.OutQuart);

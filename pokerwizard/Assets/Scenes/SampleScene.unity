@@ -24181,6 +24181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: accel pad (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6638101273096618775, guid: 1b04e9f4a322ed0428ef929f7263dd1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6638101273096618778, guid: 1b04e9f4a322ed0428ef929f7263dd1c, type: 3}
       propertyPath: m_RootOrder
       value: 103
@@ -30074,6 +30078,10 @@ PrefabInstance:
     - target: {fileID: 6638101273096618775, guid: 1b04e9f4a322ed0428ef929f7263dd1c, type: 3}
       propertyPath: m_Name
       value: accel pad (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638101273096618775, guid: 1b04e9f4a322ed0428ef929f7263dd1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6638101273096618778, guid: 1b04e9f4a322ed0428ef929f7263dd1c, type: 3}
       propertyPath: m_RootOrder
@@ -49056,7 +49064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1517242049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53795,6 +53803,10 @@ PrefabInstance:
     - target: {fileID: 6638101273096618775, guid: 1b04e9f4a322ed0428ef929f7263dd1c, type: 3}
       propertyPath: m_Name
       value: accel pad (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638101273096618775, guid: 1b04e9f4a322ed0428ef929f7263dd1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6638101273096618778, guid: 1b04e9f4a322ed0428ef929f7263dd1c, type: 3}
       propertyPath: m_RootOrder
@@ -80133,6 +80145,10 @@ PrefabInstance:
     - target: {fileID: 6638101273096618775, guid: 1b04e9f4a322ed0428ef929f7263dd1c, type: 3}
       propertyPath: m_Name
       value: accel pad
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638101273096618775, guid: 1b04e9f4a322ed0428ef929f7263dd1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6638101273096618778, guid: 1b04e9f4a322ed0428ef929f7263dd1c, type: 3}
       propertyPath: m_RootOrder
