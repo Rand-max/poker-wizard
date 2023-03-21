@@ -114,7 +114,6 @@ public class MapCallOut : MonoBehaviour
         mapIcon.texture=mapTex[1];
     }
     public void MapUIFadeIn(){
-        mapUI.transform.localPosition=new Vector3(0f,-1000f,0f);
         mapUI.DOAnchorPos(new Vector2(0f,0f),fadeTime,false).SetEase(Ease.OutCirc);
         mapTag.DOAnchorPos(new Vector2(0f,-420f),fadeTime+10f,false).SetEase(Ease.OutCirc);
     }
