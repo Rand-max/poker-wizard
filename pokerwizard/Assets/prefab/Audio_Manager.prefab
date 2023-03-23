@@ -287,19 +287,25 @@ MonoBehaviour:
     loop: 0
   - name: bgm3
     clip: {fileID: 8300000, guid: dbd817f093ec4f6409a5e0396205cbd7, type: 3}
-    volume: 0.8
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: bgm4
     clip: {fileID: 8300000, guid: ac6d7e0e450a0fa448f5a9e2012feacf, type: 3}
-    volume: 0.8
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: bgm5
+    clip: {fileID: 8300000, guid: fd2f4de02fab8bd428fcd2f606b831da, type: 3}
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  - name: bgm5
-    clip: {fileID: 8300000, guid: fd2f4de02fab8bd428fcd2f606b831da, type: 3}
-    volume: 0.8
+  - name: bgm6
+    clip: {fileID: 8300000, guid: 3c11e238fb16ce744a196f79d30d5944, type: 3}
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     loop: 0
@@ -321,3 +327,4 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  spinMusic: 0

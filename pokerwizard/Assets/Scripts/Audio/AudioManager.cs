@@ -5,6 +5,9 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
+    //public string[] bgms;
+    
+    public bool spinMusic=false;
 
     public static AudioManager instance;
     // Start is called before the first frame update
@@ -28,8 +31,13 @@ public class AudioManager : MonoBehaviour
         }
     }
     void Start(){
-        Play("bg_music");
+        Play("bgm4");
     }
+    // private void Update() {
+    //     if(spinMusic){
+    //         Play(bgms[0]);
+    //     }
+    // }
     public void Play(string name){
         Sound s=Array.Find(sounds,sound => sound.name==name);
         if(s==null){
@@ -54,4 +62,8 @@ public class AudioManager : MonoBehaviour
         }
         s.source.PlayDelayed(sec);
     }
+    //play random bgm
+    /*public void PlayRand(){
+      
+    }*/
 }
