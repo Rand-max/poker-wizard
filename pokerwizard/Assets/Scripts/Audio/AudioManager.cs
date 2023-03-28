@@ -6,7 +6,8 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     //public string[] bgms;
-    
+    public Sound BGM;
+    public AudioClip[]BGMClips;
     public bool spinMusic=false;
 
     public static AudioManager instance;
@@ -31,7 +32,7 @@ public class AudioManager : MonoBehaviour
         }
     }
     void Start(){
-        Play("bgm4");
+        TryRandomPlayBGM();
     }
     // private void Update() {
     //     if(spinMusic){
@@ -66,4 +67,14 @@ public class AudioManager : MonoBehaviour
     /*public void PlayRand(){
       
     }*/
+    public void TryRandomPlayBGM(){
+        if(!BGM.source||!BGM.source.isPlaying){
+            BGM.source=gameObject.AddComponent<AudioSource>();
+            BGM.source.clip=BGMClips[UnityEngine.Random.Range(0,BGMClips.Length-1)];
+            BGM.source.volume=BGM.volume;
+            BGM.source.pitch=BGM.pitch;
+            BGM.source.loop=BGM.loop;
+            BGM.source.Play();
+        }
+    }
 }

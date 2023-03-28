@@ -298,7 +298,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 1
   - name: bgm5
-    clip: {fileID: 8300000, guid: fd2f4de02fab8bd428fcd2f606b831da, type: 3}
+    clip: {fileID: 8300000, guid: 3d90c5c9ed49a5b4a976cd3c398ae0df, type: 3}
     volume: 0.3
     pitch: 1
     source: {fileID: 0}
@@ -327,4 +327,18 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  BGM:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+  BGMClips:
+  - {fileID: 8300000, guid: fd2f4de02fab8bd428fcd2f606b831da, type: 3}
+  - {fileID: 8300000, guid: 160734075db52c246a1dd5090f90da50, type: 3}
+  - {fileID: 8300000, guid: dbd817f093ec4f6409a5e0396205cbd7, type: 3}
+  - {fileID: 8300000, guid: ac6d7e0e450a0fa448f5a9e2012feacf, type: 3}
+  - {fileID: 8300000, guid: 3d90c5c9ed49a5b4a976cd3c398ae0df, type: 3}
+  - {fileID: 8300000, guid: 3c11e238fb16ce744a196f79d30d5944, type: 3}
   spinMusic: 0
