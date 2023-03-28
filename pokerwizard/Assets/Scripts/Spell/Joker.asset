@@ -119,8 +119,8 @@ MonoBehaviour:
     HasSlowdown: 0
     BulletSlowdownRate: 0
     BulletSlowdownTime: 0
-    HasStun: 1
-    BulletStundownTime: 2
+    HasStun: 0
+    BulletStundownTime: 0
     HasClear: 0
     HasConfusion: 0
     BulletConfusionTime: 0
@@ -153,8 +153,8 @@ MonoBehaviour:
     HasSlowdown: 0
     BulletSlowdownRate: 0
     BulletSlowdownTime: 0
-    HasStun: 1
-    BulletStundownTime: 2
+    HasStun: 0
+    BulletStundownTime: 0
     HasClear: 0
     HasConfusion: 0
     BulletConfusionTime: 0
