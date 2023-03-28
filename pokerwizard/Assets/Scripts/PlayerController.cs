@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public bool isdrift;
     public bool isJoked;
     public float joking;
+    public int JokeStrength=0;
     void Start ()
     {
         DontDestroyOnLoad(this.transform.parent);
@@ -158,6 +159,7 @@ public class PlayerController : MonoBehaviour
             if(joking<0){
                 joking=0;
                 isJoked=false;
+                JokeStrength=0;
             }
         }
     }
@@ -253,8 +255,9 @@ public class PlayerController : MonoBehaviour
         this.gameObject.GetComponent<Animator>().Play("Armature_panic",0,0f);
         FindObjectOfType<AudioManager>().Play("shocked");
     }
-    public void Joke(float time){
+    public void Joke(float time,int jokeStrength){
         isJoked=true;
         joking=time;
+        JokeStrength+=1;
     }
 }

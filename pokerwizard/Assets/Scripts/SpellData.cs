@@ -57,6 +57,9 @@ public class SpellData : ScriptableObject
     public float BulletBurstSpeed;
     public bool IsTeleporter;
     public float TeleportTiming;
+    public bool IsJoke;
+    public float JokeTime;
+    public int JokeStrength;
     public Vector3 EffectOffset;
     public bool canScore;
     public int score;

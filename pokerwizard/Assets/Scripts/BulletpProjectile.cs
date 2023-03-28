@@ -137,6 +137,9 @@ public class BulletpProjectile : MonoBehaviour
                     origin.gameObject.GetComponentInParent<PlayerController>().rb.transform.position=this.transform.position+Vector3.up;
                     Debug.Log(this.transform.position+Vector3.up);
                 }
+                if(be.IsJoke){
+                    //No.
+                }
                 Debug.Log("collide with wall");
                 Terminate();
             }
@@ -162,6 +165,9 @@ public class BulletpProjectile : MonoBehaviour
             }
             if(be.IsTeleporter){
                 origin.gameObject.GetComponentInParent<PlayerController>().rb.transform.position=other.transform.position;
+            }
+            if(be.IsJoke){
+                //No.
             }
             Debug.Log("shield brek");
             Terminate();
@@ -191,12 +197,15 @@ public class BulletpProjectile : MonoBehaviour
                     origin.gameObject.GetComponentInParent<PlayerController>().rb.transform.position=other.transform.position;
                     other.gameObject.GetComponentInParent<PlayerController>().rb.transform.position=pos;
                 }
+                if(be.IsJoke){
+                    other.gameObject.GetComponentInParent<PlayerController>().Joke(be.JokeTime,be.JokeStrength);
+                }
                 Debug.Log("HP-1");
                 if(be.canScore){
                     alreadyScore=true;
                     scoreman.AddScore(origin.GetComponentInParent<PlayerController>().playerNumber,be.score);
                     if(other.gameObject.GetComponentInParent<PlayerController>().isJoked){
-                    scoreman.AddScore(origin.GetComponentInParent<PlayerController>().playerNumber,be.score);
+                    scoreman.AddScore(origin.GetComponentInParent<PlayerController>().playerNumber,be.score+other.gameObject.GetComponentInParent<PlayerController>().JokeStrength-1);
                 }
                 }
                 Terminate();
@@ -222,6 +231,9 @@ public class BulletpProjectile : MonoBehaviour
                 }
                 if(be.IsTeleporter){
                     origin.gameObject.GetComponentInParent<PlayerController>().rb.transform.position=other.transform.position;
+                }
+                if(be.IsJoke){
+                    scoreman.AddScore(other.gameObject.GetComponentInParent<PlayerController>().playerNumber,be.JokeStrength);
                 }
                 Debug.Log("friend hit");
                 Terminate();
