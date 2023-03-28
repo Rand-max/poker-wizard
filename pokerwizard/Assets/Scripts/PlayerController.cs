@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
     private bool inputDrift;
     public LayerMask playerlayer;
     public bool isdrift;
+    public bool isJoked;
+    public float joking;
     void Start ()
     {
         DontDestroyOnLoad(this.transform.parent);
@@ -151,6 +153,13 @@ public class PlayerController : MonoBehaviour
         //c) Steering Wheel
         steeringWheel.localEulerAngles = new Vector3(-25, 90, ((Input.GetAxis("Horizontal") * 45)));
         */
+        if(isJoked){
+            joking-=Time.deltaTime;
+            if(joking<0){
+                joking=0;
+                isJoked=false;
+            }
+        }
     }
     void FixedUpdate ()
     {
@@ -243,5 +252,9 @@ public class PlayerController : MonoBehaviour
     public void ShockedAni(){
         this.gameObject.GetComponent<Animator>().Play("Armature_panic",0,0f);
         FindObjectOfType<AudioManager>().Play("shocked");
+    }
+    public void Joke(float time){
+        isJoked=true;
+        joking=time;
     }
 }

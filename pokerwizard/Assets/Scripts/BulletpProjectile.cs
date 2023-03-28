@@ -195,6 +195,9 @@ public class BulletpProjectile : MonoBehaviour
                 if(be.canScore){
                     alreadyScore=true;
                     scoreman.AddScore(origin.GetComponentInParent<PlayerController>().playerNumber,be.score);
+                    if(other.gameObject.GetComponentInParent<PlayerController>().isJoked){
+                    scoreman.AddScore(origin.GetComponentInParent<PlayerController>().playerNumber,be.score);
+                }
                 }
                 Terminate();
             }
