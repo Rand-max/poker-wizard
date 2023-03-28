@@ -330,8 +330,8 @@ MonoBehaviour:
   BGM:
     name: 
     clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    volume: 0.3
+    pitch: 1
     source: {fileID: 0}
     loop: 0
   BGMClips:
