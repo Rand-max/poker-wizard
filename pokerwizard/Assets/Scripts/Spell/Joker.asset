@@ -100,9 +100,9 @@ MonoBehaviour:
     EffectOffset: {x: 0, y: 0, z: 0}
     canScore: 0
     score: 0
-  BoomLifeTime: 3
+  BoomLifeTime: 30
   BulletEndEffects:
-  - Object: {fileID: 3453488477136196560, guid: d5eeb9e46622e0e4ba2d3adc478e3aad, type: 3}
+  - Object: {fileID: 203532469199437948, guid: fdf935b81727e344cac26a9b417466e7, type: 3}
     sounfx:
       name: 
       clip: {fileID: 8300000, guid: 593895ee453186f468ca4f2c0a5e1b27, type: 3}
@@ -110,7 +110,7 @@ MonoBehaviour:
       pitch: 1
       source: {fileID: 0}
       loop: 0
-    LifeTime: 3
+    LifeTime: 30
     targettype: 0001000000
     AttachedTarget: 0
     BulletSpeed: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
     EffectOffset: {x: 0, y: 0, z: 0}
     canScore: 0
     score: 0
-  - Object: {fileID: 7970671739509672891, guid: 01c3d97c5f9001b4e873a7849f2ff61a, type: 3}
+  - Object: {fileID: 6814077907442368085, guid: eb48fc7b6065cc647bd506ba89a31064, type: 3}
     sounfx:
       name: ice_over
       clip: {fileID: 8300000, guid: 593895ee453186f468ca4f2c0a5e1b27, type: 3}
@@ -144,7 +144,7 @@ MonoBehaviour:
       pitch: 0
       source: {fileID: 0}
       loop: 0
-    LifeTime: 3
+    LifeTime: 30
     targettype: 0101000000
     AttachedTarget: 1
     BulletSpeed: 0
