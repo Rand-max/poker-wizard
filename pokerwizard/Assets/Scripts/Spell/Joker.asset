@@ -69,7 +69,7 @@ MonoBehaviour:
   - Object: {fileID: 3697595091129685914, guid: 6c5f4c279b6ac3146a91f2d567449673, type: 3}
     sounfx:
       name: 
-      clip: {fileID: 8300000, guid: 83213261e9701d2458b600d44402d05d, type: 3}
+      clip: {fileID: 8300000, guid: 6c3d706d335a4714db133802dc31e63d, type: 3}
       volume: 1
       pitch: 0
       source: {fileID: 0}
@@ -100,12 +100,12 @@ MonoBehaviour:
     EffectOffset: {x: 0, y: 0, z: 0}
     canScore: 0
     score: 0
-  BoomLifeTime: 30
+  BoomLifeTime: 25
   BulletEndEffects:
   - Object: {fileID: 4195267786833533705, guid: e357d159bb7bac34c94817b4a25707cc, type: 3}
     sounfx:
       name: 
-      clip: {fileID: 8300000, guid: 83213261e9701d2458b600d44402d05d, type: 3}
+      clip: {fileID: 8300000, guid: ab6b390725475494cadfc78b2f24322e, type: 3}
       volume: 1
       pitch: 1
       source: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
       pitch: 0
       source: {fileID: 0}
       loop: 0
-    LifeTime: 30
+    LifeTime: 25
     targettype: 0101000000
     AttachedTarget: 1
     BulletSpeed: 0
