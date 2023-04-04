@@ -22,7 +22,7 @@ public class WarpDetect1 : MonoBehaviour
     {
         if(isTrigger){
             warpEffect.Play();
-            FindObjectOfType<AudioManager>().Play("fire_cat");
+            //FindObjectOfType<AudioManager>().Play("fire_cat");
             tcyl.SetActive(true);
         }else{
             warpEffect.Stop();
@@ -30,7 +30,7 @@ public class WarpDetect1 : MonoBehaviour
         }
     }
     //play par while in trigger,stop while out trigger
-    void OnTriggerStay(Collider collision) {
+    void OnTriggerEnter(Collider collision) {
         if(collision.gameObject.GetComponent<PlayerController>()!=null){
             isTrigger=true;
         }

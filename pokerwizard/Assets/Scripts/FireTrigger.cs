@@ -12,6 +12,7 @@ public class FireTrigger : MonoBehaviour
     void Start()
     {
         isTrigger=false;
+        fire_breath.Stop();
     }
 
     // Update is called once per frame

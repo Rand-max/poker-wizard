@@ -816,9 +816,9 @@ MonoBehaviour:
   drifting: 0
   multipliers: []
   multipliers_timer: []
-  acceleration: 80
+  acceleration: 70
   steering: 0.4
-  gravity: 32
+  gravity: 25
   layerMask:
     serializedVersion: 2
     m_Bits: 1075
@@ -826,6 +826,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   isdrift: 0
+  isJoked: 0
+  joking: 0
+  JokeStrength: 0
 --- !u!114 &8507479074176955731
 MonoBehaviour:
   m_ObjectHideFlags: 0
