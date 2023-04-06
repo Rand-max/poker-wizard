@@ -9,6 +9,7 @@ public class WarpDetect1 : MonoBehaviour
     public VisualEffect warpEffect=null;
     public GameObject tcyl;
     public bool isTrigger;
+    public bool warpTrigger;
     // Start is called before the first frame update
     void Start()
     {

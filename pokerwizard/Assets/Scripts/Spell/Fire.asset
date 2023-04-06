@@ -41,7 +41,7 @@ MonoBehaviour:
     LifeTime: 3
     targettype: 0101000000
     AttachedTarget: 0
-    BulletSpeed: 70
+    BulletSpeed: 100
     HasPursuit: 1
     PursuitStrength: 4
     HasSlowdown: 1
@@ -58,6 +58,9 @@ MonoBehaviour:
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
+    IsJoke: 0
+    JokeTime: 0
+    JokeStrength: 0
     EffectOffset: {x: 0, y: 0, z: 0}
     canScore: 1
     score: 1
@@ -91,6 +94,9 @@ MonoBehaviour:
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
+    IsJoke: 0
+    JokeTime: 0
+    JokeStrength: 0
     EffectOffset: {x: 0, y: 0, z: 0}
     canScore: 0
     score: 0
@@ -124,6 +130,9 @@ MonoBehaviour:
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
+    IsJoke: 0
+    JokeTime: 0
+    JokeStrength: 0
     EffectOffset: {x: 0, y: 0, z: 0}
     canScore: 0
     score: 0
