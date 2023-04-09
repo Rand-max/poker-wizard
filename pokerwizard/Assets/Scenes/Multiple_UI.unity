@@ -894,7 +894,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 106703174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e36b07d74a9728459d07fbf6346b087, type: 3}
+  m_Script: {fileID: 11500000, guid: 2086eac8841bfb9438c3115d69856a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   btn: {fileID: 106703175}
@@ -902,10 +902,7 @@ MonoBehaviour:
   btn_before: {fileID: 21300000, guid: 8a42c812292b93b459dfc6f729b80d4d, type: 3}
   btn_after: {fileID: 21300000, guid: a38b05324620506499fda4f7ea55e254, type: 3}
   type: 0
-  loader: {fileID: 963202949}
-  setting: {fileID: 7563870795004933716}
-  settingCallOut: {fileID: 1279810785}
-  ruleUIManager: {fileID: 0}
+  setting: {fileID: 0}
 --- !u!1 &115460160
 GameObject:
   m_ObjectHideFlags: 0
@@ -4559,7 +4556,6 @@ GameObject:
   - component: {fileID: 883967365}
   - component: {fileID: 883967364}
   - component: {fileID: 883967363}
-  - component: {fileID: 883967366}
   m_Layer: 5
   m_Name: exitbtn
   m_TagString: Untagged
@@ -4681,27 +4677,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883967361}
   m_CullTransparentMesh: 1
---- !u!114 &883967366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883967361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e36b07d74a9728459d07fbf6346b087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btn: {fileID: 0}
-  greenbtn: {fileID: 0}
-  btn_before: {fileID: 0}
-  btn_after: {fileID: 0}
-  type: 5
-  loader: {fileID: 963202949}
-  setting: {fileID: 0}
-  settingCallOut: {fileID: 1279810785}
-  ruleUIManager: {fileID: 0}
 --- !u!1 &899672240
 GameObject:
   m_ObjectHideFlags: 0
@@ -6617,7 +6592,9 @@ MonoBehaviour:
   startCtn: 0
   switchAble: 0
   mapNum: 1
+  pm: {fileID: 369257615}
   popOut: 0
+  allisReady: 0
 --- !u!114 &1279810785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7844,7 +7821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed34b23206dfed942a8110938f0c8972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOld: 1
+  isOld: 0
   characters:
   - {fileID: 1094305755175539417, guid: abe946a6443a3b84297ab0272343e877, type: 3}
   - {fileID: 2860833182306902401, guid: cf9b2e051cc82f74395a94594a57873b, type: 3}
@@ -7901,11 +7878,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  playerReady: 00000000
+  playerReady: 
   everyoneReady: 0
   mapJudge: 0
   playable: 0
-  mco: {fileID: 1279810784}
+  mco: {fileID: 0}
 --- !u!1 &1573085285
 GameObject:
   m_ObjectHideFlags: 0
@@ -8029,7 +8006,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1573085287}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1573085290}
+        m_TargetAssemblyTypeName: LockDissolveTest, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1279810787}
+        m_TargetAssemblyTypeName: RuleUICallOut, Assembly-CSharp
+        m_MethodName: RuleBookClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1573085290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8104,7 +8105,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1573085286}
-  ruleUICallOut: {fileID: 1279810787}
 --- !u!95 &1573085292
 Animator:
   serializedVersion: 4
@@ -8282,10 +8282,8 @@ MonoBehaviour:
   btn_before: {fileID: 21300000, guid: 8a42c812292b93b459dfc6f729b80d4d, type: 3}
   btn_after: {fileID: 21300000, guid: a38b05324620506499fda4f7ea55e254, type: 3}
   type: 1
-  loader: {fileID: 963202949}
-  setting: {fileID: 7563870795004933716}
-  settingCallOut: {fileID: 1279810785}
-  ruleUIManager: {fileID: 0}
+  loader: {fileID: 0}
+  setting: {fileID: 0}
 --- !u!114 &1601197399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8329,7 +8327,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1601197400}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 258352246}
+        m_TargetAssemblyTypeName: ChangeScene_btn, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menu_UI
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1601197400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12665,7 +12675,6 @@ GameObject:
   - component: {fileID: 2932552392657596087}
   - component: {fileID: 2932552392657596086}
   - component: {fileID: 2932552392657596041}
-  - component: {fileID: 2932552392657596088}
   m_Layer: 5
   m_Name: right_btn
   m_TagString: Untagged
@@ -12731,27 +12740,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2932552392657596084}
   m_CullTransparentMesh: 1
---- !u!114 &2932552392657596088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2932552392657596084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e36b07d74a9728459d07fbf6346b087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btn: {fileID: 0}
-  greenbtn: {fileID: 0}
-  btn_before: {fileID: 0}
-  btn_after: {fileID: 0}
-  type: 3
-  loader: {fileID: 0}
-  setting: {fileID: 0}
-  settingCallOut: {fileID: 0}
-  ruleUIManager: {fileID: 2932552393486977888}
 --- !u!224 &2932552392671587584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15377,7 +15365,6 @@ MonoBehaviour:
   shd_tex: {fileID: 2800000, guid: bd2f0de2c668e854f8f4935da7826a70, type: 3}
   egg_tex: {fileID: 2800000, guid: 3e363c0e39c3d4e43a58d9afae839f24, type: 3}
   buff_tex: {fileID: 2800000, guid: 259d725fc2d8da949aaad10bb53e34fb, type: 3}
-  preventclicker: 0
 --- !u!1 &2932552393486977902
 GameObject:
   m_ObjectHideFlags: 0
@@ -17328,7 +17315,6 @@ GameObject:
   - component: {fileID: 2932552394040054804}
   - component: {fileID: 2932552394040054803}
   - component: {fileID: 2932552394040054805}
-  - component: {fileID: 2932552394040054806}
   m_Layer: 5
   m_Name: left_btn
   m_TagString: Untagged
@@ -17450,27 +17436,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2932552394040054806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2932552394040054801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e36b07d74a9728459d07fbf6346b087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btn: {fileID: 0}
-  greenbtn: {fileID: 0}
-  btn_before: {fileID: 0}
-  btn_after: {fileID: 0}
-  type: 4
-  loader: {fileID: 0}
-  setting: {fileID: 0}
-  settingCallOut: {fileID: 0}
-  ruleUIManager: {fileID: 2932552393486977888}
 --- !u!1 &2932552394091543724
 GameObject:
   m_ObjectHideFlags: 0
@@ -19335,7 +19300,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Menu_UI
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!95 &7673813358351864610
@@ -19375,10 +19340,8 @@ MonoBehaviour:
   btn_before: {fileID: 21300000, guid: 8a42c812292b93b459dfc6f729b80d4d, type: 3}
   btn_after: {fileID: 21300000, guid: a38b05324620506499fda4f7ea55e254, type: 3}
   type: 2
-  loader: {fileID: 963202949}
+  loader: {fileID: 0}
   setting: {fileID: 0}
-  settingCallOut: {fileID: 0}
-  ruleUIManager: {fileID: 2932552393486977888}
 --- !u!1 &7673813358351864612
 GameObject:
   m_ObjectHideFlags: 0

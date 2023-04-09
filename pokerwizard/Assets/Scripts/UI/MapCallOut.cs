@@ -52,7 +52,9 @@ public class MapCallOut : MonoBehaviour
     public bool startCtn=false;
     public bool switchAble=false;
     public int mapNum=1;
+    public PlayerManager pm;
     public bool popOut=false;
+    public bool allisReady=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,7 @@ public class MapCallOut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        allisReady=pm.everyoneReady;
         //wizard fade out,map fade in
         StartMapUI();
         if(startCtn){
@@ -98,11 +101,12 @@ public class MapCallOut : MonoBehaviour
     }
     //啟動
     public void StartMapUI(){
-        if(Keyboard.current.zKey.wasPressedThisFrame){
+        if(Keyboard.current.zKey.wasPressedThisFrame&&allisReady){
             WizardFadeOut();
             startCtn=true;
             gatecdAllowed=true;
             mapIcon.texture=mapTex[0];
+            allisReady=false;
         }
     }
     public void WizardFadeOut(){
