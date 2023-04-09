@@ -69,6 +69,7 @@ public class LockDissolveTest : MonoBehaviour
                 playerManager.Players[cursornum].GetComponent<PlayerController>().playerTexture=playertexture;
                 playerManager.Players[cursornum].GetComponent<PlayerController>().playerfastenTexture=playerfasten;
                 playerManager.playerheadnumber[cursornum]=i;
+                playerManager.playerReady[cursornum]=true;
             }
         }
     }

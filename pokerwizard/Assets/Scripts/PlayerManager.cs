@@ -110,6 +110,9 @@
                     SceneManager.LoadScene("IceKingdom");
                 }
             }
+            if(playerReady[0]&&playerReady[1]&&playerReady[2]&&playerReady[3]){
+                everyoneReady=true;
+            }
         }
         void OnSceneLoaded(Scene scene, LoadSceneMode mode){
             Debug.Log("OnSceneLoaded: " + scene.name);
@@ -167,7 +170,6 @@
                 }
                 if(player.playerIndex>=0&&Cursors.Count>=0&&Cursors.Count>player.playerIndex&&Cursors[player.playerIndex]!=null){
                     player.GetComponentInChildren<PlayerController>().playerCursor=Cursors[player.playerIndex];
-                    playerReady[player.playerIndex]=true;
                 }
                 if(player.GetComponentInChildren<PlayerController>().Normal.childCount>0){
                     Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
@@ -260,9 +262,6 @@
                         players[3].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[1].gameObject);
                     }
                 }
-            }
-            if(playerReady[0]&&playerReady[1]&&playerReady[2]&&playerReady[3]){
-                everyoneReady=true;
             }
         }
 
