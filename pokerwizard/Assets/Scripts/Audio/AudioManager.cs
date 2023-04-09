@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public Sound BGM;
     public AudioClip[]BGMClips;
     public bool spinMusic=false;
+    public bool playMusic;
 
     public static AudioManager instance;
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class AudioManager : MonoBehaviour
         }
     }
     void Start(){
+        playMusic=true;
         TryRandomPlayBGM();
     }
     // private void Update() {
@@ -40,7 +42,9 @@ public class AudioManager : MonoBehaviour
     //     }
     // }
     void Update(){
-        TryRandomPlayBGM();
+        if(playMusic){
+            TryRandomPlayBGM();
+        }
     }
     public void Play(string name){
         Sound s=Array.Find(sounds,sound => sound.name==name);

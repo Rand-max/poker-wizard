@@ -29,6 +29,9 @@
         private PlayerInputManager playerInputManager;
         public List<GameObject>checkpointmanagers;
         public static PlayerManager instance;
+        //確認player已選取
+        public bool [] playerReady;
+        public bool everyoneReady=false;
 
         //ready
         //public GameObject readyUI;
@@ -42,7 +45,10 @@
 
         private void Awake()
         {
-            
+            playerReady[0]=false;
+            playerReady[1]=false;
+            playerReady[2]=false;
+            playerReady[3]=false;
             if(instance==null&&!GetComponent<EventSystem>()){
                 instance=this;
             }
@@ -161,6 +167,7 @@
                 }
                 if(player.playerIndex>=0&&Cursors.Count>=0&&Cursors.Count>player.playerIndex&&Cursors[player.playerIndex]!=null){
                     player.GetComponentInChildren<PlayerController>().playerCursor=Cursors[player.playerIndex];
+                    playerReady[player.playerIndex]=true;
                 }
                 if(player.GetComponentInChildren<PlayerController>().Normal.childCount>0){
                     Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
@@ -253,6 +260,9 @@
                         players[3].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[1].gameObject);
                     }
                 }
+            }
+            if(playerReady[0]&&playerReady[1]&&playerReady[2]&&playerReady[3]){
+                everyoneReady=true;
             }
         }
 
