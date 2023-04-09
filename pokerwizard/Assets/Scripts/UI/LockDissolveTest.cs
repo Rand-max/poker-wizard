@@ -102,7 +102,7 @@ public class LockDissolveTest : MonoBehaviour
         if(playerManager==null){
             foreach (var plm in FindObjectsOfType<PlayerManager>())
             {
-                if(plm.isOld){
+                if(!plm.isOld){
                     playerManager=plm;
                 }
             }

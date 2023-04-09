@@ -147,6 +147,7 @@
                 this.mirrorController=retiredplayerman.mirrorController;
                 this.checkpointmanagers=retiredplayerman.checkpointmanagers;
                 this.scoreManager=retiredplayerman.scoreManager;
+                if(retiredplayerman.mco)this.mco=retiredplayerman.mco;
                 //this.readyUI=retiredplayerman.readyUI;
                 //this.goIcon=retiredplayerman.goIcon;
             }

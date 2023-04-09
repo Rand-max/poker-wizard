@@ -6620,6 +6620,7 @@ MonoBehaviour:
   pm: {fileID: 369257615}
   popOut: 0
   allisReady: 0
+  dissolveTest: {fileID: 1573085290}
 --- !u!114 &1279810785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8044,7 +8045,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372eed94744bdee4da70ce964e1002ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 369257615}
+  playerManager: {fileID: 0}
+  newpm: {fileID: 0}
   keys:
   - {fileID: 444963585}
   - {fileID: 1977893272}

@@ -55,6 +55,8 @@ public class MapCallOut : MonoBehaviour
     public PlayerManager pm;
     public bool popOut=false;
     public bool allisReady=false;
+    public LockDissolveTest dissolveTest;
+    public bool mapstarted=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +67,17 @@ public class MapCallOut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        allisReady=pm.everyoneReady;
+        if(pm==null){
+            foreach (var item in FindObjectsOfType<PlayerManager>())
+            {
+                if(!item.isOld){
+                    pm=item;
+                }
+            }
+        }
+        if(!mapstarted){
+            allisReady=pm.everyoneReady;
+        }
         //wizard fade out,map fade in
         StartMapUI();
         if(startCtn){
@@ -101,12 +113,12 @@ public class MapCallOut : MonoBehaviour
     }
     //啟動
     public void StartMapUI(){
-        if(Keyboard.current.zKey.wasPressedThisFrame&&allisReady){
+        if(Keyboard.current.zKey.wasPressedThisFrame||(allisReady&&dissolveTest.everyoneReady&&!mapstarted)){
             WizardFadeOut();
             startCtn=true;
             gatecdAllowed=true;
             mapIcon.texture=mapTex[0];
-            allisReady=false;
+            mapstarted=true;
         }
     }
     public void WizardFadeOut(){
