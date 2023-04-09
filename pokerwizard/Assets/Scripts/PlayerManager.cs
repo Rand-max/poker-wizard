@@ -32,6 +32,9 @@
         //確認player已選取
         public bool [] playerReady;
         public bool everyoneReady=false;
+        public int mapJudge;
+        public bool playable=false;
+        public MapCallOut mco;
 
         //ready
         //public GameObject readyUI;
@@ -45,10 +48,6 @@
 
         private void Awake()
         {
-            playerReady[0]=false;
-            playerReady[1]=false;
-            playerReady[2]=false;
-            playerReady[3]=false;
             if(instance==null&&!GetComponent<EventSystem>()){
                 instance=this;
             }
@@ -89,25 +88,33 @@
                 mat.SetFloat("_FadeValue",fadeval);
             }
             */
+            mapJudge=mco.mapNum;
+            playable=mco.popOut;
             //sample scene
-            if(Keyboard.current.kKey.wasPressedThisFrame){
-                FindObjectOfType<AudioManager>().Play("ready_game");
-                loader=FindObjectOfType<LoadScene>();
-                if(loader){
-                    loader.LoadtheScene("SampleScene");
+            if(playable && Keyboard.current.jKey.wasPressedThisFrame){
+                if(mapJudge==1){
+                    FindObjectOfType<AudioManager>().Play("ready_game");
+                    loader=FindObjectOfType<LoadScene>();
+                    if(loader){
+                        loader.LoadtheScene("SampleScene");
+                        playable=false;
+                    }
+                    else{
+                        SceneManager.LoadScene("SampleScene");
+                        playable=false;
+                    }
                 }
-                else{
-                    SceneManager.LoadScene("SampleScene");
-                }
-            }
-            if(Keyboard.current.jKey.wasPressedThisFrame){
-                FindObjectOfType<AudioManager>().Play("ready_game");
-                loader=FindObjectOfType<LoadScene>();
-                if(loader){
-                    loader.LoadtheScene("IceKingdom");
-                }
-                else{
-                    SceneManager.LoadScene("IceKingdom");
+                if(mapJudge==2){
+                    FindObjectOfType<AudioManager>().Play("ready_game");
+                    loader=FindObjectOfType<LoadScene>();
+                    if(loader){
+                        loader.LoadtheScene("IceKingdom");
+                        playable=false;
+                    }
+                    else{
+                        SceneManager.LoadScene("IceKingdom");
+                        playable=false;
+                    }
                 }
             }
             if(playerReady[0]&&playerReady[1]&&playerReady[2]&&playerReady[3]){

@@ -2245,6 +2245,9 @@ MonoBehaviour:
   - {fileID: 0}
   playerReady: 00000000
   everyoneReady: 0
+  mapJudge: 0
+  playable: 0
+  mco: {fileID: 1279810784}
 --- !u!114 &369257616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6588,6 +6591,8 @@ MonoBehaviour:
   FadeInable: 0
   startCtn: 0
   switchAble: 0
+  mapNum: 1
+  popOut: 0
 --- !u!114 &1279810785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7873,6 +7878,9 @@ MonoBehaviour:
   - {fileID: 0}
   playerReady: 
   everyoneReady: 0
+  mapJudge: 0
+  playable: 0
+  mco: {fileID: 0}
 --- !u!1 &1573085285
 GameObject:
   m_ObjectHideFlags: 0
@@ -8071,6 +8079,7 @@ MonoBehaviour:
   - {fileID: 1395240752}
   - {fileID: 775492942}
   - {fileID: 688275332}
+  everyoneReady: 0
   cirimg:
   - {fileID: 45788945}
   - {fileID: 953616206}

@@ -29,6 +29,7 @@ public class LockDissolveTest : MonoBehaviour
 
     public List<TextMeshProUGUI> ConnectedText;
     public List<TextMeshProUGUI> player_text;
+    public bool everyoneReady=false;
 
     //circle
     private List<bool> circleAppear=new List<bool>(4){false,false,false,false};
@@ -137,6 +138,9 @@ public class LockDissolveTest : MonoBehaviour
         }
         if(getReady){
             red.ButtonClicked();
+        }
+        if(Mat[1].GetFloat("_FadeValue")==0){
+            everyoneReady=true;
         }
     }
     public void playerConnected(int ptext){

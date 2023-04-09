@@ -51,7 +51,8 @@ public class MapCallOut : MonoBehaviour
     public bool FadeInable=false;
     public bool startCtn=false;
     public bool switchAble=false;
-    public static int mapNum=1;
+    public int mapNum=1;
+    public bool popOut=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -209,7 +210,7 @@ public class MapCallOut : MonoBehaviour
         }
     }
     public void SelectMap(){
-        if(Keyboard.current.f9Key.wasPressedThisFrame){
+        if(Keyboard.current.kKey.wasPressedThisFrame){
             FindObjectOfType<AudioManager>().Play("whoosh");
             FindObjectOfType<AudioManager>().Play("bot_ready");
             readyBG.gameObject.SetActive(true);
@@ -219,6 +220,7 @@ public class MapCallOut : MonoBehaviour
             }else if(mapNum==2){
                 readyIcon.texture=readyTex[1];
             }
+            popOut=true;
         }
     }
 }
