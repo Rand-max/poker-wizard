@@ -6592,7 +6592,9 @@ MonoBehaviour:
   startCtn: 0
   switchAble: 0
   mapNum: 1
+  pm: {fileID: 369257615}
   popOut: 0
+  allisReady: 0
 --- !u!114 &1279810785
 MonoBehaviour:
   m_ObjectHideFlags: 0
