@@ -24,7 +24,7 @@ public class CursorKey : MonoBehaviour
     SelectImgBtn imgbtn;
     RuleBtn rlbtn;
     ButtonEvent btne;
-    ButtonHov btnSet;
+    //ButtonHov btnSet;
     public LoadScene loader;
     void Start()
     {
@@ -122,7 +122,7 @@ public class CursorKey : MonoBehaviour
                     btne=null;
                 }
             }
-            //new add
+            /*//new add
             if(results[0].gameObject.GetComponent<ButtonHov>()){
                 if(btnSet!=null&&btnSet!=results[0].gameObject.GetComponent<ButtonHov>()){
                     btnSet.OnPointerExit(this);
@@ -136,6 +136,7 @@ public class CursorKey : MonoBehaviour
                     btnSet=null;
                 }
             }
+            */
         }
     }
     public void movecursor(Vector2 dire){

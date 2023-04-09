@@ -60,19 +60,22 @@ public class RuleUIManager : MonoBehaviour
     
 
     public static int pagenum=1;
+    public float preventclicker=0f;
 
     //declare dotween
     // public RectTransform titlecard;
     // public RectTransform upbg;
 
     public void BtnNext(){
-        if(pagenum<4){
+        if(pagenum<4&&preventclicker<0f){
+            preventclicker=0.2f;
             pagenum +=1;
             FindObjectOfType<AudioManager>().Play("btn_click");
         }
     }
     public void BtnPre(){
-        if(pagenum>1){
+        if(pagenum>1&&preventclicker<0f){
+            preventclicker=0.2f;
             pagenum -=1;
             FindObjectOfType<AudioManager>().Play("btn_click");
         }
@@ -181,6 +184,9 @@ public class RuleUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(preventclicker>=0f){
+            preventclicker-=Time.deltaTime;
+        }
         JudgePage();
         c1bgc.color=c1color;
         c3bgc.color=c3color;
