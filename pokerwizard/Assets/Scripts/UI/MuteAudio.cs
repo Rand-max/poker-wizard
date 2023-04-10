@@ -8,10 +8,9 @@ public class MuteAudio : MonoBehaviour
     public bool musicMuted=false;
     public GameObject soundCheckbox;
     public bool soundMuted=false;
-    public AudioManager amg;
     public bool musicplay;
-    public void Update() {
-        musicplay=amg.playMusic;
+    public void Start() {
+        musicplay=true;
     }
     public void MuteSound(bool muted){
         if(muted){

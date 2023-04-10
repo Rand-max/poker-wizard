@@ -3146,17 +3146,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504148787}
   m_CullTransparentMesh: 1
---- !u!114 &536879350 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5018007351539145574, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
-  m_PrefabInstance: {fileID: 3327412312859649568}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 215002ec91ea8514eb1bbd726c147632, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &583512534
 GameObject:
   m_ObjectHideFlags: 0
@@ -6621,6 +6610,7 @@ MonoBehaviour:
   popOut: 0
   allisReady: 0
   dissolveTest: {fileID: 1573085290}
+  mapstarted: 0
 --- !u!114 &1279810785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6657,7 +6647,6 @@ MonoBehaviour:
   musicMuted: 0
   soundCheckbox: {fileID: 654998658}
   soundMuted: 0
-  amg: {fileID: 536879350}
   musicplay: 0
 --- !u!114 &1279810787
 MonoBehaviour:
@@ -8046,7 +8035,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerManager: {fileID: 0}
-  newpm: {fileID: 0}
   keys:
   - {fileID: 444963585}
   - {fileID: 1977893272}
@@ -17839,6 +17827,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5018007351539145574, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
+      propertyPath: ma
+      value: 
+      objectReference: {fileID: 1279810786}
     - target: {fileID: 5018007351539145575, guid: db2b74b4a58e5d64eb31e5f3384ec793, type: 3}
       propertyPath: m_Name
       value: Audio_Manager
