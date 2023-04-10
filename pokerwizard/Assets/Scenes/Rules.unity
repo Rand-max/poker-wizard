@@ -1728,7 +1728,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 481378107}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011408968}
+        m_TargetAssemblyTypeName: RuleUIManager, Assembly-CSharp
+        m_MethodName: BtnPre
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &481378110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3360,6 +3372,7 @@ MonoBehaviour:
   shd_tex: {fileID: 2800000, guid: bd2f0de2c668e854f8f4935da7826a70, type: 3}
   egg_tex: {fileID: 2800000, guid: 3e363c0e39c3d4e43a58d9afae839f24, type: 3}
   buff_tex: {fileID: 2800000, guid: 259d725fc2d8da949aaad10bb53e34fb, type: 3}
+  preventclicker: 0
 --- !u!1 &1018188523
 GameObject:
   m_ObjectHideFlags: 0
@@ -4679,7 +4692,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1322796446}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011408968}
+        m_TargetAssemblyTypeName: RuleUIManager, Assembly-CSharp
+        m_MethodName: BtnNext
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1322796450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8594,7 +8619,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4813319180604307462}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011408968}
+        m_TargetAssemblyTypeName: RuleUIManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menu_UI
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &4813319180604307466
 Animator:
   serializedVersion: 4
