@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class ScoreAnnouncer : MonoBehaviour
 {
@@ -69,7 +70,9 @@ public class ScoreAnnouncer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(Keyboard.current.kKey.wasPressedThisFrame){
+            nextround();
+        }
     }
     void Compare(){
         if(totalscore[0]+totalscore[1]>totalscore[2]+totalscore[3]){
