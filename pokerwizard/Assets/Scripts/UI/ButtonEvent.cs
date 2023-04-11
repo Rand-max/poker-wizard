@@ -14,6 +14,7 @@ public class ButtonEvent : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,I
     public ReadyCallOut setting;
     public SettingCallOut settingCallOut;
     public RuleUIManager ruleUIManager;
+    public Toggle toggle;
     void Start(){
         // btn.GetComponent<Animator>().Play("btn_hover");
     }
@@ -65,6 +66,9 @@ public class ButtonEvent : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,I
             break;
             case 5:
             settingCallOut.SettingFadeOut();
+            break;
+            case 6:
+            toggle.isOn=!toggle.isOn;
             break;
         }
     }

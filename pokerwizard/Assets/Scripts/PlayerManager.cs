@@ -35,6 +35,7 @@
         public int mapJudge;
         public bool playable=false;
         public MapCallOut mco;
+        public AudioManager am;
 
         //ready
         //public GameObject readyUI;
@@ -126,6 +127,10 @@
             Debug.Log(mode);
             scoreManager=FindObjectOfType<ScoreManager>();
             PlayerManager retiredplayerman=null;
+            am=FindObjectOfType<AudioManager>();
+            if(am){
+                am.noma=false;
+            }
             foreach (var plm in FindObjectsOfType<PlayerManager>())
             {
                 if(plm.isOld){

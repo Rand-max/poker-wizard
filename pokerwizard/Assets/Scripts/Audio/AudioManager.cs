@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public bool spinMusic=false;
     public bool playMusic;
     public MuteAudio ma;
+    public bool noma;
 
     public static AudioManager instance;
     // Start is called before the first frame update
@@ -42,6 +43,10 @@ public class AudioManager : MonoBehaviour
     //     }
     // }
     void Update(){
+        if(!ma&&!noma){
+            ma=FindObjectOfType<MuteAudio>();
+            if(!ma)noma=true;
+        }
         playMusic=ma.musicplay;
         TryRandomPlayBGM();
         JudgeMuted();
