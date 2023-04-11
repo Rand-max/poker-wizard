@@ -92,7 +92,7 @@
             playable=mco.popOut;
             //sample scene
             if(playable && Keyboard.current.jKey.wasPressedThisFrame){
-                if(mapJudge==1){
+                if(mapJudge==2){
                     FindObjectOfType<AudioManager>().Play("ready_game");
                     loader=FindObjectOfType<LoadScene>();
                     if(loader){
@@ -104,7 +104,7 @@
                         playable=false;
                     }
                 }
-                if(mapJudge==2){
+                if(mapJudge==1){
                     FindObjectOfType<AudioManager>().Play("ready_game");
                     loader=FindObjectOfType<LoadScene>();
                     if(loader){

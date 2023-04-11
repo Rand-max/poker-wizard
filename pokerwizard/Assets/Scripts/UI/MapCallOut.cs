@@ -51,7 +51,7 @@ public class MapCallOut : MonoBehaviour
     public bool FadeInable=false;
     public bool startCtn=false;
     public bool switchAble=false;
-    public int mapNum=1;
+    public int mapNum=2;
     public PlayerManager pm;
     public bool popOut=false;
     public bool allisReady=false;
@@ -117,7 +117,7 @@ public class MapCallOut : MonoBehaviour
             WizardFadeOut();
             startCtn=true;
             gatecdAllowed=true;
-            mapIcon.texture=mapTex[0];
+            mapIcon.texture=mapTex[1];
             mapstarted=true;
         }
     }
@@ -137,7 +137,7 @@ public class MapCallOut : MonoBehaviour
     //flip coin,play tele ani,change gate,map,title
     public void JudgeMap(){
         if(mapNum==1){
-            title.text="Colossal Chessboard";
+            title.text="Ice Kingdom";
             if(aniTrigger){
                 FindObjectOfType<AudioManager>().Play("phone");
                 phoneAni.SetTrigger("to_gate1");
@@ -145,7 +145,7 @@ public class MapCallOut : MonoBehaviour
             }
         }
         if(mapNum==2){
-            title.text="Ice Kingdom";
+            title.text="Colossal Chessboard";
             if(aniTrigger){
                 FindObjectOfType<AudioManager>().Play("phone");
                 phoneAni.SetTrigger("to_gate2");
@@ -208,19 +208,19 @@ public class MapCallOut : MonoBehaviour
             if(icon_cd<0){
                 icon_cd=0;
                 if(mapNum==1){
-                    mapIcon.texture=mapTex[0];
-                }else if(mapNum==2){
                     mapIcon.texture=mapTex[1];
+                }else if(mapNum==2){
+                    mapIcon.texture=mapTex[0];
                 }
                 iconChange=false;
             }
             if(tex_cd<0){
                 if(mapNum==1){
-                    miniMap.texture=miniTex[0];
-                    mapGate.texture=gateTex[0];
-                }else if(mapNum==2){
                     miniMap.texture=miniTex[1];
                     mapGate.texture=gateTex[1];
+                }else if(mapNum==2){
+                    miniMap.texture=miniTex[0];
+                    mapGate.texture=gateTex[0];
                 }
             }
         }
@@ -232,9 +232,9 @@ public class MapCallOut : MonoBehaviour
             readyBG.gameObject.SetActive(true);
             readyTable.DOAnchorPos(new Vector2(0f,0f),.5f,false).SetEase(Ease.OutQuart);
             if(mapNum==1){
-                readyIcon.texture=readyTex[0];
-            }else if(mapNum==2){
                 readyIcon.texture=readyTex[1];
+            }else if(mapNum==2){
+                readyIcon.texture=readyTex[0];
             }
             popOut=true;
         }
