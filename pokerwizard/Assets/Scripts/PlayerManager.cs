@@ -188,6 +188,9 @@
                     Destroy(player.GetComponentInChildren<PlayerController>().Normal.GetChild(0).gameObject);
                 }
                 if(player.GetComponent<PlayerController>()){
+                    player.GetComponent<PlayerController>().rb.gameObject.SetActive(true);
+                    player.GetComponent<PlayerController>().Normal.GetChild(0).gameObject.SetActive(true);
+                    player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<ShootingController>().enabled=true;
                     if(startingPoints[0]!=null){
                         player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().OnTargetObjectWarped(player.GetComponent<PlayerController>().Normal,startingPoints[player.playerIndex].position-player.GetComponent<PlayerController>().rb.transform.position);
                         player.GetComponent<PlayerController>().rb.transform.position=startingPoints[player.playerIndex].position;

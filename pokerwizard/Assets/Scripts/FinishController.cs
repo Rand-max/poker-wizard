@@ -20,8 +20,8 @@ public class FinishController : MonoBehaviour
         PlayerController playercon=other.GetComponent<PlayerController>();
         if(playercon!=null&&scoreman.rank[playercon.playerNumber]>300f){
             scoreman.finish(playercon.playerNumber);
-            Destroy(playercon.rb);
-            Destroy(playercon.Normal.GetChild(0).gameObject);
+            playercon.rb.gameObject.SetActive(false);
+            playercon.Normal.GetChild(0).gameObject.SetActive(false);
             playercon.transform.parent.GetComponentInChildren<ShootingController>().enabled=false;
         }
     }
