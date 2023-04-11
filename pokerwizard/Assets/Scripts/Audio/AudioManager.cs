@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
             ma=FindObjectOfType<MuteAudio>();
             if(!ma)noma=true;
         }
-        playMusic=ma.musicplay;
+        if(ma)playMusic=ma.musicplay;
         TryRandomPlayBGM();
         JudgeMuted();
     }
