@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
     public Sound BGM;
     public AudioClip[]BGMClips;
     public bool spinMusic=false;
-    public bool playMusic;
+    public bool playMusic=true;
     public MuteAudio ma;
     public bool noma;
 
@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
         }
     }
     void Start(){
-        TryRandomPlayBGM();
+        //TryRandomPlayBGM();
     }
     // private void Update() {
     //     if(spinMusic){
@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
             ma=FindObjectOfType<MuteAudio>();
             if(!ma)noma=true;
         }
-        if(ma)playMusic=ma.musicplay;
+        if(ma!=null){playMusic=ma.musicplay;}
         TryRandomPlayBGM();
         JudgeMuted();
     }
