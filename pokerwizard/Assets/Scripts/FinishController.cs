@@ -26,8 +26,8 @@ public class FinishController : MonoBehaviour
             if(!cpcooldown[playercon.playerNumber]){
                 CheckpointController cpc=scoreman.checkpointmanager[playercon.playerNumber].GetComponent<CheckpointController>();
                 cpcooldown[playercon.playerNumber]=true;
+                cpc.lap+=1;
             }
-            scoreman.checkpointmanager[playercon.playerNumber].GetComponent<CheckpointController>().lap+=1;
             if(scoreman.rank[playercon.playerNumber]>300f){
                 scoreman.finish(playercon.playerNumber);
                 playercon.rb.gameObject.SetActive(false);
