@@ -5,10 +5,14 @@ using UnityEngine;
 public class FinishController : MonoBehaviour
 {
     public ScoreManager scoreman;
+    public bool[] cpcooldown=new bool[4];
     // Start is called before the first frame update
     void Start()
     {
-        
+        cpcooldown[0]=false;
+        cpcooldown[1]=false;
+        cpcooldown[2]=false;
+        cpcooldown[3]=false;
     }
 
     // Update is called once per frame
@@ -19,6 +23,10 @@ public class FinishController : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         PlayerController playercon=other.GetComponent<PlayerController>();
         if(playercon!=null){
+            if(!cpcooldown[playercon.playerNumber]){
+                CheckpointController cpc=scoreman.checkpointmanager[playercon.playerNumber].GetComponent<CheckpointController>();
+                cpcooldown[playercon.playerNumber]=true;
+            }
             scoreman.checkpointmanager[playercon.playerNumber].GetComponent<CheckpointController>().lap+=1;
             if(scoreman.rank[playercon.playerNumber]>300f){
                 scoreman.finish(playercon.playerNumber);
