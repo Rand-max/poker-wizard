@@ -8,8 +8,10 @@ public class WarpDetect1 : MonoBehaviour
     [SerializeField]
     public VisualEffect warpEffect=null;
     public GameObject tcyl;
+    public float cd=5;
     public bool isTrigger;
     public bool warpTrigger;
+    public bool stopSig=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,16 @@ public class WarpDetect1 : MonoBehaviour
             warpEffect.Play();
             //FindObjectOfType<AudioManager>().Play("fire_cat");
             tcyl.SetActive(true);
-        }else{
+            cd-=Time.deltaTime;
+            if(cd<0){
+                cd=0;
+                stopSig=true;
+            }
+        }
+        if(stopSig){
             warpEffect.Stop();
             tcyl.SetActive(false);
+            stopSig=false;
         }
     }
     //play par while in trigger,stop while out trigger
@@ -37,6 +46,6 @@ public class WarpDetect1 : MonoBehaviour
         }
     }
     void OnTriggerExit(Collider collision) {
-        isTrigger=false;
+        cd=5;
     }
 }
