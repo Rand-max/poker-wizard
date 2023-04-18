@@ -166,6 +166,10 @@
             if(scoreManager){
                 scoreManager.scoreContainer=this.GetComponent<ScoreContainer>();
             }
+            playerReady[0]=false;
+            playerReady[1]=false;
+            playerReady[2]=false;
+            playerReady[3]=false;
             foreach (var player in players)
             {
                 LockDissolveTest ldt=FindObjectOfType<LockDissolveTest>();
