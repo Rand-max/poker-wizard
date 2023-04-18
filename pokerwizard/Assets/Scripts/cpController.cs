@@ -36,7 +36,6 @@ public class cpController : MonoBehaviour
                     GetComponentInParent<CheckpointController>().activeindex=selfindex+1;
                 }
                 else{
-                    GetComponentInParent<CheckpointController>().lap+=1;
                     GetComponentInParent<CheckpointController>().Checkpoints[0].SetActive(true);
                     GetComponentInParent<CheckpointController>().activeindex=0;
                 }

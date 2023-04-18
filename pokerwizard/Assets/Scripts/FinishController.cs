@@ -18,11 +18,14 @@ public class FinishController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other){
         PlayerController playercon=other.GetComponent<PlayerController>();
-        if(playercon!=null&&scoreman.rank[playercon.playerNumber]>300f){
-            scoreman.finish(playercon.playerNumber);
-            playercon.rb.gameObject.SetActive(false);
-            playercon.Normal.GetChild(0).gameObject.SetActive(false);
-            playercon.transform.parent.GetComponentInChildren<ShootingController>().enabled=false;
+        if(playercon!=null){
+            scoreman.checkpointmanager[playercon.playerNumber].GetComponent<CheckpointController>().lap+=1;
+            if(scoreman.rank[playercon.playerNumber]>300f){
+                scoreman.finish(playercon.playerNumber);
+                playercon.rb.gameObject.SetActive(false);
+                playercon.Normal.GetChild(0).gameObject.SetActive(false);
+                playercon.transform.parent.GetComponentInChildren<ShootingController>().enabled=false;
+            }
         }
     }
 }
