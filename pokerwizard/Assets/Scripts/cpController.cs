@@ -36,7 +36,7 @@ public class cpController : MonoBehaviour
                     GetComponentInParent<CheckpointController>().activeindex=selfindex+1;
                 }
                 else{
-                    FindObjectOfType<FinishController>().cpcooldown[collision.GetComponent<PlayerController>().playerNumber]=false;
+                    FindObjectOfType<FinishController>().cpcooldown[collision.transform.parent.parent.GetComponent<PlayerController>().playerNumber]=false;
                     GetComponentInParent<CheckpointController>().Checkpoints[0].SetActive(true);
                     GetComponentInParent<CheckpointController>().activeindex=0;
                 }
