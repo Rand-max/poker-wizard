@@ -9,10 +9,10 @@ public class FinishController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cpcooldown[0]=false;
-        cpcooldown[1]=false;
-        cpcooldown[2]=false;
-        cpcooldown[3]=false;
+        cpcooldown[0]=true;
+        cpcooldown[1]=true;
+        cpcooldown[2]=true;
+        cpcooldown[3]=true;
     }
 
     // Update is called once per frame
