@@ -196,8 +196,12 @@
                     player.GetComponent<PlayerController>().Normal.GetChild(0).gameObject.SetActive(true);
                     player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<ShootingController>().enabled=true;
                     if(startingPoints[0]!=null){
-                        player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().OnTargetObjectWarped(player.GetComponent<PlayerController>().Normal,startingPoints[player.playerIndex].position-player.GetComponent<PlayerController>().rb.transform.position);
+                        player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().Follow=null;
                         player.GetComponent<PlayerController>().rb.transform.position=startingPoints[player.playerIndex].position;
+                        player.GetComponent<PlayerController>().rb.velocity=Vector3.zero;
+                        player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().PreviousStateIsValid = false;
+                        player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().transform.position=player.GetComponent<PlayerController>().Normal.position;
+                        player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().Follow=player.GetComponent<PlayerController>().Normal;
                     }
                     player.GetComponent<PlayerController>().transform.forward=Vector3.back;
                     GameObject playerchar=Instantiate(characters[player.playerIndex]);
@@ -282,6 +286,10 @@
                         players[3].transform.parent.GetComponentInChildren<ShootingController>().enemy.Add(players[1].gameObject);
                     }
                 }
+            }
+            Countdown cd=FindObjectOfType<Countdown>();
+            if(cd){
+                cd.StartCoroutine("StartDelay");
             }
         }
 

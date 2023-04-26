@@ -9,7 +9,7 @@ public class Countdown : MonoBehaviour
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("countdown_start");
-        StartCoroutine("StartDelay");
+        //StartCoroutine("StartDelay");
     }
 
     // Update is called once per frame
