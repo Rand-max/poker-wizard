@@ -30,6 +30,7 @@ public class cpController : MonoBehaviour
     void OnTriggerEnter(Collider collision){
         if(collision.gameObject.tag == "Player"){
             if(this.gameObject.layer == collision.gameObject.layer){
+                //FindObjectOfType<AudioManager>().Play("cp_eaten");
                 alive=false;
                 if(selfindex+1<GetComponentInParent<CheckpointController>().Checkpoints.Length){
                     GetComponentInParent<CheckpointController>().Checkpoints[selfindex+1].SetActive(true);

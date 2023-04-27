@@ -327,6 +327,12 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: cp_eaten
+    clip: {fileID: 8300000, guid: 9648ef176e317fc4eab0deb25fc3085d, type: 3}
+    volume: 0.8
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
   BGM:
     name: 
     clip: {fileID: 0}
