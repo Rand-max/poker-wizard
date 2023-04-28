@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
  
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public Texture playerfastenTexture;
     public GameObject playerCursor;
     [SerializeField] float currentSpeed;
+    [SerializeField] public VisualEffect driftPar;
     float speed;
     float rotate;
     [SerializeField] float currentRotate;
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
     void Start ()
     {
         DontDestroyOnLoad(this.transform.parent);
+        driftPar.Stop();
     }
     public void OnTurn(InputAction.CallbackContext ctx){
         inputDirection=ctx.ReadValue<Vector2>();
@@ -87,9 +90,11 @@ public class PlayerController : MonoBehaviour
                 isdrift=true;
                 if(inputDirection.x > 0.1){
                     GetComponentInChildren<Animator>().Play("Armature_right");
+                    driftPar.Play();
                 }
                 else if(inputDirection.x < -0.1){
                     GetComponentInChildren<Animator>().Play("Armature_left");
+                    driftPar.Play();
                 }
             }
             
@@ -104,6 +109,7 @@ public class PlayerController : MonoBehaviour
         //steer?
         if (inputDirection.x != 0&&!drifting)
         {
+            //driftPar.Stop();
             int dir = inputDirection.x > 0 ? 1 : -1;
             float amount = Mathf.Abs(inputDirection.x);
             Steer(dir, amount*1.6f);
@@ -111,6 +117,7 @@ public class PlayerController : MonoBehaviour
         
         if (Mathf.Abs(inputDirection.x) >= 0.1&&drifting)
         {
+            //driftPar.Play();
             float control = (driftDirection == 1) ? Remap(inputDirection.x, -1, 1, 0, 2) : Remap(inputDirection.x, -1, 1, 2, 0);
             float powerControl = (driftDirection == 1) ? Remap(inputDirection.x, -1, 1, .2f, 1) : Remap(inputDirection.x, -1, 1, 1, .2f);
             Steer(driftDirection, control);
