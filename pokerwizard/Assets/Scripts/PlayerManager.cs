@@ -196,6 +196,7 @@
                     player.GetComponent<PlayerController>().Normal.GetChild(0).gameObject.SetActive(true);
                     player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<ShootingController>().enabled=true;
                     if(startingPoints[0]!=null){
+                        Debug.Log("iiis");
                         player.GetComponent<PlayerController>().transform.parent.GetComponentInChildren<CinemachineVirtualCamera>().Follow=null;
                         player.GetComponent<PlayerController>().rb.transform.position=startingPoints[player.playerIndex].position;
                         player.GetComponent<PlayerController>().rb.velocity=Vector3.zero;
@@ -244,7 +245,6 @@
                     if(mirrorController){
                         playerParent.GetComponentInChildren<ShootingController>().aim=mirrorController.aim[player.playerIndex];
                     }
-                    Debug.Log(playerParent.GetComponentInChildren<ShootingController>().animateplayer);
                     //set the layer
                     //playerParent.GetComponentInChildren<CinemachineVirtualCamera>().gameObject.layer = layerToAdd;
                     //add the layer

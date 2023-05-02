@@ -88,13 +88,17 @@ public class PlayerController : MonoBehaviour
         {
             if(!isdrift){
                 isdrift=true;
+                if(GetComponentInChildren<Animator>().GetBehaviour<DriftController>().driftPar==null){
+                    foreach (var item in GetComponentInChildren<Animator>().GetBehaviours<DriftController>())
+                    {
+                        item.driftPar=driftPar;
+                    }
+                }
                 if(inputDirection.x > 0.1){
                     GetComponentInChildren<Animator>().Play("Armature_right");
-                    driftPar.Play();
                 }
                 else if(inputDirection.x < -0.1){
                     GetComponentInChildren<Animator>().Play("Armature_left");
-                    driftPar.Play();
                 }
             }
             
@@ -266,5 +270,8 @@ public class PlayerController : MonoBehaviour
         isJoked=true;
         joking=time;
         JokeStrength+=1;
+    }
+    public void Getvfx(){
+        GetComponentInChildren<Animator>().GetBehaviour<DriftController>().driftPar=driftPar;
     }
 }
