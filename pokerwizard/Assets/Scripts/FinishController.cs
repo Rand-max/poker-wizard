@@ -28,7 +28,7 @@ public class FinishController : MonoBehaviour
                 cpcooldown[playercon.playerNumber]=true;
                 cpc.lap+=1;
             }
-            if(scoreman.rank[playercon.playerNumber]>290f){
+            if(scoreman.rank[playercon.playerNumber]>220f){
                 scoreman.finish(playercon.playerNumber);
                 playercon.rb.gameObject.SetActive(false);
                 playercon.Normal.GetChild(0).gameObject.SetActive(false);
