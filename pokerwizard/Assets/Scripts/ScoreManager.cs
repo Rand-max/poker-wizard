@@ -78,7 +78,7 @@ public class ScoreManager : MonoBehaviour
         shootpointui[1].text=(ShootPoint[2]+ShootPoint[3]+gold[2]*5+gold[3]*5).ToString();
     }
     public void finish(int index){
-        if(rank[index]>290f){
+        if(rank[index]>220f){
             finished[index]=true;
             finishAni[index].SetActive(true);
             FindObjectOfType<AudioManager>().Play("finish");
