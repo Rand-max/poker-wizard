@@ -333,13 +333,25 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  BGM:
-    name: 
-    clip: {fileID: 0}
-    volume: 0.3
+  - name: drift
+    clip: {fileID: 8300000, guid: 9648ef176e317fc4eab0deb25fc3085d, type: 3}
+    volume: 0.8
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: drift2
+    clip: {fileID: 8300000, guid: b9f112ef6c4113946ac37081ab88e3e0, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  BGM:
+    name: 
+    clip: {fileID: 8300000, guid: dd6168d696ceb1d46a0f51bb7f2efcc6, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
   BGMClips:
   - {fileID: 8300000, guid: fd2f4de02fab8bd428fcd2f606b831da, type: 3}
   - {fileID: 8300000, guid: 160734075db52c246a1dd5090f90da50, type: 3}

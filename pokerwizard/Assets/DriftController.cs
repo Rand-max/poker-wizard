@@ -9,6 +9,7 @@ public class DriftController : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         driftPar.Play();
+        FindObjectOfType<AudioManager>().Play("drift2");
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -21,6 +22,7 @@ public class DriftController : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         driftPar.Stop();
+        FindObjectOfType<AudioManager>().StopPlaying("drift2");
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
