@@ -27,9 +27,9 @@ public class ShootingController : MonoBehaviour
     public float preparetime;
     public int ammo=0;
     private float cooldown;
-    float casttimer=0f;
+    public float casttimer=0f;
     bool shootprepared=false;
-    bool iscasted=false;
+    public bool iscasted=false;
     public ScrollDown SD;
     public AudioManager am;
     public ScoreAnnouncer sa;

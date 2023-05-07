@@ -130,6 +130,7 @@ public class LockDissolveTest : MonoBehaviour
                 circolor[i]= new Color (1, 1, 1, 1);
             }
         }
+        /*
         bool getReady=true;
         for(int i=0;i<4;i++){
             if(isEnabled[i]){
@@ -138,7 +139,7 @@ public class LockDissolveTest : MonoBehaviour
         }
         if(getReady){
             red.ButtonClicked();
-        }
+        }*/
         if(Mat[1].GetFloat("_FadeValue")==0){
             everyoneReady=true;
         }

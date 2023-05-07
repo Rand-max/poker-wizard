@@ -121,6 +121,9 @@
             if(playerReady[0]&&playerReady[1]&&playerReady[2]&&playerReady[3]){
                 everyoneReady=true;
             }
+            else{
+                everyoneReady=false;
+            }
         }
         void OnSceneLoaded(Scene scene, LoadSceneMode mode){
             Debug.Log("OnSceneLoaded: " + scene.name);
