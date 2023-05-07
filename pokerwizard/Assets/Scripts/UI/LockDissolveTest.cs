@@ -75,6 +75,14 @@ public class LockDissolveTest : MonoBehaviour
         }
     }
     void Awake(){
+        Mat[0]=locks[0].GetComponent<Image>().material;
+        Mat[0].SetFloat("_FadeValue",1f);
+        Mat[1]=locks[1].GetComponent<Image>().material;
+        Mat[1].SetFloat("_FadeValue",1f);
+        Mat[2]=locks[2].GetComponent<Image>().material;
+        Mat[2].SetFloat("_FadeValue",1f);
+        Mat[3]=locks[3].GetComponent<Image>().material;
+        Mat[3].SetFloat("_FadeValue",1f);
         SceneManager.sceneLoaded+=OnSceneLoaded;
     }
     // Start is called before the first frame update
@@ -140,9 +148,9 @@ public class LockDissolveTest : MonoBehaviour
         if(getReady){
             red.ButtonClicked();
         }*/
-        if(Mat[1].GetFloat("_FadeValue")==0){
-            everyoneReady=true;
-        }
+        // if(Mat[1].GetFloat("_FadeValue")==0){
+        //     everyoneReady=true;
+        // }
     }
     public void playerConnected(int ptext){
         FindObjectOfType<AudioManager>().Play("pick_key");
