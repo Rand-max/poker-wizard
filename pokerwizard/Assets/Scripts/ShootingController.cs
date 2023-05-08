@@ -28,7 +28,7 @@ public class ShootingController : MonoBehaviour
     public int ammo=0;
     private float cooldown;
     public float casttimer=0f;
-    bool shootprepared=false;
+    public bool shootprepared=false;
     public bool iscasted=false;
     public ScrollDown SD;
     public AudioManager am;
@@ -37,8 +37,9 @@ public class ShootingController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        iscasted=false;
         //Cursor.lockState=CursorLockMode.Locked;
+        shootprepared=false;
+        iscasted=false;
     }
     // Update is called once per frame
     void Update()

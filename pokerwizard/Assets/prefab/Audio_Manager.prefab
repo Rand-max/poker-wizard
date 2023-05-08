@@ -185,7 +185,7 @@ MonoBehaviour:
     loop: 0
   - name: fire_cat
     clip: {fileID: 8300000, guid: 54cc32f45e3c57b4fa7dcbd1c6e8010b, type: 3}
-    volume: 1
+    volume: 0.6
     pitch: 1
     source: {fileID: 0}
     loop: 0
@@ -328,14 +328,14 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: cp_eaten
-    clip: {fileID: 8300000, guid: 9648ef176e317fc4eab0deb25fc3085d, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: eedb91f0077940745a7a7433769d347f, type: 3}
+    volume: 0.4
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: drift
     clip: {fileID: 8300000, guid: 9648ef176e317fc4eab0deb25fc3085d, type: 3}
-    volume: 0.8
+    volume: 0.4
     pitch: 1
     source: {fileID: 0}
     loop: 1
@@ -346,7 +346,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 1
   - name: drift4
-    clip: {fileID: 8300000, guid: ee797b83edb643941abd82a4f89b420f, type: 3}
+    clip: {fileID: 8300000, guid: f21b963a3130f4840bdb44cd169feb16, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
@@ -359,7 +359,7 @@ MonoBehaviour:
     loop: 0
   - name: warp
     clip: {fileID: 8300000, guid: 70495077e9f6f9b48bdda4a5d0a31e37, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     loop: 0
