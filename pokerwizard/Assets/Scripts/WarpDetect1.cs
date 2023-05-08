@@ -24,8 +24,8 @@ public class WarpDetect1 : MonoBehaviour
     void Update()
     {
         if(isTrigger){
+            // isTrigger=false;
             warpEffect.Play();
-            //FindObjectOfType<AudioManager>().Play("fire_cat");
             tcyl.SetActive(true);
             cd-=Time.deltaTime;
             if(cd<0){

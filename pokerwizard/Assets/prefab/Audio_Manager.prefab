@@ -347,10 +347,22 @@ MonoBehaviour:
     loop: 1
   - name: drift4
     clip: {fileID: 8300000, guid: ee797b83edb643941abd82a4f89b420f, type: 3}
-    volume: 0.3
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
     loop: 1
+  - name: tpcheck
+    clip: {fileID: 8300000, guid: 9b2ccac918d836241b227b30b4eec3ae, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: warp
+    clip: {fileID: 8300000, guid: 70495077e9f6f9b48bdda4a5d0a31e37, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
   BGM:
     name: 
     clip: {fileID: 0}

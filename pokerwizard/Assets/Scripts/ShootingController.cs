@@ -37,7 +37,7 @@ public class ShootingController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position=playernormal.transform.position;
+        iscasted=false;
         //Cursor.lockState=CursorLockMode.Locked;
     }
     // Update is called once per frame
@@ -218,6 +218,7 @@ public class ShootingController : MonoBehaviour
     }
     public void OnEngine(InputAction.CallbackContext ctx){
         Debug.Log("back");
+        FindObjectOfType<AudioManager>().Play("tpcheck");
         CheckpointController playercheck=scoreManager.checkpointmanager[transform.parent.GetComponentInChildren<PlayerController>().playerNumber].GetComponent<CheckpointController>();
         int teleindex=playercheck.activeindex;
         if(teleindex==0){
