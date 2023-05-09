@@ -38,8 +38,8 @@ public class ShootingController : MonoBehaviour
     void Start()
     {
         //Cursor.lockState=CursorLockMode.Locked;
-        shootprepared=false;
-        iscasted=false;
+        // shootprepared=false;
+        // iscasted=false;
     }
     // Update is called once per frame
     void Update()
