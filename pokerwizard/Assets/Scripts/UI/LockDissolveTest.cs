@@ -75,6 +75,7 @@ public class LockDissolveTest : MonoBehaviour
         }
     }
     void Awake(){
+        SceneManager.sceneLoaded+=OnSceneLoaded;
         Mat[0]=locks[0].GetComponent<Image>().material;
         Mat[0].SetFloat("_FadeValue",1f);
         Mat[1]=locks[1].GetComponent<Image>().material;
@@ -83,7 +84,6 @@ public class LockDissolveTest : MonoBehaviour
         Mat[2].SetFloat("_FadeValue",1f);
         Mat[3]=locks[3].GetComponent<Image>().material;
         Mat[3].SetFloat("_FadeValue",1f);
-        SceneManager.sceneLoaded+=OnSceneLoaded;
     }
     // Start is called before the first frame update
     void OnSceneLoaded(Scene scene, LoadSceneMode mode){
