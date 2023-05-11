@@ -22,7 +22,7 @@ public class CheckpointFetcher : MonoBehaviour
     {
         if(FetchNow){
             List<GameObject> checks=new List<GameObject>();
-            foreach (var item in GetComponentsInChildren<cpController>())
+            foreach (var item in GetComponentsInChildren<cpController>(true))
             {
                 checks.Add(item.gameObject);
             }
