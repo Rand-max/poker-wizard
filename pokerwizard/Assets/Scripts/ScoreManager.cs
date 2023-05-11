@@ -41,7 +41,7 @@ public class ScoreManager : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             if(!finished[i]){
-                rank[i]=checkpointmanager[i].GetComponent<CheckpointController>().lap*100+checkpointmanager[i].GetComponent<CheckpointController>().activeindex+1-checkpointmanager[i].GetComponent<CheckpointController>().distance/1000f;
+                rank[i]=checkpointmanager[i].GetComponent<CheckpointController>().lap*100+getrank(checkpointmanager[i].GetComponent<CheckpointController>())-checkpointmanager[i].GetComponent<CheckpointController>().distance/1000f;
             }
         }
         sortedrank=new List<float>(rank);
@@ -78,7 +78,7 @@ public class ScoreManager : MonoBehaviour
         shootpointui[1].text=(ShootPoint[2]+ShootPoint[3]+gold[2]*5+gold[3]*5).ToString();
     }
     public void finish(int index){
-        if(rank[index]>200f){
+        if(rank[index]>200f&&checkpointmanager[index].GetComponent<CheckpointController>().passedlastcheckpoint){
             finished[index]=true;
             finishAni[index].SetActive(true);
             FindObjectOfType<AudioManager>().Play("finish");
@@ -104,5 +104,11 @@ public class ScoreManager : MonoBehaviour
         LeanTween.moveY(rect,endpoint.anchoredPosition.y,1.5f).setOnComplete(()=>{
             Destroy(inst);
         });
+    }
+    public int getrank(CheckpointController cpc){
+        if(cpc.activeindex==0&&cpc.passedlastcheckpoint){
+            return cpc.Checkpoints.Length;
+        }
+        return cpc.activeindex;
     }
 }

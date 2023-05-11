@@ -11,11 +11,13 @@ public class CheckpointController : MonoBehaviour
     private float innertimer;
     public GameObject[] Checkpoints;
     public int activeindex=0;
+    public bool passedlastcheckpoint=false;
     // Start is called before the first frame update
     void Start()
     {
         innertimer=0;
         lap=0;
+        passedlastcheckpoint=false;
     }
 
     // Update is called once per frame
@@ -25,6 +27,12 @@ public class CheckpointController : MonoBehaviour
             innertimer=0;
             if(!player)distance=9999;
             else distance=Vector3.Distance(player.transform.position,GetComponentInParent<CheckpointController>().Checkpoints[activeindex].transform.position);
+        }
+        if(activeindex>=Checkpoints.Length-1&&!passedlastcheckpoint){
+            passedlastcheckpoint=true;
+        }
+        else if(activeindex==1){
+            passedlastcheckpoint=false;
         }
         innertimer+=Time.deltaTime;
     }

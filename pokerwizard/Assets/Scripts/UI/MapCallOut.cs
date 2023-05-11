@@ -113,7 +113,7 @@ public class MapCallOut : MonoBehaviour
     }
     //啟動
     public void StartMapUI(){
-        if(Keyboard.current.zKey.wasPressedThisFrame||(allisReady&&dissolveTest.everyoneReady&&!mapstarted)){
+        if(Keyboard.current.zKey.wasPressedThisFrame||(allisReady&&!mapstarted)){
             WizardFadeOut();
             startCtn=true;
             gatecdAllowed=true;
