@@ -181,6 +181,8 @@
                 }
                 ShootingController sc=player.transform.parent.GetComponentInChildren<ShootingController>();
                 if(sc){
+                    sc.casttimer=0f;
+                    sc.iscasted=false;
                     sc.sa=FindObjectOfType<ScoreAnnouncer>();
                 }
                 ScrollDown sd=FindObjectOfType<ScrollDown>();
