@@ -27,20 +27,19 @@ public class FinishController : MonoBehaviour
                 CheckpointController cpc=scoreman.checkpointmanager[playercon.playerNumber].GetComponent<CheckpointController>();
                 cpcooldown[playercon.playerNumber]=true;
                 cpc.lap+=1;
-            }
-            if(scoreman.rank[playercon.playerNumber]>200f){
-                playercon.GetComponentInChildren<Animator>().GetBehaviour<DriftController>().driftPar.Stop();
-                FindObjectOfType<AudioManager>().StopPlaying("drift4");
-                ShootingController shootingController=playercon.transform.parent.GetComponentInChildren<ShootingController>();
-                shootingController.cvm.gameObject.SetActive(false);
-                shootingController.casttimer=0f;
-                shootingController.iscasted=false;
-                shootingController.aim.SetActive(false);
-                shootingController.enabled=false;
-                scoreman.finish(playercon.playerNumber);
-                playercon.rb.gameObject.SetActive(false);
-                playercon.Normal.GetChild(0).gameObject.SetActive(false);
-                
+                if(scoreman.rank[playercon.playerNumber]>200f){
+                    playercon.GetComponentInChildren<Animator>().GetBehaviour<DriftController>().driftPar.Stop();
+                    FindObjectOfType<AudioManager>().StopPlaying("drift4");
+                    ShootingController shootingController=playercon.transform.parent.GetComponentInChildren<ShootingController>();
+                    shootingController.cvm.gameObject.SetActive(false);
+                    shootingController.casttimer=0f;
+                    shootingController.iscasted=false;
+                    shootingController.aim.SetActive(false);
+                    shootingController.enabled=false;
+                    scoreman.finish(playercon.playerNumber);
+                    playercon.rb.gameObject.SetActive(false);
+                    playercon.Normal.GetChild(0).gameObject.SetActive(false);
+                }
             }
         }
     }
