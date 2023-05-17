@@ -41,7 +41,7 @@ MonoBehaviour:
     LifeTime: 3
     targettype: 0001000001
     AttachedTarget: 0
-    BulletSpeed: 200
+    BulletSpeed: 120
     HasPursuit: 1
     PursuitStrength: 0.5
     HasSlowdown: 0
