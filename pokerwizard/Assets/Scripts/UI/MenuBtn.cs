@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class MenuBtn : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,IPointerEnterHandler,IPointerExitHandler
+public class MenuBtn : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,IPointerEnterHandler,IPointerExitHandler,ISelectHandler,IDeselectHandler
 {
     public RectTransform btn;
     [SerializeField] private Image btnimg;
@@ -40,6 +40,19 @@ public class MenuBtn : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,IPoin
         title.color=title_af;
         btn.GetComponent<Animator>().Play("menu_hover_on");
         FindObjectOfType<AudioManager>().Play("btn_hover");
+    }
+    public void OnSelect(BaseEventData eventData){
+        btnimg.sprite=btn_after;
+        logoimg.sprite=logo_af;
+        title.color=title_af;
+        btn.GetComponent<Animator>().Play("menu_hover_on");
+        FindObjectOfType<AudioManager>().Play("btn_hover");
+    }
+    public void OnDeselect(BaseEventData eventData){
+        btnimg.sprite=btn_before;
+        logoimg.sprite=logo_bef;
+        title.color=title_bef;
+        btn.GetComponent<Animator>().Play("menu_hover_off");
     }
     public void OnPointerExit(PointerEventData eventData){
         btnimg.sprite=btn_before;

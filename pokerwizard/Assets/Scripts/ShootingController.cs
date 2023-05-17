@@ -120,21 +120,21 @@ public class ShootingController : MonoBehaviour
                 newbullets.GetComponent<BulletpProjectile>().scoreman=scoreManager;
                 for(int j=0;j<CurrentSpell.BulletStartEffects.Count;j++){
                     GameObject neweffects;
-                    switch(CurrentSpell.BulletStartEffects[i].AttachedTarget){
+                    switch(CurrentSpell.BulletStartEffects[j].AttachedTarget){
                         default:
-                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[j].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
                         break;
                         case 0:
-                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[j].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
                         break;
                         case 1:
-                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up),enemy[0].transform);
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[j].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up),enemy[0].transform);
                         break;
                         case 2:
-                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up),wandposition.transform);
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[j].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up),wandposition.transform);
                         break;
                         case 3:
-                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up),friend.transform);
+                        neweffects=Instantiate(CurrentSpell.BulletStartEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletStartEffects[j].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up),friend.transform);
                         break;
                     }
                     if(!neweffects.GetComponent<BulletpProjectile>()){
@@ -152,17 +152,17 @@ public class ShootingController : MonoBehaviour
                     neweffects.GetComponent<BulletpProjectile>().scoreman=scoreManager;
                 }
                 for(int j=0;j<CurrentSpell.BulletEndEffects.Count;j++){
-                    GameObject boomeffects=Instantiate(CurrentSpell.BulletEndEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletEndEffects[i].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
+                    GameObject boomeffects=Instantiate(CurrentSpell.BulletEndEffects[j].Object,newbullet.transform.position+CurrentSpell.BulletEndEffects[j].EffectOffset,Quaternion.LookRotation(aimdir,Vector3.up));
                     if(!boomeffects.GetComponent<BulletpProjectile>()){
                         boomeffects.AddComponent<BulletpProjectile>();
                     }
-                    boomeffects.GetComponent<BulletpProjectile>().bspeed=CurrentSpell.BulletEndEffects[i].BulletSpeed;
-                    boomeffects.GetComponent<BulletpProjectile>().lifetime=CurrentSpell.BulletEndEffects[i].LifeTime;
+                    boomeffects.GetComponent<BulletpProjectile>().bspeed=CurrentSpell.BulletEndEffects[j].BulletSpeed;
+                    boomeffects.GetComponent<BulletpProjectile>().lifetime=CurrentSpell.BulletEndEffects[j].LifeTime;
                     boomeffects.GetComponent<BulletpProjectile>().isSpell=CurrentSpell;
                     boomeffects.GetComponent<BulletpProjectile>().enemy=enemy;
                     boomeffects.GetComponent<BulletpProjectile>().origin=wandposition;
                     boomeffects.GetComponent<BulletpProjectile>().friend=friend;
-                    boomeffects.GetComponent<BulletpProjectile>().be=CurrentSpell.BulletEndEffects[i];
+                    boomeffects.GetComponent<BulletpProjectile>().be=CurrentSpell.BulletEndEffects[j];
                     boomeffects.GetComponent<BulletpProjectile>().selfLayer=mousecolliderlayermask;
                     boomeffects.GetComponent<BulletpProjectile>().enemyLayer=enemyLayer;
                     boomeffects.GetComponent<BulletpProjectile>().scoreman=scoreManager;

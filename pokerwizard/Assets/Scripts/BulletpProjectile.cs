@@ -115,6 +115,7 @@ public class BulletpProjectile : MonoBehaviour
         }
     }
     private void OnTriggerEnter(Collider other){
+        Debug.Log(other.gameObject);
         if((other.gameObject.layer==0)&&be.targettype[0]){
             if(other.gameObject.layer==0){
                 triggered=true;
@@ -169,11 +170,9 @@ public class BulletpProjectile : MonoBehaviour
             if(be.IsJoke){
                 //No.
             }
-            Debug.Log("shield brek");
             Terminate();
         }else if((((1<<other.gameObject.layer) & enemyLayer) != 0)&&be.targettype[1]){
             if(other.gameObject.tag=="Player"){
-                Debug.Log(be.HasStun);
                 triggered=true;
                 other.transform.parent.GetComponentInChildren<Animator>().Play("Armature_panic");
                 FindObjectOfType<AudioManager>().Play("shocked");
@@ -200,7 +199,6 @@ public class BulletpProjectile : MonoBehaviour
                 if(be.IsJoke){
                     other.gameObject.GetComponentInParent<PlayerController>().Joke(be.JokeTime,be.JokeStrength);
                 }
-                Debug.Log("HP-1");
                 if(be.canScore){
                     alreadyScore=true;
                     scoreman.AddScore(origin.GetComponentInParent<PlayerController>().playerNumber,be.score);
@@ -235,7 +233,6 @@ public class BulletpProjectile : MonoBehaviour
                 if(be.IsJoke){
                     scoreman.AddScore(other.gameObject.GetComponentInParent<PlayerController>().playerNumber,be.JokeStrength);
                 }
-                Debug.Log("friend hit");
                 Terminate();
             }
         }else{

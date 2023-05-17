@@ -62,8 +62,8 @@ MonoBehaviour:
     JokeTime: 0
     JokeStrength: 0
     EffectOffset: {x: 0, y: 0, z: 0}
-    canScore: 1
-    score: 1
+    canScore: 0
+    score: 0
   EffectLifeTime: 0.5
   BulletStartEffects:
   - Object: {fileID: 3098136464652354338, guid: 73a11c61df025dc428e83e5bea9ee3c3, type: 3}

@@ -58,9 +58,9 @@ MonoBehaviour:
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
-    IsJoke: 0
-    JokeTime: 0
-    JokeStrength: 0
+    IsJoke: 1
+    JokeTime: 25
+    JokeStrength: 1
     EffectOffset: {x: 0, y: 0, z: 0}
     canScore: 0
     score: 0
@@ -130,9 +130,9 @@ MonoBehaviour:
     BulletBurstSpeed: 0
     IsTeleporter: 0
     TeleportTiming: 0
-    IsJoke: 1
-    JokeTime: 25
-    JokeStrength: 1
+    IsJoke: 0
+    JokeTime: 0
+    JokeStrength: 0
     EffectOffset: {x: 0, y: 0, z: 0}
     canScore: 0
     score: 0
