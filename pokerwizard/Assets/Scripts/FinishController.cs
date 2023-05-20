@@ -27,6 +27,7 @@ public class FinishController : MonoBehaviour
                 CheckpointController cpc=scoreman.checkpointmanager[playercon.playerNumber].GetComponent<CheckpointController>();
                 cpcooldown[playercon.playerNumber]=true;
                 cpc.lap+=1;
+                scoreman.CalculateRank();
                 if(scoreman.rank[playercon.playerNumber]>200f){
                     playercon.GetComponentInChildren<Animator>().GetBehaviour<DriftController>().driftPar.Stop();
                     FindObjectOfType<AudioManager>().StopPlaying("drift4");

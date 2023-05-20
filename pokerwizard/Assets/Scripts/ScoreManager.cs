@@ -38,12 +38,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            if(!finished[i]){
-                rank[i]=checkpointmanager[i].GetComponent<CheckpointController>().lap*100+getrank(checkpointmanager[i].GetComponent<CheckpointController>())-checkpointmanager[i].GetComponent<CheckpointController>().distance/1000f;
-            }
-        }
+        CalculateRank();
         sortedrank=new List<float>(rank);
         sortedrank.Sort();
         for (int i = 0; i < 4; i++)
@@ -110,5 +105,13 @@ public class ScoreManager : MonoBehaviour
             return cpc.Checkpoints.Length;
         }
         return cpc.activeindex;
+    }
+    public void CalculateRank(){
+        for (int i = 0; i < 4; i++)
+        {
+            if(!finished[i]){
+                rank[i]=checkpointmanager[i].GetComponent<CheckpointController>().lap*100+getrank(checkpointmanager[i].GetComponent<CheckpointController>())-checkpointmanager[i].GetComponent<CheckpointController>().distance/1000f;
+            }
+        }
     }
 }
