@@ -28,7 +28,7 @@ public class FinishController : MonoBehaviour
                 cpcooldown[playercon.playerNumber]=true;
                 cpc.lap+=1;
                 scoreman.CalculateRank();
-                if(Mathf.CeilToInt(scoreman.rank[playercon.playerNumber])>220){
+                if(cpc.lap>=3){
                     playercon.GetComponentInChildren<Animator>().GetBehaviour<DriftController>().driftPar.Stop();
                     FindObjectOfType<AudioManager>().StopPlaying("drift4");
                     ShootingController shootingController=playercon.transform.parent.GetComponentInChildren<ShootingController>();
