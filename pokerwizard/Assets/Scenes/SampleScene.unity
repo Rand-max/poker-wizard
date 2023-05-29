@@ -2302,6 +2302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playercount: 0
   score: {fileID: 1026211996}
+  placeeng: {fileID: 1702691695}
 --- !u!1001 &67287476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3554,7 +3555,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 37.98, y: 30, z: 2.77}
+  m_Size: {x: 93.5, y: 30, z: 2.77}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &116917230
 MeshRenderer:
@@ -6225,6 +6226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playercount: 2
   score: {fileID: 1026211996}
+  placeeng: {fileID: 564427981}
 --- !u!134 &213806283
 PhysicMaterial:
   m_ObjectHideFlags: 0
@@ -30789,6 +30791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playercount: 1
   score: {fileID: 1026211996}
+  placeeng: {fileID: 986568283}
 --- !u!1 &962797118
 GameObject:
   m_ObjectHideFlags: 0
@@ -34852,6 +34855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playercount: 3
   score: {fileID: 1026211996}
+  placeeng: {fileID: 1405435468}
 --- !u!134 &1104683542
 PhysicMaterial:
   m_ObjectHideFlags: 0

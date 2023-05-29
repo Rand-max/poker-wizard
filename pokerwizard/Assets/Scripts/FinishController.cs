@@ -29,7 +29,13 @@ public class FinishController : MonoBehaviour
                 cpc.lap+=1;
                 scoreman.CalculateRank();
                 if(cpc.lap>=3){
-                    playercon.GetComponentInChildren<Animator>().GetBehaviour<DriftController>().driftPar.Stop();
+                    if(playercon.GetComponentInChildren<Animator>()){
+                        if(playercon.GetComponentInChildren<Animator>().GetBehaviour<DriftController>()){
+                            if(playercon.GetComponentInChildren<Animator>().GetBehaviour<DriftController>().driftPar){
+                                playercon.GetComponentInChildren<Animator>().GetBehaviour<DriftController>().driftPar.Stop();
+                            }
+                        }
+                    }
                     FindObjectOfType<AudioManager>().StopPlaying("drift4");
                     ShootingController shootingController=playercon.transform.parent.GetComponentInChildren<ShootingController>();
                     shootingController.cvm.gameObject.SetActive(false);

@@ -7,7 +7,7 @@ public class placecontroller : MonoBehaviour
 {
     public int playercount;
     public GameObject score;
-    public SpellActivate spellActivate;
+    public TextMeshProUGUI placeeng;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,30 +18,22 @@ public class placecontroller : MonoBehaviour
     void Update()
     {
         int place=score.GetComponent<ScoreManager>().leaderboard[playercount];
-        switch(place){
+        switch(place-1){
             case 0:
                 GetComponent<TextMeshProUGUI>().text=place.ToString();
-                spellActivate.placeEng.text="st";
-                GetComponent<TextMeshProUGUI>().colorGradient=spellActivate.fire_color;
-                spellActivate.placeEng.colorGradient=spellActivate.fire_color;
+                placeeng.text="st";
                 break;
             case 1:
                 GetComponent<TextMeshProUGUI>().text=place.ToString();
-                spellActivate.placeEng.text="nd";
-                GetComponent<TextMeshProUGUI>().colorGradient=spellActivate.ice_color;
-                spellActivate.placeEng.colorGradient=spellActivate.ice_color;
+                placeeng.text="nd";
                 break;
             case 2:
                 GetComponent<TextMeshProUGUI>().text=place.ToString();
-                spellActivate.placeEng.text="rd";
-                GetComponent<TextMeshProUGUI>().colorGradient=spellActivate.brown_color;
-                spellActivate.placeEng.colorGradient=spellActivate.brown_color;
+                placeeng.text="rd";
                 break;
             case 3 :
                 GetComponent<TextMeshProUGUI>().text=place.ToString();
-                spellActivate.placeEng.text="th";
-                GetComponent<TextMeshProUGUI>().colorGradient=spellActivate.purp_color;
-                spellActivate.placeEng.colorGradient=spellActivate.purp_color;
+                placeeng.text="th";
                 break;
             default:
                 break;
